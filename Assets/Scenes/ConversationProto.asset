@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
+  m_Name: ConversationProto
+  m_EditorClassIdentifier: 
+  DialogueObjects:
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Brock
+      IsCharacterMainPlayer: 1
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: Hey how's it going
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Lekshmy
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: Great, what's your name?
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 1
+    StandardDialogueObject:
+      CharacterName: 
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 5, y: 5}
+      MazeCompletionResults:
+      - DialogueResultType: 0
+        DialogueResponse:
+          CharacterName: Brock
+          DialogueResponse: 'I''m Brock
+
+'
+        HealthResult:
+          HealthAmountToChange: 2
+        DifficultyModifierResult:
+          MazeSizeModifier: -1
+          MazeShakeModifier: -0.25
+          MazeRotateModifier: -0.25
+      - DialogueResultType: 0
+        DialogueResponse:
+          CharacterName: Brock
+          DialogueResponse: I'm uh. uh.. uh.... Brock
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 1
+          MazeShakeModifier: 0.01
+          MazeRotateModifier: 0
+      - DialogueResultType: 0
+        DialogueResponse:
+          CharacterName: Brock
+          DialogueResponse: I FORGOT OK GET OFF MY FUCKING DICK JESUS CHRIST!!!!!!!!!!!111!!!!ONE
+        HealthResult:
+          HealthAmountToChange: -4
+        DifficultyModifierResult:
+          MazeSizeModifier: 2
+          MazeShakeModifier: 0.1
+          MazeRotateModifier: 0
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Lekshmy
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 1
+      CharacterSentiment: 3
+      HappyDialogue: So nice to meet you!  Do you like mazes?
+      NeutralDialogue: Ok cool.  Here's a maze.
+      AnnoyedDialogue: Calm down dude solve this maze
+      FuckingPissedDialogue: I WILL KILL YOU WITH THIS MAZE
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 1
+    StandardDialogueObject:
+      CharacterName: 
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 6, y: 6}
+      MazeCompletionResults: []
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Lekshmy
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Brock
+      IsCharacterMainPlayer: 1
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 0
+    StandardDialogueObject:
+      CharacterName: Lekshmy
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+  - DialogueObjectType: 1
+    StandardDialogueObject:
+      CharacterName: 
+      IsCharacterMainPlayer: 0
+      UsesSentimentSystem: 0
+      CharacterSentiment: 0
+      HappyDialogue: 
+      NeutralDialogue: 
+      AnnoyedDialogue: 
+      FuckingPissedDialogue: 
+      StandardDialogue: 
+    MazeSpawnerDialogue:
+      MazeSpawnData:
+        MazeSize: {x: 10, y: 10}
+      MazeCompletionResults: []
