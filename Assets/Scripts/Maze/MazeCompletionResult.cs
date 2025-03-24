@@ -1,5 +1,8 @@
+using Characters;
+using Dialogue;
 using Sirenix.OdinInspector;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Maze
@@ -18,21 +21,24 @@ namespace Maze
         public EMazeCompletionResultType DialogueResultType;
 
         [ShowIf("DialogueResultType", EMazeCompletionResultType.DialogueResponse)]
-        public DialogueResponseResult DialogueResponse;
+        public List<StandardDialogueObject> DialogueResponses;
 
         [ShowIf("DialogueResultType", EMazeCompletionResultType.HealthResult)]
         public DialogueHealthResult HealthResult;
 
         [ShowIf("DialogueResultType", EMazeCompletionResultType.DifficultyResult)]
         public DifficultyModifierResult DifficultyModifierResult;
-    }
 
-    [Serializable]
-    public class DialogueResponseResult
-    {
-        public string CharacterName;
-        [TextArea(2,10)]
-        public string DialogueResponse;
+        public void ApplyEffects()
+        {
+            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(DifficultyModifierResult);
+
+            int healthToChange = HealthResult.HealthAmountToChange;
+            if (healthToChange != 0)
+            {
+                MainPlayer.Player.Instance.HealthComponent.ChangeHealth(healthToChange);
+            }
+        }
     }
 
     [Serializable]

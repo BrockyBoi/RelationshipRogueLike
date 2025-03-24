@@ -176,7 +176,8 @@ namespace Maze
             _hasGameStarted = false;
             _hasStartCountdownBegun = false;
 
-            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(GetMazeCompletionResultToApply().DifficultyModifierResult);
+            MazeCompletionResult result = GetMazeCompletionResultToApply();
+            result.ApplyEffects();
         }
 
         public void EnteredExitZone()
@@ -195,7 +196,7 @@ namespace Maze
 
         private float GetPercentageOfTimeLeftToSolveMaze()
         {
-            return 1f - ((_timeLeftToFinish - _totalPenaltyTime) / _timeToSolveMaze);
+            return (_timeLeftToFinish - _totalPenaltyTime) / _timeToSolveMaze;
         }
 
         public MazeCompletionResult GetMazeCompletionResultToApply()
@@ -215,7 +216,7 @@ namespace Maze
             {
                 indexDesired++;
             }
-            while (indexDesired * percentagePerResult > percentageTimeLeftToSolveMaze);
+            while (_mazeCompletionResults.IsValidIndex(indexDesired) && indexDesired * percentagePerResult > percentageTimeLeftToSolveMaze);
 
             return _mazeCompletionResults[indexDesired - 1];
         }

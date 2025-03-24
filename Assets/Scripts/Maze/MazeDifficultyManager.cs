@@ -26,6 +26,8 @@ namespace Maze
         [ShowInInspector, ShowIf("ShouldShake")]
         public float ShakeIntensity { get; private set; }
 
+        public Vector2 ShakeOffsetPosition { get; private set; }
+
         [ShowInInspector]
         public bool ShouldRotate { get; private set; }
 
@@ -38,6 +40,14 @@ namespace Maze
         private void Awake()
         {
             Instance = this;
+        }
+
+        private void Update()
+        {
+            if (ShouldShake)
+            {
+                ShakeOffsetPosition = Random.insideUnitCircle * _maxShakeIntensity;
+            }
         }
 
         public void ProvideDifficultyModifierResult(DifficultyModifierResult result)

@@ -69,7 +69,7 @@ namespace Maze
         {
             if (_difficultyManager.ShouldShake)
             {
-                Vector2 offset = MazeGenerator.Instance.OffsetPos;
+                Vector2 offset = _difficultyManager.ShakeOffsetPosition;
                 transform.position = _startPos + new Vector3(offset.x, 0, offset.y);
             }
             else if (_difficultyManager.ShouldRotate)

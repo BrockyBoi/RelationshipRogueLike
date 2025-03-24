@@ -1,3 +1,4 @@
+using Characters;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,14 +6,6 @@ using UnityEngine;
 
 namespace MainPlayer
 {
-    public enum ECharacterSentiment
-    {
-        Happy,
-        Neutral,
-        Annoyed,
-        FuckingPissed
-    }
-
     public class HealthComponent : MonoBehaviour
     {
         [ShowInInspector, ReadOnly]
@@ -40,12 +33,24 @@ namespace MainPlayer
             ResetHealth();
         }
 
-        public void RemoveHealth(int healthToRemove)
+        public void ChangeHealth(int amountToChange)
         {
-            SetHealth(Health - healthToRemove);
+            if (amountToChange < 0)
+            {
+                RemoveHealth(amountToChange);
+            }
+            else if (amountToChange > 0)
+            {
+                HealHealth(amountToChange);   
+            }
         }
 
-        public void HealHealth(int healthToHeal)
+        private void RemoveHealth(int healthToRemove)
+        {
+            SetHealth(Health - Mathf.Abs(healthToRemove));
+        }
+
+        private void HealHealth(int healthToHeal)
         {
             SetHealth(Health + healthToHeal);
         }

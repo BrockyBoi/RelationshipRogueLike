@@ -1,3 +1,4 @@
+using Characters;
 using Maze;
 using MainPlayer;
 using Sirenix.OdinInspector;
@@ -21,61 +22,83 @@ namespace Dialogue
         public EDialogueObjectType DialogueObjectType;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
-        public StandardDialogueObject StandardDialogueObject;
+        public List<StandardDialogueObject> StandardDialogueObjects;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
         public MazeSpawnerDialogue MazeSpawnerDialogue;
     }
 
     [Serializable]
+    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, string> { }
+
+
+    [Serializable]
     public class StandardDialogueObject
     {
-        public string CharacterName;
+        [SerializeField]
+        private CharacterData _characterData;
 
-        public bool IsCharacterMainPlayer;
-        public bool UsesSentimentSystem;
+        [SerializeField]
+        private bool _usesCustomName;
+        [ShowIf("_usesCustomName")]
+        private string _customName;
 
-        [ShowIf("UsesSentimentSystem")]
-        public ECharacterSentiment CharacterSentiment;
+        [SerializeField]
+        private bool _usesCustomSprite;
+        [SerializeField, ShowIf("_usesCustomSprite")]
+        private Sprite _customSprite;
 
-        [ShowIf("@UsesSentimentSystem && CharacterSentiment == ECharacterSentiment.Happy"), TextArea(2, 4)]
-        public string HappyDialogue;
+        [SerializeField]
+        private bool _isCharacterMainPlayer;
 
-        [ShowIf("@UsesSentimentSystem && CharacterSentiment == ECharacterSentiment.Neutral"), TextArea(2, 4)]
-        public string NeutralDialogue;
+        [SerializeField]
+        private bool _usesSentimentSystem;
 
-        [ShowIf("@UsesSentimentSystem && CharacterSentiment == ECharacterSentiment.Annoyed"), TextArea(2, 4)]
-        public string AnnoyedDialogue;
+        [SerializeField, ShowIf("_usesSentimentSystem")]
+        private SentimentDialogueDictionary _sentimentDialogues;
 
-        [ShowIf("@UsesSentimentSystem && CharacterSentiment == ECharacterSentiment.FuckingPissed"), TextArea(2, 4)]
-        public string FuckingPissedDialogue;
+        [SerializeField, HideIf("_usesSentimentSystem"), TextArea(2, 4)]
+        private string _standardDialogue;
 
-        [HideIf("UsesSentimentSystem"), TextArea(2, 4)]
-        public string StandardDialogue;
-
-        public string GetDialogueString(HealthComponent healthComponent)
+        public string GetCharacterName()
         {
-            if (UsesSentimentSystem && healthComponent != null)
+            if (!_usesCustomName)
             {
-                switch (healthComponent.GetCharacterSentiment())
-                {
-                    case ECharacterSentiment.Happy:
-                        return HappyDialogue;
-                    case ECharacterSentiment.Neutral:
-                        return NeutralDialogue;
-                    case ECharacterSentiment.Annoyed:
-                        return AnnoyedDialogue;
-                    case ECharacterSentiment.FuckingPissed:
-                        return FuckingPissedDialogue;
-                }
-            }
-            else
-            {
-                return StandardDialogue;
+                return _characterData.CharacterName;
             }
 
-            Debug.LogError("Something went wrong and return empty string");
-            return string.Empty;
+            return _customName;
+        }
+
+        public Sprite GetCharacterSprite()
+        {
+            if (_usesCustomSprite)
+            {
+                return _customSprite;
+            }
+
+            if (_usesSentimentSystem && _characterData != null && _characterData.SentimentPortraits != null && _characterData.SentimentPortraits.Count > 0)
+            {
+                ECharacterSentiment sentiment = GetPlayerHealthComponent().GetCharacterSentiment();
+                return _characterData.SentimentPortraits.ContainsKey(sentiment) ? _characterData.SentimentPortraits[sentiment] : _characterData.DefaultSprite;
+            }
+
+            return _characterData.DefaultSprite;
+        }
+
+        public string GetDialogueString()
+        {
+            if (_usesSentimentSystem)
+            {
+                return _sentimentDialogues[GetPlayerHealthComponent().GetCharacterSentiment()];
+            }
+
+            return _standardDialogue;
+        }
+
+        private HealthComponent GetPlayerHealthComponent()
+        {
+            return Player.Instance.HealthComponent;
         }
     }
 

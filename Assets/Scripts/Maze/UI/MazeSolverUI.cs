@@ -1,12 +1,16 @@
+using CustomUI;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Dialogue.UI;
+using Maze.Generation;
 
-namespace Maze
+namespace Maze.UI
 {
-    public class MazeSolverUI : MonoBehaviour
+    public class MazeSolverUI : GameUI
     {
+        public static MazeSolverUI Instance { get; private set; }
+
         [SerializeField]
         TextMeshProUGUI _timerText;
 
@@ -15,7 +19,12 @@ namespace Maze
         [SerializeField]
         private float _wallHitAnimTime = .5f;
 
-        // Start is called before the first frame update
+        private void Awake()
+        {
+            Instance = this;
+            HideUI();
+        }
+
         void Start()
         {
             MazeSolverComponent mazeSolver = MazeSolverComponent.Instance;
@@ -25,8 +34,20 @@ namespace Maze
                 mazeSolver.OnMazeSolved += OnMazeSolved;
                 mazeSolver.OnCountdownValueChange += OnCountdownTimerValueChange;
                 mazeSolver.OnMainTimerValueChange += OnGameTimerValueChange;
-                mazeSolver.OnStartGameCountdownLeft += ClearText;
+                mazeSolver.OnStartGameCountdownLeft += HideUI;
                 mazeSolver.OnWallHit += OnWallHit;
+            }
+
+            MazeGenerator mazeGenerator = MazeGenerator.Instance;
+            if (mazeGenerator != null)
+            {
+                //mazeGenerator.OnMazeGenerated += ShowUI;
+            }
+
+            DialogueUI dialogueUI = DialogueUI.Instance;
+            if (dialogueUI != null)
+            {
+                dialogueUI.OnShowUI += HideUI;
             }
         }
 
@@ -39,15 +60,21 @@ namespace Maze
                 mazeSolver.OnMazeSolved -= OnMazeSolved;
                 mazeSolver.OnCountdownValueChange -= OnCountdownTimerValueChange;
                 mazeSolver.OnMainTimerValueChange -= OnGameTimerValueChange;
-                mazeSolver.OnStartGameCountdownLeft -= ClearText;
+                mazeSolver.OnStartGameCountdownLeft -= HideUI;
                 mazeSolver.OnWallHit -= OnWallHit;
             }
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
+            MazeGenerator mazeGenerator = MazeGenerator.Instance;
+            if (mazeGenerator != null)
+            {
+                mazeGenerator.OnMazeGenerated -= ShowUI;
+            }
 
+            DialogueUI dialogueUI = DialogueUI.Instance;
+            if (dialogueUI != null)
+            {
+                dialogueUI.OnShowUI -= HideUI;
+            }
         }
 
         private void ClearText()
@@ -76,6 +103,7 @@ namespace Maze
 
         private void OnCountdownTimerValueChange(float value)
         {
+            ShowUI();
             _timerText.text = "CountDown : " + value.ToString("F2");
         }
 

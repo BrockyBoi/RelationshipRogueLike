@@ -12,9 +12,6 @@ namespace Maze.Generation
         [SerializeField]
         private MazeNode _nodePrefab;
 
-        [SerializeField]
-        private Vector2Int _mazeSize;
-
         private MazeNode[,] _maze;
 
         [SerializeField]
@@ -25,7 +22,6 @@ namespace Maze.Generation
 
         private bool _hasGeneratedMaze = false;
         public System.Action OnMazeGenerated;
-        public Vector2 OffsetPos { get; private set; }
 
         private void Awake()
         {
@@ -34,9 +30,10 @@ namespace Maze.Generation
 
         public void DestroyMaze()
         {
-            for (int yPos = 0; yPos < _mazeSize.y; yPos++)
+            int mazeLength = GetMazeLength();
+            for (int yPos = 0; yPos < mazeLength; yPos++)
             {
-                for (int xPos = 0; xPos < _mazeSize.x; xPos++)
+                for (int xPos = 0; xPos < mazeLength; xPos++)
                 {
                     Destroy(_maze[xPos, yPos].gameObject);
                 }
@@ -47,77 +44,28 @@ namespace Maze.Generation
             EndNode = null;
         }
 
-        private IEnumerator BuildMazeOverTime()
-        {
-            for (int yPos = 0; yPos < _mazeSize.y; yPos++)
-            {
-                for (int xPos = 0; xPos < _mazeSize.x; xPos++)
-                {
-                    MazeNode mazeNode = Instantiate<MazeNode>(_nodePrefab, new Vector3(xPos, 0, yPos), Quaternion.identity);
-                    mazeNode.SetPositionInMaze(new Vector2Int(xPos, yPos));
-                    _maze[xPos, yPos] = mazeNode;
-                }
-            }
-
-            MazeNode firstNode = _maze[0, 0];
-            firstNode.ClearAllWalls();
-            List<MazeNode> currentPath = new List<MazeNode>();
-            int completedNodes = 0;
-
-            currentPath.Add(firstNode);
-            firstNode.VisitNode();
-            MazeNode currentNode = firstNode;
-            while (completedNodes < _maze.Length)
-            {
-                List<MazeNode> neighborNodes = GetNeighborNodes(currentNode, ENodeState.None);
-                if (neighborNodes.Count > 0)
-                { 
-                    MazeNode nextNode = neighborNodes.GetRandomElement();
-                    if (nextNode.NodeState == ENodeState.None)
-                    {
-                        nextNode.VisitNode();
-                        ClearWalls(currentNode, nextNode, GetDirectionMovingIn(currentNode.PositionInMaze, nextNode.PositionInMaze));
-                    }
-
-                    currentPath.Add(nextNode);
-                    currentNode = nextNode;
-
-                    yield return new WaitForSeconds(_mazeCreationSpeed);
-
-                }
-                else if (currentPath.Count > 0)
-                {
-                    currentNode.CompleteNode();
-                    currentNode = currentPath.Last();
-                    currentPath.RemoveAt(currentPath.Count - 1);
-
-                    yield return null;
-                }
-                else
-                {
-                    break;
-                }    
-            }
-        }
-
         public void BuildMaze(MazeSpawnData data, List<MazeCompletionResult> mazeCompletionResults)
         {
             MazeSolverComponent.Instance.SetMazeCompletionResults(mazeCompletionResults);
 
             int difficultySizeModifier = MazeDifficultyManager.Instance.MazeSizeModifier;
             _maze = new MazeNode[data.MazeSize.x + difficultySizeModifier, data.MazeSize.y + difficultySizeModifier];
+            int mazeLength = GetMazeLength();
 
             GameObject parentObject = ParentObjectsManager.Instance.MazeNodesParent;
-            parentObject.transform.position = new Vector3(_mazeSize.x / 2, 0, _mazeSize.y / 2);
-            for (int yPos = 0; yPos < _mazeSize.y; yPos++)
+            parentObject.transform.position = new Vector3(mazeLength / 2f, 0, mazeLength / 2f);
+            for (int yPos = 0; yPos < mazeLength; yPos++)
             {
-                for (int xPos = 0; xPos < _mazeSize.x; xPos++)
+                for (int xPos = 0; xPos < mazeLength; xPos++)
                 {
                     MazeNode mazeNode = Instantiate<MazeNode>(_nodePrefab, new Vector3(xPos, 0, yPos), Quaternion.identity, parentObject.transform);
                     mazeNode.SetPositionInMaze(new Vector2Int(xPos, yPos));
                     _maze[xPos, yPos] = mazeNode;
                 }
             }
+
+            Camera.main.orthographicSize = mazeLength * .8f;
+            Camera.main.transform.position = parentObject.transform.position.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
 
             MazeNode firstNode = _maze[0, 0];
             firstNode.ClearAllWalls();
@@ -218,7 +166,7 @@ namespace Maze.Generation
             List<MazeNode> neighborNodes = new List<MazeNode>();
             Vector2Int nodePos = currentNode.PositionInMaze;
 
-            if (nodePos.x + 1 < _mazeSize.x)
+            if (nodePos.x + 1 < GetMazeLength())
             {
                 MazeNode rightNode = GetMazeNode(new Vector2Int(nodePos.x + 1, nodePos.y));
                 if (rightNode != null && rightNode.NodeState == desiredState)
@@ -236,7 +184,7 @@ namespace Maze.Generation
                 }
             }
 
-            if (nodePos.y + 1 < _mazeSize.y)
+            if (nodePos.y + 1 < GetMazeLength())
             {
                 MazeNode frontNode = GetMazeNode(new Vector2Int(nodePos.x, nodePos.y + 1));
                 if (frontNode != null && frontNode.NodeState == desiredState)
@@ -297,6 +245,11 @@ namespace Maze.Generation
             {
                 action?.Invoke();
             }
+        }
+
+        private int GetMazeLength()
+        { 
+            return _maze.GetLength(0); 
         }
     }
 }

@@ -21,4 +21,9 @@ public static class ExtensionMethods
         float zValue = axis == VectorAxis.Z ? value : vector.z;
         return new Vector3(xValue, yValue, zValue);
     }
+
+    public static bool IsValidIndex<T>(this IEnumerable<T> elements, int index)
+    {
+        return index >= 0 && index < elements.Count();
+    }
 }

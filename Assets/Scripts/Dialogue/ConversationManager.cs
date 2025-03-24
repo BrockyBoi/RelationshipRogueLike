@@ -4,6 +4,9 @@ using MainPlayer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Characters;
+using Dialogue.UI;
+using System.Runtime.CompilerServices;
 
 namespace Dialogue
 {
@@ -32,9 +35,7 @@ namespace Dialogue
                 {
                     case EDialogueObjectType.StandardDialogue:
                     {
-                        StandardDialogueObject diag = dialogueObject.StandardDialogueObject;
-                        Debug.Log(diag.CharacterName + " says: " + diag.GetDialogueString(player.HealthComponent));
-                        yield return YieldUntilInput();
+                        yield return ProcessStandardDialogueObjects(dialogueObject.StandardDialogueObjects);
                         break;
                     }
                     case EDialogueObjectType.SpawnMaze:
@@ -43,7 +44,8 @@ namespace Dialogue
                         yield return YieldUntilMazeCompletion();
                         MazeGenerator.Instance.DestroyMaze();
                         MazeCompletionResult result = MazeSolverComponent.Instance.GetMazeCompletionResultToApply();
-                        Debug.Log(result.DialogueResponse.CharacterName + " says: " + result.DialogueResponse.DialogueResponse);
+
+                        yield return ProcessStandardDialogueObjects(result.DialogueResponses);
                         break;
                     }
                     default:
@@ -54,12 +56,23 @@ namespace Dialogue
             Debug.Log("Completed dialogue");
         }
 
+        private IEnumerator ProcessStandardDialogueObjects(List<StandardDialogueObject> dialogueObjects)
+        {
+            foreach (StandardDialogueObject dialogueObject in dialogueObjects)
+            {
+                DialogueUI.Instance.ShowDialogue(dialogueObject);
+                yield return YieldUntilInput();
+            }
+        }
+
         private IEnumerator YieldUntilInput()
         {
             while (!Input.anyKeyDown)
             {
                 yield return null;
             }
+
+            yield return new WaitForEndOfFrame();
         }
 
         private IEnumerator YieldUntilMazeCompletion()
