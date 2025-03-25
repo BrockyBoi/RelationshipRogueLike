@@ -4,9 +4,8 @@ using MainPlayer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Characters;
 using Dialogue.UI;
-using System.Runtime.CompilerServices;
+using GeneralGame;
 
 namespace Dialogue
 {
@@ -43,7 +42,7 @@ namespace Dialogue
                         MazeGenerator.Instance.BuildMaze(dialogueObject.MazeSpawnerDialogue.MazeSpawnData, dialogueObject.MazeSpawnerDialogue.MazeCompletionResults);
                         yield return YieldUntilMazeCompletion();
                         MazeGenerator.Instance.DestroyMaze();
-                        MazeCompletionResult result = MazeSolverComponent.Instance.GetMazeCompletionResultToApply();
+                        MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApply();
 
                         yield return ProcessStandardDialogueObjects(result.DialogueResponses);
                         break;
@@ -78,7 +77,7 @@ namespace Dialogue
         private IEnumerator YieldUntilMazeCompletion()
         {
             MazeSolverComponent mazeSolverComponent = MazeSolverComponent.Instance;
-            while (mazeSolverComponent != null && !mazeSolverComponent.HasGameFinished)
+            while (mazeSolverComponent != null && mazeSolverComponent.IsStage(EGameStage.InGame))
             {
                 yield return null;
             }

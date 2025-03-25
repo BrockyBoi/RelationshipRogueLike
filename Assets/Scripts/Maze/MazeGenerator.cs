@@ -14,9 +14,6 @@ namespace Maze.Generation
 
         private MazeNode[,] _maze;
 
-        [SerializeField]
-        float _mazeCreationSpeed = .5f;
-
         public MazeNode StartNode { get; private set; }
         public MazeNode EndNode { get; private set; }
 

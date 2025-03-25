@@ -50,7 +50,7 @@ namespace Maze
             }
         }
 
-        public void ProvideDifficultyModifierResult(DifficultyModifierResult result)
+        public void ProvideDifficultyModifierResult(MazeDifficultyModifierResult result)
         {
             ChangeRotationRate(result.MazeRotateModifier);
             ChangeShakeIntensity(result.MazeShakeModifier);

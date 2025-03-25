@@ -1,55 +1,24 @@
-using Characters;
-using Dialogue;
-using Sirenix.OdinInspector;
+using GeneralGame.Results;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Maze
 {
-    public enum EMazeCompletionResultType
-    {
-        DialogueResponse,
-        HealthResult,
-        DifficultyResult
-    }
-
     [Serializable]
-    public class MazeCompletionResult
+    public class MazeCompletionResult : GameCompletionResult
     {
-        [EnumToggleButtons]
-        public EMazeCompletionResultType DialogueResultType;
+        public MazeDifficultyModifierResult DifficultyModifierResult;
 
-        [ShowIf("DialogueResultType", EMazeCompletionResultType.DialogueResponse)]
-        public List<StandardDialogueObject> DialogueResponses;
-
-        [ShowIf("DialogueResultType", EMazeCompletionResultType.HealthResult)]
-        public DialogueHealthResult HealthResult;
-
-        [ShowIf("DialogueResultType", EMazeCompletionResultType.DifficultyResult)]
-        public DifficultyModifierResult DifficultyModifierResult;
-
-        public void ApplyEffects()
+        public override void ApplyEffects()
         {
-            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(DifficultyModifierResult);
+            base.ApplyEffects();
 
-            int healthToChange = HealthResult.HealthAmountToChange;
-            if (healthToChange != 0)
-            {
-                MainPlayer.Player.Instance.HealthComponent.ChangeHealth(healthToChange);
-            }
+            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(DifficultyModifierResult);
         }
     }
 
     [Serializable]
-    public class DialogueHealthResult
-    {
-        [Range(-10, 10)]
-        public int HealthAmountToChange = 0;
-    }
-
-    [Serializable]
-    public class DifficultyModifierResult
+    public class MazeDifficultyModifierResult
     {
         [Range(-4, 4)]
         public int MazeSizeModifier;
