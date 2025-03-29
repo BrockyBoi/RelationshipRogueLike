@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Maze
 {
-    public class MazeDifficultyManager : MonoBehaviour
+    public class MazeDifficultyManager : GameDifficultyManager<MazeDifficultyModifierResult>
     {
         public static MazeDifficultyManager Instance { get; private set; }
 
@@ -50,7 +50,7 @@ namespace Maze
             }
         }
 
-        public void ProvideDifficultyModifierResult(MazeDifficultyModifierResult result)
+        public override void ProvideDifficultyModifierResult(MazeDifficultyModifierResult result)
         {
             ChangeRotationRate(result.MazeRotateModifier);
             ChangeShakeIntensity(result.MazeShakeModifier);

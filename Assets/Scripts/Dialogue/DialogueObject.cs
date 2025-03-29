@@ -6,13 +6,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MemoryGame;
 
 namespace Dialogue
 {
     public enum EDialogueObjectType
     {
         StandardDialogue,
-        SpawnMaze
+        SpawnMaze,
+        SpawnMemoryGame
     }
 
     [Serializable]
@@ -26,6 +28,9 @@ namespace Dialogue
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
         public MazeSpawnerDialogue MazeSpawnerDialogue;
+
+        [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
+        public MemoryGameSpawnerDialogue MemoryGameSpawnerDialogue;
     }
 
     [Serializable]
@@ -105,7 +110,14 @@ namespace Dialogue
     [Serializable]
     public class MazeSpawnerDialogue
     {
-        public MazeSpawnData MazeSpawnData;
+        public Vector2Int GridSize;
         public List<MazeCompletionResult> MazeCompletionResults;
+    }
+
+    [Serializable]
+    public class MemoryGameSpawnerDialogue
+    {
+        public Vector2Int GridSize;
+        public List<MemoryGameCompletionResult> MemoryGameCompletionResults;
     }
 }

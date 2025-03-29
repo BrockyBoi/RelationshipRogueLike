@@ -13,18 +13,29 @@ namespace GeneralGame.Results
 
         public virtual void ApplyEffects()
         {
-            int healthToChange = HealthResult.HealthAmountToChange;
+            HealthResult.ApplyEffect();
+        }
+    }
+
+    [Serializable]
+    public abstract class GameResult
+    {
+        public abstract void ApplyEffect();
+    }
+
+    [Serializable]
+    public class DialogueHealthResult : GameResult
+    {
+        [Range(-10, 10)]
+        public int HealthAmountToChange = 0;
+
+        public override void ApplyEffect()
+        {
+            int healthToChange = HealthAmountToChange;
             if (healthToChange != 0)
             {
                 MainPlayer.Player.Instance.HealthComponent.ChangeHealth(healthToChange);
             }
         }
-    }
-
-    [Serializable]
-    public class DialogueHealthResult
-    {
-        [Range(-10, 10)]
-        public int HealthAmountToChange = 0;
     }
 }

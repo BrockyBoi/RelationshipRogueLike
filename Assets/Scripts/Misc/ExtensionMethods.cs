@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public static class ExtensionMethods 
+public static class ExtensionMethods
 {
     public enum VectorAxis
     {
@@ -11,7 +12,7 @@ public static class ExtensionMethods
     }
     public static T GetRandomElement<T>(this IEnumerable<T> elements)
     {
-        return elements.ElementAt(Random.Range(0, elements.Count()));
+        return elements.ElementAt(UnityEngine.Random.Range(0, elements.Count()));
     }
 
     public static Vector3 ChangeAxis(this Vector3 vector, VectorAxis axis, float value)

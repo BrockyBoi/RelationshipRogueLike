@@ -1,4 +1,5 @@
 using CustomUI;
+using GeneralGame;
 using Maze.UI;
 using TMPro;
 using UnityEngine;
@@ -27,21 +28,12 @@ namespace Dialogue.UI
 
         private void Start()
         {
-            MazeSolverUI ui = MazeSolverUI.Instance;
-            if (ui != null)
-            {
-                ui.OnShowUI += HideUI;
-            }
+           BaseGameSolverComponent.OnAnyGamePresented += HideUI;
         }
 
         private void OnDisable()
         {
-            MazeSolverUI ui = MazeSolverUI.Instance;
-            if (ui != null)
-            {
-                ui.OnShowUI -= HideUI;
-            }
-
+            BaseGameSolverComponent.OnAnyGamePresented -= HideUI;
         }
 
         public void ShowDialogue(StandardDialogueObject dialogueObject)

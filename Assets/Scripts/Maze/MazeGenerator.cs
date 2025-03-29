@@ -1,3 +1,4 @@
+using MemoryGame;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,66 +6,45 @@ using UnityEngine;
 
 namespace Maze.Generation
 {
-    public class MazeGenerator : MonoBehaviour
+    public class MazeGenerator : GameGridGenerator<MazeCompletionResult, MazeNode>
     {
         public static MazeGenerator Instance {  get; private set; }
 
-        [SerializeField]
-        private MazeNode _nodePrefab;
-
-        private MazeNode[,] _maze;
-
         public MazeNode StartNode { get; private set; }
         public MazeNode EndNode { get; private set; }
-
-        private bool _hasGeneratedMaze = false;
-        public System.Action OnMazeGenerated;
 
         private void Awake()
         {
             Instance = this;
         }
 
-        public void DestroyMaze()
+        public override void DestroyGrid()
         {
-            int mazeLength = GetMazeLength();
-            for (int yPos = 0; yPos < mazeLength; yPos++)
-            {
-                for (int xPos = 0; xPos < mazeLength; xPos++)
-                {
-                    Destroy(_maze[xPos, yPos].gameObject);
-                }
-            }
+            base.DestroyGrid();
 
-            _maze = new MazeNode[0,0];
             StartNode = null;
             EndNode = null;
         }
 
-        public void BuildMaze(MazeSpawnData data, List<MazeCompletionResult> mazeCompletionResults)
+        public override void CreateGrid(Vector2Int gridSize, List<MazeCompletionResult> results)
         {
-            MazeSolverComponent.Instance.SetMazeCompletionResults(mazeCompletionResults);
-
-            int difficultySizeModifier = MazeDifficultyManager.Instance.MazeSizeModifier;
-            _maze = new MazeNode[data.MazeSize.x + difficultySizeModifier, data.MazeSize.y + difficultySizeModifier];
-            int mazeLength = GetMazeLength();
-
-            GameObject parentObject = ParentObjectsManager.Instance.MazeNodesParent;
-            parentObject.transform.position = new Vector3(mazeLength / 2f, 0, mazeLength / 2f);
-            for (int yPos = 0; yPos < mazeLength; yPos++)
+            if (gridSize.x == 0 || gridSize.y == 0)
             {
-                for (int xPos = 0; xPos < mazeLength; xPos++)
-                {
-                    MazeNode mazeNode = Instantiate<MazeNode>(_nodePrefab, new Vector3(xPos, 0, yPos), Quaternion.identity, parentObject.transform);
-                    mazeNode.SetPositionInMaze(new Vector2Int(xPos, yPos));
-                    _maze[xPos, yPos] = mazeNode;
-                }
+                Debug.LogError("Invalid grid size");
+                return;
             }
 
-            Camera.main.orthographicSize = mazeLength * .8f;
-            Camera.main.transform.position = parentObject.transform.position.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
+            base.CreateGrid(gridSize, results);
 
-            MazeNode firstNode = _maze[0, 0];
+            MazeSolverComponent.Instance.SetGameCompletionResults(results);
+
+            CreateMazePath();
+            OnGridGenerated?.Invoke();
+        }
+
+        private void CreateMazePath()
+        {
+            MazeNode firstNode = _objectGrid[0, 0];
             firstNode.ClearAllWalls();
             firstNode.SetAsEndNode();
             EndNode = firstNode;
@@ -78,7 +58,7 @@ namespace Maze.Generation
             List<MazeNode> potentialStartNodes = new List<MazeNode>();
 
             bool wasLastNodeValid = false;
-            while (completedNodes < _maze.Length)
+            while (completedNodes < _objectGrid.Length)
             {
                 List<MazeNode> neighborNodes = GetNeighborNodes(currentNode, ENodeState.None);
                 if (neighborNodes.Count > 0)
@@ -126,9 +106,6 @@ namespace Maze.Generation
 
             StartNode = bestNode;
             StartNode.SetAsStartNode();
-
-            _hasGeneratedMaze = true;
-            OnMazeGenerated?.Invoke();
         }
 
         private void ClearWalls(MazeNode previousNode, MazeNode currentNode, EMazeDirection directionMoving)
@@ -163,9 +140,9 @@ namespace Maze.Generation
             List<MazeNode> neighborNodes = new List<MazeNode>();
             Vector2Int nodePos = currentNode.PositionInMaze;
 
-            if (nodePos.x + 1 < GetMazeLength())
+            if (nodePos.x + 1 < _objectGrid.GetLength(0))
             {
-                MazeNode rightNode = GetMazeNode(new Vector2Int(nodePos.x + 1, nodePos.y));
+                MazeNode rightNode = GetGridObject(new Vector2Int(nodePos.x + 1, nodePos.y));
                 if (rightNode != null && rightNode.NodeState == desiredState)
                 {
                     neighborNodes.Add(rightNode);
@@ -174,16 +151,16 @@ namespace Maze.Generation
 
             if (nodePos.x - 1 >= 0)
             {
-                MazeNode leftNode = GetMazeNode(new Vector2Int(nodePos.x - 1, nodePos.y));
+                MazeNode leftNode = GetGridObject(new Vector2Int(nodePos.x - 1, nodePos.y));
                 if (leftNode != null && leftNode.NodeState == desiredState)
                 {
                     neighborNodes.Add(leftNode);
                 }
             }
 
-            if (nodePos.y + 1 < GetMazeLength())
+            if (nodePos.y + 1 < _objectGrid.GetLength(1))
             {
-                MazeNode frontNode = GetMazeNode(new Vector2Int(nodePos.x, nodePos.y + 1));
+                MazeNode frontNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y + 1));
                 if (frontNode != null && frontNode.NodeState == desiredState)
                 {
                     neighborNodes.Add(frontNode);
@@ -192,7 +169,7 @@ namespace Maze.Generation
 
             if (nodePos.y - 1 >= 0)
             {
-                MazeNode backNode = GetMazeNode(new Vector2Int(nodePos.x, nodePos.y - 1));
+                MazeNode backNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y - 1));
                 if (backNode != null && backNode.NodeState == desiredState)
                 {
                     neighborNodes.Add(backNode);
@@ -200,11 +177,6 @@ namespace Maze.Generation
             }
 
             return neighborNodes;
-        }
-
-        public MazeNode GetMazeNode(Vector2Int nodePosition)
-        {
-            return _maze[nodePosition.x, nodePosition.y];
         }
 
         private static EMazeDirection GetDirectionMovingIn(Vector2Int node1, Vector2Int node2)
@@ -232,21 +204,19 @@ namespace Maze.Generation
             return EMazeDirection.None;
         }
 
-        public void ListenToOnMazeGenerated(System.Action action)
+        protected override int GetDifficultySizeModifier()
         {
-            if (!_hasGeneratedMaze)
-            {
-                OnMazeGenerated += action;
-            }
-            else
-            {
-                action?.Invoke();
-            }
+            return MazeDifficultyManager.Instance.MazeSizeModifier;
         }
 
-        private int GetMazeLength()
-        { 
-            return _maze.GetLength(0); 
+        protected override GameObject GetGridParentObject()
+        {
+            return ParentObjectsManager.Instance.MazeNodesParent;
+        }
+
+        protected override void GiveResultsToSolver(List<MazeCompletionResult> results)
+        {
+            MazeSolverComponent.Instance.SetGameCompletionResults(results);
         }
     }
 }

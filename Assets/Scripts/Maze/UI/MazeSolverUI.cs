@@ -41,7 +41,7 @@ namespace Maze.UI
             MazeGenerator mazeGenerator = MazeGenerator.Instance;
             if (mazeGenerator != null)
             {
-                //mazeGenerator.OnMazeGenerated += ShowUI;
+                mazeGenerator.OnGridGenerated += ShowUI;
             }
 
             DialogueUI dialogueUI = DialogueUI.Instance;
@@ -67,7 +67,7 @@ namespace Maze.UI
             MazeGenerator mazeGenerator = MazeGenerator.Instance;
             if (mazeGenerator != null)
             {
-                mazeGenerator.OnMazeGenerated -= ShowUI;
+                mazeGenerator.OnGridGenerated -= ShowUI;
             }
 
             DialogueUI dialogueUI = DialogueUI.Instance;

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dialogue.UI;
 using GeneralGame;
+using MemoryGame;
 
 namespace Dialogue
 {
@@ -39,14 +40,24 @@ namespace Dialogue
                     }
                     case EDialogueObjectType.SpawnMaze:
                     {
-                        MazeGenerator.Instance.BuildMaze(dialogueObject.MazeSpawnerDialogue.MazeSpawnData, dialogueObject.MazeSpawnerDialogue.MazeCompletionResults);
+                        MazeGenerator.Instance.CreateGrid(dialogueObject.MazeSpawnerDialogue.GridSize, dialogueObject.MazeSpawnerDialogue.MazeCompletionResults);
                         yield return YieldUntilMazeCompletion();
-                        MazeGenerator.Instance.DestroyMaze();
-                        MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApply();
+                        MazeGenerator.Instance.DestroyGrid();
+                        MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
                         yield return ProcessStandardDialogueObjects(result.DialogueResponses);
                         break;
                     }
+                    case EDialogueObjectType.SpawnMemoryGame:
+                        {
+                            MemoryGameGenerator.Instance.CreateGrid(dialogueObject.MemoryGameSpawnerDialogue.GridSize, dialogueObject.MemoryGameSpawnerDialogue.MemoryGameCompletionResults);
+                            yield return YieldUntilMemoryGameCompletion();
+                            MemoryGameGenerator.Instance.DestroyGrid();
+                            MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
+
+                            yield return ProcessStandardDialogueObjects(result.DialogueResponses);
+                            break;
+                        }
                     default:
                         break;
                 }
@@ -77,7 +88,16 @@ namespace Dialogue
         private IEnumerator YieldUntilMazeCompletion()
         {
             MazeSolverComponent mazeSolverComponent = MazeSolverComponent.Instance;
-            while (mazeSolverComponent != null && mazeSolverComponent.IsStage(EGameStage.InGame))
+            while (mazeSolverComponent != null && !mazeSolverComponent.IsStage(EGameStage.GameFinished))
+            {
+                yield return null;
+            }
+        }
+
+        private IEnumerator YieldUntilMemoryGameCompletion()
+        {
+            MemoryGameSolverComponent memoryGameSolverComponent = MemoryGameSolverComponent.Instance;
+            while (memoryGameSolverComponent != null && !memoryGameSolverComponent.IsStage(EGameStage.GameFinished))
             {
                 yield return null;
             }

@@ -45,17 +45,17 @@ MonoBehaviour:
         valueData: []
       _standardDialogue: Hi, I'm little Lekker, shall we try a maze?
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 0, y: 0}
+      GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 5, y: 5}
+      GridSize: {x: 4, y: 4}
       MazeCompletionResults:
-      - DialogueResultType: 1
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 1
@@ -72,8 +72,7 @@ MonoBehaviour:
           MazeSizeModifier: -1
           MazeShakeModifier: -0.25
           MazeRotateModifier: -0.25
-      - DialogueResultType: 1
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -90,8 +89,7 @@ MonoBehaviour:
           MazeSizeModifier: 1
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - DialogueResultType: 2
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 1
@@ -108,6 +106,9 @@ MonoBehaviour:
           MazeSizeModifier: 3
           MazeShakeModifier: 0.2
           MazeRotateModifier: 0
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -125,17 +126,17 @@ MonoBehaviour:
         - Fuck. You.  FUCK.  YOU.
       _standardDialogue: 
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 0, y: 0}
+      GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 6, y: 6}
+      GridSize: {x: 5, y: 5}
       MazeCompletionResults:
-      - DialogueResultType: 2
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -152,8 +153,7 @@ MonoBehaviour:
           MazeSizeModifier: -1
           MazeShakeModifier: -0.1
           MazeRotateModifier: -0.1
-      - DialogueResultType: 2
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -170,8 +170,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - DialogueResultType: 2
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -188,8 +187,7 @@ MonoBehaviour:
           MazeSizeModifier: 1
           MazeShakeModifier: 0.01
           MazeRotateModifier: 0
-      - DialogueResultType: 2
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -206,6 +204,9 @@ MonoBehaviour:
           MazeSizeModifier: 3
           MazeShakeModifier: 0.1
           MazeRotateModifier: 0.1
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -223,17 +224,17 @@ MonoBehaviour:
         - If I ever find your address I'm going to mail you a pipe bomb
       _standardDialogue: 
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 0, y: 0}
+      GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
     MazeSpawnerDialogue:
-      MazeSpawnData:
-        MazeSize: {x: 10, y: 10}
+      GridSize: {x: 6, y: 6}
       MazeCompletionResults:
-      - DialogueResultType: 1
-        DialogueResponses:
+      - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
           _usesCustomName: 0
           _usesCustomSprite: 0
@@ -254,3 +255,6 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
+    MemoryGameSpawnerDialogue:
+      GridSize: {x: 0, y: 0}
+      MemoryGameCompletionResults: []

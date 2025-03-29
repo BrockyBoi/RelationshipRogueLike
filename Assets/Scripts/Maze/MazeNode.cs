@@ -15,7 +15,7 @@ namespace Maze
         None, Visited, Completed
     }
 
-    public class MazeNode : MonoBehaviour
+    public class MazeNode : GridObject
     {
         [SerializeField]
         private GameObject _leftWall;
@@ -44,8 +44,6 @@ namespace Maze
 
         public bool IsStartNode { get; private set; }
         public bool IsEndNode { get; private set; }
-
-        public Vector2Int PositionInMaze { get; private set; }
 
         public ENodeState NodeState { get; private set; }
         private Vector3 _startPos = Vector3.zero;
@@ -96,9 +94,9 @@ namespace Maze
             NodeState = ENodeState.Completed;
         }
 
-        public void SetPositionInMaze(Vector2Int positionInMaze)
+        public override void SetPositionInMaze(Vector2Int positionInMaze)
         {
-            PositionInMaze = positionInMaze;
+            base.SetPositionInMaze(positionInMaze);
             _startPos = transform.position;
         }
 

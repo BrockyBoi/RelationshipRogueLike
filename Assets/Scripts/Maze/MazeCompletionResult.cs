@@ -13,12 +13,12 @@ namespace Maze
         {
             base.ApplyEffects();
 
-            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(DifficultyModifierResult);
+            DifficultyModifierResult.ApplyEffect();
         }
     }
 
     [Serializable]
-    public class MazeDifficultyModifierResult
+    public class MazeDifficultyModifierResult : GameResult
     {
         [Range(-4, 4)]
         public int MazeSizeModifier;
@@ -28,5 +28,10 @@ namespace Maze
 
         [Range(-.25f, .25f)]
         public float MazeRotateModifier;
+
+        public override void ApplyEffect()
+        {
+            MazeDifficultyManager.Instance.ProvideDifficultyModifierResult(this);
+        }
     }
 }

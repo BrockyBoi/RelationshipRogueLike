@@ -9,6 +9,9 @@ public class ParentObjectsManager : MonoBehaviour
     [SerializeField]
     private GameObject _mazeNodesParent;
     public GameObject MazeNodesParent { get { return _mazeNodesParent;} }
+    [SerializeField]
+    private GameObject _cardGameParent;
+    public GameObject CardGameParent {  get { return _cardGameParent; } }
 
     private void Awake()
     {

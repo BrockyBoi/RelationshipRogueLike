@@ -1,21 +1,14 @@
 using Maze.Generation;
 using GeneralGame;
 using UnityEngine;
+using CustomUI;
+using Maze.UI;
 
 namespace Maze
 {
-    public class MazeSolverComponent : MazeSolverComponentLogic
+    public class MazeSolverComponent : GameSolverComponent<MazeCompletionResult>
     {
         public static MazeSolverComponent Instance { get; private set; }
-
-        private void Awake()
-        {
-            Instance = this;
-        }
-    }
-
-    public class MazeSolverComponentLogic : GameSolverComponent<MazeCompletionResult>
-    {
 
         [SerializeField]
         private float _penaltyOnWallHit = 1.5f;
@@ -29,10 +22,14 @@ namespace Maze
         public System.Action OnWallHit;
         public System.Action OnMazeSolved;
         public System.Action OnMazeFailed;
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
-            MazeGenerator.Instance.ListenToOnMazeGenerated(OnMazeGenerated);
+            MazeGenerator.Instance.ListenToOnGridGenerated(OnMazeGenerated);
         }
 
         private void OnMazeGenerated()
@@ -89,7 +86,6 @@ namespace Maze
             base.EndGame();
 
             PlayerMazeSolverObject.Instance.gameObject.SetActive(true);
-
         }
 
         public void EnteredExitZone()
@@ -104,6 +100,17 @@ namespace Maze
         {
             _totalPenaltyTime += _penaltyOnWallHit;
             OnWallHit?.Invoke();
+        }
+
+        protected override void ApplyEndGameResults()
+        {
+            MazeCompletionResult result = GetGameCompletionResultToApplyByTimeRemaining();
+            result.ApplyEffects();
+        }
+
+        protected override GameUI GetGameUIInstance()
+        {
+            return MazeSolverUI.Instance;
         }
     }
 }
