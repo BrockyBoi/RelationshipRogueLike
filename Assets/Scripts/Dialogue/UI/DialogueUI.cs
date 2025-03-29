@@ -1,6 +1,5 @@
 using CustomUI;
-using GeneralGame;
-using Maze.UI;
+using GeneralGame.Generation;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,12 +27,12 @@ namespace Dialogue.UI
 
         private void Start()
         {
-           BaseGameSolverComponent.OnAnyGamePresented += HideUI;
+           BaseGameGenerator.OnAnyGameGenerated += HideUI;
         }
 
         private void OnDisable()
         {
-            BaseGameSolverComponent.OnAnyGamePresented -= HideUI;
+            BaseGameGenerator.OnAnyGameGenerated -= HideUI;
         }
 
         public void ShowDialogue(StandardDialogueObject dialogueObject)

@@ -7,6 +7,7 @@ using UnityEngine;
 using Dialogue.UI;
 using GeneralGame;
 using MemoryGame;
+using MemoryGame.Generation;
 
 namespace Dialogue
 {
@@ -40,7 +41,7 @@ namespace Dialogue
                     }
                     case EDialogueObjectType.SpawnMaze:
                     {
-                        MazeGenerator.Instance.CreateGrid(dialogueObject.MazeSpawnerDialogue.GridSize, dialogueObject.MazeSpawnerDialogue.MazeCompletionResults);
+                        MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
                         yield return YieldUntilMazeCompletion();
                         MazeGenerator.Instance.DestroyGrid();
                         MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
@@ -50,7 +51,7 @@ namespace Dialogue
                     }
                     case EDialogueObjectType.SpawnMemoryGame:
                         {
-                            MemoryGameGenerator.Instance.CreateGrid(dialogueObject.MemoryGameSpawnerDialogue.GridSize, dialogueObject.MemoryGameSpawnerDialogue.MemoryGameCompletionResults);
+                            MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
                             yield return YieldUntilMemoryGameCompletion();
                             MemoryGameGenerator.Instance.DestroyGrid();
                             MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
@@ -62,8 +63,6 @@ namespace Dialogue
                         break;
                 }
             }
-
-            Debug.Log("Completed dialogue");
         }
 
         private IEnumerator ProcessStandardDialogueObjects(List<StandardDialogueObject> dialogueObjects)

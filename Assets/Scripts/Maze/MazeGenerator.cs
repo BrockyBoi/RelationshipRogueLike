@@ -1,3 +1,6 @@
+using GeneralGame;
+using GeneralGame.Generation;
+
 using MemoryGame;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,12 +9,15 @@ using UnityEngine;
 
 namespace Maze.Generation
 {
-    public class MazeGenerator : GameGridGenerator<MazeCompletionResult, MazeNode>
+    public class MazeGenerator : GameGridGenerator<MazeGeneratorData, MazeCompletionResult, MazeNode>
     {
         public static MazeGenerator Instance {  get; private set; }
 
         public MazeNode StartNode { get; private set; }
         public MazeNode EndNode { get; private set; }
+
+        bool _hasGeneratedMazePath = false;
+        private System.Action OnMazePathGenerated;
 
         private void Awake()
         {
@@ -26,20 +32,11 @@ namespace Maze.Generation
             EndNode = null;
         }
 
-        public override void CreateGrid(Vector2Int gridSize, List<MazeCompletionResult> results)
+        protected override void CreateGrid(Vector2Int gridSize, List<MazeCompletionResult> results)
         {
-            if (gridSize.x == 0 || gridSize.y == 0)
-            {
-                Debug.LogError("Invalid grid size");
-                return;
-            }
-
             base.CreateGrid(gridSize, results);
 
-            MazeSolverComponent.Instance.SetGameCompletionResults(results);
-
             CreateMazePath();
-            OnGridGenerated?.Invoke();
         }
 
         private void CreateMazePath()
@@ -106,6 +103,26 @@ namespace Maze.Generation
 
             StartNode = bestNode;
             StartNode.SetAsStartNode();
+
+            _hasGeneratedMazePath = true;
+            OnMazePathGenerated?.Invoke();
+        }
+
+        public void ListenToOnMazePathGenerated(System.Action action)
+        {
+            if (!_hasGeneratedMazePath)
+            {
+                OnMazePathGenerated += action;
+            }
+            else
+            {
+                action?.Invoke();
+            }
+        }
+
+        public void UnlistenToMazePathGenerated(System.Action action)
+        {
+            OnMazePathGenerated -= action;
         }
 
         private void ClearWalls(MazeNode previousNode, MazeNode currentNode, EMazeDirection directionMoving)
@@ -218,6 +235,16 @@ namespace Maze.Generation
         {
             MazeSolverComponent.Instance.SetGameCompletionResults(results);
         }
+
+        public override void GenerateGame(MazeGeneratorData generationData)
+        {
+            CreateGrid(generationData.GridSize, generationData.MazeCompletionResults);
+        }
+
+        //protected override GameSolverComponent<MazeCompletionResult> GetAssociatedGameSolver()
+        //{
+        //    return MazeSolverComponent.Instance;
+        //}
     }
 }
 

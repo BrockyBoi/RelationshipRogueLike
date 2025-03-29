@@ -1,13 +1,11 @@
 using Characters;
-using Maze;
 using MainPlayer;
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MemoryGame;
 
+using GeneralGame.Generation;
 namespace Dialogue
 {
     public enum EDialogueObjectType
@@ -27,10 +25,10 @@ namespace Dialogue
         public List<StandardDialogueObject> StandardDialogueObjects;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
-        public MazeSpawnerDialogue MazeSpawnerDialogue;
+        public MazeGeneratorData MazeSpawnerData;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
-        public MemoryGameSpawnerDialogue MemoryGameSpawnerDialogue;
+        public MemoryGameGeneratorData MemoryGameSpawnerData;
     }
 
     [Serializable]
@@ -105,19 +103,5 @@ namespace Dialogue
         {
             return Player.Instance.HealthComponent;
         }
-    }
-
-    [Serializable]
-    public class MazeSpawnerDialogue
-    {
-        public Vector2Int GridSize;
-        public List<MazeCompletionResult> MazeCompletionResults;
-    }
-
-    [Serializable]
-    public class MemoryGameSpawnerDialogue
-    {
-        public Vector2Int GridSize;
-        public List<MemoryGameCompletionResult> MemoryGameCompletionResults;
     }
 }

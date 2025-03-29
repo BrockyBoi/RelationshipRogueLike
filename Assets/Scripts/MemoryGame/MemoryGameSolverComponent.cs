@@ -1,7 +1,6 @@
 using CustomUI;
 using GeneralGame;
-using Maze.Generation;
-using MemoryGame;
+using MemoryGame.Generation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +18,7 @@ namespace MemoryGame
         [SerializeField]
         private int _defaultGuessesAllowed = 5;
         private int _totalGuesses = 0;
-        private int _totalGuessesAllowed = 0;
+        public int TotalGuessesAllowed { get; private set; }
 
         private EMemoryType _memoryTypeToSearchFor;
 
@@ -32,7 +31,7 @@ namespace MemoryGame
 
         private void Start()
         {
-            MemoryGameGenerator.Instance.ListenToOnGridGenerated(OnCardsGenerated);
+            MemoryGameGenerator.Instance.ListenToOnGameGenerated(OnCardsGenerated);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
 
@@ -50,10 +49,10 @@ namespace MemoryGame
         private void OnCardsGenerated()
         {
             _totalGuesses = 0;
-            _totalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
+            TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
             do
             {
-                _memoryTypeToSearchFor = MemoryGameGenerator.Instance.GetRandomElement().MemoryType;
+                _memoryTypeToSearchFor = MemoryGameGenerator.Instance.GetRandomGridElement().MemoryType;
             }
             while (_memoryTypeToSearchFor == EMemoryType.Bomb);
 

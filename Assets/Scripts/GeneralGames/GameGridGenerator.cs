@@ -4,91 +4,84 @@ using MemoryGame;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GameGridGenerator<CompletionResultType, GridObjectType> : MonoBehaviour where CompletionResultType : GameCompletionResult where GridObjectType : GridObject
+namespace GeneralGame.Generation
 {
-    [SerializeField]
-    protected GridObjectType _objectPrefab;
-
-    protected GridObjectType[,] _objectGrid;
-
-    [SerializeField]
-    private float _spaceBetweenGridObjects = 5f;
-
-    [SerializeField]
-    private float _cameraSizeMultiplier = 1f;
-
-    public bool HasGeneratedGrid { get; private set; }
-
-    public System.Action OnGridGenerated;
-
-    public virtual void CreateGrid(Vector2Int gridSize, List<CompletionResultType> results)
+    public abstract class GameGridGenerator<GenerationData, CompletionResultType, GridObjectType> : DialogueCreatedGameGenerator<GenerationData, CompletionResultType> 
+        where GenerationData : GameGenerationData where CompletionResultType : GameCompletionResult where GridObjectType : GridObject
     {
-        int difficultySizeModifier = GetDifficultySizeModifier();
-        _objectGrid = new GridObjectType[gridSize.x + difficultySizeModifier, gridSize.y + difficultySizeModifier];
-        int mazeLength = _objectGrid.GetLength(0);
+        [SerializeField]
+        protected GridObjectType _objectPrefab;
 
-        GameObject parentObject = GetGridParentObject();
-        for (int yPos = 0; yPos < _objectGrid.GetLength(1); yPos++)
+        protected GridObjectType[,] _objectGrid;
+
+        [SerializeField]
+        private float _spaceBetweenGridObjects = 5f;
+
+        [SerializeField]
+        private float _cameraSizeMultiplier = 1f;
+
+        protected virtual void CreateGrid(Vector2Int gridSize, List<CompletionResultType> results)
         {
-            for (int xPos = 0; xPos < _objectGrid.GetLength(0); xPos++)
+            if (gridSize.x == 0 || gridSize.y == 0)
             {
-                GridObjectType gridObject = Instantiate<GridObjectType>(_objectPrefab, new Vector3(xPos * _spaceBetweenGridObjects, 0, yPos * _spaceBetweenGridObjects), Quaternion.identity, parentObject.transform);
-                gridObject.SetPositionInMaze(new Vector2Int(xPos, yPos));
-                _objectGrid[xPos, yPos] = gridObject;
+                Debug.LogError("Invalid grid size");
+                return;
             }
-        }
 
-        parentObject.transform.position = new Vector3(mazeLength * _spaceBetweenGridObjects, 0, mazeLength * _spaceBetweenGridObjects);
+            int difficultySizeModifier = GetDifficultySizeModifier();
+            _objectGrid = new GridObjectType[gridSize.x + difficultySizeModifier, gridSize.y + difficultySizeModifier];
+            int mazeLength = _objectGrid.GetLength(0);
 
-        Camera.main.orthographicSize = _objectGrid.GetLength(0) * _cameraSizeMultiplier;
-        Camera.main.transform.position = GetGridParentObject().transform.position.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
-
-        HasGeneratedGrid = true;
-
-        GiveResultsToSolver(results);
-    }
-
-    protected abstract void GiveResultsToSolver(List<CompletionResultType> results);
-
-    public virtual void DestroyGrid()
-    {
-        for (int yPos = 0; yPos < _objectGrid.GetLength(1); yPos++)
-        {
-            for (int xPos = 0; xPos < _objectGrid.GetLength(0); xPos++)
+            GameObject parentObject = GetGridParentObject();
+            for (int yPos = 0; yPos < _objectGrid.GetLength(1); yPos++)
             {
-                Destroy(_objectGrid[xPos, yPos].gameObject);
+                for (int xPos = 0; xPos < _objectGrid.GetLength(0); xPos++)
+                {
+                    GridObjectType gridObject = Instantiate<GridObjectType>(_objectPrefab, new Vector3(xPos * _spaceBetweenGridObjects, 0, yPos * _spaceBetweenGridObjects), Quaternion.identity, parentObject.transform);
+                    gridObject.SetPositionInMaze(new Vector2Int(xPos, yPos));
+                    _objectGrid[xPos, yPos] = gridObject;
+                }
             }
+
+            parentObject.transform.position = new Vector3(mazeLength * _spaceBetweenGridObjects, 0, mazeLength * _spaceBetweenGridObjects);
+
+            Camera.main.orthographicSize = _objectGrid.GetLength(0) * _cameraSizeMultiplier;
+            Camera.main.transform.position = GetGridParentObject().transform.position.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
+
+            _hasGeneratedGame = true;
+
+            GiveResultsToSolver(results);
+            GameGenerated();
         }
 
-        _objectGrid = new GridObjectType[0, 0];
-    }
-
-    public void ListenToOnGridGenerated(System.Action action)
-    {
-        if (!HasGeneratedGrid)
+        public virtual void DestroyGrid()
         {
-            OnGridGenerated += action;
+            for (int yPos = 0; yPos < _objectGrid.GetLength(1); yPos++)
+            {
+                for (int xPos = 0; xPos < _objectGrid.GetLength(0); xPos++)
+                {
+                    Destroy(_objectGrid[xPos, yPos].gameObject);
+                }
+            }
+
+            _objectGrid = new GridObjectType[0, 0];
         }
-        else
+
+        public GridObjectType GetGridObject(Vector2Int objectPosition)
         {
-            action?.Invoke();
+            return _objectGrid[objectPosition.x, objectPosition.y];
         }
-    }
 
-    public GridObjectType GetGridObject(Vector2Int objectPosition)
-    {
-        return _objectGrid[objectPosition.x, objectPosition.y];
-    }
+        protected abstract int GetDifficultySizeModifier();
 
-    protected abstract int GetDifficultySizeModifier();
+        protected abstract GameObject GetGridParentObject();
 
-    protected abstract GameObject GetGridParentObject();
+        public GridObjectType GetRandomGridElement()
+        {
+            int x = Random.Range(0, _objectGrid.GetLength(0));
+            int y = Random.Range(0, _objectGrid.GetLength(1));
 
-    public GridObjectType GetRandomElement()
-    {
-        int x = Random.Range(0, _objectGrid.GetLength(0));
-        int y = Random.Range(0, _objectGrid.GetLength(1));
-
-        return _objectGrid[x, y];
+            return _objectGrid[x, y];
+        }
     }
 }

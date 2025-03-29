@@ -29,13 +29,19 @@ namespace Maze
 
         private void Start()
         {
-            MazeGenerator.Instance.ListenToOnGridGenerated(OnMazeGenerated);
+            MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
         }
 
-        private void OnMazeGenerated()
+        private void OnMazePathGenerated()
         {
             _startNode = MazeGenerator.Instance.StartNode;
             _endNode = MazeGenerator.Instance.EndNode;
+
+            if (_startNode == null || _endNode == null)
+            {
+                Debug.LogError("Either start or end node is null in maze");
+                return;
+            }
 
             if (_startNode != null)
             {
@@ -53,6 +59,8 @@ namespace Maze
 
         private void OnDisable()
         {
+            MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
+
             if (_startNode != null)
             {
                 _startNode.OnCursorEntered -= EnterStartZone;
@@ -65,7 +73,7 @@ namespace Maze
             }
         }
 
-        public void EnterStartZone()
+        private void EnterStartZone()
         {
             if (IsStage(EGameStage.PreCountdown))
             {
@@ -73,7 +81,7 @@ namespace Maze
             }
         }
 
-        public void ExitStartZone()
+        private void ExitStartZone()
         {
             if (IsStage(EGameStage.DuringCountdown))
             {

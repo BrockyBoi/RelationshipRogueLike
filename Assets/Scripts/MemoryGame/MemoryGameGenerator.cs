@@ -1,12 +1,13 @@
-using Maze;
+using GeneralGame;
+using GeneralGame.Generation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MemoryGame
+namespace MemoryGame.Generation
 {
-    public class MemoryGameGenerator : GameGridGenerator<MemoryGameCompletionResult, MemoryGameCard>
+    public class MemoryGameGenerator : GameGridGenerator<MemoryGameGeneratorData, MemoryGameCompletionResult, MemoryGameCard>
     {
         public static MemoryGameGenerator Instance {  get; private set; }
 
@@ -28,7 +29,7 @@ namespace MemoryGame
             MemoryGameSolverComponent.Instance.OnGuessMade -= OnGuessMade;
         }
 
-        public override void CreateGrid(Vector2Int gridSize, List<MemoryGameCompletionResult> results)
+        protected override void CreateGrid(Vector2Int gridSize, List<MemoryGameCompletionResult> results)
         {
             if (gridSize.x * gridSize.y % 2 != 0)
             {
@@ -38,8 +39,6 @@ namespace MemoryGame
 
             base.CreateGrid(gridSize, results);
             SetAllCardValues();
-
-            OnGridGenerated?.Invoke();
         }
 
         private void SetAllCardValues()
@@ -119,12 +118,12 @@ namespace MemoryGame
 
         private void SwapRandomCards()
         {
-            MemoryGameCard card1 = GetRandomElement();
+            MemoryGameCard card1 = GetRandomGridElement();
             Vector3 card1StartPos = card1.transform.position;
             MemoryGameCard card2;
             do
             {
-                card2 = GetRandomElement();
+                card2 = GetRandomGridElement();
             } while (card1 == card2);
             Vector3 card2StartPos = card2.transform.position;
 
@@ -135,6 +134,11 @@ namespace MemoryGame
         protected override void GiveResultsToSolver(List<MemoryGameCompletionResult> results)
         {
             MemoryGameSolverComponent.Instance.SetGameCompletionResults(results);
+        }
+
+        public override void GenerateGame(MemoryGameGeneratorData generationData)
+        {
+            CreateGrid(generationData.GridSize, generationData.MemoryGameCompletionResults);
         }
     }
 }

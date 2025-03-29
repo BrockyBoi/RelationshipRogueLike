@@ -44,34 +44,17 @@ MonoBehaviour:
         keyData: 
         valueData: []
       _standardDialogue: Hi, I'm little Lekker, shall we try a maze?
-    MazeSpawnerDialogue:
+    MazeSpawnerData:
       GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
-    MemoryGameSpawnerDialogue:
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
-    MazeSpawnerDialogue:
+    MazeSpawnerData:
       GridSize: {x: 4, y: 4}
       MazeCompletionResults:
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 1
-          _customSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: Good job!
-        HealthResult:
-          HealthAmountToChange: 2
-        DifficultyModifierResult:
-          MazeSizeModifier: -1
-          MazeShakeModifier: -0.25
-          MazeRotateModifier: -0.25
       - DialogueResponses:
         - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
           _usesCustomName: 0
@@ -82,31 +65,35 @@ MonoBehaviour:
           _sentimentDialogues:
             keyData: 
             valueData: []
-          _standardDialogue: Not too bad, can be improved
+          _standardDialogue: good
         HealthResult:
           HealthAmountToChange: 0
         DifficultyModifierResult:
-          MazeSizeModifier: 1
+          MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 1
-          _customSprite: {fileID: 21300000, guid: 3428e4834a002c543872a409f7247b44, type: 3}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: Ugh, you're so ugly to me
+      - DialogueResponses: []
         HealthResult:
-          HealthAmountToChange: -4
+          HealthAmountToChange: 0
         DifficultyModifierResult:
-          MazeSizeModifier: 3
-          MazeShakeModifier: 0.2
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
           MazeRotateModifier: 0
-    MemoryGameSpawnerDialogue:
+      - DialogueResponses: []
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - DialogueResponses: []
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
   - DialogueObjectType: 0
@@ -125,86 +112,18 @@ MonoBehaviour:
         - Maybe try a little harder this time?
         - Fuck. You.  FUCK.  YOU.
       _standardDialogue: 
-    MazeSpawnerDialogue:
+    MazeSpawnerData:
       GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
-    MemoryGameSpawnerDialogue:
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
-    MazeSpawnerDialogue:
-      GridSize: {x: 5, y: 5}
-      MazeCompletionResults:
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 0
-          _customSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: I can do this all day, baby
-        HealthResult:
-          HealthAmountToChange: 2
-        DifficultyModifierResult:
-          MazeSizeModifier: -1
-          MazeShakeModifier: -0.1
-          MazeRotateModifier: -0.1
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 0
-          _customSprite: {fileID: 0}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: Mazes are fine.  I am neutral.
-        HealthResult:
-          HealthAmountToChange: 0
-        DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 0
-          _customSprite: {fileID: 0}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: Can we do something else please?
-        HealthResult:
-          HealthAmountToChange: -3
-        DifficultyModifierResult:
-          MazeSizeModifier: 1
-          MazeShakeModifier: 0.01
-          MazeRotateModifier: 0
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 0
-          _customSprite: {fileID: 0}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 0
-          _sentimentDialogues:
-            keyData: 
-            valueData: []
-          _standardDialogue: '*slips* *farts* *dies*'
-        HealthResult:
-          HealthAmountToChange: -7
-        DifficultyModifierResult:
-          MazeSizeModifier: 3
-          MazeShakeModifier: 0.1
-          MazeRotateModifier: 0.1
-    MemoryGameSpawnerDialogue:
+    MazeSpawnerData:
+      GridSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
   - DialogueObjectType: 0
@@ -223,38 +142,17 @@ MonoBehaviour:
         - Just please, don't fuck up this time?
         - If I ever find your address I'm going to mail you a pipe bomb
       _standardDialogue: 
-    MazeSpawnerDialogue:
+    MazeSpawnerData:
       GridSize: {x: 0, y: 0}
       MazeCompletionResults: []
-    MemoryGameSpawnerDialogue:
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
   - DialogueObjectType: 1
     StandardDialogueObjects: []
-    MazeSpawnerDialogue:
-      GridSize: {x: 6, y: 6}
-      MazeCompletionResults:
-      - DialogueResponses:
-        - _characterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-          _usesCustomName: 0
-          _usesCustomSprite: 0
-          _customSprite: {fileID: 0}
-          _isCharacterMainPlayer: 0
-          _usesSentimentSystem: 1
-          _sentimentDialogues:
-            keyData: 00000000010000000200000003000000
-            valueData:
-            - Let's fuck.
-            - Hopefully we get another date!
-            - Look, I tried ok?
-            - I'M SO SOWWWYYY WWAAAAHHH
-          _standardDialogue: 
-        HealthResult:
-          HealthAmountToChange: 0
-        DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-    MemoryGameSpawnerDialogue:
+    MazeSpawnerData:
+      GridSize: {x: 0, y: 0}
+      MazeCompletionResults: []
+    MemoryGameSpawnerData:
       GridSize: {x: 0, y: 0}
       MemoryGameCompletionResults: []
