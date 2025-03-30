@@ -24,7 +24,7 @@ namespace Dialogue
         private IEnumerator RunConversation()
         {
             Player player = Player.Instance;
-            if (player == null)
+            if (!player)
             {
                 Debug.LogError("Player is null");
                 yield break;
@@ -51,12 +51,17 @@ namespace Dialogue
                     }
                     case EDialogueObjectType.SpawnMemoryGame:
                         {
+                            StandardDialogueObject openingDialogue = dialogueObject.MemoryGameSpawnerData.OpeningDialogue.GetGameCreationDialogueObject();
+                            yield return ProcessStandardDialogueObject(openingDialogue);
+
                             MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
                             yield return YieldUntilMemoryGameCompletion();
                             MemoryGameGenerator.Instance.DestroyGrid();
-                            MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
 
-                            yield return ProcessStandardDialogueObjects(result.DialogueResponses);
+                            MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
+                            StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
+
+                            yield return ProcessStandardDialogueObject(closingDialogue);
                             break;
                         }
                     default:
@@ -69,9 +74,14 @@ namespace Dialogue
         {
             foreach (StandardDialogueObject dialogueObject in dialogueObjects)
             {
-                DialogueUI.Instance.ShowDialogue(dialogueObject);
-                yield return YieldUntilInput();
+                yield return ProcessStandardDialogueObject(dialogueObject);
             }
+        }
+
+        private IEnumerator ProcessStandardDialogueObject(StandardDialogueObject dialogueObject)
+        {
+            DialogueUI.Instance.ShowDialogue(dialogueObject);
+            yield return YieldUntilInput();
         }
 
         private IEnumerator YieldUntilInput()
@@ -87,7 +97,7 @@ namespace Dialogue
         private IEnumerator YieldUntilMazeCompletion()
         {
             MazeSolverComponent mazeSolverComponent = MazeSolverComponent.Instance;
-            while (mazeSolverComponent != null && !mazeSolverComponent.IsStage(EGameStage.GameFinished))
+            while (mazeSolverComponent && !mazeSolverComponent.IsStage(EGameStage.GameFinished))
             {
                 yield return null;
             }
@@ -96,7 +106,7 @@ namespace Dialogue
         private IEnumerator YieldUntilMemoryGameCompletion()
         {
             MemoryGameSolverComponent memoryGameSolverComponent = MemoryGameSolverComponent.Instance;
-            while (memoryGameSolverComponent != null && !memoryGameSolverComponent.IsStage(EGameStage.GameFinished))
+            while (memoryGameSolverComponent && !memoryGameSolverComponent.IsStage(EGameStage.GameFinished))
             {
                 yield return null;
             }

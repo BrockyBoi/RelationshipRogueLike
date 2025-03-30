@@ -1,3 +1,5 @@
+using Dialogue;
+using GeneralGame.Results;
 using Maze;
 using MemoryGame;
 using System;
@@ -7,23 +9,27 @@ using UnityEngine;
 
 namespace GeneralGame.Generation
 {
-    [Serializable]
-    public class GameGenerationData
+    public abstract class BaseGameGenerationData
     {
 
     }
 
     [Serializable]
-    public class MazeGeneratorData : GameGenerationData
+    public abstract class GameGenerationData<GameResult> : BaseGameGenerationData where GameResult : GameCompletionResult
     {
-        public Vector2Int GridSize;
-        public List<MazeCompletionResult> MazeCompletionResults;
+        public List<GameResult> GameCompletionResults;
     }
 
     [Serializable]
-    public class MemoryGameGeneratorData : GameGenerationData
+    public class MazeGeneratorData : GameGenerationData<MazeCompletionResult>
     {
         public Vector2Int GridSize;
-        public List<MemoryGameCompletionResult> MemoryGameCompletionResults;
+    }
+
+    [Serializable]
+    public class MemoryGameGeneratorData : GameGenerationData<MemoryGameCompletionResult>
+    {
+        public MemoryGameRelatedDialogue OpeningDialogue;
+        public Vector2Int GridSize;
     }
 }

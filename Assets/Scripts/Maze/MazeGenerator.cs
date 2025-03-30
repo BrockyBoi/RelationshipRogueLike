@@ -238,7 +238,7 @@ namespace Maze.Generation
 
         public override void GenerateGame(MazeGeneratorData generationData)
         {
-            CreateGrid(generationData.GridSize, generationData.MazeCompletionResults);
+            CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
         }
 
         //protected override GameSolverComponent<MazeCompletionResult> GetAssociatedGameSolver()

@@ -1,5 +1,7 @@
+using Dialogue;
 using GeneralGame.Results;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Maze
@@ -8,6 +10,7 @@ namespace Maze
     public class MazeCompletionResult : GameCompletionResult
     {
         public MazeDifficultyModifierResult DifficultyModifierResult;
+        public List<StandardDialogueObject> DialogueResponses;
 
         public override void ApplyEffects()
         {

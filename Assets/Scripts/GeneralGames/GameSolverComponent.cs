@@ -52,7 +52,7 @@ namespace GeneralGame
                 return default(CompletionResultType);
             }
 
-            return _gameCompletionResults[_wonPreviousGame ? 0 : 1];
+            return _gameCompletionResults[WonPreviousGame ? 0 : 1];
         }
         #endregion
     }

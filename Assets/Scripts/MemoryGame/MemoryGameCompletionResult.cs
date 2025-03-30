@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GeneralGame.Results;
-using Maze;
 using System;
+using Dialogue;
 
 namespace MemoryGame
 {
     [Serializable]
     public class MemoryGameCompletionResult : GameCompletionResult
     {
-        public MazeDifficultyModifierResult DifficultyModifierResult;
+        public MemoryGameRelatedDialogue GameRelatedDialogue;
+        public MemoryGameDifficultyModifierResult DifficultyModifierResult;
 
         public override void ApplyEffects()
         {
@@ -21,7 +22,7 @@ namespace MemoryGame
     }
 
     [Serializable]
-    public class MazeDifficultyModifierResult : GameResult
+    public class MemoryGameDifficultyModifierResult : GameResult
     {
         [Range(-4, 4)]
         public int GridSizeModifier;

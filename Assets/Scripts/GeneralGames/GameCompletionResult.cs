@@ -8,7 +8,6 @@ namespace GeneralGame.Results
     [Serializable]
     public abstract class GameCompletionResult
     {
-        public List<StandardDialogueObject> DialogueResponses;
         public DialogueHealthResult HealthResult;
 
         public virtual void ApplyEffects()

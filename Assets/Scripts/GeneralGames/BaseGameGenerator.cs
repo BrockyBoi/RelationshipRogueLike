@@ -33,7 +33,5 @@ namespace GeneralGame.Generation
             OnGameGenerated?.Invoke();
             OnAnyGameGenerated?.Invoke();
         }
-
-       // protected abstract BaseGameSolverComponent GetAssociatedSolver();
     }
 }

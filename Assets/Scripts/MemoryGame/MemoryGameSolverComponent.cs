@@ -17,10 +17,11 @@ namespace MemoryGame
 
         [SerializeField]
         private int _defaultGuessesAllowed = 5;
-        private int _totalGuesses = 0;
+
+        public int GuessesLeft { get; private set; }
         public int TotalGuessesAllowed { get; private set; }
 
-        private EMemoryType _memoryTypeToSearchFor;
+        public EMemoryType MemoryTypeToSearchFor { get { return MemoryGameGenerator.Instance.MemoryTypeToSearchFor; } }
 
         public System.Action OnGuessMade;
 
@@ -31,31 +32,26 @@ namespace MemoryGame
 
         private void Start()
         {
-            MemoryGameGenerator.Instance.ListenToOnGameGenerated(OnCardsGenerated);
+            MemoryGameGenerator.Instance.ListenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
 
         private void OnDestroy()
         {
+            MemoryGameGenerator.Instance.UnlistenToOnGameGenerated(OnCardValuesSet);
             MemoryGameCard.OnCardClicked -= SelectCard;
         }
 
         protected override void EndGame()
         {
             base.EndGame();
-            _totalGuesses = 0;
+            GuessesLeft = 0;
         }
 
-        private void OnCardsGenerated()
+        private void OnCardValuesSet()
         {
-            _totalGuesses = 0;
             TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
-            do
-            {
-                _memoryTypeToSearchFor = MemoryGameGenerator.Instance.GetRandomGridElement().MemoryType;
-            }
-            while (_memoryTypeToSearchFor == EMemoryType.Bomb);
-
+            GuessesLeft = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
             StartGame();
         }
 
@@ -93,7 +89,7 @@ namespace MemoryGame
                     card.CollectCard();
                     _currentlySelectedCard.CollectCard();
 
-                    if (card.MemoryType == _memoryTypeToSearchFor)
+                    if (card.MemoryType == MemoryTypeToSearchFor)
                     {
                         CompletedGame();
                     }
@@ -108,9 +104,9 @@ namespace MemoryGame
                 yield return new WaitForSeconds(1f);
                 _currentlySelectedCard.HideCard();
                 card.HideCard();
-                _totalGuesses++;
+                GuessesLeft--;
 
-                if (_totalGuesses >= MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier)
+                if (GuessesLeft <= 0)
                 {
                     FailGame();
                 }

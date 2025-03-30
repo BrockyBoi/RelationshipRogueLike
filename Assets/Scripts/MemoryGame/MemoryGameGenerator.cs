@@ -11,8 +11,13 @@ namespace MemoryGame.Generation
     {
         public static MemoryGameGenerator Instance {  get; private set; }
 
+        public EMemoryType MemoryTypeToSearchFor { get; private set; }
+
         [SerializeField]
-        float _timeBetweenSwaps = .75f;
+        private float _timeBetweenSwaps = .75f;
+
+        private bool _hasCardValuesBeenSet = false;
+        private System.Action OnCardValuesSet;
 
         private void Awake()
         {
@@ -65,7 +70,10 @@ namespace MemoryGame.Generation
                         break;
                     }
                 }
-                while ((!canBeBomb && isBomb) || (types.ContainsKey(memoryType) && types[memoryType] == 2) || (!types.ContainsKey(memoryType) && types.Count >= possibleMemoryTypeCount));
+                while ((!canBeBomb && isBomb) || 
+                (types.ContainsKey(memoryType) && types[memoryType] == 2) || 
+                (!types.ContainsKey(memoryType) && types.Count >= possibleMemoryTypeCount) ||
+                (!types.ContainsKey(MemoryTypeToSearchFor) && memoryType != MemoryTypeToSearchFor && types.Count == possibleMemoryTypeCount - 1));
 
                 if (!types.ContainsKey(memoryType))
                 {
@@ -86,6 +94,30 @@ namespace MemoryGame.Generation
                 card.SetMemoryType(memoryType);
                 card.HideCard();
             }
+
+            OnCardValuesSet?.Invoke();
+        }
+
+        public void SetMemoryTypeToSearchFor(EMemoryType memoryType)
+        {
+            MemoryTypeToSearchFor = memoryType;
+        }
+
+        public void ListenToOnCardValuesSet(System.Action action)
+        {
+            if (!_hasCardValuesBeenSet)
+            {
+                OnCardValuesSet += action;
+            }
+            else
+            {
+                action?.Invoke();
+            }
+        }
+
+        public void UnlistenToOnCardValuesSet(System.Action action)
+        {
+            OnCardValuesSet -= action;
         }
 
         protected override int GetDifficultySizeModifier()
@@ -138,7 +170,7 @@ namespace MemoryGame.Generation
 
         public override void GenerateGame(MemoryGameGeneratorData generationData)
         {
-            CreateGrid(generationData.GridSize, generationData.MemoryGameCompletionResults);
+            CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
         }
     }
 }

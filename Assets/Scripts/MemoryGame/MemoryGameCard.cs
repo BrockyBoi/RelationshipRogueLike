@@ -1,7 +1,9 @@
+using MemoryGame.Dialogue;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MemoryGame
 {
@@ -29,17 +31,25 @@ namespace MemoryGame
         [SerializeField]
         TextMeshProUGUI _text;
 
+        [SerializeField]
+        Image _memoryImage;
+
         public static System.Action<MemoryGameCard> OnCardClicked;
 
         public void SetMemoryType(EMemoryType memoryType)
         {
             MemoryType = memoryType;
+
+            MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(MemoryType);
+            if (data && _memoryImage)
+            {
+                _memoryImage.sprite = data.MemorySprite;
+            }
         }
 
         public void OnMouseDown()
         {
             OnCardClicked?.Invoke(this);
-            Debug.Log("Clicked");
         }
 
         public void ShowCard()

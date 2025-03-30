@@ -1,3 +1,4 @@
+using GeneralGame;
 using Maze;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace MemoryGame
 {
-    public class MemoryGameDifficultyManager : GameDifficultyManager<MazeDifficultyModifierResult>
+    public class MemoryGameDifficultyManager : GameDifficultyManager<MemoryGameDifficultyModifierResult>
     {
         public static MemoryGameDifficultyManager Instance { get; private set; }
 
@@ -45,10 +46,10 @@ namespace MemoryGame
 
         private void Start()
         {
-            ChangeNumberOfGuessesModifier(5);
+
         }
 
-        public override void ProvideDifficultyModifierResult(MazeDifficultyModifierResult result)
+        public override void ProvideDifficultyModifierResult(MemoryGameDifficultyModifierResult result)
         {
             ChangeGridSizeModifierValue(result.GridSizeModifier);
             ChangeNumberOfBombsInGame(result.BombsInGame);

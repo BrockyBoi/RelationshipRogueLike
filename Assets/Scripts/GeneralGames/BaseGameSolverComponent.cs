@@ -1,4 +1,5 @@
 using CustomUI;
+using GeneralGame.Generation;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace GeneralGame
 
         protected float _timeLeftToFinish = 0;
 
-        protected bool _wonPreviousGame;
+        public bool WonPreviousGame { get; protected set; }
 
         public EGameStage CurrentGameState { get; private set; }
 
@@ -147,14 +148,14 @@ namespace GeneralGame
         #region Game Completion
         protected void FailGame()
         {
-            _wonPreviousGame = false;
+            WonPreviousGame = false;
             OnGameFailed?.Invoke();
             EndGame();
         }
 
         protected void CompletedGame()
         {
-            _wonPreviousGame = true;
+            WonPreviousGame = true;
             OnGameCompleted?.Invoke();
             EndGame();
         }
