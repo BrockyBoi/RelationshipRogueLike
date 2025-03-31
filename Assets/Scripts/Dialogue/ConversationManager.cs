@@ -86,6 +86,8 @@ namespace Dialogue
 
         private IEnumerator YieldUntilInput()
         {
+            yield return new WaitForEndOfFrame();
+
             while (!Input.anyKeyDown)
             {
                 yield return null;

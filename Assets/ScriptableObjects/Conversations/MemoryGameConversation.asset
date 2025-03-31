@@ -122,7 +122,7 @@ MonoBehaviour:
           GridSizeModifier: 1
           NumberOfCardsToSwap: 4
           BombsInGame: 2
-          NumberOfGuesses: -1
+          NumberOfGuesses: -3
       OpeningDialogue:
         _dialogueData:
           CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -171,3 +171,139 @@ MonoBehaviour:
               valueData: []
           IsCharacterMainPlayer: 0
       GridSize: {x: 0, y: 0}
+  - DialogueObjectType: 2
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses: []
+      - HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses: []
+      GridSize: {x: 3, y: 4}
+    MemoryGameSpawnerData:
+      GameCompletionResults:
+      - HealthResult:
+          HealthAmountToChange: 0
+        GameRelatedDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - HealthResult:
+          HealthAmountToChange: 0
+        GameRelatedDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+              valueData: []
+          IsCharacterMainPlayer: 0
+      GridSize: {x: 3, y: 4}
+  - DialogueObjectType: 2
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults:
+      - HealthResult:
+          HealthAmountToChange: 0
+        GameRelatedDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - HealthResult:
+          HealthAmountToChange: 0
+        GameRelatedDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+              valueData: []
+          IsCharacterMainPlayer: 0
+      GridSize: {x: 4, y: 3}

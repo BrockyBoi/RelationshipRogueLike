@@ -50,6 +50,7 @@ namespace MemoryGame.UI
         {
             EMemoryType memoryType = MemoryGameSolverComponent.Instance.MemoryTypeToSearchFor;
             _memorySearchingForText.text = "Memory Searching For: " + memoryType.ToString();
+            OnGuessMade();
             ShowUI();
         }
 

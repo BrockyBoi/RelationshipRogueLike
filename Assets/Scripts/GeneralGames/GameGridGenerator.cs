@@ -36,6 +36,7 @@ namespace GeneralGame.Generation
             _objectGrid = new GridObjectType[gridSize.x + difficultySizeModifier, gridSize.y + difficultySizeModifier];
 
             GameObject parentObject = GetGridParentObject();
+            parentObject.transform.position = Vector3.zero;
             for (int yPos = 0; yPos < GridHeight; yPos++)
             {
                 for (int xPos = 0; xPos < GridWidth; xPos++)
@@ -46,10 +47,11 @@ namespace GeneralGame.Generation
                 }
             }
 
-            parentObject.transform.position = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, 0, (GridHeight - 1) * _spaceBetweenGridObjects);
+            Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, 0, (GridHeight - 1) * _spaceBetweenGridObjects);
+            parentObject.transform.position = finalLoc;
 
-            Camera.main.orthographicSize = _objectGrid.GetLength(0) * _cameraSizeMultiplier;
-            Camera.main.transform.position = GetGridParentObject().transform.position.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
+            Camera.main.orthographicSize = _objectGrid.Length * _cameraSizeMultiplier;
+            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
 
             _hasGeneratedGame = true;
 

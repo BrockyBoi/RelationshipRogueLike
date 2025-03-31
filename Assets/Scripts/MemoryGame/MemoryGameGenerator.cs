@@ -1,5 +1,6 @@
 using GeneralGame;
 using GeneralGame.Generation;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,54 +49,82 @@ namespace MemoryGame.Generation
 
         private void SetAllCardValues()
         {
-            // Maximum amount of types allowed
-            // Example: If 16 cards, then we want 8 pairs.  Add 1 extra later for bombs
-            int maxMemoryTypes = _objectGrid.Length / 2;
-            int bombCount = 0;
-            Dictionary<EMemoryType, int> usedTypes = new Dictionary<EMemoryType, int>();
-            Func<Dictionary<EMemoryType, int>, bool, EMemoryType> getRandomMemoryTypeValue = (types, canBeBomb) =>
+            int bombsInGame = MemoryGameDifficultyManager.Instance.BombsInGame;
+            bool canHaveBombs = bombsInGame > 1;
+            List<MemoryGameCard> tempMemoryGameCardsList = new List<MemoryGameCard>();
+            foreach (MemoryGameCard card in _objectGrid)
             {
-                int possibleMemoryTypeCount = maxMemoryTypes + (canBeBomb ? 1 : 0);
+                tempMemoryGameCardsList.Add(card);
+            }
+
+            SetNumberOfCardsToValue(bombsInGame, EMemoryType.Bomb, ref tempMemoryGameCardsList);
+            SetNumberOfCardsToValue(2, MemoryTypeToSearchFor, ref tempMemoryGameCardsList);
+            FillRandomValuesForCardsList(ref tempMemoryGameCardsList);
+
+            OnCardValuesSet?.Invoke();
+        }
+
+        private void SetNumberOfCardsToValue(int numberOfCardsToSet, EMemoryType memoryType, ref List<MemoryGameCard> initializedCards)
+        {
+            for (int i = 0; i < numberOfCardsToSet; i++)
+            {
+                if (initializedCards.Count > 0)
+                {
+                    MemoryGameCard randomCard = initializedCards.GetRandomElement();
+                    if (randomCard)
+                    {
+                        randomCard.SetMemoryType(memoryType);
+                        initializedCards.Remove(randomCard);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("No valid cards to set");
+                    break;
+                }
+            }
+        }
+
+        private void FillRandomValuesForCardsList(ref List<MemoryGameCard> cards)
+        {
+            Dictionary<EMemoryType, int> cardCountsPerMemoryType = new Dictionary<EMemoryType, int>();
+            bool hasBombs = MemoryGameDifficultyManager.Instance.BombsInGame > 1;
+            while (cards.Count > 0)
+            {
                 EMemoryType memoryType;
-                bool isBomb;
                 int increments = 0;
+                // Remove 2 since we remove one type for bombs and remove another type for the memory type we have to search for
+                int possibleMemoryTypeCounts = (_objectGrid.Length / 2) - 1 - (hasBombs ? 1 : 0);
                 do
                 {
                     memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
-                    isBomb = memoryType == EMemoryType.Bomb;
-
                     if (++increments >= 100)
                     {
                         Debug.LogError("Spent too much time in SetAllCardValues");
                         break;
                     }
                 }
-                while ((!canBeBomb && isBomb) || 
-                (types.ContainsKey(memoryType) && types[memoryType] == 2) || 
-                (!types.ContainsKey(memoryType) && types.Count >= possibleMemoryTypeCount) ||
-                (!types.ContainsKey(MemoryTypeToSearchFor) && memoryType != MemoryTypeToSearchFor && types.Count == possibleMemoryTypeCount - 1));
+                while ((cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType[memoryType] == 2) ||
+                (!cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType.Count >= possibleMemoryTypeCounts) ||
+                memoryType == EMemoryType.Bomb ||
+                MemoryGameSolverComponent.Instance.AlreadyPlayedForMemoryType(memoryType) ||
+                memoryType == MemoryTypeToSearchFor);
 
-                if (!types.ContainsKey(memoryType))
+                if (increments >= 100)
                 {
-                    types.Add(memoryType, 0);
-                }
-                types[memoryType]++;
-                return memoryType;
-            };
-
-            foreach (MemoryGameCard card in _objectGrid)
-            {
-                EMemoryType memoryType = getRandomMemoryTypeValue(usedTypes, bombCount < MemoryGameDifficultyManager.Instance.BombsInGame);
-                if (memoryType == EMemoryType.Bomb)
-                {
-                    bombCount++;
+                    break;
                 }
 
+                if (!cardCountsPerMemoryType.ContainsKey(memoryType))
+                {
+                    cardCountsPerMemoryType.Add(memoryType, 0);
+                }
+                cardCountsPerMemoryType[memoryType]++;
+
+                MemoryGameCard card = cards.GetRandomElement();
                 card.SetMemoryType(memoryType);
-                card.HideCard();
+                cards.Remove(card);
             }
-
-            OnCardValuesSet?.Invoke();
         }
 
         public void SetMemoryTypeToSearchFor(EMemoryType memoryType)
@@ -133,7 +162,7 @@ namespace MemoryGame.Generation
         private void OnGuessMade()
         {
             int cardsToSwap = MemoryGameDifficultyManager.Instance.CardsToSwap;
-            if (cardsToSwap > 0)
+            if (cardsToSwap > 0 && MemoryGameSolverComponent.Instance.IsStage(EGameStage.InGame))
             {
                 StartCoroutine(SwapCards(cardsToSwap));
             }
@@ -171,6 +200,30 @@ namespace MemoryGame.Generation
         public override void GenerateGame(MemoryGameGeneratorData generationData)
         {
             CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
+        }
+
+        [Button]
+        public void DebugShowAllCards()
+        {
+            if (_objectGrid != null && _objectGrid.Length > 0)
+            {
+                foreach (MemoryGameCard card in _objectGrid)
+                {
+                    card.ShowCard();
+                }
+            }
+        }
+
+        [Button]
+        public void DebugHideAllCards()
+        {
+            if (_objectGrid != null && _objectGrid.Length > 0)
+            {
+                foreach (MemoryGameCard card in _objectGrid)
+                {
+                    card.HideCard();
+                }
+            }
         }
     }
 }

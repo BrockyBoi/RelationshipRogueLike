@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214258459}
   - component: {fileID: 214258458}
+  - component: {fileID: 214258460}
   m_Layer: 0
   m_Name: GeneralControllers
   m_TagString: Untagged
@@ -319,6 +320,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &214258460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214258457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71371899221f1344ac589dcdfb952ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409115437
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484633521}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 5.88, y: 10.62, z: 1.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1172,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9553685d03949f6468ef4348f0e4e140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationToRun: {fileID: 11400000, guid: e946e82c51dc26b45b96d42d0f9be10c, type: 2}
+  _conversationToRun: {fileID: 11400000, guid: 260b19abb0252dc4ebacad2047575fdf, type: 2}
 --- !u!4 &888546738
 Transform:
   m_ObjectHideFlags: 0
@@ -1962,7 +1975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 956892806304350894, guid: 1f92bceb570e2ad4f858d29e537f5a75, type: 3}
   _spaceBetweenGridObjects: 3.5
-  _cameraSizeMultiplier: 1.75
+  _cameraSizeMultiplier: 0.7
   _timeBetweenSwaps: 0.75
 --- !u!114 &1870133169
 MonoBehaviour:
@@ -1978,8 +1991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSizeModifier: 6
   _maxBombsInGame: 5
+  _defaultBombs: 2
   _maxCardsToSawp: 6
-  _minNumberOfGuessesModifier: 3
+  _minNumberOfGuessesModifier: -4
   _maxNumberOfGuessesModifier: 4
 --- !u!114 &1870133170
 MonoBehaviour:

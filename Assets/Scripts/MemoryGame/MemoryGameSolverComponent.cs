@@ -23,11 +23,14 @@ namespace MemoryGame
 
         public EMemoryType MemoryTypeToSearchFor { get { return MemoryGameGenerator.Instance.MemoryTypeToSearchFor; } }
 
+        private HashSet<EMemoryType>_memoryTypesSearchedForPreviously;
+
         public System.Action OnGuessMade;
 
         private void Awake()
         {
             Instance = this;
+            _memoryTypesSearchedForPreviously = new HashSet<EMemoryType>();
         }
 
         private void Start()
@@ -51,8 +54,10 @@ namespace MemoryGame
         private void OnCardValuesSet()
         {
             TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
-            GuessesLeft = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
+            GuessesLeft = TotalGuessesAllowed;
             StartGame();
+
+            _memoryTypesSearchedForPreviously.Add(MemoryTypeToSearchFor);
         }
 
         public void SelectCard(MemoryGameCard card)
@@ -122,6 +127,11 @@ namespace MemoryGame
         {
             MemoryGameCompletionResult result = GetGameCompletionResultToApplyBySucceeding();
             result.ApplyEffects();
+        }
+
+        public bool AlreadyPlayedForMemoryType(EMemoryType memoryType)
+        {
+            return _memoryTypesSearchedForPreviously.Contains(memoryType);
         }
 
         protected override GameUI GetGameUIInstance()

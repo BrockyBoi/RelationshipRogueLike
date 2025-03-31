@@ -19,6 +19,9 @@ namespace MemoryGame
         private int _maxBombsInGame = 5;
 
         [SerializeField]
+        private int _defaultBombs = 0;
+
+        [SerializeField]
         private int _maxCardsToSawp = 6;
 
         [SerializeField]
@@ -46,7 +49,7 @@ namespace MemoryGame
 
         private void Start()
         {
-
+            BombsInGame = _defaultBombs;
         }
 
         public override void ProvideDifficultyModifierResult(MemoryGameDifficultyModifierResult result)

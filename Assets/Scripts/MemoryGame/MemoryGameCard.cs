@@ -36,6 +36,11 @@ namespace MemoryGame
 
         public static System.Action<MemoryGameCard> OnCardClicked;
 
+        private void Start()
+        {
+            HideCard();
+        }
+
         public void SetMemoryType(EMemoryType memoryType)
         {
             MemoryType = memoryType;
