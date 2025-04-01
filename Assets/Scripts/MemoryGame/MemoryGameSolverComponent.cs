@@ -33,8 +33,9 @@ namespace MemoryGame
             _memoryTypesSearchedForPreviously = new HashSet<EMemoryType>();
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             MemoryGameGenerator.Instance.ListenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
@@ -53,6 +54,7 @@ namespace MemoryGame
 
         private void OnCardValuesSet()
         {
+            SetGameStage(EGameStage.PreCountdown);
             TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
             GuessesLeft = TotalGuessesAllowed;
             StartGame();
@@ -125,6 +127,8 @@ namespace MemoryGame
 
         protected override void ApplyEndGameResults()
         {
+            base.ApplyEndGameResults();
+
             MemoryGameCompletionResult result = GetGameCompletionResultToApplyBySucceeding();
             result.ApplyEffects();
         }

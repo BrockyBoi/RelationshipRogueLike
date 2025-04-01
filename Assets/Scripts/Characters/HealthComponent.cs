@@ -14,6 +14,7 @@ namespace MainPlayer
 
         [SerializeField]
         private int _maxHealth = 10;
+        public int MaxHealth { get { return _maxHealth; } }
 
         public System.Action OnDeath;
         public System.Action<int, int> OnHealthChange;

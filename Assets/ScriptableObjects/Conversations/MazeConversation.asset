@@ -36,7 +36,7 @@ MonoBehaviour:
             keyData: 
             valueData: []
         IsCharacterMainPlayer: 0
-      _standardDialogue: Hi, I'm Brock
+      _standardDialogue: Hi, I'm Maddie
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CustomDialogueOptions:
@@ -73,7 +73,55 @@ MonoBehaviour:
     StandardDialogueObjects: []
     MazeSpawnerData:
       GameCompletionResults:
-      - HealthResult:
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: Oh goodie! I love mazes!
+        HealthResult:
+          HealthAmountToChange: 2
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses:
+        - _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 1
+              CustomSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: I'm so glad you love mazes as much as I do!
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: Mazes are alright I suppose
+        HealthResult:
           HealthAmountToChange: 0
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -92,16 +140,10 @@ MonoBehaviour:
                 keyData: 
                 valueData: []
             IsCharacterMainPlayer: 0
-          _standardDialogue: Good job
-      - HealthResult:
-          HealthAmountToChange: 0
-        DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-        DialogueResponses:
-        - _dialogueData:
-            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          _standardDialogue: I mean, I like mazes, but they're not for everyone.
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -112,9 +154,9 @@ MonoBehaviour:
                 keyData: 
                 valueData: []
             IsCharacterMainPlayer: 0
-          _standardDialogue: Medium job
-      - HealthResult:
-          HealthAmountToChange: 0
+          _standardDialogue: Mazes?  Pffffft.  What do I look like?  Gay?
+        HealthResult:
+          HealthAmountToChange: -3
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -125,14 +167,14 @@ MonoBehaviour:
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
-              UsesCustomSprite: 0
-              CustomSprite: {fileID: 0}
+              UsesCustomSprite: 1
+              CustomSprite: {fileID: 21300000, guid: e7fe014a7d7a2e847ae3a30428d7b725, type: 3}
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
                 valueData: []
             IsCharacterMainPlayer: 0
-          _standardDialogue: Bad job
+          _standardDialogue: We're on a lesbian date, dumbass.
       GridSize: {x: 4, y: 4}
     MemoryGameSpawnerData:
       GameCompletionResults: []
@@ -157,14 +199,14 @@ MonoBehaviour:
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
-          UsesCustomSprite: 0
-          CustomSprite: {fileID: 0}
+          UsesCustomSprite: 1
+          CustomSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
             valueData: []
         IsCharacterMainPlayer: 0
-      _standardDialogue: One more time
+      _standardDialogue: Why not another maze?
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
@@ -187,8 +229,110 @@ MonoBehaviour:
   - DialogueObjectType: 1
     StandardDialogueObjects: []
     MazeSpawnerData:
-      GameCompletionResults: []
-      GridSize: {x: 0, y: 0}
+      GameCompletionResults:
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 3
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses:
+        - _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 1
+              CustomSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: Great job!  You're really good at solving these.
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses:
+        - _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: I know, it's a bit much, but it helps Brock do the playtesting
+      - PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: -3
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        DialogueResponses:
+        - _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 1
+              CustomSprite: {fileID: 21300000, guid: 3428e4834a002c543872a409f7247b44, type: 3}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: You know you don't have to be here right?
+      GridSize: {x: 5, y: 5}
     MemoryGameSpawnerData:
       GameCompletionResults: []
       OpeningDialogue:
@@ -214,33 +358,16 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
-          UsesSentimentSystem: 0
+          UsesSentimentSystem: 1
           SentimentDialogues:
-            keyData: 
-            valueData: []
+            keyData: 00000000010000000200000003000000
+            valueData:
+            - I'm loving this date so far?  Do you want to have another one?
+            - I hope this date has been fun for you.
+            - I'm not sure this is working out.  Nice to meet you.
+            - You've actually made me want to be straight.  Fuck you.
         IsCharacterMainPlayer: 0
       _standardDialogue: I lied one more
-    MazeSpawnerData:
-      GameCompletionResults: []
-      GridSize: {x: 0, y: 0}
-    MemoryGameSpawnerData:
-      GameCompletionResults: []
-      OpeningDialogue:
-        _dialogueData:
-          CharacterData: {fileID: 0}
-          CustomDialogueOptions:
-            UsesCustomName: 0
-            CustomName: 
-            UsesCustomSprite: 0
-            CustomSprite: {fileID: 0}
-            UsesSentimentSystem: 0
-            SentimentDialogues:
-              keyData: 
-              valueData: []
-          IsCharacterMainPlayer: 0
-      GridSize: {x: 0, y: 0}
-  - DialogueObjectType: 1
-    StandardDialogueObjects: []
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}

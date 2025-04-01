@@ -75,6 +75,20 @@ MonoBehaviour:
       GameCompletionResults:
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -85,6 +99,20 @@ MonoBehaviour:
       GameCompletionResults:
       - HealthResult:
           HealthAmountToChange: 2
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 1
+          _standardDialogue: Of course I remember!
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -105,6 +133,20 @@ MonoBehaviour:
           NumberOfGuesses: 0
       - HealthResult:
           HealthAmountToChange: -2
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: Uhhhhhhhhhhhhhhhhhhhhhhhhhhhh
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -177,6 +219,20 @@ MonoBehaviour:
       GameCompletionResults:
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -184,6 +240,20 @@ MonoBehaviour:
         DialogueResponses: []
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -194,6 +264,20 @@ MonoBehaviour:
       GameCompletionResults:
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -214,6 +298,20 @@ MonoBehaviour:
           NumberOfGuesses: 0
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -255,6 +353,20 @@ MonoBehaviour:
       GameCompletionResults:
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -275,6 +387,20 @@ MonoBehaviour:
           NumberOfGuesses: 0
       - HealthResult:
           HealthAmountToChange: 0
+        PotentialPlayerDialogue:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}

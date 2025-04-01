@@ -52,7 +52,7 @@ namespace Dialogue
         [SerializeField]
         private DialogueData _dialogueData;
 
-        [SerializeField, TextArea(2, 4)]
+        [SerializeField, TextArea(2, 4), HideIf("@_dialogueData.CustomDialogueOptions.UsesSentimentSystem")]
         private string _standardDialogue;
 
         private CharacterData CharacterData { get { return _dialogueData.CharacterData; } }

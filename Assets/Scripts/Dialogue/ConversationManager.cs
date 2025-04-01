@@ -46,6 +46,7 @@ namespace Dialogue
                         MazeGenerator.Instance.DestroyGrid();
                         MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
+                        yield return ProcessStandardDialogueObject(result.PotentialPlayerDialogue);
                         yield return ProcessStandardDialogueObjects(result.DialogueResponses);
                         break;
                     }
@@ -61,6 +62,7 @@ namespace Dialogue
                             MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
                             StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
 
+                            yield return ProcessStandardDialogueObject(result.PotentialPlayerDialogue);
                             yield return ProcessStandardDialogueObject(closingDialogue);
                             break;
                         }

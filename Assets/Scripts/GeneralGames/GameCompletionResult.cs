@@ -8,7 +8,9 @@ namespace GeneralGame.Results
     [Serializable]
     public abstract class GameCompletionResult
     {
-        public DialogueHealthResult HealthResult;
+        public StandardDialogueObject PotentialPlayerDialogue;
+
+        public GameHealthResult HealthResult;
 
         public virtual void ApplyEffects()
         {
@@ -23,7 +25,7 @@ namespace GeneralGame.Results
     }
 
     [Serializable]
-    public class DialogueHealthResult : GameResult
+    public class GameHealthResult : GameResult
     {
         [Range(-10, 10)]
         public int HealthAmountToChange = 0;

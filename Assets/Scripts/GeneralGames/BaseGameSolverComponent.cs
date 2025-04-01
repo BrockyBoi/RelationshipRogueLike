@@ -11,6 +11,7 @@ namespace GeneralGame
     {
         PreCountdown,
         DuringCountdown,
+        InGameInputPrevented,
         InGame,
         GameFinished
     }
@@ -46,6 +47,11 @@ namespace GeneralGame
         public System.Action OnGameFailed;
 
         public System.Action<EGameStage> OnStageChange;
+
+        protected virtual void Start()
+        {
+
+        }
 
         #region Countdown
         protected void StartCountDown()
@@ -148,6 +154,7 @@ namespace GeneralGame
         #region Game Completion
         protected void FailGame()
         {
+            Debug.Log("Failed game");
             WonPreviousGame = false;
             OnGameFailed?.Invoke();
             EndGame();
@@ -155,6 +162,7 @@ namespace GeneralGame
 
         protected void CompletedGame()
         {
+            Debug.Log("Won game");
             WonPreviousGame = true;
             OnGameCompleted?.Invoke();
             EndGame();

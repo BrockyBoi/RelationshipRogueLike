@@ -13,9 +13,6 @@ namespace Maze
         [SerializeField]
         private float _penaltyOnWallHit = 1.5f;
 
-        [SerializeField]
-        private float _timeToSolveMaze = 10f;
-
         private MazeNode _startNode;
         private MazeNode _endNode;
 
@@ -27,13 +24,15 @@ namespace Maze
             Instance = this;
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
         }
 
         private void OnMazePathGenerated()
         {
+            SetGameStage(EGameStage.PreCountdown);
             _startNode = MazeGenerator.Instance.StartNode;
             _endNode = MazeGenerator.Instance.EndNode;
 
@@ -112,6 +111,7 @@ namespace Maze
 
         protected override void ApplyEndGameResults()
         {
+            base.ApplyEndGameResults();
             MazeCompletionResult result = GetGameCompletionResultToApplyByTimeRemaining();
             result.ApplyEffects();
         }

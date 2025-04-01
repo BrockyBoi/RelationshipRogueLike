@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d75d33d1f1d97374ba4b4a8f5b71f859, type: 3}
-  m_Name: BrockData
+  m_Name: MaddieData
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -24,5 +24,5 @@ MonoBehaviour:
     - Name: SentimentPortraits
       Entry: 6
       Data: 
-  CharacterName: Brock
-  DefaultSprite: {fileID: 21300000, guid: efffd735986c4ab4486a1bcedc4a85d9, type: 3}
+  CharacterName: Maddie
+  DefaultSprite: {fileID: 21300000, guid: 8d4b7ab204adb90419966e3286b3c708, type: 3}

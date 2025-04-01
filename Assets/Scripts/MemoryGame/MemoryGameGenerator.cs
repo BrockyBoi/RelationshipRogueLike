@@ -170,11 +170,13 @@ namespace MemoryGame.Generation
 
         private IEnumerator SwapCards(int timesToSwap)
         {
+            MemoryGameSolverComponent.Instance.SetGameStage(EGameStage.InGameInputPrevented);
             for (int i = 0; i < timesToSwap; i++)
             {
                 SwapRandomCards();
                 yield return new WaitForSeconds(_timeBetweenSwaps);
             }
+            MemoryGameSolverComponent.Instance.SetGameStage(EGameStage.InGame);
         }
 
         private void SwapRandomCards()

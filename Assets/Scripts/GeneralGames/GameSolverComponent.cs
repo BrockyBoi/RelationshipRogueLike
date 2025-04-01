@@ -1,3 +1,4 @@
+using Dialogue.UI;
 using GeneralGame.Results;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -8,34 +9,58 @@ namespace GeneralGame
 {
     public abstract class GameSolverComponent<CompletionResultType> : BaseGameSolverComponent where CompletionResultType : GameCompletionResult
     {
-        List<CompletionResultType> _gameCompletionResults;
+        protected List<CompletionResultType> _gameCompletionResults;
+
+        private Coroutine _highlightIndexCoroutine;
 
         #region Completion Results
         public void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
         {
             _gameCompletionResults = gameCompletionResults;
+
+            List<GameCompletionResult> results = new List<GameCompletionResult>(gameCompletionResults);
+            PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results);
         }
 
-        public CompletionResultType GetGameCompletionResultToApplyByTimeRemaining()
+        protected override void ApplyEndGameResults()
+        {
+            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+        }
+
+        protected override void StartGame()
+        {
+            base.StartGame();
+            _highlightIndexCoroutine = StartCoroutine(HighlightCurrentGameResultIndex());
+        }
+
+        private IEnumerator HighlightCurrentGameResultIndex()
+        {
+            while (IsStage(EGameStage.InGame))
+            {
+                PotentialPlayerDialogueUI.Instance.HighlightResult(GetGameCompletionResultIndexByTimeRemaining());
+                yield return null;
+            }
+        }
+
+        public int GetGameCompletionResultIndexByTimeRemaining()
         {
             if (_gameCompletionResults.Count == 0)
             {
                 Debug.LogError("There are no completion results");
-                return default(CompletionResultType);
+                return 0;
             }
 
             float percentageTimeLeftToSolveMaze = GetPercentageOfTimeLeftToCompleteGame();
             // Ex player solved while only taking 25% of time, so value is 75%
-            int indexDesired = 0;
-            float percentagePerResult = 1f / _gameCompletionResults.Count;
+            int index = Mathf.FloorToInt(_gameCompletionResults.Count * percentageTimeLeftToSolveMaze);
             // Ex there are only 3 results, so value is 33%
-            do
-            {
-                indexDesired++;
-            }
-            while (_gameCompletionResults.IsValidIndex(indexDesired) && indexDesired * percentagePerResult > percentageTimeLeftToSolveMaze);
 
-            return _gameCompletionResults[indexDesired - 1];
+            return _gameCompletionResults.Count - index - 1;
+        }
+
+        public CompletionResultType GetGameCompletionResultToApplyByTimeRemaining()
+        {
+            return _gameCompletionResults[GetGameCompletionResultIndexByTimeRemaining()];
         }
 
         public CompletionResultType GetGameCompletionResultToApplyBySucceeding()

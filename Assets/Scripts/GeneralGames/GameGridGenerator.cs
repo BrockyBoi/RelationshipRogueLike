@@ -52,6 +52,7 @@ namespace GeneralGame.Generation
 
             Camera.main.orthographicSize = _objectGrid.Length * _cameraSizeMultiplier;
             Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
+            Camera.main.transform.position = Camera.main.transform.position + (Vector3.right * finalLoc.x / 2);
 
             _hasGeneratedGame = true;
 
