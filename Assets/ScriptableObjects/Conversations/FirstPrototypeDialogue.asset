@@ -1,0 +1,625 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
+  m_Name: FirstPrototypeDialogue
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  DialogueObjects:
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "*Thinking* Alright, Tabitha said that she\u2019d be here
+        at the park waiting on a bench.  Can\u2019t imagine there will be too many
+        cute, short, Indian girls hanging around, but she also knows to look for
+        the tall, goth Polish girl, so I imagine this will be an easy find."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 1
+          CustomSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "Hi there!  It\u2019s so nice to meet you.  I know it\u2019s
+        a bit awkward having Tabitha setting us up on a blind date, but I\u2019m
+        really glad that you showed up.  My name is Ananthalekshmy, but you can call
+        me Lekshmy if that\u2019s easier for you.  She said your name was Maddie,
+        right?"
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 1
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Good introduction
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "It\u2019s so nice to meet you too!   My name is Magdalena,
+              but yeah everyone calls me Maddie.  I\u2019ve really been looking forward
+              to this."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            OpeningDialogue:
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                IsCharacterMainPlayer: 0
+              ForceMemoryTypeToSearchFor: 0
+              ForcedMemoryTypeToSearchFor: 0
+              ShowLimitedMemoryTypesAvailable: 0
+              AllowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      - PotentialPlayerDialogueDescription: Bland Introduction
+        HealthResult:
+          HealthAmountToChange: -1
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Yup, that\u2019s me."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            OpeningDialogue:
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                IsCharacterMainPlayer: 0
+              ForceMemoryTypeToSearchFor: 0
+              ForcedMemoryTypeToSearchFor: 0
+              ShowLimitedMemoryTypesAvailable: 0
+              AllowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      - PotentialPlayerDialogueDescription: Way too sexual of an introduction
+        HealthResult:
+          HealthAmountToChange: -3
+        DifficultyModifierResult:
+          MazeSizeModifier: 1
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Don\u2019t worry, you\u2019ll be screaming my name
+              soon enough.  Maddie.  You\u2019ll be shouting \u201CMaddie.\u201D"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh!  Erm, yeah I guess if I\u2019m looking around
+              for you it might be nice to yell it out.  Heh. "
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            OpeningDialogue:
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                IsCharacterMainPlayer: 0
+              ForceMemoryTypeToSearchFor: 0
+              ForcedMemoryTypeToSearchFor: 0
+              ShowLimitedMemoryTypesAvailable: 0
+              AllowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      GridSize: {x: 1, y: 4}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "Well it\u2019s so nice to meet you, Maddie.  I haven\u2019t
+        gotten out in a while and really met anyone new, let alone gone on a date. 
+        I feel like meeting people in the city has been pretty tough.  I\u2019m from
+        a small town where everyone knew each other, and while it wasn\u2019t always
+        great having everyone in your business, at least you never felt alone.  "
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "But look at me yapping on and on!  I\u2019m a bit of a
+        talker, so sorry if I\u2019m not letting you speak enough.  Tell me about
+        yourself!  What do you like to do in your free time?"
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 1
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Start conversation about living in the
+          city and the art that you draw
+        HealthResult:
+          HealthAmountToChange: 2
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh it\u2019s no problem at all!  I like listening
+              to you talk.  And yeah, I completely understand.  It can be tough feeling
+              like your surrounded by millions of people, while simultaneously feeling
+              like everyone around you knows what they\u2019re doing and having it
+              all figured out, and it makes it that much harder to truly reach out. 
+              I\u2019m glad Tabitha helped us both out though. Otherwise, I really
+              like drawing and animation, and making cool art with friends over the
+              internet.  It\u2019s really fulfilling work."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "That\u2019s so cool!  I always wanted to get more
+              into art, but I\u2019m not much of a painter.  I\u2019d love to take
+              a look sometime if that\u2019d be ok with you."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Of course!
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            OpeningDialogue:
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                IsCharacterMainPlayer: 0
+              ForceMemoryTypeToSearchFor: 0
+              ForcedMemoryTypeToSearchFor: 0
+              ShowLimitedMemoryTypesAvailable: 0
+              AllowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      - PotentialPlayerDialogueDescription: Start conversation about a few basic
+          things you like to do
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      - PotentialPlayerDialogueDescription: "Start brief conversation on how you
+          don\u2019t do too much and just hang around"
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      - PotentialPlayerDialogueDescription: "Go on full diatribe about Bitcoin and
+          the underlying technology and how you\u2019re going to be rich one day"
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      GridSize: {x: 4, y: 4}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "Well I appreciate you sharing that with me.  I always love
+        learning about people\u2019s interests.  Even though it\u2019s nice to have
+        the same intersets as someone, honestly I care much more about someone being
+        passionate.  It doesn\u2019t have to be waht I\u2019m passionate about, as
+        long as it\u2019s something."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "If I\u2019m dating outside of India I\u2019m not expecting
+        anybody to be able to quote Ohm Shanty Ohm to me, but even just putting in
+        the effort to relate is more than enough.  Is there anything in particular
+        that you\u2019re looking for in a partner?"
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 1
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Looking for something serious
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      - PotentialPlayerDialogueDescription: Looking for something
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      - PotentialPlayerDialogueDescription: Casual
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      - PotentialPlayerDialogueDescription: Still way too sexual
+        HealthResult:
+          HealthAmountToChange: 0
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+        MazeDialogueResponses: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 1
+          SentimentDialogues:
+            keyData: 
+        IsCharacterMainPlayer: 0
+      _standardDialogue: 
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      OpeningDialogue:
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+          IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []

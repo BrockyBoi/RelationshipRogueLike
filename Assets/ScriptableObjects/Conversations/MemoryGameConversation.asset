@@ -31,10 +31,9 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
-          UsesSentimentSystem: 0
+          UsesSentimentSystem: 1
           SentimentDialogues:
             keyData: 
-            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: So good to see you!
     - _dialogueData:
@@ -47,7 +46,6 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
-            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: You too!
     MazeSpawnerData:
@@ -66,15 +64,21 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
-              valueData: []
           IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
   - DialogueObjectType: 2
     StandardDialogueObjects: []
     MazeSpawnerData:
       GameCompletionResults:
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -86,9 +90,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -97,8 +102,7 @@ MonoBehaviour:
       GridSize: {x: 0, y: 0}
     MemoryGameSpawnerData:
       GameCompletionResults:
-      - HealthResult:
-          HealthAmountToChange: 2
+      - PotentialPlayerDialogueDescription: You remember
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -110,9 +114,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 1
           _standardDialogue: Of course I remember!
+        HealthResult:
+          HealthAmountToChange: 2
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -124,15 +129,17 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
-      - HealthResult:
-          HealthAmountToChange: -2
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -144,9 +151,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: Uhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+        HealthResult:
+          HealthAmountToChange: -2
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -158,8 +166,11 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 1
           NumberOfCardsToSwap: 4
@@ -176,9 +187,16 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
-              valueData: []
           IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 1
+        ForcedMemoryTypeToSearchFor: 64
+        ShowLimitedMemoryTypesAvailable: 1
+        AllowedMemoryTypes: 1984
       GridSize: {x: 5, y: 2}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -191,7 +209,6 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
-            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: Testing testing
     MazeSpawnerData:
@@ -210,15 +227,21 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
-              valueData: []
           IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
   - DialogueObjectType: 2
     StandardDialogueObjects: []
     MazeSpawnerData:
       GameCompletionResults:
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -230,16 +253,16 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
         DialogueResponses: []
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -251,9 +274,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
@@ -262,8 +286,7 @@ MonoBehaviour:
       GridSize: {x: 3, y: 4}
     MemoryGameSpawnerData:
       GameCompletionResults:
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -275,9 +298,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -289,15 +313,17 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -309,9 +335,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -323,8 +350,11 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
@@ -341,18 +371,24 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
-              valueData: []
           IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
       GridSize: {x: 3, y: 4}
-  - DialogueObjectType: 2
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
     StandardDialogueObjects: []
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
     MemoryGameSpawnerData:
       GameCompletionResults:
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -364,9 +400,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -378,15 +415,17 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
-      - HealthResult:
-          HealthAmountToChange: 0
+      - PotentialPlayerDialogueDescription: 
         PotentialPlayerDialogue:
           _dialogueData:
             CharacterData: {fileID: 0}
@@ -398,9 +437,10 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
           _standardDialogue: 
+        HealthResult:
+          HealthAmountToChange: 0
         GameRelatedDialogue:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -412,8 +452,11 @@ MonoBehaviour:
               UsesSentimentSystem: 0
               SentimentDialogues:
                 keyData: 
-                valueData: []
             IsCharacterMainPlayer: 0
+          ForceMemoryTypeToSearchFor: 0
+          ForcedMemoryTypeToSearchFor: 0
+          ShowLimitedMemoryTypesAvailable: 0
+          AllowedMemoryTypes: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
@@ -430,6 +473,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
-              valueData: []
           IsCharacterMainPlayer: 0
+        ForceMemoryTypeToSearchFor: 0
+        ForcedMemoryTypeToSearchFor: 0
+        ShowLimitedMemoryTypesAvailable: 0
+        AllowedMemoryTypes: 0
       GridSize: {x: 4, y: 3}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []

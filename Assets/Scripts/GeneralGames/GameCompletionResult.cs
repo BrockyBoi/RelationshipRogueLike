@@ -8,7 +8,7 @@ namespace GeneralGame.Results
     [Serializable]
     public abstract class GameCompletionResult
     {
-        public StandardDialogueObject PotentialPlayerDialogue;
+        public string PotentialPlayerDialogueDescription;
 
         public GameHealthResult HealthResult;
 

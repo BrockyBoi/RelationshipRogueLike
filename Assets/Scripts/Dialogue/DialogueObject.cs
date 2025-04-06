@@ -16,16 +16,17 @@ namespace Dialogue
     {
         StandardDialogue,
         SpawnMaze,
-        SpawnMemoryGame
+        SpawnMemoryGame,
+        EndConversation,
+        LinkNewConversation
     }
 
     [Serializable]
     public class DialogueObject
     {
-        [EnumToggleButtons]
         public EDialogueObjectType DialogueObjectType;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
+        [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue), HideLabel]
         public List<StandardDialogueObject> StandardDialogueObjects;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
@@ -33,10 +34,16 @@ namespace Dialogue
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
         public MemoryGameGeneratorData MemoryGameSpawnerData;
+
+        [ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
+        public NewConversationObject LinkedConverssationObject;
+
+        [ShowIf("DialogueObjectType", EDialogueObjectType.EndConversation), HideLabel]
+        public EndConversationObject EndConversationObject;
     }
 
     [Serializable]
-    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, string> { }
+    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, List<DialogueObject>> { }
 
     [Serializable]
     public class DialogueData
@@ -55,8 +62,8 @@ namespace Dialogue
         [SerializeField, TextArea(2, 4), HideIf("@_dialogueData.CustomDialogueOptions.UsesSentimentSystem")]
         private string _standardDialogue;
 
-        private CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
-        private CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
+        public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
+        public CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
 
         public static StandardDialogueObject EmptyDialogueObject
         {
@@ -126,12 +133,6 @@ namespace Dialogue
 
         public string GetDialogueString()
         {
-            ECharacterSentiment sentiment = GetPlayerHealthComponent().GetCharacterSentiment();
-            if (CustomDialogue.UsesSentimentSystem && CustomDialogue.SentimentDialogues.ContainsKey(sentiment))
-            {
-                return CustomDialogue.SentimentDialogues[sentiment];
-            }
-
             return _standardDialogue;
         }
 
@@ -139,6 +140,18 @@ namespace Dialogue
         {
             return Player.Instance.HealthComponent;
         }
+    }
+
+    [Serializable]
+    public class EndConversationObject
+    {
+        public List<StandardDialogueObject> FinalDialogue;
+    }
+
+    [Serializable]
+    public class NewConversationObject
+    {
+        public Conversation NewConversation;
     }
 
     [Serializable]
@@ -162,16 +175,27 @@ namespace Dialogue
         [SerializeField]
         private DialogueData _dialogueData;
 
+        public bool ForceMemoryTypeToSearchFor;
+        [ShowIf("ForceMemoryTypeToSearchFor")]
+        public EMemoryType ForcedMemoryTypeToSearchFor;
+
+        public bool ShowLimitedMemoryTypesAvailable;
+        [ShowIf("ShowLimitedMemoryTypesAvailable")]
+        public EMemoryType AllowedMemoryTypes;
+
         public override StandardDialogueObject GetGameCreationDialogueObject()
         {
-            EMemoryType memoryType;
-            do
+            EMemoryType memoryType = ForceMemoryTypeToSearchFor ? ForcedMemoryTypeToSearchFor : EMemoryType.Bomb;
+            if (memoryType == EMemoryType.Bomb)
             {
-                memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
+                do
+                {
+                    memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
+                }
+                while (memoryType == EMemoryType.Bomb && (AllowedMemoryTypes & memoryType) == 0);
             }
-            while (memoryType == EMemoryType.Bomb);
 
-            MemoryGameGenerator.Instance.SetMemoryTypeToSearchFor(memoryType);
+            MemoryGameGenerator.Instance.SetMemoryTypeToSearchFor(memoryType, AllowedMemoryTypes);
             MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(memoryType);
             if (!data)
             {
@@ -208,5 +232,17 @@ namespace Dialogue
         public bool UsesSentimentSystem;
         [ShowIf("UsesSentimentSystem")]
         public SentimentDialogueDictionary SentimentDialogues;
+
+        public bool PlayerHasSentiment()
+        {
+            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
+            return UsesSentimentSystem && SentimentDialogues.ContainsKey(sentiment);
+        }
+
+        public List<DialogueObject> GetSentimentDialogue()
+        {
+            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
+            return PlayerHasSentiment() ? SentimentDialogues[sentiment] : null;
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace MemoryGame.Generation
 
         public EMemoryType MemoryTypeToSearchFor { get; private set; }
 
+        private EMemoryType _allowedMemoryTypes;
+
         [SerializeField]
         private float _timeBetweenSwaps = .75f;
 
@@ -108,7 +110,8 @@ namespace MemoryGame.Generation
                 (!cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType.Count >= possibleMemoryTypeCounts) ||
                 memoryType == EMemoryType.Bomb ||
                 MemoryGameSolverComponent.Instance.AlreadyPlayedForMemoryType(memoryType) ||
-                memoryType == MemoryTypeToSearchFor);
+                memoryType == MemoryTypeToSearchFor ||
+                (_allowedMemoryTypes & memoryType) == 0);
 
                 if (increments >= 100)
                 {
@@ -127,9 +130,10 @@ namespace MemoryGame.Generation
             }
         }
 
-        public void SetMemoryTypeToSearchFor(EMemoryType memoryType)
+        public void SetMemoryTypeToSearchFor(EMemoryType memoryType, EMemoryType allowedMemoryTypes)
         {
             MemoryTypeToSearchFor = memoryType;
+            _allowedMemoryTypes = allowedMemoryTypes;
         }
 
         public void ListenToOnCardValuesSet(System.Action action)

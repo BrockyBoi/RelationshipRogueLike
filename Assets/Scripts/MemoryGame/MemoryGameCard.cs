@@ -7,21 +7,24 @@ using UnityEngine.UI;
 
 namespace MemoryGame
 {
+    [System.Flags]
     public enum EMemoryType
     {
-        AnniversaryDate,
-        BestFriendName,
-        MomName,
-        DadName,
-        DogName,
-        BirthdayDate,
-        FavoriteFood,
-        FavoriteFlower,
-        FavoriteColor,
-        SchoolDegree,
-        FavoriteMovie,
-        MiddleName,
-        Bomb,
+        AnniversaryDate = 1 << 1,
+        BestFriendName = 1 << 2,
+        MomName = 1 << 3,
+        DadName = 1 << 4,
+        DogName = 1 << 5,
+        BirthdayDate = 1 << 6,
+        FavoriteFood = 1 << 7,
+        FavoriteFlower = 1 << 8,
+        FavoriteColor = 1 << 9,
+        SchoolDegree = 1 << 10,
+        FavoriteMovie = 1 << 11,
+        MiddleName = 1 << 12,
+        Bomb = 1 << 13,
+        ALL = AnniversaryDate | BestFriendName | MomName | DadName | DogName | BirthdayDate | FavoriteFood | FavoriteFlower | FavoriteColor
+            | FavoriteColor | SchoolDegree| FavoriteMovie | MiddleName
     }
 
     public class MemoryGameCard : GridObject

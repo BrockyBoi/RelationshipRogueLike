@@ -28,7 +28,7 @@ namespace Dialogue.UI
         {
             _result = result;
 
-            _dialogueText.text = result.PotentialPlayerDialogue.GetDialogueString();
+            _dialogueText.text = result.PotentialPlayerDialogueDescription;
 
             bool isZeroHealthChange = result.HealthResult.HealthAmountToChange == 0;
             _healthImage.gameObject.SetActive(!isZeroHealthChange);

@@ -10,7 +10,7 @@ namespace Maze
     public class MazeCompletionResult : GameCompletionResult
     {
         public MazeDifficultyModifierResult DifficultyModifierResult;
-        public List<StandardDialogueObject> DialogueResponses;
+        public List<DialogueObject> MazeDialogueResponses;
 
         public override void ApplyEffects()
         {

@@ -18,10 +18,10 @@ namespace Dialogue
 
         private void Start ()
         {
-            StartCoroutine(RunConversation());
+            StartCoroutine(ProcessConversation(_conversationToRun));
         }
 
-        private IEnumerator RunConversation()
+        private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
         {
             Player player = Player.Instance;
             if (!player)
@@ -30,26 +30,25 @@ namespace Dialogue
                 yield break;
             }
 
-            foreach (DialogueObject dialogueObject in _conversationToRun.DialogueObjects)
+            foreach (DialogueObject dialogueObject in dialogueObjects)
             {
                 switch (dialogueObject.DialogueObjectType)
                 {
                     case EDialogueObjectType.StandardDialogue:
-                    {
-                        yield return ProcessStandardDialogueObjects(dialogueObject.StandardDialogueObjects);
-                        break;
-                    }
+                        {
+                            yield return ProcessStandardDialogueObjects(dialogueObject.StandardDialogueObjects);
+                            break;
+                        }
                     case EDialogueObjectType.SpawnMaze:
-                    {
-                        MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
-                        yield return YieldUntilMazeCompletion();
-                        MazeGenerator.Instance.DestroyGrid();
-                        MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
+                        {
+                            MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
+                            yield return YieldUntilMazeCompletion();
+                            MazeGenerator.Instance.DestroyGrid();
+                            MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
-                        yield return ProcessStandardDialogueObject(result.PotentialPlayerDialogue);
-                        yield return ProcessStandardDialogueObjects(result.DialogueResponses);
-                        break;
-                    }
+                            yield return ProcessDialogues(result.MazeDialogueResponses);
+                            break;
+                        }
                     case EDialogueObjectType.SpawnMemoryGame:
                         {
                             StandardDialogueObject openingDialogue = dialogueObject.MemoryGameSpawnerData.OpeningDialogue.GetGameCreationDialogueObject();
@@ -62,14 +61,28 @@ namespace Dialogue
                             MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
                             StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
 
-                            yield return ProcessStandardDialogueObject(result.PotentialPlayerDialogue);
                             yield return ProcessStandardDialogueObject(closingDialogue);
                             break;
+                        }
+                    case EDialogueObjectType.EndConversation:
+                        {
+                            yield return ProcessStandardDialogueObjects(dialogueObject.EndConversationObject.FinalDialogue);
+                            yield break;
+                        }
+                    case EDialogueObjectType.LinkNewConversation:
+                        {
+                            yield return ProcessConversation(dialogueObject.LinkedConverssationObject.NewConversation);
+                            yield break;
                         }
                     default:
                         break;
                 }
             }
+        }
+
+        private IEnumerator ProcessConversation(Conversation conversation)
+        {
+            yield return ProcessDialogues(conversation.DialogueObjects);
         }
 
         private IEnumerator ProcessStandardDialogueObjects(List<StandardDialogueObject> dialogueObjects)
@@ -82,7 +95,14 @@ namespace Dialogue
 
         private IEnumerator ProcessStandardDialogueObject(StandardDialogueObject dialogueObject)
         {
-            DialogueUI.Instance.ShowDialogue(dialogueObject);
+            if (dialogueObject.CustomDialogue.PlayerHasSentiment())
+            {
+                yield return ProcessDialogues(dialogueObject.CustomDialogue.GetSentimentDialogue());
+            }
+            else
+            {
+                DialogueUI.Instance.ShowDialogue(dialogueObject);
+            }
             yield return YieldUntilInput();
         }
 
