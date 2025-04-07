@@ -34,6 +34,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "*Thinking* Alright, Tabitha said that she\u2019d be here
         at the park waiting on a bench.  Can\u2019t imagine there will be too many
@@ -49,6 +50,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "Hi there!  It\u2019s so nice to meet you.  I know it\u2019s
         a bit awkward having Tabitha setting us up on a blind date, but I\u2019m
@@ -58,9 +60,41 @@ MonoBehaviour:
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -71,11 +105,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -105,6 +141,7 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "It\u2019s so nice to meet you too!   My name is Magdalena,
               but yeah everyone calls me Maddie.  I\u2019ve really been looking forward
@@ -112,9 +149,41 @@ MonoBehaviour:
           MazeSpawnerData:
             GameCompletionResults: []
             GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
           MemoryGameSpawnerData:
             GameCompletionResults: []
-            OpeningDialogue:
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
                 CustomDialogueOptions:
@@ -125,11 +194,13 @@ MonoBehaviour:
                   UsesSentimentSystem: 0
                   SentimentDialogues:
                     keyData: 
+                    valueData: []
                 IsCharacterMainPlayer: 0
-              ForceMemoryTypeToSearchFor: 0
-              ForcedMemoryTypeToSearchFor: 0
-              ShowLimitedMemoryTypesAvailable: 0
-              AllowedMemoryTypes: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
             GridSize: {x: 0, y: 0}
           LinkedConverssationObject:
             NewConversation: {fileID: 0}
@@ -155,14 +226,47 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "Yup, that\u2019s me."
           MazeSpawnerData:
             GameCompletionResults: []
             GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
           MemoryGameSpawnerData:
             GameCompletionResults: []
-            OpeningDialogue:
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
                 CustomDialogueOptions:
@@ -173,11 +277,13 @@ MonoBehaviour:
                   UsesSentimentSystem: 0
                   SentimentDialogues:
                     keyData: 
+                    valueData: []
                 IsCharacterMainPlayer: 0
-              ForceMemoryTypeToSearchFor: 0
-              ForcedMemoryTypeToSearchFor: 0
-              ShowLimitedMemoryTypesAvailable: 0
-              AllowedMemoryTypes: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
             GridSize: {x: 0, y: 0}
           LinkedConverssationObject:
             NewConversation: {fileID: 0}
@@ -203,6 +309,7 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "Don\u2019t worry, you\u2019ll be screaming my name
               soon enough.  Maddie.  You\u2019ll be shouting \u201CMaddie.\u201D"
@@ -216,15 +323,48 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "Oh!  Erm, yeah I guess if I\u2019m looking around
               for you it might be nice to yell it out.  Heh. "
           MazeSpawnerData:
             GameCompletionResults: []
             GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
           MemoryGameSpawnerData:
             GameCompletionResults: []
-            OpeningDialogue:
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
                 CustomDialogueOptions:
@@ -235,20 +375,54 @@ MonoBehaviour:
                   UsesSentimentSystem: 0
                   SentimentDialogues:
                     keyData: 
+                    valueData: []
                 IsCharacterMainPlayer: 0
-              ForceMemoryTypeToSearchFor: 0
-              ForcedMemoryTypeToSearchFor: 0
-              ShowLimitedMemoryTypesAvailable: 0
-              AllowedMemoryTypes: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
             GridSize: {x: 0, y: 0}
           LinkedConverssationObject:
             NewConversation: {fileID: 0}
           EndConversationObject:
             FinalDialogue: []
-      GridSize: {x: 1, y: 4}
+      GridSize: {x: 2, y: 3}
+      ShakeIntensity: 0.01
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -259,11 +433,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -281,6 +457,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "Well it\u2019s so nice to meet you, Maddie.  I haven\u2019t
         gotten out in a while and really met anyone new, let alone gone on a date. 
@@ -297,6 +474,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "But look at me yapping on and on!  I\u2019m a bit of a
         talker, so sorry if I\u2019m not letting you speak enough.  Tell me about
@@ -304,9 +482,41 @@ MonoBehaviour:
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -317,11 +527,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -352,6 +564,7 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "Oh it\u2019s no problem at all!  I like listening
               to you talk.  And yeah, I completely understand.  It can be tough feeling
@@ -371,6 +584,7 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: "That\u2019s so cool!  I always wanted to get more
               into art, but I\u2019m not much of a painter.  I\u2019d love to take
@@ -385,14 +599,47 @@ MonoBehaviour:
                 UsesSentimentSystem: 0
                 SentimentDialogues:
                   keyData: 
+                  valueData: []
               IsCharacterMainPlayer: 0
             _standardDialogue: Of course!
           MazeSpawnerData:
             GameCompletionResults: []
             GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
           MemoryGameSpawnerData:
             GameCompletionResults: []
-            OpeningDialogue:
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
                 CustomDialogueOptions:
@@ -403,11 +650,13 @@ MonoBehaviour:
                   UsesSentimentSystem: 0
                   SentimentDialogues:
                     keyData: 
+                    valueData: []
                 IsCharacterMainPlayer: 0
-              ForceMemoryTypeToSearchFor: 0
-              ForcedMemoryTypeToSearchFor: 0
-              ShowLimitedMemoryTypesAvailable: 0
-              AllowedMemoryTypes: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
             GridSize: {x: 0, y: 0}
           LinkedConverssationObject:
             NewConversation: {fileID: 0}
@@ -421,29 +670,396 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Well, I do love going the movies.  I do art now, but
+              I studied film in college and really like watching movies and gaming
+              youtuber videos with my friends.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Oh I really like video games too!
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "You would, you\u2019re in one right now."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 1
+                CustomSprite: {fileID: 21300000, guid: 1ff60a6215d35784d9775c893fb12a03, type: 3}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "I\u2019M WHAT"
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
       - PotentialPlayerDialogueDescription: "Start brief conversation on how you
           don\u2019t do too much and just hang around"
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -1
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Nothing super interesting.  I like going to the movies
+              or just wandering around the city. I\u2019ve been here most my life,
+              so I\u2019m pretty used to the feeling.  Not the most pleasant at first,
+              but you get used to it.  Hope you figure it out soon enough."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Thanks.
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
       - PotentialPlayerDialogueDescription: "Go on full diatribe about Bitcoin and
           the underlying technology and how you\u2019re going to be rich one day"
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -5
         DifficultyModifierResult:
-          MazeSizeModifier: 0
+          MazeSizeModifier: 2
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
-      GridSize: {x: 4, y: 4}
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Personally, I\u2019m about that grind.  There\u2019s
+              two types of people: losers, and people who think they\u2019re not,
+              when they really are.  Then there\u2019s me, a born winner.  As we
+              speak I\u2019m knee deep in making my own crypto coin that is going
+              to revolutionize commerce as we know it. Say goodbye to Ethereum, say
+              \u201Cau revoir\u201D to DOGE Coin, but say Cze\u015B\u0107 to PollackCoin. 
+              People like to make fun of bitcoin, but it\u2019s just because they
+              don\u2019t understand the underlying technology that makes it all possible. "
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 1
+                CustomName: Person who's soul just died
+                UsesCustomSprite: 1
+                CustomSprite: {fileID: 21300000, guid: e7fe014a7d7a2e847ae3a30428d7b725, type: 3}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Yeah I\u2019m not really int-"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "The way that bitcoin works is through something called
+              \u201Eblockchain\u201D which means that all transactions are tracked
+              through a unique hash that is also linked to the previously hashed
+              blocks that are all broadcasted to the network and shared across all
+              computers.  The guenius of this technology means that only the smartest
+              people across the globe can invest in things like PollackCoin, and
+              allow even geniuser people like me to make millions. Maybe if you\u2019re
+              lucky I\u2019ll invite you to the Cayman Islands for a little getaway."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 1
+                CustomSprite: {fileID: 21300000, guid: e7fe014a7d7a2e847ae3a30428d7b725, type: 3}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Hmm, I think I\u2019m actually busy that weekend. "
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      GridSize: {x: 5, y: 5}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -454,11 +1070,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -476,6 +1094,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "Well I appreciate you sharing that with me.  I always love
         learning about people\u2019s interests.  Even though it\u2019s nice to have
@@ -492,6 +1111,7 @@ MonoBehaviour:
           UsesSentimentSystem: 0
           SentimentDialogues:
             keyData: 
+            valueData: []
         IsCharacterMainPlayer: 0
       _standardDialogue: "If I\u2019m dating outside of India I\u2019m not expecting
         anybody to be able to quote Ohm Shanty Ohm to me, but even just putting in
@@ -500,9 +1120,41 @@ MonoBehaviour:
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -513,11 +1165,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -529,20 +1183,205 @@ MonoBehaviour:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Looking for something serious
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: 2
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "I\u2019m definitely looking for something more serious.
+              I\u2019m all for having fun, but I do take the word \"partner\u201D
+              quite literally and want someone that I can truly share my life with."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Well, nobody knows the future for sure, but I suppose
+              I wouldn\u2019t mind spending a bit more time figuring it out with
+              you."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
       - PotentialPlayerDialogueDescription: Looking for something
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: 1
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "I\u2019m not sure honestly.  I think I\u2019m just
+              here to have some fun and see what happens.  If it turns into something
+              serious great, but if it just lasts for a few days then that\u2019s
+              great too. "
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "That\u2019s understandable!  I do feel like I know
+              what I want, but I also know that nothing in life is for certain, so
+              taking it one day at a time is a good effort."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
       - PotentialPlayerDialogueDescription: Casual
         HealthResult:
           HealthAmountToChange: 0
@@ -550,19 +1389,236 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "I\u2019m not really looking for anything serious. 
+              You seem like someone who\u2019s really nice and fun to talk to, but
+              I also haven\u2019t got laid in a while and that\u2019s not a low priority
+              for me."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Well, I\u2019m not exactly sure you and I are looking
+              for the same thing.  Maybe we can talk a bit more about it, but if
+              you need something else out of a partner I fully understand."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
       - PotentialPlayerDialogueDescription: Still way too sexual
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -2
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-        MazeDialogueResponses: []
-      GridSize: {x: 0, y: 0}
+        MazeDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "I\u2019m just here to fuck around and find out. 
+              Except in this scenario you can call me \u201Earound\u201D and the
+              thing you\u2019re finding is my vagina.  I\u2019m so sorry I just wrote
+              this out."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 1
+                CustomSprite: {fileID: 21300000, guid: e7fe014a7d7a2e847ae3a30428d7b725, type: 3}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Jesus Christ dude, you really can\u2019t read the
+              room."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+      GridSize: {x: 5, y: 6}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -573,11 +1629,13 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
@@ -594,15 +1652,111 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           UsesSentimentSystem: 1
           SentimentDialogues:
-            keyData: 
+            keyData: 03000000
+            valueData:
+            - DialogueObjectType: 3
+              StandardDialogueObjects: []
+              MazeSpawnerData:
+                GameCompletionResults: []
+                GridSize: {x: 0, y: 0}
+                ShakeIntensity: 0
+                RotationSpeed: 0
+              MemoryGameSpawnerData:
+                GameCompletionResults: []
+                MemoryGameRelatedDialogue:
+                  _hasOpeningDialogue: 0
+                  _hasClosingDialogue: 0
+                  _defaultOpeningDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _defaultClosingDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _dialogueData:
+                    CharacterData: {fileID: 0}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                _searchForSingleMemoryType: 0
+                _forceMemoryTypeToSearchFor: 0
+                _forcedMemoryTypeToSearchFor: 0
+                _showLimitedMemoryTypesAvailable: 0
+                _allowedMemoryTypes: 0
+                GridSize: {x: 0, y: 0}
+              LinkedConverssationObject:
+                NewConversation: {fileID: 0}
+              EndConversationObject:
+                FinalDialogue:
+                - _dialogueData:
+                    CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                  _standardDialogue: "Yeah, I don\u2019t think is is a good match
+                    for us.  If you wouldn\u2019t mind deleting my number I would
+                    appreciate it.  Bye."
         IsCharacterMainPlayer: 0
       _standardDialogue: 
     MazeSpawnerData:
       GameCompletionResults: []
       GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
-      OpeningDialogue:
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
           CustomDialogueOptions:
@@ -613,11 +1767,1102 @@ MonoBehaviour:
             UsesSentimentSystem: 0
             SentimentDialogues:
               keyData: 
+              valueData: []
           IsCharacterMainPlayer: 0
-        ForceMemoryTypeToSearchFor: 0
-        ForcedMemoryTypeToSearchFor: 0
-        ShowLimitedMemoryTypesAvailable: 0
-        AllowedMemoryTypes: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+            valueData: []
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "But yeah, it was really nice of Tabitha to do this for
+        us.  She\u2019s been mentioning it for such a long time, and I kept saying
+        no either becuase I was busy or shy, and finally she just forced me into
+        this, which I honestly am pretty thankful for.  She told me a lot of interesting
+        things about you that really made me look forward to today.  It also helps
+        that she told me that she also told you a lot of stuff about me as well.  "
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+            valueData: []
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "Sometimes it can be a bit tough when you don\u2019t know
+        anything about the other person, but the fact I already know things like
+        that you only have one brother, that you\u2019re from Kodz, you get along
+        with your mom, and stuff like that already meant that I could have a mental
+        image of you in my head.  If you don\u2019t mind me asking, what was it about
+        me that Tabitha brought up that made you think that we\u2019d potentially
+        be a fit?"
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+            valueData: []
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "*Thinking* Oh god, that was like a week and a half ago,
+        how the hell am I supposed to remember everything she said?  I\u2019m sure
+        I can dredge up something though..."
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+              valueData: []
+          IsCharacterMainPlayer: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
+      GridSize: {x: 0, y: 0}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 2
+    StandardDialogueObjects: []
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Genuinely fascinated
+        HealthResult:
+          HealthAmountToChange: 3
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 1
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh my gosh, everything about you is so fascinating. 
+              You moving all the way from Kerala on your own, dealing with all the
+              culture shock, having to hide parts of your life from your parents,
+              it was really all interesting to hear.  I\u2019m not really into Americans
+              too much, so having someeone who is also far away from their home just
+              let me know that this would be an easy match."
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        MemoryGameDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh my gosh, everything about you is so fascinating. 
+              You moving all the way from Kerala on your own, dealing with all the
+              culture shock, having to hide parts of your life from your parents,
+              it was really all interesting to hear.  I\u2019m not really into Americans
+              too much, so having someeone who is also far away from their home just
+              let me know that this would be an easy match."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh wow you really were listening!  Makes me so happy
+              to hear that you are already so accepting of all these different things
+              about me, even though we\u2019ve only known each other for a few minutes."
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Knows a little bit
+        HealthResult:
+          HealthAmountToChange: -2
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        MemoryGameDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Um, well I know you\u2019re from India (obviously)
+              and you and I both only have one sibling, so that stuff is pretty cool. 
+              Same with me?"
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Really?  \u0D12\u0D30\u0D41 \u0D28\u0D3F\u0D2E\u0D3F\u0D37\u0D02,
+              \u0D28\u0D40 \u0D2F\u0D25\u0D3E\u0D7C\u0D24\u0D4D\u0D25\u0D24\u0D4D\u0D24\u0D3F\u0D7D
+              \u0D07\u0D28\u0D4D\u0D24\u0D4D\u0D2F\u0D2F\u0D3F\u0D7D \u0D28\u0D3F\u0D28\u0D4D\u0D28\u0D3E\u0D23\u0D4B? "
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: ' I literally do not have a single fucking clue what
+              just happened.'
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Oh, you said you too!  You\u2019ve been to India?"
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Oh, I just meant I also only have one brother.  I
+              have no clue what you said.
+          - _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Oh, sorry, I just got a little excited.
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Vaguely racist response
+        HealthResult:
+          HealthAmountToChange: -5
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+        MemoryGameDialogueResponses:
+        - DialogueObjectType: 0
+          StandardDialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "Ummmmm, well I really like Kumail Nanjiani.  He\u2019s
+              Indian right?"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "He\u2019s from Pakistan"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: "\u2026\u2026. which is \u2026."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Not India
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: 'Got it. '
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Do you remember anything she said?
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: No.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UsesSentimentSystem: 0
+                SentimentDialogues:
+                  keyData: 
+                  valueData: []
+              IsCharacterMainPlayer: 0
+            _standardDialogue: Got it.
+          MazeSpawnerData:
+            GameCompletionResults: []
+            GridSize: {x: 0, y: 0}
+            ShakeIntensity: 0
+            RotationSpeed: 0
+          MemoryGameSpawnerData:
+            GameCompletionResults: []
+            MemoryGameRelatedDialogue:
+              _hasOpeningDialogue: 0
+              _hasClosingDialogue: 0
+              _defaultOpeningDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _defaultClosingDialogueObject:
+                _dialogueData:
+                  CharacterData: {fileID: 0}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: 
+              _dialogueData:
+                CharacterData: {fileID: 0}
+                CustomDialogueOptions:
+                  UsesCustomName: 0
+                  CustomName: 
+                  UsesCustomSprite: 0
+                  CustomSprite: {fileID: 0}
+                  UsesSentimentSystem: 0
+                  SentimentDialogues:
+                    keyData: 
+                    valueData: []
+                IsCharacterMainPlayer: 0
+            _searchForSingleMemoryType: 0
+            _forceMemoryTypeToSearchFor: 0
+            _forcedMemoryTypeToSearchFor: 0
+            _showLimitedMemoryTypesAvailable: 0
+            _allowedMemoryTypes: 0
+            GridSize: {x: 0, y: 0}
+          LinkedConverssationObject:
+            NewConversation: {fileID: 0}
+          EndConversationObject:
+            FinalDialogue: []
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 1
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: Let's see how much you remember
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+              valueData: []
+          IsCharacterMainPlayer: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 1
+      _allowedMemoryTypes: 8188
+      GridSize: {x: 5, y: 2}
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 0
+          SentimentDialogues:
+            keyData: 
+            valueData: []
+        IsCharacterMainPlayer: 0
+      _standardDialogue: "Alright, I think it\u2019s starting to get a little bit
+        late.  Have to wake up at 6:30am tomorrow for work."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UsesSentimentSystem: 1
+          SentimentDialogues:
+            keyData: 00000000010000000200000003000000
+            valueData:
+            - DialogueObjectType: 0
+              StandardDialogueObjects: []
+              MazeSpawnerData:
+                GameCompletionResults: []
+                GridSize: {x: 0, y: 0}
+                ShakeIntensity: 0
+                RotationSpeed: 0
+              MemoryGameSpawnerData:
+                GameCompletionResults: []
+                MemoryGameRelatedDialogue:
+                  _hasOpeningDialogue: 0
+                  _hasClosingDialogue: 0
+                  _defaultOpeningDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _defaultClosingDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _dialogueData:
+                    CharacterData: {fileID: 0}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                _searchForSingleMemoryType: 0
+                _forceMemoryTypeToSearchFor: 0
+                _forcedMemoryTypeToSearchFor: 0
+                _showLimitedMemoryTypesAvailable: 0
+                _allowedMemoryTypes: 0
+                GridSize: {x: 0, y: 0}
+              LinkedConverssationObject:
+                NewConversation: {fileID: 0}
+              EndConversationObject:
+                FinalDialogue: []
+            - DialogueObjectType: 0
+              StandardDialogueObjects:
+              - _dialogueData:
+                  CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: "I had a really nice time.  I think I should be
+                  free again sometime next week or so if you maybe want to go out
+                  again?  Feel like there\u2019s still a lot to learn about each
+                  other, so if you have the time just send me a text!  Hope you have
+                  a nice night.  Bye."
+              MazeSpawnerData:
+                GameCompletionResults: []
+                GridSize: {x: 0, y: 0}
+                ShakeIntensity: 0
+                RotationSpeed: 0
+              MemoryGameSpawnerData:
+                GameCompletionResults: []
+                MemoryGameRelatedDialogue:
+                  _hasOpeningDialogue: 0
+                  _hasClosingDialogue: 0
+                  _defaultOpeningDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _defaultClosingDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _dialogueData:
+                    CharacterData: {fileID: 0}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                _searchForSingleMemoryType: 0
+                _forceMemoryTypeToSearchFor: 0
+                _forcedMemoryTypeToSearchFor: 0
+                _showLimitedMemoryTypesAvailable: 0
+                _allowedMemoryTypes: 0
+                GridSize: {x: 0, y: 0}
+              LinkedConverssationObject:
+                NewConversation: {fileID: 0}
+              EndConversationObject:
+                FinalDialogue: []
+            - DialogueObjectType: 0
+              StandardDialogueObjects:
+              - _dialogueData:
+                  CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: "It was nice meeting you, but I\u2019m not sure
+                  that this is going to work out between us.  It was nice for Tabitha
+                  to set us up, but I think you and I are looking for different things. 
+                  I hope you find what you\u2019re looking for."
+              MazeSpawnerData:
+                GameCompletionResults: []
+                GridSize: {x: 0, y: 0}
+                ShakeIntensity: 0
+                RotationSpeed: 0
+              MemoryGameSpawnerData:
+                GameCompletionResults: []
+                MemoryGameRelatedDialogue:
+                  _hasOpeningDialogue: 0
+                  _hasClosingDialogue: 0
+                  _defaultOpeningDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _defaultClosingDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _dialogueData:
+                    CharacterData: {fileID: 0}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                _searchForSingleMemoryType: 0
+                _forceMemoryTypeToSearchFor: 0
+                _forcedMemoryTypeToSearchFor: 0
+                _showLimitedMemoryTypesAvailable: 0
+                _allowedMemoryTypes: 0
+                GridSize: {x: 0, y: 0}
+              LinkedConverssationObject:
+                NewConversation: {fileID: 0}
+              EndConversationObject:
+                FinalDialogue: []
+            - DialogueObjectType: 0
+              StandardDialogueObjects:
+              - _dialogueData:
+                  CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: "Yeah, I don\u2019t think is is a good match for
+                  us.  If you wouldn\u2019t mind deleting my number I would appreciate
+                  it.  Bye."
+              MazeSpawnerData:
+                GameCompletionResults: []
+                GridSize: {x: 0, y: 0}
+                ShakeIntensity: 0
+                RotationSpeed: 0
+              MemoryGameSpawnerData:
+                GameCompletionResults: []
+                MemoryGameRelatedDialogue:
+                  _hasOpeningDialogue: 0
+                  _hasClosingDialogue: 0
+                  _defaultOpeningDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _defaultClosingDialogueObject:
+                    _dialogueData:
+                      CharacterData: {fileID: 0}
+                      CustomDialogueOptions:
+                        UsesCustomName: 0
+                        CustomName: 
+                        UsesCustomSprite: 0
+                        UsesSentimentSystem: 0
+                      IsCharacterMainPlayer: 0
+                    _standardDialogue: 
+                  _dialogueData:
+                    CharacterData: {fileID: 0}
+                    CustomDialogueOptions:
+                      UsesCustomName: 0
+                      CustomName: 
+                      UsesCustomSprite: 0
+                      CustomSprite: {fileID: 0}
+                      UsesSentimentSystem: 0
+                    IsCharacterMainPlayer: 0
+                _searchForSingleMemoryType: 0
+                _forceMemoryTypeToSearchFor: 0
+                _forcedMemoryTypeToSearchFor: 0
+                _showLimitedMemoryTypesAvailable: 0
+                _allowedMemoryTypes: 0
+                GridSize: {x: 0, y: 0}
+              LinkedConverssationObject:
+                NewConversation: {fileID: 0}
+              EndConversationObject:
+                FinalDialogue: []
+        IsCharacterMainPlayer: 0
+      _standardDialogue: SHOULD NOT BE POSSIBLE TO REACH THIS DIALOGUE
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UsesSentimentSystem: 0
+              SentimentDialogues:
+                keyData: 
+                valueData: []
+            IsCharacterMainPlayer: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UsesSentimentSystem: 0
+            SentimentDialogues:
+              keyData: 
+              valueData: []
+          IsCharacterMainPlayer: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 0
       GridSize: {x: 0, y: 0}
     LinkedConverssationObject:
       NewConversation: {fileID: 0}

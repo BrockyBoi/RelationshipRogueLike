@@ -1,10 +1,9 @@
 using Maze;
+using Maze.Generation;
 using UnityEngine;
 
 public class PlayerMazeSolverObject : MonoBehaviour
 {
-    public static PlayerMazeSolverObject Instance { get; private set; }
-
     [SerializeField]
     private float _moveSpeed = 1f;
 
@@ -33,15 +32,18 @@ public class PlayerMazeSolverObject : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        Instance = this;
-        gameObject.SetActive(false);
-    }
-
     private void Start()
     {
         _camera = Camera.main;
+        MazeSolverComponent.Instance.OnGameStop += OnMazeGameEnd;
+        MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        MazeSolverComponent.Instance.OnGameStop -= OnMazeGameEnd;
+        MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
     }
 
     private void Update()
@@ -66,5 +68,16 @@ public class PlayerMazeSolverObject : MonoBehaviour
             //Debug.Log("Is not blocked from moving");
             transform.position = nextPos;
         }
+    }
+
+    private void OnMazePathGenerated()
+    {
+        gameObject.SetActive(true);
+        transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void OnMazeGameEnd()
+    {
+        gameObject.SetActive(false);
     }
 }

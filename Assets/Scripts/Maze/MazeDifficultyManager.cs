@@ -47,7 +47,7 @@ namespace Maze
         {
             if (ShouldShake)
             {
-                ShakeOffsetPosition = Random.insideUnitCircle * _maxShakeIntensity;
+                ShakeOffsetPosition = Random.insideUnitCircle * ShakeIntensity;
             }
         }
 
@@ -64,7 +64,7 @@ namespace Maze
             ShouldRotate = RotateSpeed > 0.0f;
         }
 
-        private void ChangeShakeIntensity(float shakeIntensityChange)
+        public void ChangeShakeIntensity(float shakeIntensityChange)
         {
             ShakeIntensity = Mathf.Clamp(ShakeIntensity + shakeIntensityChange, 0.0f, _maxShakeIntensity);
             ShouldShake = ShakeIntensity > 0.0f;

@@ -16,9 +16,11 @@ namespace Dialogue
         [SerializeField]
         private Conversation _conversationToRun;
 
+        private Coroutine _conversationCoroutine;
+
         private void Start ()
         {
-            StartCoroutine(ProcessConversation(_conversationToRun));
+            _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationToRun));
         }
 
         private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
@@ -51,22 +53,36 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnMemoryGame:
                         {
-                            StandardDialogueObject openingDialogue = dialogueObject.MemoryGameSpawnerData.OpeningDialogue.GetGameCreationDialogueObject();
+                            dialogueObject.MemoryGameSpawnerData.GenerateMemoryGameData();
+                            MemoryGameSolverComponent instance = MemoryGameSolverComponent.Instance;
+                            StandardDialogueObject openingDialogue;
+
+                            openingDialogue = dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.GetGameCreationDialogueObject();
+
                             yield return ProcessStandardDialogueObject(openingDialogue);
 
                             MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
                             yield return YieldUntilMemoryGameCompletion();
                             MemoryGameGenerator.Instance.DestroyGrid();
 
-                            MemoryGameCompletionResult result = MemoryGameSolverComponent.Instance.GetGameCompletionResultToApplyBySucceeding();
-                            StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
+                            MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
+                                                                                                        instance.GetGameCompletionResultToApplyByGuessesLeft();
+                            if (instance.IsLookingForSingleMemoryType)
+                            {
+                                StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
 
-                            yield return ProcessStandardDialogueObject(closingDialogue);
+                                yield return ProcessStandardDialogueObject(closingDialogue);
+                            }
+                            else
+                            {
+                                yield return ProcessDialogues(result.MemoryGameDialogueResponses);
+                            }
                             break;
                         }
                     case EDialogueObjectType.EndConversation:
                         {
                             yield return ProcessStandardDialogueObjects(dialogueObject.EndConversationObject.FinalDialogue);
+                            StopCoroutine(_conversationCoroutine);
                             yield break;
                         }
                     case EDialogueObjectType.LinkNewConversation:
@@ -97,13 +113,15 @@ namespace Dialogue
         {
             if (dialogueObject.CustomDialogue.PlayerHasSentiment())
             {
-                yield return ProcessDialogues(dialogueObject.CustomDialogue.GetSentimentDialogue());
+                List<DialogueObject> dialogueObjects = new List<DialogueObject>();
+                dialogueObjects.Add(dialogueObject.CustomDialogue.GetSentimentDialogue());
+                yield return ProcessDialogues(dialogueObjects);
             }
-            else
+            else if (dialogueObject.GetDialogueString() != string.Empty)
             {
                 DialogueUI.Instance.ShowDialogue(dialogueObject);
+                yield return YieldUntilInput();
             }
-            yield return YieldUntilInput();
         }
 
         private IEnumerator YieldUntilInput()

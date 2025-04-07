@@ -91,12 +91,13 @@ namespace MemoryGame.Generation
         {
             Dictionary<EMemoryType, int> cardCountsPerMemoryType = new Dictionary<EMemoryType, int>();
             bool hasBombs = MemoryGameDifficultyManager.Instance.BombsInGame > 1;
+            bool isSearchingForSingleMemoryType = MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType;
             while (cards.Count > 0)
             {
                 EMemoryType memoryType;
                 int increments = 0;
                 // Remove 2 since we remove one type for bombs and remove another type for the memory type we have to search for
-                int possibleMemoryTypeCounts = (_objectGrid.Length / 2) - 1 - (hasBombs ? 1 : 0);
+                int possibleMemoryTypeCounts = (_objectGrid.Length / 2) - (isSearchingForSingleMemoryType ? 1 : 0) - (hasBombs ? 1 : 0);
                 do
                 {
                     memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
@@ -109,6 +110,7 @@ namespace MemoryGame.Generation
                 while ((cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType[memoryType] == 2) ||
                 (!cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType.Count >= possibleMemoryTypeCounts) ||
                 memoryType == EMemoryType.Bomb ||
+                memoryType != EMemoryType.ALL ||
                 MemoryGameSolverComponent.Instance.AlreadyPlayedForMemoryType(memoryType) ||
                 memoryType == MemoryTypeToSearchFor ||
                 (_allowedMemoryTypes & memoryType) == 0);

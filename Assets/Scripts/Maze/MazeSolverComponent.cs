@@ -52,8 +52,6 @@ namespace Maze
             {
                 _endNode.OnCursorEntered += EnteredExitZone;
             }
-
-            PlayerMazeSolverObject.Instance.gameObject.SetActive(true);
         }
 
         private void OnDisable()
@@ -88,13 +86,6 @@ namespace Maze
             }
         }
 
-        protected override void EndGame()
-        {
-            base.EndGame();
-
-            PlayerMazeSolverObject.Instance.gameObject.SetActive(true);
-        }
-
         public void EnteredExitZone()
         {
             if (IsStage(EGameStage.InGame))
@@ -119,6 +110,11 @@ namespace Maze
         protected override GameUI GetGameUIInstance()
         {
             return MazeSolverUI.Instance;
+        }
+
+        public override int GetCurrentPotentialDialogueIndex()
+        {
+            return GetGameCompletionResultIndexByTimeRemaining();
         }
     }
 }

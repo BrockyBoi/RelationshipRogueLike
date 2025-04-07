@@ -170,5 +170,6 @@ namespace GeneralGame
         #endregion
 
         protected abstract GameUI GetGameUIInstance();
+        public abstract int GetCurrentPotentialDialogueIndex();
     }
 }

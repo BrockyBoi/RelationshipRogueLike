@@ -43,7 +43,7 @@ namespace Dialogue
     }
 
     [Serializable]
-    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, List<DialogueObject>> { }
+    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, DialogueObject> { }
 
     [Serializable]
     public class DialogueData
@@ -59,7 +59,7 @@ namespace Dialogue
         [SerializeField]
         private DialogueData _dialogueData;
 
-        [SerializeField, TextArea(2, 4), HideIf("@_dialogueData.CustomDialogueOptions.UsesSentimentSystem")]
+        [SerializeField, TextArea(2, 4)]
         private string _standardDialogue;
 
         public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
@@ -157,13 +157,21 @@ namespace Dialogue
     [Serializable]
     public abstract class GameRelatedDialogue
     {
-        //[SerializeField]
-        //protected bool _hasOpeningDialogue;
-        //public bool HasOpeningDialogue { get { return _hasOpeningDialogue; } }
+        [SerializeField]
+        protected bool _hasOpeningDialogue;
+        public bool HasOpeningDialogue { get { return _hasOpeningDialogue; } }
 
-        //[SerializeField]
-        //protected bool _hasClosingDialogue;
-        //public bool HasClosingDialogue { get { return _hasClosingDialogue; } }
+        [SerializeField]
+        protected bool _hasClosingDialogue;
+        public bool HasClosingDialogue { get { return _hasClosingDialogue; } }
+
+        [SerializeField, ShowIf("_hasOpeningDialogue")]
+        protected StandardDialogueObject _defaultOpeningDialogueObject;
+        [SerializeField, ShowIf("_hasClosingDialogue")]
+        protected StandardDialogueObject _defaultClosingDialogueObject;
+
+        [SerializeField]
+        protected DialogueData _dialogueData;
 
         public virtual StandardDialogueObject GetGameCreationDialogueObject() { return StandardDialogueObject.EmptyDialogueObject; }
         public virtual StandardDialogueObject GetGameClosingDialogueObject() { return StandardDialogueObject.EmptyDialogueObject; }
@@ -172,49 +180,42 @@ namespace Dialogue
     [Serializable]
     public class MemoryGameRelatedDialogue : GameRelatedDialogue
     {
-        [SerializeField]
-        private DialogueData _dialogueData;
-
-        public bool ForceMemoryTypeToSearchFor;
-        [ShowIf("ForceMemoryTypeToSearchFor")]
-        public EMemoryType ForcedMemoryTypeToSearchFor;
-
-        public bool ShowLimitedMemoryTypesAvailable;
-        [ShowIf("ShowLimitedMemoryTypesAvailable")]
-        public EMemoryType AllowedMemoryTypes;
-
         public override StandardDialogueObject GetGameCreationDialogueObject()
         {
-            EMemoryType memoryType = ForceMemoryTypeToSearchFor ? ForcedMemoryTypeToSearchFor : EMemoryType.Bomb;
-            if (memoryType == EMemoryType.Bomb)
+            if (MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType)
             {
-                do
+                EMemoryType memoryType = MemoryGameGenerator.Instance.MemoryTypeToSearchFor;
+                MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(memoryType);
+                if (!data)
                 {
-                    memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
+                    Debug.LogError("No data for " + memoryType);
                 }
-                while (memoryType == EMemoryType.Bomb && (AllowedMemoryTypes & memoryType) == 0);
-            }
+                StandardDialogueObject dialogue = new StandardDialogueObject(_dialogueData.CharacterData, _dialogueData.CustomDialogueOptions, data.QuestionPrompts.GetRandomElement());
 
-            MemoryGameGenerator.Instance.SetMemoryTypeToSearchFor(memoryType, AllowedMemoryTypes);
-            MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(memoryType);
-            if (!data)
+                return dialogue;
+            }
+            else
             {
-                Debug.LogError("No data for " + memoryType);
+                return _defaultOpeningDialogueObject;
             }
-            StandardDialogueObject dialogue = new StandardDialogueObject(_dialogueData.CharacterData, _dialogueData.CustomDialogueOptions, data.QuestionPrompts.GetRandomElement());
-
-            return dialogue;
         }
 
         public override StandardDialogueObject GetGameClosingDialogueObject()
         {
-            EMemoryType memoryType = MemoryGameGenerator.Instance.MemoryTypeToSearchFor;
-            MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(memoryType);
+            if (MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType)
+            {
+                EMemoryType memoryType = MemoryGameGenerator.Instance.MemoryTypeToSearchFor;
+                MemoryGameDialoguePromptData data = MemoryGameDialoguePromptsManager.Instance.GetMemoryGameDialoguePromptData(memoryType);
 
-            bool wonGame = MemoryGameSolverComponent.Instance.WonPreviousGame;
-            StandardDialogueObject dialogue = new StandardDialogueObject(_dialogueData.CharacterData, _dialogueData.CustomDialogueOptions, wonGame ? data.CorrectAnswers.GetRandomElement() : data.IncorrectAnswers.GetRandomElement());
+                bool wonGame = MemoryGameSolverComponent.Instance.WonPreviousGame;
+                StandardDialogueObject dialogue = new StandardDialogueObject(_dialogueData.CharacterData, _dialogueData.CustomDialogueOptions, wonGame ? data.CorrectAnswers.GetRandomElement() : data.IncorrectAnswers.GetRandomElement());
 
-            return dialogue;
+                return dialogue;
+            }
+            else
+            {
+                return _defaultClosingDialogueObject;
+            }
         }
     }
 
@@ -239,7 +240,7 @@ namespace Dialogue
             return UsesSentimentSystem && SentimentDialogues.ContainsKey(sentiment);
         }
 
-        public List<DialogueObject> GetSentimentDialogue()
+        public DialogueObject GetSentimentDialogue()
         {
             ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
             return PlayerHasSentiment() ? SentimentDialogues[sentiment] : null;

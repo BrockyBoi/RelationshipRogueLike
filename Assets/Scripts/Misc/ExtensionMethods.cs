@@ -27,4 +27,9 @@ public static class ExtensionMethods
     {
         return index >= 0 && index < elements.Count();
     }
+
+    public static bool IsNearlyZero(this float value)
+    {
+        return Mathf.Approximately(value, 0);
+    }
 }

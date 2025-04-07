@@ -18,6 +18,7 @@ namespace MemoryGame
         [SerializeField]
         private int _defaultGuessesAllowed = 5;
 
+        public bool IsLookingForSingleMemoryType { get; private set; }
         public int GuessesLeft { get; private set; }
         public int TotalGuessesAllowed { get; private set; }
 
@@ -96,7 +97,7 @@ namespace MemoryGame
                     card.CollectCard();
                     _currentlySelectedCard.CollectCard();
 
-                    if (card.MemoryType == MemoryTypeToSearchFor)
+                    if (!IsLookingForSingleMemoryType && card.MemoryType == MemoryTypeToSearchFor)
                     {
                         CompletedGame();
                     }
@@ -129,7 +130,7 @@ namespace MemoryGame
         {
             base.ApplyEndGameResults();
 
-            MemoryGameCompletionResult result = GetGameCompletionResultToApplyBySucceeding();
+            MemoryGameCompletionResult result = IsLookingForSingleMemoryType ? GetGameCompletionResultToApplyBySucceeding() : GetGameCompletionResultToApplyByGuessesLeft();
             result.ApplyEffects();
         }
 
@@ -138,9 +139,36 @@ namespace MemoryGame
             return _memoryTypesSearchedForPreviously.Contains(memoryType);
         }
 
+        public void SetIsLookingForSingleMemoryType(bool isLookingForSingleMemoryType)
+        {
+            IsLookingForSingleMemoryType = isLookingForSingleMemoryType;
+        }
+
+        public int GetGameCompletionIndexBasedOnGuessesLeft()
+        {
+            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float percentageOfGuessesUsed = 1f - (GuessesLeft / (float)TotalGuessesAllowed);
+            return Mathf.Clamp(Mathf.FloorToInt(_gameCompletionResults.Count * percentageOfGuessesUsed), 0, _gameCompletionResults.Count - 1);
+        }
+
+        public MemoryGameCompletionResult GetGameCompletionResultToApplyByGuessesLeft()
+        {
+            return _gameCompletionResults[GetGameCompletionIndexBasedOnGuessesLeft()];
+        }
+
         protected override GameUI GetGameUIInstance()
         {
             throw new System.NotImplementedException();
+        }
+
+        public override int GetCurrentPotentialDialogueIndex()
+        {
+            return GetGameCompletionIndexBasedOnGuessesLeft();
         }
     }
 }

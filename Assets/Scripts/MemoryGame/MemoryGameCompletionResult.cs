@@ -4,13 +4,20 @@ using UnityEngine;
 using GeneralGame.Results;
 using System;
 using Dialogue;
+using Sirenix.OdinInspector;
 
 namespace MemoryGame
 {
     [Serializable]
     public class MemoryGameCompletionResult : GameCompletionResult
     {
+        public bool HasResponseBasedOnSpecificMemoryType;
+
+        [ShowIf("HasResponseBasedOnSpecificMemoryType")]
         public MemoryGameRelatedDialogue GameRelatedDialogue;
+        [HideIf("HasResponseBasedOnSpecificMemoryType")]
+        public List<DialogueObject> MemoryGameDialogueResponses;
+
         public MemoryGameDifficultyModifierResult DifficultyModifierResult;
 
         public override void ApplyEffects()

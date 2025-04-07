@@ -49,7 +49,8 @@ namespace MemoryGame.UI
         private void OnGameStart()
         {
             EMemoryType memoryType = MemoryGameSolverComponent.Instance.MemoryTypeToSearchFor;
-            _memorySearchingForText.text = "Memory Searching For: " + memoryType.ToString();
+            bool isSearchingForSingleMemoryType = MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType;
+            _memorySearchingForText.text = isSearchingForSingleMemoryType ? "Memory Searching For: " + memoryType.ToString() : string.Empty;
             OnGuessMade();
             ShowUI();
         }

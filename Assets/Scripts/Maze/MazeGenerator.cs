@@ -238,6 +238,7 @@ namespace Maze.Generation
 
         public override void GenerateGame(MazeGeneratorData generationData)
         {
+            MazeDifficultyManager.Instance.ChangeShakeIntensity(generationData.ShakeIntensity);
             CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
         }
 

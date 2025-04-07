@@ -1,11 +1,13 @@
 using MainPlayer;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
 {
+    [Serializable]
     public enum ECharacterSentiment
     {
         Happy,
@@ -19,6 +21,8 @@ namespace Characters
     {
         public string CharacterName;
         public Sprite DefaultSprite;
-        public Dictionary<ECharacterSentiment, Sprite> SentimentPortraits;
+        public SentimentSpriteDictionary SentimentPortraits;
     }
+
+    public class SentimentSpriteDictionary : UnitySerializedDictionary<ECharacterSentiment, Sprite> { }
 }

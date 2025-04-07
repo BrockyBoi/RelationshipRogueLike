@@ -65,15 +65,18 @@ namespace Maze
 
         private void Update()
         {
-            if (_difficultyManager.ShouldShake)
+            if (MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
             {
-                Vector2 offset = _difficultyManager.ShakeOffsetPosition;
-                transform.position = _startPos + new Vector3(offset.x, 0, offset.y);
-            }
-            else if (_difficultyManager.ShouldRotate)
-            {
-                GameObject mazeNodes = ParentObjectsManager.Instance.MazeNodesParent;
-                transform.RotateAround(mazeNodes.transform.position, Vector3.up, _difficultyManager.RotateSpeed);
+                if (_difficultyManager.ShouldShake)
+                {
+                    Vector2 offset = _difficultyManager.ShakeOffsetPosition;
+                    transform.position = _startPos + new Vector3(offset.x, 0, offset.y);
+                }
+                else if (_difficultyManager.ShouldRotate)
+                {
+                    GameObject mazeNodes = ParentObjectsManager.Instance.MazeNodesParent;
+                    transform.RotateAround(mazeNodes.transform.position, Vector3.up, _difficultyManager.RotateSpeed);
+                }
             }
         }
 

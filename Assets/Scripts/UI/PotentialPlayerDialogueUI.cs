@@ -50,13 +50,14 @@ namespace Dialogue.UI
                 Destroy(_dialogueObjects[i].gameObject);
             }
 
+            _currentlyHighlightedIndex = 0;
             _dialogueObjects.Clear();
             HideUI();
         }
 
         public void HighlightResult(int indexResult)
         {
-            if (indexResult != _currentlyHighlightedIndex)
+            if (indexResult != _currentlyHighlightedIndex && _dialogueObjects.IsValidIndex(indexResult))
             {
                 _dialogueObjects[_currentlyHighlightedIndex].StopHighlightingObject();
                 _dialogueObjects[indexResult].HighlightObject();

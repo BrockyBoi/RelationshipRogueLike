@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &334043032698641987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264597294073205055}
+  - component: {fileID: 7135335098820904722}
+  - component: {fileID: 5289425810455973498}
+  - component: {fileID: 5702073040661719961}
+  - component: {fileID: 4678989834558794511}
+  m_Layer: 0
+  m_Name: MemoryGameControllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1264597294073205055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334043032698641987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7135335098820904722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334043032698641987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b041084d63b35429f0095838def0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxSizeModifier: 6
+  _maxBombsInGame: 5
+  _defaultBombs: 2
+  _maxCardsToSawp: 6
+  _minNumberOfGuessesModifier: -4
+  _maxNumberOfGuessesModifier: 4
+--- !u!114 &5289425810455973498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334043032698641987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6327a0effd4d945a20d5346635f9c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectPrefab: {fileID: 956892806304350894, guid: 1f92bceb570e2ad4f858d29e537f5a75, type: 3}
+  _spaceBetweenGridObjects: 3.5
+  _cameraSizeMultiplier: 0.7
+  _timeBetweenSwaps: 0.75
+--- !u!114 &5702073040661719961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334043032698641987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f917a424697f624e9d61d5595327183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToCompleteGame: 10
+  _defaultGuessesAllowed: 8
+--- !u!114 &4678989834558794511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334043032698641987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44114579dbab9f4281a5e072d70fb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prompts:
+    keyData: 02000000050000000800000010000000200000004100000080000000010100000002000001040000000800000110000000200000
+    valueData:
+    - {fileID: 11400000, guid: 7d55ad9a903e6164c9ce6ed5db714456, type: 2}
+    - {fileID: 11400000, guid: 19c8227681df5b54eaa863b565ded133, type: 2}
+    - {fileID: 11400000, guid: 551a1cbfe2711f641a98221006fbf609, type: 2}
+    - {fileID: 11400000, guid: f3c31b23cbfce344e90fee9769cfac6b, type: 2}
+    - {fileID: 11400000, guid: 01f879faa1e094a4289db6c605d5e16f, type: 2}
+    - {fileID: 11400000, guid: f23eaf7f0fcb70543aa6eb1956dc9597, type: 2}
+    - {fileID: 11400000, guid: 376f580cad263a14b8c7bd772b3b5304, type: 2}
+    - {fileID: 11400000, guid: 87eb03a690114ca4baf15cd3b4490eb8, type: 2}
+    - {fileID: 11400000, guid: 43235f9918b9aba48932259b68beabd9, type: 2}
+    - {fileID: 11400000, guid: fd0849be4fe765d41aad91321957b273, type: 2}
+    - {fileID: 11400000, guid: bca3437f9c586d747a2973534f003d14, type: 2}
+    - {fileID: 11400000, guid: 612cbe90a27076a4fa6c88f3aa35c1d3, type: 2}
+    - {fileID: 11400000, guid: 604efe457116fc24fa5fe300a32bd0f4, type: 2}
