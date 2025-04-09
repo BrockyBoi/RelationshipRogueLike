@@ -1,4 +1,5 @@
 using Dialogue;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,13 @@ namespace GeneralGame.Results
     [Serializable]
     public abstract class GameCompletionResult
     {
+        [FoldoutGroup("@GetResultTitleString")]
         public string PotentialPlayerDialogueDescription;
 
+        [FoldoutGroup("@GetResultTitleString")]
         public GameHealthResult HealthResult;
+
+        protected string GetResultTitleString { get { return PotentialPlayerDialogueDescription + " result"; } }
 
         public virtual void ApplyEffects()
         {

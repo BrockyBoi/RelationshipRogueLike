@@ -25,8 +25,11 @@ namespace GeneralGame.Generation
     [Serializable]
     public class MazeGeneratorData : GameGenerationData<MazeCompletionResult>
     {
+        [FoldoutGroup("MazeData")]
         public Vector2Int GridSize;
+        [FoldoutGroup("MazeData")]
         public float ShakeIntensity = 0;
+        [FoldoutGroup("MazeData")]
         public float RotationSpeed = 0;
     }
 
@@ -35,30 +38,43 @@ namespace GeneralGame.Generation
     {
         public MemoryGameRelatedDialogue MemoryGameRelatedDialogue;
 
-        [SerializeField]
+        [SerializeField, FoldoutGroup("Memory Game Data")]
         private bool _searchForSingleMemoryType;
 
-        [ShowIf("_searchForSingleMemoryType")]
+        [ShowIf("_searchForSingleMemoryType"), FoldoutGroup("Memory Game Data")]
         public bool _forceMemoryTypeToSearchFor;
-        [ShowIf("_forceMemoryTypeToSearchFor")]
+        [ShowIf("_forceMemoryTypeToSearchFor"), FoldoutGroup("Memory Game Data")]
         public EMemoryType _forcedMemoryTypeToSearchFor;
 
-        public bool _showLimitedMemoryTypesAvailable;
-        [ShowIf("_showLimitedMemoryTypesAvailable")]
-        public EMemoryType _allowedMemoryTypes;
+        [SerializeField, FoldoutGroup("Memory Game Data")]
+        private bool _showLimitedMemoryTypesAvailable;
+        [ShowIf("_showLimitedMemoryTypesAvailable"), FoldoutGroup("Memory Game Data")]
+        public EMemoryType _allowedMemoryTypes = EMemoryType.ALL;
 
+        [FoldoutGroup("Memory Game Data")]
         public Vector2Int GridSize;
 
         public void GenerateMemoryGameData()
         {
+            if (!_showLimitedMemoryTypesAvailable || (_showLimitedMemoryTypesAvailable && _allowedMemoryTypes == 0))
+            {
+                _allowedMemoryTypes = EMemoryType.ALL;
+            }
+
             EMemoryType memoryType = _forceMemoryTypeToSearchFor ? _forcedMemoryTypeToSearchFor : EMemoryType.Bomb;
             if (_searchForSingleMemoryType && memoryType == EMemoryType.Bomb)
             {
+                int iterations = 0;
                 do
                 {
-                    memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
+                    memoryType = GlobalFunctions.RandomEnumValue(EMemoryType.ALL, EMemoryType.Bomb);
+                    if (iterations++ >= 100)
+                    {
+                        Debug.LogError("Stuck in while loop");
+                        break;
+                    }
                 }
-                while (memoryType == EMemoryType.Bomb || (_allowedMemoryTypes & memoryType) == 0 || memoryType == EMemoryType.ALL);
+                while (!_allowedMemoryTypes.Has(memoryType));
             }
 
             MemoryGameSolverComponent.Instance.SetIsLookingForSingleMemoryType(_searchForSingleMemoryType);

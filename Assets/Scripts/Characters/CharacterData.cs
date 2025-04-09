@@ -13,7 +13,8 @@ namespace Characters
         Happy,
         Neutral,
         Annoyed,
-        FuckingPissed
+        FuckingPissed,
+        Sad
     }
 
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CharacterData", order = 1)]
@@ -24,5 +25,6 @@ namespace Characters
         public SentimentSpriteDictionary SentimentPortraits;
     }
 
+    [Serializable]
     public class SentimentSpriteDictionary : UnitySerializedDictionary<ECharacterSentiment, Sprite> { }
 }

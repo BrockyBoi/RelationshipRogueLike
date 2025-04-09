@@ -1,3 +1,4 @@
+using MemoryGame;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,12 @@ public static class ExtensionMethods
         float yValue = axis == VectorAxis.Y ? value : vector.y;
         float zValue = axis == VectorAxis.Z ? value : vector.z;
         return new Vector3(xValue, yValue, zValue);
+    }
+
+    public static bool Has<T>(this Enum type , T value)
+    {
+        //https://stackoverflow.com/questions/93744/most-common-c-sharp-bitwise-operations-on-enums
+        return (((int)(object)type & (int)(object)value) == (int)(object)value);
     }
 
     public static bool IsValidIndex<T>(this IEnumerable<T> elements, int index)

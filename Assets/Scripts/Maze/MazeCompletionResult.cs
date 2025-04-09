@@ -1,5 +1,6 @@
 using Dialogue;
 using GeneralGame.Results;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,10 @@ namespace Maze
     [Serializable]
     public class MazeCompletionResult : GameCompletionResult
     {
+        [FoldoutGroup("@GetResultTitleString")]
         public MazeDifficultyModifierResult DifficultyModifierResult;
+
+        [FoldoutGroup("@GetResultTitleString")]
         public List<DialogueObject> MazeDialogueResponses;
 
         public override void ApplyEffects()

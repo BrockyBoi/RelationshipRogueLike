@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSizeModifier: 6
   _maxBombsInGame: 5
-  _defaultBombs: 2
+  _defaultBombs: 0
   _maxCardsToSawp: 6
   _minNumberOfGuessesModifier: -4
   _maxNumberOfGuessesModifier: 4
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prompts:
-    keyData: 02000000050000000800000010000000200000004100000080000000010100000002000001040000000800000110000000200000
+    keyData: 02000000040000000800000010000000200000004000000080000000010100000002000000040000000800000010000000200000
     valueData:
     - {fileID: 11400000, guid: 7d55ad9a903e6164c9ce6ed5db714456, type: 2}
     - {fileID: 11400000, guid: 19c8227681df5b54eaa863b565ded133, type: 2}

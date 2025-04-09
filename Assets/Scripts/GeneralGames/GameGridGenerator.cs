@@ -17,6 +17,7 @@ namespace GeneralGame.Generation
 
         public int GridWidth { get { return _objectGrid != null & _objectGrid.Length > 0 ? _objectGrid.GetLength(0) : 0; } }
         public int GridHeight { get { return _objectGrid != null & _objectGrid.Length > 0 ? _objectGrid.GetLength(1) : 0; } }
+        public int TotalElementsCount { get { return _objectGrid.Length; } }
 
         [SerializeField]
         private float _spaceBetweenGridObjects = 5f;

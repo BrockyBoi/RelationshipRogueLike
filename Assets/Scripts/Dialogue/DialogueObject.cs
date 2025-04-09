@@ -26,7 +26,7 @@ namespace Dialogue
     {
         public EDialogueObjectType DialogueObjectType;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue), HideLabel]
+        [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
         public List<StandardDialogueObject> StandardDialogueObjects;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
@@ -48,7 +48,12 @@ namespace Dialogue
     [Serializable]
     public class DialogueData
     {
+        [HorizontalGroup]
         public CharacterData CharacterData;
+        [HorizontalGroup]
+        public ECharacterSentiment CharacterSentiment = ECharacterSentiment.Neutral;
+
+        [HideLabel]
         public CustomDialogueOptions CustomDialogueOptions;
         public bool IsCharacterMainPlayer;
     }
@@ -56,14 +61,17 @@ namespace Dialogue
     [Serializable]
     public class StandardDialogueObject
     {
-        [SerializeField]
+        [FoldoutGroup("@DialogueEditorDisplayString")]
+        [SerializeField, FoldoutGroup("@DialogueEditorDisplayString")]
         private DialogueData _dialogueData;
 
-        [SerializeField, TextArea(2, 4)]
+        [SerializeField, TextArea(2, 4), FoldoutGroup("@DialogueEditorDisplayString")]
         private string _standardDialogue;
 
         public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
         public CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
+
+        private string DialogueEditorDisplayString { get { return CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue"; } }
 
         public static StandardDialogueObject EmptyDialogueObject
         {
@@ -126,6 +134,11 @@ namespace Dialogue
             {
                 ECharacterSentiment sentiment = GetPlayerHealthComponent().GetCharacterSentiment();
                 return CharacterData.SentimentPortraits.ContainsKey(sentiment) ? CharacterData.SentimentPortraits[sentiment] : CharacterData.DefaultSprite;
+            }
+
+            if (HasCharacterData() && _dialogueData.CharacterData.SentimentPortraits.ContainsKey(_dialogueData.CharacterSentiment))
+            {
+                return _dialogueData.CharacterData.SentimentPortraits[_dialogueData.CharacterSentiment];
             }
 
             return CharacterData.DefaultSprite;
@@ -222,14 +235,17 @@ namespace Dialogue
     [Serializable]
     public class CustomDialogueOptions
     {
+        [HorizontalGroup("Row1")]
         public bool UsesCustomName;
-        [ShowIf("UsesCustomName")]
+        [ShowIf("UsesCustomName"), HorizontalGroup("Row1")]
         public string CustomName;
 
+        [HorizontalGroup("Row2")]
         public bool UsesCustomSprite;
-        [ShowIf("UsesCustomSprite")]
+        [ShowIf("UsesCustomSprite"), HorizontalGroup("Row2")]
         public Sprite CustomSprite;
 
+        [HorizontalGroup]
         public bool UsesSentimentSystem;
         [ShowIf("UsesSentimentSystem")]
         public SentimentDialogueDictionary SentimentDialogues;

@@ -26,6 +26,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -42,10 +43,11 @@ MonoBehaviour:
         the tall, goth Polish girl, so I imagine this will be an easy find."
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
-          UsesCustomSprite: 1
+          UsesCustomSprite: 0
           CustomSprite: {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
           UsesSentimentSystem: 0
           SentimentDialogues:
@@ -70,6 +72,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -84,6 +87,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -97,6 +101,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -133,6 +138,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -159,6 +165,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -173,6 +180,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -186,6 +194,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -218,6 +227,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -242,6 +252,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -256,6 +267,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -269,6 +281,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -301,6 +314,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -315,6 +329,7 @@ MonoBehaviour:
               soon enough.  Maddie.  You\u2019ll be shouting \u201CMaddie.\u201D"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -340,6 +355,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -354,6 +370,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -367,6 +384,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -388,7 +406,7 @@ MonoBehaviour:
           EndConversationObject:
             FinalDialogue: []
       GridSize: {x: 2, y: 3}
-      ShakeIntensity: 0.01
+      ShakeIntensity: 0
       RotationSpeed: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
@@ -398,6 +416,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -412,6 +431,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -425,6 +445,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -449,6 +470,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -466,6 +488,7 @@ MonoBehaviour:
         great having everyone in your business, at least you never felt alone.  "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -492,6 +515,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -506,6 +530,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -519,6 +544,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -556,6 +582,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -576,6 +603,7 @@ MonoBehaviour:
               internet.  It\u2019s really fulfilling work."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -591,6 +619,7 @@ MonoBehaviour:
               a look sometime if that\u2019d be ok with you."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -615,6 +644,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -629,6 +659,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -642,6 +673,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -675,6 +707,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -690,6 +723,7 @@ MonoBehaviour:
               youtuber videos with my friends.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -703,6 +737,7 @@ MonoBehaviour:
             _standardDialogue: Oh I really like video games too!
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -716,6 +751,7 @@ MonoBehaviour:
             _standardDialogue: "You would, you\u2019re in one right now."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -740,6 +776,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -754,6 +791,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -767,6 +805,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -800,6 +839,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -816,6 +856,7 @@ MonoBehaviour:
               but you get used to it.  Hope you figure it out soon enough."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -840,6 +881,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -854,6 +896,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -867,6 +910,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -900,6 +944,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -920,6 +965,7 @@ MonoBehaviour:
               don\u2019t understand the underlying technology that makes it all possible. "
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 1
                 CustomName: Person who's soul just died
@@ -933,6 +979,7 @@ MonoBehaviour:
             _standardDialogue: "Yeah I\u2019m not really int-"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -953,6 +1000,7 @@ MonoBehaviour:
               lucky I\u2019ll invite you to the Cayman Islands for a little getaway."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -977,6 +1025,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -991,6 +1040,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1004,6 +1054,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -1035,6 +1086,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1049,6 +1101,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1062,6 +1115,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -1086,6 +1140,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1103,6 +1158,7 @@ MonoBehaviour:
         long as it\u2019s something."
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1130,6 +1186,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1144,6 +1201,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1157,6 +1215,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -1193,6 +1252,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1208,6 +1268,7 @@ MonoBehaviour:
               quite literally and want someone that I can truly share my life with."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1234,6 +1295,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1248,6 +1310,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1261,6 +1324,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -1293,6 +1357,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1309,6 +1374,7 @@ MonoBehaviour:
               great too. "
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1335,6 +1401,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1349,6 +1416,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1362,6 +1430,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -1394,6 +1463,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1410,6 +1480,7 @@ MonoBehaviour:
               for me."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1436,6 +1507,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1450,6 +1522,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1463,6 +1536,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -1495,6 +1569,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1511,6 +1586,7 @@ MonoBehaviour:
               this out."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1536,6 +1612,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1550,6 +1627,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -1563,6 +1641,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -1594,6 +1673,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1608,6 +1688,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1621,6 +1702,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -1645,6 +1727,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1669,6 +1752,7 @@ MonoBehaviour:
                   _defaultOpeningDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -1679,6 +1763,7 @@ MonoBehaviour:
                   _defaultClosingDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -1688,6 +1773,7 @@ MonoBehaviour:
                     _standardDialogue: 
                   _dialogueData:
                     CharacterData: {fileID: 0}
+                    CharacterSentiment: 1
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -1707,6 +1793,7 @@ MonoBehaviour:
                 FinalDialogue:
                 - _dialogueData:
                     CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                    CharacterSentiment: 3
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -1732,6 +1819,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1746,6 +1834,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1759,6 +1848,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -1783,6 +1873,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1801,6 +1892,7 @@ MonoBehaviour:
         that she told me that she also told you a lot of stuff about me as well.  "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1820,6 +1912,7 @@ MonoBehaviour:
         be a fit?"
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 4
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -1846,6 +1939,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1860,6 +1954,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1873,6 +1968,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -1912,6 +2008,7 @@ MonoBehaviour:
           _defaultOpeningDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 0}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1926,6 +2023,7 @@ MonoBehaviour:
           _defaultClosingDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1944,6 +2042,7 @@ MonoBehaviour:
               let me know that this would be an easy match."
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -1959,6 +2058,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1977,6 +2077,7 @@ MonoBehaviour:
               let me know that this would be an easy match."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2003,6 +2104,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2017,6 +2119,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2030,6 +2133,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -2065,6 +2169,7 @@ MonoBehaviour:
           _defaultOpeningDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 0}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2079,6 +2184,7 @@ MonoBehaviour:
           _defaultClosingDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 0}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2092,6 +2198,7 @@ MonoBehaviour:
             _standardDialogue: 
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2106,7 +2213,8 @@ MonoBehaviour:
         - DialogueObjectType: 0
           StandardDialogueObjects:
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2121,7 +2229,8 @@ MonoBehaviour:
               and you and I both only have one sibling, so that stuff is pretty cool. 
               Same with me?"
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2136,7 +2245,8 @@ MonoBehaviour:
               \u0D28\u0D40 \u0D2F\u0D25\u0D3E\u0D7C\u0D24\u0D4D\u0D25\u0D24\u0D4D\u0D24\u0D3F\u0D7D
               \u0D07\u0D28\u0D4D\u0D24\u0D4D\u0D2F\u0D2F\u0D3F\u0D7D \u0D28\u0D3F\u0D28\u0D4D\u0D28\u0D3E\u0D23\u0D4B? "
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2150,7 +2260,8 @@ MonoBehaviour:
             _standardDialogue: ' I literally do not have a single fucking clue what
               just happened.'
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2163,7 +2274,8 @@ MonoBehaviour:
               IsCharacterMainPlayer: 0
             _standardDialogue: "Oh, you said you too!  You\u2019ve been to India?"
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2177,7 +2289,8 @@ MonoBehaviour:
             _standardDialogue: Oh, I just meant I also only have one brother.  I
               have no clue what you said.
           - _dialogueData:
-              CharacterData: {fileID: 0}
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2202,6 +2315,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2216,6 +2330,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2229,6 +2344,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -2264,6 +2380,7 @@ MonoBehaviour:
           _defaultOpeningDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 0}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2278,6 +2395,7 @@ MonoBehaviour:
           _defaultClosingDialogueObject:
             _dialogueData:
               CharacterData: {fileID: 0}
+              CharacterSentiment: 1
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2291,6 +2409,7 @@ MonoBehaviour:
             _standardDialogue: 
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2306,6 +2425,7 @@ MonoBehaviour:
           StandardDialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2320,6 +2440,7 @@ MonoBehaviour:
               Indian right?"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2333,6 +2454,7 @@ MonoBehaviour:
             _standardDialogue: "He\u2019s from Pakistan"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2346,6 +2468,7 @@ MonoBehaviour:
             _standardDialogue: "\u2026\u2026. which is \u2026."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2359,6 +2482,7 @@ MonoBehaviour:
             _standardDialogue: Not India
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2372,6 +2496,7 @@ MonoBehaviour:
             _standardDialogue: 'Got it. '
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2385,6 +2510,7 @@ MonoBehaviour:
             _standardDialogue: Do you remember anything she said?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2398,6 +2524,7 @@ MonoBehaviour:
             _standardDialogue: No.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2422,6 +2549,7 @@ MonoBehaviour:
               _defaultOpeningDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2436,6 +2564,7 @@ MonoBehaviour:
               _defaultClosingDialogueObject:
                 _dialogueData:
                   CharacterData: {fileID: 0}
+                  CharacterSentiment: 1
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2449,6 +2578,7 @@ MonoBehaviour:
                 _standardDialogue: 
               _dialogueData:
                 CharacterData: {fileID: 0}
+                CharacterSentiment: 1
                 CustomDialogueOptions:
                   UsesCustomName: 0
                   CustomName: 
@@ -2480,6 +2610,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+            CharacterSentiment: 0
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2490,10 +2621,11 @@ MonoBehaviour:
                 keyData: 
                 valueData: []
             IsCharacterMainPlayer: 0
-          _standardDialogue: Let's see how much you remember
+          _standardDialogue: Let's see how much you remember!
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2507,6 +2639,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
@@ -2531,6 +2664,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -2545,6 +2679,7 @@ MonoBehaviour:
         late.  Have to wake up at 6:30am tomorrow for work."
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -2555,7 +2690,25 @@ MonoBehaviour:
             keyData: 00000000010000000200000003000000
             valueData:
             - DialogueObjectType: 0
-              StandardDialogueObjects: []
+              StandardDialogueObjects:
+              - _dialogueData:
+                  CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CharacterSentiment: 0
+                  CustomDialogueOptions:
+                    UsesCustomName: 0
+                    CustomName: 
+                    UsesCustomSprite: 0
+                    CustomSprite: {fileID: 0}
+                    UsesSentimentSystem: 0
+                    SentimentDialogues:
+                      keyData: 
+                      valueData: []
+                  IsCharacterMainPlayer: 0
+                _standardDialogue: "I had so much fun getting to know you though! 
+                  If it\u2019s alright with you I\u2019d really like to see you again. 
+                  I was really nervous in the beginning, but I already feel so comfortable
+                  around you, and would really like to explore this some more.  Please
+                  call me when you get the chance.  Bye!"
               MazeSpawnerData:
                 GameCompletionResults: []
                 GridSize: {x: 0, y: 0}
@@ -2569,6 +2722,7 @@ MonoBehaviour:
                   _defaultOpeningDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2579,6 +2733,7 @@ MonoBehaviour:
                   _defaultClosingDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2588,6 +2743,7 @@ MonoBehaviour:
                     _standardDialogue: 
                   _dialogueData:
                     CharacterData: {fileID: 0}
+                    CharacterSentiment: 1
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -2609,6 +2765,7 @@ MonoBehaviour:
               StandardDialogueObjects:
               - _dialogueData:
                   CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CharacterSentiment: 0
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2637,6 +2794,7 @@ MonoBehaviour:
                   _defaultOpeningDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2647,6 +2805,7 @@ MonoBehaviour:
                   _defaultClosingDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2656,6 +2815,7 @@ MonoBehaviour:
                     _standardDialogue: 
                   _dialogueData:
                     CharacterData: {fileID: 0}
+                    CharacterSentiment: 1
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -2677,6 +2837,7 @@ MonoBehaviour:
               StandardDialogueObjects:
               - _dialogueData:
                   CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CharacterSentiment: 2
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2704,6 +2865,7 @@ MonoBehaviour:
                   _defaultOpeningDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2714,6 +2876,7 @@ MonoBehaviour:
                   _defaultClosingDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2723,6 +2886,7 @@ MonoBehaviour:
                     _standardDialogue: 
                   _dialogueData:
                     CharacterData: {fileID: 0}
+                    CharacterSentiment: 1
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -2744,6 +2908,7 @@ MonoBehaviour:
               StandardDialogueObjects:
               - _dialogueData:
                   CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+                  CharacterSentiment: 3
                   CustomDialogueOptions:
                     UsesCustomName: 0
                     CustomName: 
@@ -2770,6 +2935,7 @@ MonoBehaviour:
                   _defaultOpeningDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2780,6 +2946,7 @@ MonoBehaviour:
                   _defaultClosingDialogueObject:
                     _dialogueData:
                       CharacterData: {fileID: 0}
+                      CharacterSentiment: 1
                       CustomDialogueOptions:
                         UsesCustomName: 0
                         CustomName: 
@@ -2789,6 +2956,7 @@ MonoBehaviour:
                     _standardDialogue: 
                   _dialogueData:
                     CharacterData: {fileID: 0}
+                    CharacterSentiment: 1
                     CustomDialogueOptions:
                       UsesCustomName: 0
                       CustomName: 
@@ -2821,6 +2989,7 @@ MonoBehaviour:
         _defaultOpeningDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2835,6 +3004,7 @@ MonoBehaviour:
         _defaultClosingDialogueObject:
           _dialogueData:
             CharacterData: {fileID: 0}
+            CharacterSentiment: 1
             CustomDialogueOptions:
               UsesCustomName: 0
               CustomName: 
@@ -2848,6 +3018,7 @@ MonoBehaviour:
           _standardDialogue: 
         _dialogueData:
           CharacterData: {fileID: 0}
+          CharacterSentiment: 1
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 

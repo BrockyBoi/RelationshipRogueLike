@@ -15,89 +15,19 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 21300000, guid: 7c5181dd7ff88f94bba0e6e8ef7470d9, type: 3}
-    - {fileID: 21300000, guid: 1c1d8757b18f89a449f1b10079589e81, type: 3}
-    - {fileID: 21300000, guid: e7fe014a7d7a2e847ae3a30428d7b725, type: 3}
-    - {fileID: 21300000, guid: 3428e4834a002c543872a409f7247b44, type: 3}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: SentimentPortraits
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Characters.ECharacterSentiment,
-        Assembly-CSharp],[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Characters.ECharacterSentiment,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 4
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 0
-    - Name: $v
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 2
-    - Name: $v
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 3
-    - Name: $v
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
   CharacterName: LittleLekker
-  DefaultSprite: {fileID: 21300000, guid: 1c1d8757b18f89a449f1b10079589e81, type: 3}
+  DefaultSprite: {fileID: 21300000, guid: 938157888c074ef4fbf9175b9d16799e, type: 3}
+  SentimentPortraits:
+    keyData: 0000000001000000020000000300000004000000
+    valueData:
+    - {fileID: 21300000, guid: 3a9d5e796f226ce43af37039b0a6fd43, type: 3}
+    - {fileID: 21300000, guid: 938157888c074ef4fbf9175b9d16799e, type: 3}
+    - {fileID: 21300000, guid: 71c8adb3fc8ffc147b86b85e6f9a88e5, type: 3}
+    - {fileID: 21300000, guid: dc9ce07f88ece114088339774e87d4dd, type: 3}
+    - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}

@@ -11,13 +11,15 @@ namespace MemoryGame
     [Serializable]
     public class MemoryGameCompletionResult : GameCompletionResult
     {
+        [FoldoutGroup("@GetResultTitleString")]
         public bool HasResponseBasedOnSpecificMemoryType;
 
-        [ShowIf("HasResponseBasedOnSpecificMemoryType")]
+        [FoldoutGroup("@GetResultTitleString"), ShowIf("HasResponseBasedOnSpecificMemoryType")]
         public MemoryGameRelatedDialogue GameRelatedDialogue;
-        [HideIf("HasResponseBasedOnSpecificMemoryType")]
+        [FoldoutGroup("@GetResultTitleString"), HideIf("HasResponseBasedOnSpecificMemoryType")]
         public List<DialogueObject> MemoryGameDialogueResponses;
 
+        [FoldoutGroup("@GetResultTitleString")]
         public MemoryGameDifficultyModifierResult DifficultyModifierResult;
 
         public override void ApplyEffects()

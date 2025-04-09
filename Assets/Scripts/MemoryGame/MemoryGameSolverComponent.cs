@@ -18,6 +18,8 @@ namespace MemoryGame
         [SerializeField]
         private int _defaultGuessesAllowed = 5;
 
+        private int _cardsCollected = 0;
+
         public bool IsLookingForSingleMemoryType { get; private set; }
         public int GuessesLeft { get; private set; }
         public int TotalGuessesAllowed { get; private set; }
@@ -56,6 +58,7 @@ namespace MemoryGame
         private void OnCardValuesSet()
         {
             SetGameStage(EGameStage.PreCountdown);
+            _cardsCollected = 0;
             TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
             GuessesLeft = TotalGuessesAllowed;
             StartGame();
@@ -96,8 +99,13 @@ namespace MemoryGame
 
                     card.CollectCard();
                     _currentlySelectedCard.CollectCard();
+                    _cardsCollected += 2;
 
-                    if (!IsLookingForSingleMemoryType && card.MemoryType == MemoryTypeToSearchFor)
+                    if (IsLookingForSingleMemoryType && card.MemoryType == MemoryTypeToSearchFor)
+                    {
+                        CompletedGame();
+                    }
+                    else if (!IsLookingForSingleMemoryType && _cardsCollected == MemoryGameGenerator.Instance.TotalElementsCount)
                     {
                         CompletedGame();
                     }

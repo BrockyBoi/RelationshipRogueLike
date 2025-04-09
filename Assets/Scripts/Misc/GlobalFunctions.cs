@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GlobalFunctions : MonoBehaviour
@@ -12,12 +13,24 @@ public class GlobalFunctions : MonoBehaviour
         instance = this;
     }
 
-    public static T RandomEnumValue<T>()
+    public static T RandomEnumValue<T>(params T[] elementsToAvoid)
     {
         // https://discussions.unity.com/t/using-random-range-to-pick-a-random-value-out-of-an-enum/119639/3
         var values = Enum.GetValues(typeof(T));
-        int random = UnityEngine.Random.Range(0, values.Length);
-        return (T)values.GetValue(random);
+        T randomElement;
+        int iterations = 0;
+        do
+        { 
+            randomElement = (T)values.GetValue(UnityEngine.Random.Range(0, values.Length));
+
+            if (++iterations >= 100)
+            {
+                Debug.LogError("Stuck in RandomEnumValue");
+                break;
+            }
+
+        } while (elementsToAvoid.Contains(randomElement));
+        return randomElement;
     }
 
     public static void LerpObjectToLocation(GameObject objectToMove, Vector3 finalPosition,  float duration)
@@ -37,5 +50,19 @@ public class GlobalFunctions : MonoBehaviour
         }
 
         objectToMove.transform.position = finalPosition;
+    }
+
+    public static List<T> EnumToList<T>(params T[] restrictedTypes) where T : Enum
+    {
+        List<T> enumList = new List<T>();
+        foreach (T mem in Enum.GetValues(typeof(T)))
+        {
+            if (!restrictedTypes.Contains(mem))
+            {
+                enumList.Add(mem);
+            }
+        }
+
+        return enumList;
     }
 }

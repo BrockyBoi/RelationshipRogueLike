@@ -20,9 +20,14 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: SentimentPortraits
-      Entry: 6
-      Data: 
+    SerializationNodes: []
   CharacterName: Maddie
-  DefaultSprite: {fileID: 21300000, guid: 8d4b7ab204adb90419966e3286b3c708, type: 3}
+  DefaultSprite: {fileID: 21300000, guid: efa413aa15627da44a8391246f1c3301, type: 3}
+  SentimentPortraits:
+    keyData: 0000000001000000020000000300000004000000
+    valueData:
+    - {fileID: 21300000, guid: 37e84b3a1557dc546aea532446462c79, type: 3}
+    - {fileID: 21300000, guid: efa413aa15627da44a8391246f1c3301, type: 3}
+    - {fileID: 21300000, guid: 320b7e903458ced4984bbe13cf178f04, type: 3}
+    - {fileID: 21300000, guid: 843855689a0e51144960e21f844e00fc, type: 3}
+    - {fileID: 21300000, guid: 9d519e8bae481f8479946d580d3eeb55, type: 3}

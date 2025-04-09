@@ -1,9 +1,11 @@
 using GeneralGame;
 using GeneralGame.Generation;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MemoryGame.Generation
@@ -59,7 +61,11 @@ namespace MemoryGame.Generation
                 tempMemoryGameCardsList.Add(card);
             }
 
-            SetNumberOfCardsToValue(bombsInGame, EMemoryType.Bomb, ref tempMemoryGameCardsList);
+            if (canHaveBombs)
+            {
+                SetNumberOfCardsToValue(bombsInGame, EMemoryType.Bomb, ref tempMemoryGameCardsList);
+            }
+
             SetNumberOfCardsToValue(2, MemoryTypeToSearchFor, ref tempMemoryGameCardsList);
             FillRandomValuesForCardsList(ref tempMemoryGameCardsList);
 
@@ -89,46 +95,50 @@ namespace MemoryGame.Generation
 
         private void FillRandomValuesForCardsList(ref List<MemoryGameCard> cards)
         {
-            Dictionary<EMemoryType, int> cardCountsPerMemoryType = new Dictionary<EMemoryType, int>();
-            bool hasBombs = MemoryGameDifficultyManager.Instance.BombsInGame > 1;
             bool isSearchingForSingleMemoryType = MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType;
+            List<EMemoryType> avaialableMemoryTypes = GlobalFunctions.EnumToList(EMemoryType.ALL, EMemoryType.Bomb);
+            if (isSearchingForSingleMemoryType)
+            {
+                avaialableMemoryTypes.Remove(MemoryTypeToSearchFor);
+            }
+
             while (cards.Count > 0)
             {
                 EMemoryType memoryType;
                 int increments = 0;
-                // Remove 2 since we remove one type for bombs and remove another type for the memory type we have to search for
-                int possibleMemoryTypeCounts = (_objectGrid.Length / 2) - (isSearchingForSingleMemoryType ? 1 : 0) - (hasBombs ? 1 : 0);
                 do
                 {
-                    memoryType = GlobalFunctions.RandomEnumValue<EMemoryType>();
+                    memoryType = avaialableMemoryTypes.GetRandomElement();
                     if (++increments >= 100)
                     {
                         Debug.LogError("Spent too much time in SetAllCardValues");
                         break;
                     }
+
                 }
-                while ((cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType[memoryType] == 2) ||
-                (!cardCountsPerMemoryType.ContainsKey(memoryType) && cardCountsPerMemoryType.Count >= possibleMemoryTypeCounts) ||
-                memoryType == EMemoryType.Bomb ||
-                memoryType != EMemoryType.ALL ||
-                MemoryGameSolverComponent.Instance.AlreadyPlayedForMemoryType(memoryType) ||
-                memoryType == MemoryTypeToSearchFor ||
-                (_allowedMemoryTypes & memoryType) == 0);
+                while (MemoryGameSolverComponent.Instance.AlreadyPlayedForMemoryType(memoryType) ||
+                !_allowedMemoryTypes.Has(memoryType));
 
                 if (increments >= 100)
                 {
                     break;
                 }
 
-                if (!cardCountsPerMemoryType.ContainsKey(memoryType))
+                for (int i = 0; i < 2; i++)
                 {
-                    cardCountsPerMemoryType.Add(memoryType, 0);
+                    MemoryGameCard card = cards.GetRandomElement();
+                    if (card)
+                    {
+                        card.SetMemoryType(memoryType);
+                        cards.Remove(card);
+                    }
+                    else
+                    {
+                        Debug.LogError("Ran out of cards");
+                    }    
                 }
-                cardCountsPerMemoryType[memoryType]++;
 
-                MemoryGameCard card = cards.GetRandomElement();
-                card.SetMemoryType(memoryType);
-                cards.Remove(card);
+                avaialableMemoryTypes.Remove(memoryType);
             }
         }
 
