@@ -38,6 +38,8 @@ namespace Maze
         [ShowInInspector, ReadOnly]
         public int MazeSizeModifier { get; private set; }
 
+        public System.Action<Vector2> OnShakeOffsetPositionChanged;
+
         private void Awake()
         {
             Instance = this;
@@ -48,6 +50,7 @@ namespace Maze
             if (ShouldShake)
             {
                 ShakeOffsetPosition = Random.insideUnitCircle * ShakeIntensity;
+                OnShakeOffsetPositionChanged?.Invoke(ShakeOffsetPosition);
             }
         }
 

@@ -43,7 +43,7 @@ namespace GeneralGame.Generation
                 for (int xPos = 0; xPos < GridWidth; xPos++)
                 {
                     GridObjectType gridObject = Instantiate<GridObjectType>(_objectPrefab, new Vector3(xPos * _spaceBetweenGridObjects, 0, yPos * _spaceBetweenGridObjects), Quaternion.identity, parentObject.transform);
-                    gridObject.SetPositionInMaze(new Vector2Int(xPos, yPos));
+                    gridObject.SetPositionInGrid(new Vector2Int(xPos, yPos));
                     _objectGrid[xPos, yPos] = gridObject;
                 }
             }

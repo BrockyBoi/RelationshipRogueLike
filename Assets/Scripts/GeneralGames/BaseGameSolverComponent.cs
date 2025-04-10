@@ -169,6 +169,11 @@ namespace GeneralGame
         }
         #endregion
 
+        public void SetTimeToCompleteGame(float time)
+        {
+            _timeToCompleteGame = time;
+        }
+
         protected abstract GameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
     }

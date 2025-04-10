@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class GridObject : MonoBehaviour
 {
-    public Vector2Int PositionInMaze { get; private set; }
+    public Vector2Int PositionInGrid { get; private set; }
 
-    public virtual void SetPositionInMaze(Vector2Int positionInMaze)
+    public virtual void SetPositionInGrid(Vector2Int positionInGrid)
     {
-        PositionInMaze = positionInMaze;
+        PositionInGrid = positionInGrid;
     }
 }

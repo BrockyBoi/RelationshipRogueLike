@@ -31,6 +31,8 @@ namespace GeneralGame.Generation
         public float ShakeIntensity = 0;
         [FoldoutGroup("MazeData")]
         public float RotationSpeed = 0;
+        [FoldoutGroup("MazeData")]
+        public float TimeToSolveMaze = 10;
     }
 
     [Serializable]
@@ -53,6 +55,9 @@ namespace GeneralGame.Generation
 
         [FoldoutGroup("Memory Game Data")]
         public Vector2Int GridSize;
+
+        [FoldoutGroup("Memory Game Data")]
+        public int NumberOfGuesses = 5;
 
         public void GenerateMemoryGameData()
         {

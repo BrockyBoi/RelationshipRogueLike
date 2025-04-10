@@ -169,6 +169,11 @@ namespace MemoryGame
             return _gameCompletionResults[GetGameCompletionIndexBasedOnGuessesLeft()];
         }
 
+        public void SetBaseNumberOfGuesses(int baseNumberOfGuesses)
+        {
+            _defaultGuessesAllowed = baseNumberOfGuesses;
+        }
+
         protected override GameUI GetGameUIInstance()
         {
             throw new System.NotImplementedException();

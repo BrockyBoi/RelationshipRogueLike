@@ -1,4 +1,3 @@
-using Maze.Generation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -61,18 +60,18 @@ namespace Maze
 
             MazeSolverComponent.Instance.OnGameStart += OnGameStart;
             _difficultyManager = MazeDifficultyManager.Instance;
+
+            _difficultyManager.OnShakeOffsetPositionChanged += OnShakeOffsetChanged;
+
+            _startPos = transform.position;
+
         }
 
         private void Update()
         {
             if (MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
             {
-                if (_difficultyManager.ShouldShake)
-                {
-                    Vector2 offset = _difficultyManager.ShakeOffsetPosition;
-                    transform.position = _startPos + new Vector3(offset.x, 0, offset.y);
-                }
-                else if (_difficultyManager.ShouldRotate)
+                if (_difficultyManager.ShouldRotate)
                 {
                     GameObject mazeNodes = ParentObjectsManager.Instance.MazeNodesParent;
                     transform.RotateAround(mazeNodes.transform.position, Vector3.up, _difficultyManager.RotateSpeed);
@@ -83,6 +82,15 @@ namespace Maze
         private void OnDestroy()
         {
             MazeSolverComponent.Instance.OnGameStart -= OnGameStart;
+            _difficultyManager.OnShakeOffsetPositionChanged -= OnShakeOffsetChanged;
+        }
+
+        private void OnShakeOffsetChanged(Vector2 offset)
+        {
+            if (_difficultyManager.ShouldShake && MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
+            {
+                transform.position = _startPos + new Vector3(offset.x, 0, offset.y);
+            }
         }
 
         public void VisitNode()
@@ -95,12 +103,6 @@ namespace Maze
         public void CompleteNode()
         {
             NodeState = ENodeState.Completed;
-        }
-
-        public override void SetPositionInMaze(Vector2Int positionInMaze)
-        {
-            base.SetPositionInMaze(positionInMaze);
-            _startPos = transform.position;
         }
 
         public void ClearWall(EMazeDirection direction)

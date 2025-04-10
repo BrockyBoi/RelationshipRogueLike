@@ -64,7 +64,7 @@ namespace Maze.Generation
                     if (nextNode.NodeState == ENodeState.None)
                     {
                         nextNode.VisitNode();
-                        ClearWalls(currentNode, nextNode, GetDirectionMovingIn(currentNode.PositionInMaze, nextNode.PositionInMaze));
+                        ClearWalls(currentNode, nextNode, GetDirectionMovingIn(currentNode.PositionInGrid, nextNode.PositionInGrid));
                     }
 
                     currentPath.Add(nextNode);
@@ -155,7 +155,7 @@ namespace Maze.Generation
         private List<MazeNode> GetNeighborNodes(MazeNode currentNode, ENodeState desiredState)
         {
             List<MazeNode> neighborNodes = new List<MazeNode>();
-            Vector2Int nodePos = currentNode.PositionInMaze;
+            Vector2Int nodePos = currentNode.PositionInGrid;
 
             if (nodePos.x + 1 < _objectGrid.GetLength(0))
             {
@@ -239,6 +239,7 @@ namespace Maze.Generation
         public override void GenerateGame(MazeGeneratorData generationData)
         {
             MazeDifficultyManager.Instance.ChangeShakeIntensity(generationData.ShakeIntensity);
+            MazeSolverComponent.Instance.SetTimeToCompleteGame(generationData.TimeToSolveMaze);
             CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
         }
 

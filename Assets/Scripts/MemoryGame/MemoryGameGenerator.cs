@@ -217,6 +217,7 @@ namespace MemoryGame.Generation
 
         public override void GenerateGame(MemoryGameGeneratorData generationData)
         {
+            MemoryGameSolverComponent.Instance.SetBaseNumberOfGuesses(generationData.NumberOfGuesses);
             CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
         }
 
