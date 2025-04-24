@@ -12,8 +12,11 @@ namespace GeneralGame.Results
         [FoldoutGroup("@GetResultTitleString")]
         public string PotentialPlayerDialogueDescription;
 
-        [FoldoutGroup("@GetResultTitleString")]
+        [FoldoutGroup("@GetResultTitleString"), HideLabel]
         public GameHealthResult HealthResult;
+
+        [FoldoutGroup("@GetResultTitleString"), HideLabel]
+        public BranchingDialogueObject BranchingDialogue;
 
         protected string GetResultTitleString { get { return PotentialPlayerDialogueDescription + " result"; } }
 

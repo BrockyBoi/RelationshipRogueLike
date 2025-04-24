@@ -1,6 +1,6 @@
 using GeneralGame;
 using GeneralGame.Generation;
-
+using Maze.Gameplay;
 using MemoryGame;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,12 +16,44 @@ namespace Maze.Generation
         public MazeNode StartNode { get; private set; }
         public MazeNode EndNode { get; private set; }
 
+        bool _needsKeys = false;
+        int _keysNeeded = 0;
+
         bool _hasGeneratedMazePath = false;
         private System.Action OnMazePathGenerated;
+
+        [SerializeField]
+        private KeyPickupObject _keyPrefab;
+
+        private List<KeyPickupObject> _keysInGame = new List<KeyPickupObject>();
 
         private void Awake()
         {
             Instance = this;
+        }
+
+        protected void Start()
+        {
+            MazeSolverComponent.Instance.OnGameStart += OnGameStart;
+            MazeSolverComponent.Instance.OnGameStop += OnGameEnd;
+        }
+
+        private void OnDestroy()
+        {
+            MazeSolverComponent.Instance.OnGameStart -= OnGameStart;
+        }
+
+        private void OnGameStart()
+        {
+            foreach (KeyPickupObject key in _keysInGame)
+            {
+                key.ActivateObject();
+            }
+        }
+
+        private void OnGameEnd()
+        {
+            _keysInGame.Clear();
         }
 
         public override void DestroyGrid()
@@ -98,6 +130,29 @@ namespace Maze.Generation
                 {
                     maxDist = distance;
                     bestNode = node;
+                }
+            }
+
+            int keysToSpawn = _keysNeeded;
+            if (_needsKeys && _keysNeeded > 0)
+            {
+                foreach (MazeNode node in potentialStartNodes)
+                {
+                    if (node && node != bestNode)
+                    {
+                        KeyPickupObject keyPickupObject = Instantiate(_keyPrefab, node.transform);
+                        if (keyPickupObject)
+                        {
+                            _keysInGame.Add(keyPickupObject);
+                            keyPickupObject.DeactivateObject();
+                            keysToSpawn--;
+
+                            if (keysToSpawn == 0)
+                            {
+                                break;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -238,9 +293,17 @@ namespace Maze.Generation
 
         public override void GenerateGame(MazeGeneratorData generationData)
         {
+            SetGameGenerationData(generationData);
             MazeDifficultyManager.Instance.ChangeShakeIntensity(generationData.ShakeIntensity);
+            MazeDifficultyManager.Instance.ChangeRotationRate(generationData.RotationSpeed);
             MazeSolverComponent.Instance.SetTimeToCompleteGame(generationData.TimeToSolveMaze);
+            MazeSolverComponent.Instance.SetFakeTime(generationData.IsMazeFake ? generationData.FakeMazeTime : 0);
+
+            _needsKeys = generationData.NeedsKeys;
+            _keysNeeded = _needsKeys ? generationData.KeysNeeded : 0;
             CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
+
+           //Cursor.visible = false;
         }
 
         //protected override GameSolverComponent<MazeCompletionResult> GetAssociatedGameSolver()

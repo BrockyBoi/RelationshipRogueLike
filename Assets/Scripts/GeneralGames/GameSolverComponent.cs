@@ -1,4 +1,5 @@
 using Dialogue.UI;
+using GeneralGame.Generation;
 using GeneralGame.Results;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -7,11 +8,13 @@ using UnityEngine;
 
 namespace GeneralGame
 {
-    public abstract class GameSolverComponent<CompletionResultType> : BaseGameSolverComponent where CompletionResultType : GameCompletionResult
+    public abstract class GameSolverComponent<GameGenerator, CompletionResultType> : BaseGameSolverComponent where GameGenerator : BaseGameGenerator where CompletionResultType : GameCompletionResult
     {
         protected List<CompletionResultType> _gameCompletionResults;
 
         private Coroutine _highlightIndexCoroutine;
+
+        protected abstract GameGenerator GameGeneratorInstance { get; }
 
         #region Completion Results
         public void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
@@ -22,15 +25,14 @@ namespace GeneralGame
             PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results);
         }
 
-        protected override void ApplyEndGameResults()
-        {
-            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
-        }
-
         protected override void StartGame()
         {
             base.StartGame();
             _highlightIndexCoroutine = StartCoroutine(HighlightCurrentGameResultIndex());
+        }
+
+        protected override void ApplyEndGameResults()
+        {
         }
 
         private IEnumerator HighlightCurrentGameResultIndex()

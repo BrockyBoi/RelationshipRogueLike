@@ -206,8 +206,8 @@ namespace MemoryGame.Generation
             } while (card1 == card2);
             Vector3 card2StartPos = card2.transform.position;
 
-            GlobalFunctions.LerpObjectToLocation(card1.gameObject, card2StartPos, .75f);
-            GlobalFunctions.LerpObjectToLocation(card2.gameObject, card1StartPos, .75f);
+            GlobalFunctions.LerpObjectToLocation(card1, card1.gameObject, card2StartPos, .75f);
+            GlobalFunctions.LerpObjectToLocation(card2,card2.gameObject, card1StartPos, .75f);
         }
 
         protected override void GiveResultsToSolver(List<MemoryGameCompletionResult> results)

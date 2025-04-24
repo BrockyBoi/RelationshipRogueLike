@@ -22,8 +22,16 @@ namespace GeneralGame.Generation
         [SerializeField]
         private float _spaceBetweenGridObjects = 5f;
 
-        [SerializeField]
-        private float _cameraSizeMultiplier = 1f;
+        private GenerationData _gameData;
+        public GenerationData GameData { get { return _gameData; } }
+
+        public System.Action OnGameGenerationDataSet;
+
+        public void SetGameGenerationData(GenerationData data)
+        {
+            _gameData = data;
+            OnGameGenerationDataSet?.Invoke();
+        }
 
         protected virtual void CreateGrid(Vector2Int gridSize, List<CompletionResultType> results)
         {
@@ -48,12 +56,23 @@ namespace GeneralGame.Generation
                 }
             }
 
+            float cameraWidth = (GridWidth + 1) * _spaceBetweenGridObjects;
+            float cameraHeight = (GridHeight + 1) * _spaceBetweenGridObjects;
+
             Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, 0, (GridHeight - 1) * _spaceBetweenGridObjects);
             parentObject.transform.position = finalLoc;
 
-            Camera.main.orthographicSize = _objectGrid.Length * _cameraSizeMultiplier;
-            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
-            Camera.main.transform.position = Camera.main.transform.position + (Vector3.right * finalLoc.x / 2);
+            // https://www.youtube.com/watch?v=3xXlnSetHPM
+            if (cameraHeight >= cameraWidth)
+            {
+                Camera.main.orthographicSize = cameraHeight / 2;
+            }
+            else
+            {
+                Camera.main.orthographicSize = ((GridWidth + 4) * _spaceBetweenGridObjects) * Screen.height / Screen.width / 2;
+            }
+
+            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10) + (Vector3.right * finalLoc.x / 2);
 
             _hasGeneratedGame = true;
 

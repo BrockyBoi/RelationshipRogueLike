@@ -13,9 +13,6 @@ namespace Maze
         [FoldoutGroup("@GetResultTitleString")]
         public MazeDifficultyModifierResult DifficultyModifierResult;
 
-        [FoldoutGroup("@GetResultTitleString")]
-        public List<DialogueObject> MazeDialogueResponses;
-
         public override void ApplyEffects()
         {
             base.ApplyEffects();

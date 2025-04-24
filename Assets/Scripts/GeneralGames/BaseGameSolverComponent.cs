@@ -1,5 +1,6 @@
 using CustomUI;
 using GeneralGame.Generation;
+using MainPlayer;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace GeneralGame
     {
         [ShowInInspector, ReadOnly]
         protected float _totalPenaltyTime = 0f;
+        protected float _bonusTimeGained = 0f;
 
         [SerializeField]
         protected float _timeToCompleteGame = 10f;
@@ -50,7 +52,7 @@ namespace GeneralGame
 
         protected virtual void Start()
         {
-
+            
         }
 
         #region Countdown
@@ -95,6 +97,10 @@ namespace GeneralGame
         #region During Game
         protected virtual void StartGame()
         {
+            _timeLeftToFinish = _timeToCompleteGame;
+            _totalPenaltyTime = 0f;
+            _bonusTimeGained = 0f;
+
             OnGameStart?.Invoke();
             SetGameStage(EGameStage.InGame);
         }
@@ -103,13 +109,11 @@ namespace GeneralGame
         {
             StartGame();
 
-            _timeLeftToFinish = _timeToCompleteGame;
-            _totalPenaltyTime = 0f;
             float countDownTimeWithPenalties = _timeLeftToFinish;
             while (countDownTimeWithPenalties > 0f && IsStage(EGameStage.InGame))
             {
                 _timeLeftToFinish -= Time.deltaTime;
-                countDownTimeWithPenalties = _timeLeftToFinish - _totalPenaltyTime;
+                countDownTimeWithPenalties = _timeLeftToFinish - _totalPenaltyTime + _bonusTimeGained;
 
                 OnMainTimerValueChange?.Invoke(countDownTimeWithPenalties);
                 yield return null;
@@ -119,7 +123,7 @@ namespace GeneralGame
         }
         protected float GetPercentageOfTimeLeftToCompleteGame()
         {
-            return (_timeLeftToFinish - _totalPenaltyTime) / _timeToCompleteGame;
+            return (_timeLeftToFinish - _totalPenaltyTime + _bonusTimeGained) / _timeToCompleteGame;
         }
 
         protected virtual void EndGame()
@@ -157,6 +161,9 @@ namespace GeneralGame
             Debug.Log("Failed game");
             WonPreviousGame = false;
             OnGameFailed?.Invoke();
+
+            // If player fails to complete game they lose an extra health point
+            Player.Instance.HealthComponent.ChangeHealth(-1);
             EndGame();
         }
 
@@ -176,5 +183,7 @@ namespace GeneralGame
 
         protected abstract GameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
+
+        protected abstract void OnGameDataSet();
     }
 }

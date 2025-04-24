@@ -4,19 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GlobalFunctions : MonoBehaviour
+public static class GlobalFunctions
 {
-    private static GlobalFunctions instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     public static T RandomEnumValue<T>(params T[] elementsToAvoid)
     {
         // https://discussions.unity.com/t/using-random-range-to-pick-a-random-value-out-of-an-enum/119639/3
-        var values = Enum.GetValues(typeof(T));
+        Array values = Enum.GetValues(typeof(T));
         T randomElement;
         int iterations = 0;
         do
@@ -33,12 +26,19 @@ public class GlobalFunctions : MonoBehaviour
         return randomElement;
     }
 
-    public static void LerpObjectToLocation(GameObject objectToMove, Vector3 finalPosition,  float duration)
+    public static void LerpObjectToLocation(MonoBehaviour coroutineParent, GameObject objectToMove, Vector3 finalPosition,  float duration)
     {
-        instance.StartCoroutine(instance.RunLerpObjectToLocation(objectToMove, finalPosition, duration));
+        if (coroutineParent)
+        {
+            coroutineParent.StartCoroutine(RunLerpObjectToLocation(objectToMove, finalPosition, duration));
+        }
+        else
+        {
+            Debug.LogError("Null object provided");
+        }
     }
 
-    private IEnumerator RunLerpObjectToLocation(GameObject objectToMove, Vector3 finalPosition, float duration)
+    private static IEnumerator RunLerpObjectToLocation(GameObject objectToMove, Vector3 finalPosition, float duration)
     {
         Vector3 objectStartPos = objectToMove.transform.position;
         float time = 0;
@@ -50,6 +50,65 @@ public class GlobalFunctions : MonoBehaviour
         }
 
         objectToMove.transform.position = finalPosition;
+    }
+
+    public static void LerpObjectScale(MonoBehaviour coroutineParent, GameObject objectToScale, Vector3 finalScale, float duration)
+    {
+        if (coroutineParent)
+        {
+            coroutineParent.StartCoroutine(RunLerpObjectScale(objectToScale, finalScale, duration));
+        }
+        else
+        {
+            Debug.LogError("Null object provided");
+        }
+    }
+
+    private static IEnumerator RunLerpObjectScale(GameObject objectToScale, Vector3 finalScale, float duration)
+    {
+        Vector3 startScale = objectToScale.transform.localScale;
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            objectToScale.transform.localScale = Vector3.Lerp(startScale, finalScale, time / duration);
+            yield return null;
+        }
+
+        objectToScale.transform.localScale = finalScale;
+    }
+
+    public static void LerpRectTransform(MonoBehaviour coroutineParent, RectTransform rectToTransform, RectTransform finalRectValues, float duration)
+    {
+        if (coroutineParent)
+        {
+            coroutineParent.StartCoroutine(RunLerpORectTransform(rectToTransform, finalRectValues, duration));
+        }
+        else
+        {
+            Debug.LogError("Null object provided");
+        }
+    }
+
+    private static IEnumerator RunLerpORectTransform(RectTransform rectToTransform, RectTransform finalRectValues, float duration)
+    {
+        //rectToTransform.SetParent(finalRectValues.parent);
+        Vector2 startMin = rectToTransform.offsetMin;
+        Vector2 startMax = rectToTransform.offsetMax;
+        Vector3 startPos = rectToTransform.position;
+
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            rectToTransform.offsetMin = Vector2.Lerp(startMin, finalRectValues.offsetMin, time / duration);
+            rectToTransform.offsetMax = Vector2.Lerp(startMax, finalRectValues.offsetMax, time / duration);
+            rectToTransform.position = Vector3.Lerp(startPos, finalRectValues.position, time / duration);
+            yield return null;
+        }
+
+        rectToTransform.offsetMin = finalRectValues.offsetMin;
+        rectToTransform.offsetMax = finalRectValues.offsetMax;
     }
 
     public static List<T> EnumToList<T>(params T[] restrictedTypes) where T : Enum

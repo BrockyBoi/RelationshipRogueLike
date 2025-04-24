@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Dialogue.UI
 {
@@ -23,14 +24,24 @@ namespace Dialogue.UI
 
         private int _currentlyHighlightedIndex = 0;
 
+        [SerializeField]
+        private float _timeToMoveFromResultToDialogue = 1.5f;
+        public float TimeToMoveFromResultToDialogue { get {  return _timeToMoveFromResultToDialogue;} }
+
+        [SerializeField]
+        private VerticalLayoutGroup _verticalLayoutGroup;
+
         private void Awake()
         {
             Instance = this;
             _dialogueObjects = new List<PotentialPlayerDialogueUIObject>();
+            _currentlyHighlightedIndex = -1;
         }
 
         public void AddDialogueObjects(List<GameCompletionResult> completionResults)
         {
+            //_verticalLayoutGroup.enabled = true;
+
             foreach (GameCompletionResult completionResult in completionResults)
             {
                 PotentialPlayerDialogueUIObject dialogueUI = Instantiate(_potentialPlayerDialoguePrefab, gameObject.transform);
@@ -39,8 +50,14 @@ namespace Dialogue.UI
                 _dialogueObjects.Add(dialogueUI);
             }
 
+            //_verticalLayoutGroup.enabled = false;
+
             ShowUI();
-            HighlightResult(0);
+        }
+
+        public PotentialPlayerDialogueUIObject GetCurrentlyHighlightedPotentialPlayerDialogueUI()
+        {
+             return _dialogueObjects.IsValidIndex(_currentlyHighlightedIndex) ? _dialogueObjects[_currentlyHighlightedIndex] : null;
         }
 
         public void DestroyAllDialogueOptions()
@@ -50,16 +67,33 @@ namespace Dialogue.UI
                 Destroy(_dialogueObjects[i].gameObject);
             }
 
-            _currentlyHighlightedIndex = 0;
+            _currentlyHighlightedIndex = -1;
             _dialogueObjects.Clear();
             HideUI();
         }
 
         public void HighlightResult(int indexResult)
         {
-            if (indexResult != _currentlyHighlightedIndex && _dialogueObjects.IsValidIndex(indexResult))
+            //_verticalLayoutGroup.enabled = false;
+
+            if (!_dialogueObjects.IsValidIndex(indexResult))
             {
-                _dialogueObjects[_currentlyHighlightedIndex].StopHighlightingObject();
+                Debug.LogError(indexResult + " is not a valid index");
+                return;
+            }
+
+            if (indexResult != _currentlyHighlightedIndex)
+            {
+                if (_dialogueObjects.IsValidIndex(_currentlyHighlightedIndex))
+                {
+                    PotentialPlayerDialogueUIObject oldResult = _dialogueObjects[_currentlyHighlightedIndex];
+                    if (oldResult)
+                    {
+                        oldResult.StopHighlightingObject();
+                        oldResult.RemoveResult();
+                    }
+                }
+
                 _dialogueObjects[indexResult].HighlightObject();
 
                 _currentlyHighlightedIndex = indexResult;

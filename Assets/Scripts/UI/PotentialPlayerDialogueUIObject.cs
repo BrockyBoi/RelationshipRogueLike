@@ -11,18 +11,25 @@ namespace Dialogue.UI
     public class PotentialPlayerDialogueUIObject : MonoBehaviour
     {
         [SerializeField]
-        Image _backgroundImage;
+        private Image _backgroundImage;
 
         [SerializeField]
-        TextMeshProUGUI _dialogueText;
+        private TextMeshProUGUI _dialogueText;
 
         [SerializeField]
-        Image _healthImage;
+        private Image _healthImage;
 
         [SerializeField]
-        TextMeshProUGUI _healthChangeText;
+        private TextMeshProUGUI _healthChangeText;
 
         private GameCompletionResult _result;
+
+        private Vector3 _startScale = Vector3.one;
+
+        private void Start()
+        {
+            _startScale = transform.localScale;
+        }
 
         public void SetGameCompletionResult(GameCompletionResult result)
         {
@@ -49,11 +56,20 @@ namespace Dialogue.UI
         public void HighlightObject()
         {
             _backgroundImage.color = Color.yellow;
+            transform.localScale = _startScale * 1.25f;
+
         }
 
         public void StopHighlightingObject()
         {
             _backgroundImage.color = Color.white;
+            transform.localScale = _startScale;
+        }
+
+        public void RemoveResult()
+        {
+            Vector3 endPos = transform.position + Vector3.right * 1000;
+            GlobalFunctions.LerpObjectToLocation(this, gameObject, endPos, 2);
         }
     }
 }

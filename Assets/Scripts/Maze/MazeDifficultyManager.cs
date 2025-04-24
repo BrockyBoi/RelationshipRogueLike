@@ -27,6 +27,8 @@ namespace Maze
         [ShowInInspector, ShowIf("ShouldShake")]
         public float ShakeIntensity { get; private set; }
 
+        private float _storedShakeIntensity = 0;
+
         public Vector2 ShakeOffsetPosition { get; private set; }
 
         [ShowInInspector]
@@ -61,7 +63,7 @@ namespace Maze
             ChangeMazeSizeModifierValue(result.MazeSizeModifier);
         }
 
-        private void ChangeRotationRate(float rotationRateChange)
+        public void ChangeRotationRate(float rotationRateChange)
         {
             RotateSpeed = Mathf.Clamp(RotateSpeed + rotationRateChange, 0.0f, _maxRotation);
             ShouldRotate = RotateSpeed > 0.0f;
@@ -70,6 +72,13 @@ namespace Maze
         public void ChangeShakeIntensity(float shakeIntensityChange)
         {
             ShakeIntensity = Mathf.Clamp(ShakeIntensity + shakeIntensityChange, 0.0f, _maxShakeIntensity);
+            ShouldShake = ShakeIntensity > 0.0f;
+        }
+
+        public void ForceShakeIntensity(float shakeIntensity)
+        {
+            _storedShakeIntensity = ShakeIntensity;
+            ShakeIntensity = Mathf.Clamp(shakeIntensity, 0.0f, _maxShakeIntensity);
             ShouldShake = ShakeIntensity > 0.0f;
         }
 

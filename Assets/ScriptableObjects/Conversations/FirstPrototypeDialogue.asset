@@ -414,7 +414,7 @@ MonoBehaviour:
           EndConversationObject:
             FinalDialogue: []
       GridSize: {x: 2, y: 3}
-      ShakeIntensity: 0.01
+      ShakeIntensity: 0
       RotationSpeed: 0
       TimeToSolveMaze: 10
     MemoryGameSpawnerData:

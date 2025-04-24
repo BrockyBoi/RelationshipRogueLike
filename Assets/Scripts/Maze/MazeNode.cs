@@ -1,3 +1,4 @@
+using Maze.Generation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,10 +54,10 @@ namespace Maze
 
         private void Start()
         {
-            _leftWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            _rightWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            _frontWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            _backWall.GetComponent<MeshRenderer>().material.color = Color.red;
+            //_leftWall.GetComponent<MeshRenderer>().material.color = Color.red;
+            //_rightWall.GetComponent<MeshRenderer>().material.color = Color.red;
+            //_frontWall.GetComponent<MeshRenderer>().material.color = Color.red;
+            //_backWall.GetComponent<MeshRenderer>().material.color = Color.red;
 
             MazeSolverComponent.Instance.OnGameStart += OnGameStart;
             _difficultyManager = MazeDifficultyManager.Instance;
@@ -71,10 +72,19 @@ namespace Maze
         {
             if (MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
             {
-                if (_difficultyManager.ShouldRotate)
+                var controller = MazeGenerator.Instance;
+                Vector3 finalLoc = new Vector3((controller.GridWidth - 1), 0, (controller.GridHeight - 1));
+                if (_difficultyManager.ShouldRotate/* && PositionInGrid == Vector2Int.zero*/)
                 {
+                    float speed = _difficultyManager.RotateSpeed;
                     GameObject mazeNodes = ParentObjectsManager.Instance.MazeNodesParent;
-                    transform.RotateAround(mazeNodes.transform.position, Vector3.up, _difficultyManager.RotateSpeed);
+                   //mazeNodes.transform.Rotate(Vector3.up, speed, Space.Self);
+                    
+                    transform.RotateAround(transform.parent.localPosition * 1.5f, Vector3.up, speed);
+                    //Quaternion current = mazeNodes.transform.localRotation * Quaternion.Euler(0, speed, 0);
+                    //Quaternion next = mazeNodes.transform.localRotation;
+                    //mazeNodes.transform.localRotation = Quaternion.Slerp(next, current, Time.deltaTime);
+                    ////mazeNodes.transform.Translate(0, speed, 0);
                 }
             }
         }

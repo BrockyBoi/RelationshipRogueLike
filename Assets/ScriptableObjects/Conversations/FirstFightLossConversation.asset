@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
+  m_Name: FirstFightLossConversation
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  DialogueObjects:
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 4
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "*Crying* You know what? This isn\u2019t working.  I don\u2019t
+        deserve to be treated this way.  I think you need to leave."
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      TimeToSolveMaze: 10
+      IsMazeFake: 0
+      FakeMazeTime: 2
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      GridSize: {x: 0, y: 0}
+      NumberOfGuesses: 5
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []

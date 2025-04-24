@@ -23,6 +23,7 @@ namespace Characters
         public string CharacterName;
         public Sprite DefaultSprite;
         public SentimentSpriteDictionary SentimentPortraits;
+        public bool IsMainCharacter;
     }
 
     [Serializable]

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-using GeneralGame.Generation;
+using Maze;
 using MemoryGame.Dialogue;
 using MemoryGame.Generation;
 using MemoryGame;
@@ -15,6 +15,7 @@ namespace Dialogue
     public enum EDialogueObjectType
     {
         StandardDialogue,
+        SentimentDialogue,
         SpawnMaze,
         SpawnMemoryGame,
         EndConversation,
@@ -28,6 +29,9 @@ namespace Dialogue
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
         public List<StandardDialogueObject> StandardDialogueObjects;
+
+        [ShowIf("DialogueObjectType", EDialogueObjectType.SentimentDialogue)]
+        public SentimentDialogueObject SentimentDialogueObject;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
         public MazeGeneratorData MazeSpawnerData;
@@ -43,7 +47,7 @@ namespace Dialogue
     }
 
     [Serializable]
-    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, DialogueObject> { }
+    public class SentimentDialogueDictionary : UnitySerializedDictionary<ECharacterSentiment, BranchingDialogueObject> { }
 
     [Serializable]
     public class DialogueData
@@ -55,14 +59,13 @@ namespace Dialogue
 
         [HideLabel]
         public CustomDialogueOptions CustomDialogueOptions;
-        public bool IsCharacterMainPlayer;
     }
 
     [Serializable]
     public class StandardDialogueObject
     {
         [FoldoutGroup("@DialogueEditorDisplayString")]
-        [SerializeField, FoldoutGroup("@DialogueEditorDisplayString")]
+        [SerializeField, FoldoutGroup("@DialogueEditorDisplayString"), HideLabel]
         private DialogueData _dialogueData;
 
         [SerializeField, TextArea(2, 4), FoldoutGroup("@DialogueEditorDisplayString")]
@@ -71,7 +74,7 @@ namespace Dialogue
         public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
         public CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
 
-        private string DialogueEditorDisplayString { get { return CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue"; } }
+        private string DialogueEditorDisplayString { get { return CharacterData ? CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue" + " '" + _standardDialogue.Substring(0, Mathf.Min(_standardDialogue.Length, 45)) + "'" : string.Empty; } }
 
         public static StandardDialogueObject EmptyDialogueObject
         {
@@ -130,7 +133,7 @@ namespace Dialogue
                 return CustomDialogue.CustomSprite;
             }
 
-            if (HasCharacterData() && CustomDialogue.UsesSentimentSystem && CharacterData != null && CharacterData.SentimentPortraits != null && CharacterData.SentimentPortraits.Count > 0)
+            if (HasCharacterData() && CustomDialogue.UseCurrentPlayerHealthForSentimentSprite && CharacterData != null && CharacterData.SentimentPortraits != null && CharacterData.SentimentPortraits.Count > 0)
             {
                 ECharacterSentiment sentiment = GetPlayerHealthComponent().GetCharacterSentiment();
                 return CharacterData.SentimentPortraits.ContainsKey(sentiment) ? CharacterData.SentimentPortraits[sentiment] : CharacterData.DefaultSprite;
@@ -153,6 +156,12 @@ namespace Dialogue
         {
             return Player.Instance.HealthComponent;
         }
+    }
+
+    [Serializable]
+    public class SentimentDialogueObject
+    {
+        public SentimentDialogueDictionary SentimentDialogue;
     }
 
     [Serializable]
@@ -240,26 +249,21 @@ namespace Dialogue
         [ShowIf("UsesCustomName"), HorizontalGroup("Row1")]
         public string CustomName;
 
-        [HorizontalGroup("Row2")]
+        [HideIf("UseCurrentPlayerHealthForSentimentSprite"), HorizontalGroup("Row2")]
         public bool UsesCustomSprite;
         [ShowIf("UsesCustomSprite"), HorizontalGroup("Row2")]
         public Sprite CustomSprite;
 
-        [HorizontalGroup]
-        public bool UsesSentimentSystem;
-        [ShowIf("UsesSentimentSystem")]
-        public SentimentDialogueDictionary SentimentDialogues;
+        public bool UseCurrentPlayerHealthForSentimentSprite;
+    }
 
-        public bool PlayerHasSentiment()
-        {
-            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
-            return UsesSentimentSystem && SentimentDialogues.ContainsKey(sentiment);
-        }
-
-        public DialogueObject GetSentimentDialogue()
-        {
-            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
-            return PlayerHasSentiment() ? SentimentDialogues[sentiment] : null;
-        }
+    [Serializable]
+    public class BranchingDialogueObject
+    {
+        public bool OnlyUsesDialogue = true;
+        [ShowIf("OnlyUsesDialogue")]
+        public List<StandardDialogueObject> DialogueObjects;
+        [HideIf("OnlyUsesDialogue")]
+        public Conversation NewConversation;
     }
 }

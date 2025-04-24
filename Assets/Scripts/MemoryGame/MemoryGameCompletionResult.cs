@@ -16,8 +16,6 @@ namespace MemoryGame
 
         [FoldoutGroup("@GetResultTitleString"), ShowIf("HasResponseBasedOnSpecificMemoryType")]
         public MemoryGameRelatedDialogue GameRelatedDialogue;
-        [FoldoutGroup("@GetResultTitleString"), HideIf("HasResponseBasedOnSpecificMemoryType")]
-        public List<DialogueObject> MemoryGameDialogueResponses;
 
         [FoldoutGroup("@GetResultTitleString")]
         public MemoryGameDifficultyModifierResult DifficultyModifierResult;

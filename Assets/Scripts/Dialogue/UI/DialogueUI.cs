@@ -11,13 +11,19 @@ namespace Dialogue.UI
         public static DialogueUI Instance { get; private set; }
 
         [SerializeField]
+        private Image _textBackgroundImage;
+
+        [SerializeField]
         private TextMeshProUGUI _dialogueText;
 
         [SerializeField]
         private TextMeshProUGUI _characterNameText;
 
         [SerializeField]
-        private Image _characterImage;
+        private Image _playableCharacterImage;
+
+        [SerializeField]
+        private Image _NPCImage;
 
         private void Awake()
         {
@@ -40,7 +46,24 @@ namespace Dialogue.UI
             ShowUI();
             _dialogueText.text = dialogueObject.GetDialogueString();
             _characterNameText.text = dialogueObject.GetCharacterName();
-            _characterImage.sprite = dialogueObject.GetCharacterSprite();
+
+            bool isMainCharacter = dialogueObject.CharacterData.IsMainCharacter;
+            _playableCharacterImage.sprite = isMainCharacter ? dialogueObject.GetCharacterSprite() : null;
+            _NPCImage.sprite = !isMainCharacter ? dialogueObject.GetCharacterSprite() : null;
+
+            _playableCharacterImage.enabled = isMainCharacter;
+            _NPCImage.enabled = !isMainCharacter;
+        }
+
+        public void GetMoveFromGameResultToConversationData(out Vector3 finalLocation, out RectTransform backgroundTransform)
+        {
+            finalLocation = Vector3.zero;
+            backgroundTransform = null;
+            if (_textBackgroundImage)
+            {
+                finalLocation = _textBackgroundImage.transform.position;
+                backgroundTransform = _textBackgroundImage.rectTransform;
+            }
         }
     }
 }

@@ -8,6 +8,8 @@ using Dialogue.UI;
 using GeneralGame;
 using MemoryGame;
 using MemoryGame.Generation;
+using GeneralGame.Results;
+using Characters;
 
 namespace Dialogue
 {
@@ -16,11 +18,42 @@ namespace Dialogue
         [SerializeField]
         private Conversation _conversationToRun;
 
+        [SerializeField]
+        private Conversation _conversationOnPlayerDeath;
+
         private Coroutine _conversationCoroutine;
 
         private void Start ()
         {
             _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationToRun));
+            Player player = Player.Instance;
+            if (player)
+            {
+                HealthComponent healthComponent = player.HealthComponent;
+                if (healthComponent)
+                {
+                    healthComponent.OnDeath += OnPlayerDeath;
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            Player player = Player.Instance;
+            if (player)
+            {
+                HealthComponent healthComponent = player.HealthComponent;
+                if (healthComponent)
+                {
+                    healthComponent.OnDeath -= OnPlayerDeath;
+                }
+            }
+        }
+
+        private void OnPlayerDeath()
+        {
+            StopCoroutine(_conversationCoroutine);
+            StartCoroutine(ProcessConversation(_conversationOnPlayerDeath));
         }
 
         private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
@@ -41,6 +74,19 @@ namespace Dialogue
                             yield return ProcessStandardDialogueObjects(dialogueObject.StandardDialogueObjects);
                             break;
                         }
+                    case EDialogueObjectType.SentimentDialogue:
+                        {
+                            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
+                            if (dialogueObject.SentimentDialogueObject.SentimentDialogue.ContainsKey(sentiment))
+                            {
+                                yield return ProcessBranchingDialogueObject(dialogueObject.SentimentDialogueObject.SentimentDialogue[sentiment]);
+                            }
+                            else
+                            {
+                                Debug.LogWarning(sentiment + " was not in sentiment dialogue dictionary");
+                            }
+                            break;
+                        }
                     case EDialogueObjectType.SpawnMaze:
                         {
                             MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
@@ -48,7 +94,8 @@ namespace Dialogue
                             MazeGenerator.Instance.DestroyGrid();
                             MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
-                            yield return ProcessDialogues(result.MazeDialogueResponses);
+                            yield return ProcessResultDialogueIntoCharacterDialogue();
+                            yield return ProcessGameResult(result);
                             break;
                         }
                     case EDialogueObjectType.SpawnMemoryGame:
@@ -67,6 +114,7 @@ namespace Dialogue
 
                             MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
                                                                                                         instance.GetGameCompletionResultToApplyByGuessesLeft();
+                            yield return ProcessResultDialogueIntoCharacterDialogue();
                             if (instance.IsLookingForSingleMemoryType)
                             {
                                 StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
@@ -75,7 +123,7 @@ namespace Dialogue
                             }
                             else
                             {
-                                yield return ProcessDialogues(result.MemoryGameDialogueResponses);
+                                yield return ProcessGameResult(result);
                             }
                             break;
                         }
@@ -111,16 +159,61 @@ namespace Dialogue
 
         private IEnumerator ProcessStandardDialogueObject(StandardDialogueObject dialogueObject)
         {
-            if (dialogueObject.CustomDialogue.PlayerHasSentiment())
-            {
-                List<DialogueObject> dialogueObjects = new List<DialogueObject>();
-                dialogueObjects.Add(dialogueObject.CustomDialogue.GetSentimentDialogue());
-                yield return ProcessDialogues(dialogueObjects);
-            }
-            else if (dialogueObject.GetDialogueString() != string.Empty)
+            if (dialogueObject.GetDialogueString() != string.Empty)
             {
                 DialogueUI.Instance.ShowDialogue(dialogueObject);
                 yield return YieldUntilInput();
+            }
+        }
+
+        private IEnumerator ProcessBranchingDialogueObject(BranchingDialogueObject branchingDialogue)
+        {
+            if (branchingDialogue != null)
+            {
+                if (branchingDialogue.OnlyUsesDialogue)
+                {
+                    yield return ProcessStandardDialogueObjects(branchingDialogue.DialogueObjects);
+                }
+                else
+                {
+                    yield return ProcessConversation(branchingDialogue.NewConversation);
+                }
+            }
+        }
+
+        private IEnumerator ProcessGameResult(GameCompletionResult gameResult)
+        {
+            if (gameResult.BranchingDialogue.OnlyUsesDialogue)
+            {
+                yield return ProcessStandardDialogueObjects(gameResult.BranchingDialogue.DialogueObjects);
+            }
+            else
+            {
+                yield return ProcessConversation(gameResult.BranchingDialogue.NewConversation);
+            }
+        }
+
+        private IEnumerator ProcessResultDialogueIntoCharacterDialogue()
+        {
+            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+            yield break;
+
+            // Still working on it
+            PotentialPlayerDialogueUIObject dialogueUI = PotentialPlayerDialogueUI.Instance.GetCurrentlyHighlightedPotentialPlayerDialogueUI();
+            if (dialogueUI)
+            {
+                float timeToMove = PotentialPlayerDialogueUI.Instance.TimeToMoveFromResultToDialogue;
+                Vector3 finalLocation;
+                RectTransform rect;
+
+                DialogueUI.Instance.GetMoveFromGameResultToConversationData(out finalLocation, out rect);
+
+                //GlobalFunctions.LerpObjectToLocation(dialogueUI, dialogueUI.gameObject, finalLocation, timeToMove);
+                GlobalFunctions.LerpRectTransform(dialogueUI, dialogueUI.GetComponent<RectTransform>(), rect, timeToMove);
+
+                yield return new WaitForSeconds(timeToMove);
+
+                PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
             }
         }
 

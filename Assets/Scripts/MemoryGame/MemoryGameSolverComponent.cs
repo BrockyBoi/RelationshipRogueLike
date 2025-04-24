@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MemoryGame
 {
-    public class MemoryGameSolverComponent : GameSolverComponent<MemoryGameCompletionResult>
+    public class MemoryGameSolverComponent : GameSolverComponent<MemoryGameGenerator, MemoryGameCompletionResult>
     {
         public static MemoryGameSolverComponent Instance { get; private set; }
 
@@ -24,7 +24,9 @@ namespace MemoryGame
         public int GuessesLeft { get; private set; }
         public int TotalGuessesAllowed { get; private set; }
 
-        public EMemoryType MemoryTypeToSearchFor { get { return MemoryGameGenerator.Instance.MemoryTypeToSearchFor; } }
+        public EMemoryType MemoryTypeToSearchFor { get { return GameGeneratorInstance.MemoryTypeToSearchFor; } }
+
+        protected override MemoryGameGenerator GameGeneratorInstance { get { return MemoryGameGenerator.Instance; } }
 
         private HashSet<EMemoryType>_memoryTypesSearchedForPreviously;
 
@@ -39,13 +41,13 @@ namespace MemoryGame
         protected override void Start()
         {
             base.Start();
-            MemoryGameGenerator.Instance.ListenToOnCardValuesSet(OnCardValuesSet);
+            GameGeneratorInstance.ListenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
 
         private void OnDestroy()
         {
-            MemoryGameGenerator.Instance.UnlistenToOnGameGenerated(OnCardValuesSet);
+            GameGeneratorInstance.UnlistenToOnGameGenerated(OnCardValuesSet);
             MemoryGameCard.OnCardClicked -= SelectCard;
         }
 
@@ -182,6 +184,11 @@ namespace MemoryGame
         public override int GetCurrentPotentialDialogueIndex()
         {
             return GetGameCompletionIndexBasedOnGuessesLeft();
+        }
+
+        protected override void OnGameDataSet()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
