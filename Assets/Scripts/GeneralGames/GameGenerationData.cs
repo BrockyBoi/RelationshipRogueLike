@@ -1,13 +1,7 @@
-using Dialogue;
 using GeneralGame.Results;
-using Maze;
-using MemoryGame;
-using MemoryGame.Generation;
 using Sirenix.OdinInspector;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace GeneralGame.Generation
 {
@@ -17,8 +11,11 @@ namespace GeneralGame.Generation
     }
 
     [Serializable]
-    public abstract class GameGenerationData<GameResult> : BaseGameGenerationData where GameResult : GameCompletionResult
+    public abstract class GameGenerationData<GameResult> : BaseGameGenerationData where GameResult : GameCompletionResult, new()
     {
-        public List<GameResult> GameCompletionResults;
+        [InfoBox("There must be 2 or more results at all times", InfoMessageType.Error, "@!HasEnoughResults")]
+        public List<GameResult> GameCompletionResults = new List<GameResult>() { new GameResult(), new GameResult() };
+
+        private bool HasEnoughResults { get { return GameCompletionResults != null && GameCompletionResults.Count >= 2; } }
     }
 }

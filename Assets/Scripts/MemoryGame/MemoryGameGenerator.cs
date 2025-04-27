@@ -10,11 +10,13 @@ using UnityEngine;
 
 namespace MemoryGame.Generation
 {
-    public class MemoryGameGenerator : GameGridGenerator<MemoryGameGeneratorData, MemoryGameCompletionResult, MemoryGameCard>
+    public class MemoryGameGenerator : GameGridGenerator<MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult, MemoryGameCard>
     {
         public static MemoryGameGenerator Instance {  get; private set; }
 
         public EMemoryType MemoryTypeToSearchFor { get; private set; }
+
+        protected override MemoryGameSolverComponent GameSolverComponent { get { return MemoryGameSolverComponent.Instance; } }
 
         private EMemoryType _allowedMemoryTypes;
 
@@ -39,7 +41,7 @@ namespace MemoryGame.Generation
             MemoryGameSolverComponent.Instance.OnGuessMade -= OnGuessMade;
         }
 
-        protected override void CreateGrid(Vector2Int gridSize, List<MemoryGameCompletionResult> results)
+        protected override void CreateGrid(Vector2Int gridSize)
         {
             if (gridSize.x * gridSize.y % 2 != 0)
             {
@@ -47,7 +49,7 @@ namespace MemoryGame.Generation
                 return;
             }
 
-            base.CreateGrid(gridSize, results);
+            base.CreateGrid(gridSize);
             SetAllCardValues();
         }
 
@@ -210,15 +212,11 @@ namespace MemoryGame.Generation
             GlobalFunctions.LerpObjectToLocation(card2,card2.gameObject, card1StartPos, .75f);
         }
 
-        protected override void GiveResultsToSolver(List<MemoryGameCompletionResult> results)
-        {
-            MemoryGameSolverComponent.Instance.SetGameCompletionResults(results);
-        }
-
         public override void GenerateGame(MemoryGameGeneratorData generationData)
         {
+            base.GenerateGame(generationData);
             MemoryGameSolverComponent.Instance.SetBaseNumberOfGuesses(generationData.NumberOfGuesses);
-            CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
+            CreateGrid(generationData.GridSize);
         }
 
         [Button]

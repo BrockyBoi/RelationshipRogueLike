@@ -10,6 +10,9 @@ using MemoryGame.Dialogue;
 using MemoryGame.Generation;
 using MemoryGame;
 
+using WhackAMole;
+using UnityEditor;
+
 namespace Dialogue
 {
     public enum EDialogueObjectType
@@ -19,7 +22,8 @@ namespace Dialogue
         SpawnMaze,
         SpawnMemoryGame,
         EndConversation,
-        LinkNewConversation
+        LinkNewConversation,
+        SpawnWhackAMole
     }
 
     [Serializable]
@@ -38,6 +42,9 @@ namespace Dialogue
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
         public MemoryGameGeneratorData MemoryGameSpawnerData;
+
+        [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnWhackAMole)]
+        public WhackAMoleGenerationData WhackAMoleGameSpawnerData;
 
         [ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
         public NewConversationObject LinkedConverssationObject;
@@ -74,7 +81,7 @@ namespace Dialogue
         public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
         public CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
 
-        private string DialogueEditorDisplayString { get { return CharacterData ? CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue" + " '" + _standardDialogue.Substring(0, Mathf.Min(_standardDialogue.Length, 45)) + "'" : string.Empty; } }
+        private string DialogueEditorDisplayString { get { return CharacterData ? CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue" + " '" + _standardDialogue.Substring(0, Mathf.Min(_standardDialogue.Length, 50)) + "'" : string.Empty; } }
 
         public static StandardDialogueObject EmptyDialogueObject
         {

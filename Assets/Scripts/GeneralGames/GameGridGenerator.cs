@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace GeneralGame.Generation
 {
-    public abstract class GameGridGenerator<GenerationData, CompletionResultType, GridObjectType> : DialogueCreatedGameGenerator<GenerationData, CompletionResultType> 
-        where GenerationData : BaseGameGenerationData where CompletionResultType : GameCompletionResult where GridObjectType : GridObject
+    public abstract class GameGridGenerator<GameSolverClass, GenerationData, CompletionResultType, GridObjectType> : DialogueCreatedGameGenerator<GameSolverClass, GenerationData, CompletionResultType>
+        where GameSolverClass : GameSolverComponent<GenerationData, CompletionResultType> where GenerationData : GameGenerationData<CompletionResultType> where CompletionResultType : GameCompletionResult, new() where GridObjectType : GridObject
     {
-        [SerializeField, AssetsOnly]
+        [SerializeField, AssetsOnly, Required]
         protected GridObjectType _objectPrefab;
 
         protected GridObjectType[,] _objectGrid;
@@ -22,18 +22,7 @@ namespace GeneralGame.Generation
         [SerializeField]
         private float _spaceBetweenGridObjects = 5f;
 
-        private GenerationData _gameData;
-        public GenerationData GameData { get { return _gameData; } }
-
-        public System.Action OnGameGenerationDataSet;
-
-        public void SetGameGenerationData(GenerationData data)
-        {
-            _gameData = data;
-            OnGameGenerationDataSet?.Invoke();
-        }
-
-        protected virtual void CreateGrid(Vector2Int gridSize, List<CompletionResultType> results)
+        protected virtual void CreateGrid(Vector2Int gridSize)
         {
             if (gridSize.x == 0 || gridSize.y == 0)
             {
@@ -76,7 +65,6 @@ namespace GeneralGame.Generation
 
             _hasGeneratedGame = true;
 
-            GiveResultsToSolver(results);
             GameGenerated();
         }
 

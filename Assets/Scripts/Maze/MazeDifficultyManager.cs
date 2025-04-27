@@ -27,12 +27,14 @@ namespace Maze
         [ShowInInspector, ShowIf("ShouldShake")]
         public float ShakeIntensity { get; private set; }
 
-        private float _storedShakeIntensity = 0;
+        private float _difficultySkakeIntensityModifier = 0;
 
         public Vector2 ShakeOffsetPosition { get; private set; }
 
         [ShowInInspector]
         public bool ShouldRotate { get; private set; }
+
+        private float _difficultyRotationModifier = 0;
 
         [ShowInInspector, ShowIf("ShouldRotate")]
         public float RotateSpeed { get; private set; }
@@ -58,28 +60,31 @@ namespace Maze
 
         public override void ProvideDifficultyModifierResult(MazeDifficultyModifierResult result)
         {
-            ChangeRotationRate(result.MazeRotateModifier);
-            ChangeShakeIntensity(result.MazeShakeModifier);
+            ChangeRotationRateModifier(result.MazeRotateModifier);
+            ChangeShakeIntensityModifier(result.MazeShakeModifier);
             ChangeMazeSizeModifierValue(result.MazeSizeModifier);
         }
 
-        public void ChangeRotationRate(float rotationRateChange)
+        public void InitializeRotationRate(float rotationRate, bool isRateForced)
         {
-            RotateSpeed = Mathf.Clamp(RotateSpeed + rotationRateChange, 0.0f, _maxRotation);
+            RotateSpeed = isRateForced ? Mathf.Clamp(rotationRate, 0.0f, _maxRotation) : _difficultyRotationModifier;
             ShouldRotate = RotateSpeed > 0.0f;
         }
 
-        public void ChangeShakeIntensity(float shakeIntensityChange)
+        public void ChangeRotationRateModifier(float rotationRateChange)
         {
-            ShakeIntensity = Mathf.Clamp(ShakeIntensity + shakeIntensityChange, 0.0f, _maxShakeIntensity);
+            _difficultyRotationModifier = Mathf.Clamp(_difficultyRotationModifier + rotationRateChange, 0.0f, _maxRotation);
+        }
+
+        public void InitializeShakeIntensityRate(float shakeIntensity, bool isRateForced)
+        {
+            ShakeIntensity = isRateForced ? Mathf.Clamp(shakeIntensity, 0.0f, _maxRotation) : _difficultySkakeIntensityModifier;
             ShouldShake = ShakeIntensity > 0.0f;
         }
 
-        public void ForceShakeIntensity(float shakeIntensity)
+        public void ChangeShakeIntensityModifier(float shakeIntensityChange)
         {
-            _storedShakeIntensity = ShakeIntensity;
-            ShakeIntensity = Mathf.Clamp(shakeIntensity, 0.0f, _maxShakeIntensity);
-            ShouldShake = ShakeIntensity > 0.0f;
+            _difficultySkakeIntensityModifier = Mathf.Clamp(_difficultySkakeIntensityModifier + shakeIntensityChange, 0.0f, _maxShakeIntensity);
         }
 
         private void ChangeMazeSizeModifierValue(int mazeSizeModifierValue)

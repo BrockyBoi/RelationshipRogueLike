@@ -185,6 +185,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -346,15 +347,16 @@ MonoBehaviour:
           MazeSizeModifier: 1
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 10, y: 10}
+      GridSize: {x: 8, y: 8}
       ShakeIntensity: 0
-      RotationSpeed: 5
-      TimeToSolveMaze: 60
-      NeedsKeys: 1
+      RotationSpeed: 0
+      TimeToSolveMaze: 25
+      NeedsKeys: 0
       NeedsNumberedKeys: 0
-      KeysNeeded: 3
+      KeysNeeded: 1
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -430,6 +432,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -503,6 +506,17 @@ MonoBehaviour:
             _standardDialogue: "I\u2019m really sorry that I hurt your feelings. 
               I thought that we were just joking around and having fun, but if I
               read the room wrong then I apologize."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: I promise I was only joking though.  I just thought
+              it would be afunny thing to say.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -525,6 +539,26 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 'I was obviously joking.  Do you think that I actually
               consider you a monster?  '
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: If you didn't mean it... then why would you say it?
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Ummm, as a joke?
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -557,20 +591,42 @@ MonoBehaviour:
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Oh, so I\u2019m crazy now?"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Glad to know I'm dating someone who can't take a fucking
+              joke.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Oh, you will not be talking to me like that.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 1
-          MazeShakeModifier: 0.025
+          MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 7, y: 7}
-      ShakeIntensity: 0.02
-      RotationSpeed: 0.01
-      TimeToSolveMaze: 15
+      GridSize: {x: 8, y: 8}
+      ShakeIntensity: 0.0047
+      RotationSpeed: 0
+      TimeToSolveMaze: 30
       NeedsKeys: 1
       NeedsNumberedKeys: 0
-      KeysNeeded: 2
+      KeysNeeded: 1
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -668,6 +724,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -756,15 +813,16 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 10, y: 10}
+      GridSize: {x: 12, y: 12}
       ShakeIntensity: 0.1
       RotationSpeed: 0
-      TimeToSolveMaze: 15
-      NeedsKeys: 0
+      TimeToSolveMaze: 30
+      NeedsKeys: 1
       NeedsNumberedKeys: 0
-      KeysNeeded: 0
+      KeysNeeded: 7
       IsMazeFake: 1
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -815,6 +873,16 @@ MonoBehaviour:
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Well I think -
+    - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 3
         CustomDialogueOptions:
@@ -840,6 +908,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -929,14 +998,15 @@ MonoBehaviour:
           MazeShakeModifier: 0
           MazeRotateModifier: 0
       GridSize: {x: 30, y: 30}
-      ShakeIntensity: 0.5
+      ShakeIntensity: 0.2
       RotationSpeed: 0
-      TimeToSolveMaze: 500
+      TimeToSolveMaze: 120
       NeedsKeys: 1
       NeedsNumberedKeys: 0
       KeysNeeded: 99
       IsMazeFake: 1
       FakeMazeTime: 4
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -987,6 +1057,16 @@ MonoBehaviour:
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: But -
+    - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 3
         CustomDialogueOptions:
@@ -1012,6 +1092,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1085,6 +1166,16 @@ MonoBehaviour:
             _standardDialogue: "I am so sorry that I hurt your feelings.  I genuinely
               did not mean what I said.  It was a joke, but a bad one.  I\u2019m
               sorry."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Hmm, well, thank you for saying that.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -1130,20 +1221,33 @@ MonoBehaviour:
             _standardDialogue: "I\u2019m not sure if you just started your period,
               but you really need to calm down.  I didn\u2019t do anything wrong. 
               Am I going to have to deal with this for every joke I make?"
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: You do not get to speak to me like that.  You don't
+              get to come here, insult me, and then get pissy when I take <b>your</b>
+              words poorly.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
       GridSize: {x: 9, y: 9}
-      ShakeIntensity: 0.03
+      ShakeIntensity: 0.015
       RotationSpeed: 0
-      TimeToSolveMaze: 20
-      NeedsKeys: 0
+      TimeToSolveMaze: 45
+      NeedsKeys: 1
       NeedsNumberedKeys: 0
-      KeysNeeded: 0
+      KeysNeeded: 2
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1220,6 +1324,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1302,7 +1407,19 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I honestly didn\u2019t know that.  If I knew that
               beforehand then I would have never said it.  I promise I\u2019ll never
-              say that again"
+              say that again."
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: I understand that you may not know everything about
+              my culture and our differences, but you're still just too casual with
+              the things you say sometimes.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -1324,6 +1441,27 @@ MonoBehaviour:
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Well I didn\u2019t know that!  I\u2019m sorry ok? "
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Ok well don't start getting defensive with me.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: You're on the offensive, and you just want me to sit
+              here and take it?  Hard pass.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -1361,14 +1499,24 @@ MonoBehaviour:
               again, you\u2019re mistaken."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 4
+              CharacterSentiment: 3
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: Sorry
+            _standardDialogue: ....
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Yeah, sorry.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
@@ -1377,12 +1525,13 @@ MonoBehaviour:
       GridSize: {x: 8, y: 8}
       ShakeIntensity: 0.006
       RotationSpeed: 0
-      TimeToSolveMaze: 20
+      TimeToSolveMaze: 25
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1458,6 +1607,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1526,7 +1676,7 @@ MonoBehaviour:
           MazeRotateModifier: 0
       - PotentialPlayerDialogueDescription: Defend Yourself
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -1
         BranchingDialogue:
           OnlyUsesDialogue: 1
           DialogueObjects: []
@@ -1537,7 +1687,7 @@ MonoBehaviour:
           MazeRotateModifier: 0
       - PotentialPlayerDialogueDescription: Be Aggressive
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -3
         BranchingDialogue:
           OnlyUsesDialogue: 1
           DialogueObjects: []
@@ -1546,7 +1696,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 5, y: 5}
+      GridSize: {x: 7, y: 7}
       ShakeIntensity: 0
       RotationSpeed: 0
       TimeToSolveMaze: 15
@@ -1555,6 +1705,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 1
       FakeMazeTime: 1
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1642,6 +1793,180 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      GridSize: {x: 0, y: 0}
+      NumberOfGuesses: 5
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 2
+    StandardDialogueObjects: []
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: You'll Never Read This
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: You'll Never Read This
+        HealthResult:
+          HealthAmountToChange: -1
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: You'll Never Read This
+        HealthResult:
+          HealthAmountToChange: -3
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 6, y: 6}
+      ShakeIntensity: 0.01
+      RotationSpeed: 0
+      TimeToSolveMaze: 20
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 1
+      FakeMazeTime: 0.1
+      ForceDifficultySettings: 1
+    MemoryGameSpawnerData:
+      GameCompletionResults: []
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      GridSize: {x: 0, y: 0}
+      NumberOfGuesses: 5
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 4
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*crying* Say something!'
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameCompletionResults: []
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      TimeToSolveMaze: 10
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1796,14 +2121,15 @@ MonoBehaviour:
           MazeShakeModifier: 0
           MazeRotateModifier: 0
       GridSize: {x: 4, y: 5}
-      ShakeIntensity: 0
+      ShakeIntensity: 0.0001
       RotationSpeed: 0
-      TimeToSolveMaze: 15
+      TimeToSolveMaze: 20
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -1878,6 +2204,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -2020,15 +2347,16 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 3, y: 4}
+      GridSize: {x: 8, y: 8}
       ShakeIntensity: 0
-      RotationSpeed: 0
-      TimeToSolveMaze: 15
-      NeedsKeys: 0
+      RotationSpeed: 0.045
+      TimeToSolveMaze: 50
+      NeedsKeys: 1
       NeedsNumberedKeys: 0
-      KeysNeeded: 0
+      KeysNeeded: 3
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:
@@ -2110,16 +2438,6 @@ MonoBehaviour:
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Starting to Cry again*'
     - _dialogueData:
-        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-        CharacterSentiment: 4
-        CustomDialogueOptions:
-          UsesCustomName: 0
-          CustomName: 
-          UsesCustomSprite: 0
-          CustomSprite: {fileID: 0}
-          UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: (Under breath) Jesus Christ
-    - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 4
         CustomDialogueOptions:
@@ -2195,6 +2513,7 @@ MonoBehaviour:
       KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
       GameCompletionResults: []
       MemoryGameRelatedDialogue:

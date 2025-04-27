@@ -54,12 +54,9 @@ namespace Maze
 
         private void Start()
         {
-            //_leftWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            //_rightWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            //_frontWall.GetComponent<MeshRenderer>().material.color = Color.red;
-            //_backWall.GetComponent<MeshRenderer>().material.color = Color.red;
-
             MazeSolverComponent.Instance.OnGameStart += OnGameStart;
+            MazeSolverComponent.Instance.OnKeyCollected += OnKeyCollected;
+
             _difficultyManager = MazeDifficultyManager.Instance;
 
             _difficultyManager.OnShakeOffsetPositionChanged += OnShakeOffsetChanged;
@@ -72,25 +69,17 @@ namespace Maze
         {
             if (MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
             {
-                var controller = MazeGenerator.Instance;
-                Vector3 finalLoc = new Vector3((controller.GridWidth - 1), 0, (controller.GridHeight - 1));
-                if (_difficultyManager.ShouldRotate/* && PositionInGrid == Vector2Int.zero*/)
+                if (_difficultyManager.ShouldRotate)
                 {
                     float speed = _difficultyManager.RotateSpeed;
-                    GameObject mazeNodes = ParentObjectsManager.Instance.MazeNodesParent;
-                   //mazeNodes.transform.Rotate(Vector3.up, speed, Space.Self);
-                    
                     transform.RotateAround(transform.parent.localPosition * 1.5f, Vector3.up, speed);
-                    //Quaternion current = mazeNodes.transform.localRotation * Quaternion.Euler(0, speed, 0);
-                    //Quaternion next = mazeNodes.transform.localRotation;
-                    //mazeNodes.transform.localRotation = Quaternion.Slerp(next, current, Time.deltaTime);
-                    ////mazeNodes.transform.Translate(0, speed, 0);
                 }
             }
         }
 
         private void OnDestroy()
         {
+            MazeSolverComponent.Instance.OnKeyCollected -= OnKeyCollected;
             MazeSolverComponent.Instance.OnGameStart -= OnGameStart;
             _difficultyManager.OnShakeOffsetPositionChanged -= OnShakeOffsetChanged;
         }
@@ -159,6 +148,23 @@ namespace Maze
         private void OnGameStart()
         {
             ShowWalls(true);
+
+            if (IsEndNode)
+            {
+                SetFloorColor(MazeSolverComponent.Instance.KeysNeeded > 0 ? Color.red : Color.green);
+            }
+            else if (IsStartNode)
+            {
+                SetFloorColor(Color.black);
+            }
+        }
+
+        private void OnKeyCollected()
+        {
+            if (IsEndNode && MazeSolverComponent.Instance.KeysNeeded == 0)
+            {
+                SetFloorColor(Color.green);
+            }
         }
 
         public void ClearAllWalls()
@@ -173,7 +179,7 @@ namespace Maze
         {
             _boxCollider.gameObject.SetActive(true);
             IsStartNode = true;
-            _floor.GetComponent<MeshRenderer>().material.color = Color.blue;
+            SetFloorColor(Color.green);
             _boxCollider.enabled = true;
         }
 
@@ -181,7 +187,6 @@ namespace Maze
         {
             _boxCollider.gameObject.SetActive(true);
             IsEndNode = true;
-            _floor.GetComponent<MeshRenderer>().material.color = Color.yellow;
             _boxCollider.enabled = true;
         }
 
@@ -199,6 +204,11 @@ namespace Maze
             {
                 OnCursorExited?.Invoke();
             }
+        }
+
+        private void SetFloorColor(Color color)
+        {
+            _floor.GetComponent<MeshRenderer>().material.color = color;
         }
     }
 }

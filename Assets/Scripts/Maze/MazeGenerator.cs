@@ -1,7 +1,5 @@
-using GeneralGame;
 using GeneralGame.Generation;
 using Maze.Gameplay;
-using MemoryGame;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +7,14 @@ using UnityEngine;
 
 namespace Maze.Generation
 {
-    public class MazeGenerator : GameGridGenerator<MazeGeneratorData, MazeCompletionResult, MazeNode>
+    public class MazeGenerator : GameGridGenerator<MazeSolverComponent, MazeGeneratorData, MazeCompletionResult, MazeNode>
     {
         public static MazeGenerator Instance {  get; private set; }
 
         public MazeNode StartNode { get; private set; }
         public MazeNode EndNode { get; private set; }
+
+        protected override MazeSolverComponent GameSolverComponent { get { return MazeSolverComponent.Instance; } }
 
         bool _needsKeys = false;
         int _keysNeeded = 0;
@@ -64,28 +64,46 @@ namespace Maze.Generation
             EndNode = null;
         }
 
-        protected override void CreateGrid(Vector2Int gridSize, List<MazeCompletionResult> results)
+        protected override void CreateGrid(Vector2Int gridSize)
         {
-            base.CreateGrid(gridSize, results);
+            base.CreateGrid(gridSize);
 
             CreateMazePath();
         }
 
+        #region Maze Generation
         private void CreateMazePath()
+        {
+            List<MazeNode> potentialStartNodes = new List<MazeNode>();
+            GeneratePathThroughMazeNodes(potentialStartNodes);
+
+            MazeNode bestNode = GetBestStartNode(potentialStartNodes);
+
+            potentialStartNodes.Remove(bestNode);
+
+            GenerateKeysInMaze(potentialStartNodes);
+
+            StartNode = bestNode;
+            StartNode.SetAsStartNode();
+
+            _hasGeneratedMazePath = true;
+            OnMazePathGenerated?.Invoke();
+        }
+
+        private void GeneratePathThroughMazeNodes(List<MazeNode> potentialStartNodes)
         {
             MazeNode firstNode = _objectGrid[0, 0];
             firstNode.ClearAllWalls();
             firstNode.SetAsEndNode();
             EndNode = firstNode;
-            List<MazeNode> currentPath = new List<MazeNode>();
-            int completedNodes = 0;
 
-            currentPath.Add(firstNode);
             firstNode.VisitNode();
             MazeNode currentNode = firstNode;
 
-            List<MazeNode> potentialStartNodes = new List<MazeNode>();
+            List<MazeNode> currentPath = new List<MazeNode>();
 
+            currentPath.Add(firstNode);
+            int completedNodes = 0;
             bool wasLastNodeValid = false;
             while (completedNodes < _objectGrid.Length)
             {
@@ -120,7 +138,10 @@ namespace Maze.Generation
                     break;
                 }
             }
+        }
 
+        private MazeNode GetBestStartNode(List<MazeNode> potentialStartNodes)
+        {
             float maxDist = -1;
             MazeNode bestNode = null;
             foreach (MazeNode node in potentialStartNodes)
@@ -133,19 +154,34 @@ namespace Maze.Generation
                 }
             }
 
+            return bestNode;
+        }
+
+        private void GenerateKeysInMaze(List<MazeNode> potentialStartNodes)
+        {
+            int startPotentialStartNodesCount = potentialStartNodes.Count;
             int keysToSpawn = _keysNeeded;
             if (_needsKeys && _keysNeeded > 0)
             {
-                foreach (MazeNode node in potentialStartNodes)
+                for (int i = 0; i < _keysNeeded; i++)
                 {
-                    if (node && node != bestNode)
+                    MazeNode node = potentialStartNodes.GetRandomElement();
+                    if (node)
                     {
+                        potentialStartNodes.Remove(node);
+
                         KeyPickupObject keyPickupObject = Instantiate(_keyPrefab, node.transform);
                         if (keyPickupObject)
                         {
                             _keysInGame.Add(keyPickupObject);
                             keyPickupObject.DeactivateObject();
                             keysToSpawn--;
+
+                            if (potentialStartNodes.Count == 0 && keysToSpawn > 0)
+                            {
+                                _keysNeeded = startPotentialStartNodesCount;
+                                break;
+                            }
 
                             if (keysToSpawn == 0)
                             {
@@ -154,56 +190,6 @@ namespace Maze.Generation
                         }
                     }
                 }
-            }
-
-            StartNode = bestNode;
-            StartNode.SetAsStartNode();
-
-            _hasGeneratedMazePath = true;
-            OnMazePathGenerated?.Invoke();
-        }
-
-        public void ListenToOnMazePathGenerated(System.Action action)
-        {
-            if (!_hasGeneratedMazePath)
-            {
-                OnMazePathGenerated += action;
-            }
-            else
-            {
-                action?.Invoke();
-            }
-        }
-
-        public void UnlistenToMazePathGenerated(System.Action action)
-        {
-            OnMazePathGenerated -= action;
-        }
-
-        private void ClearWalls(MazeNode previousNode, MazeNode currentNode, EMazeDirection directionMoving)
-        {
-            if (previousNode == null)
-            {
-                return;
-            }
-
-            previousNode.ClearWall(directionMoving);
-            switch (directionMoving)
-            {
-                case EMazeDirection.Left:
-                    currentNode.ClearWall(EMazeDirection.Right);
-                    break;
-                case EMazeDirection.Right:
-                    currentNode.ClearWall(EMazeDirection.Left);
-                    break;
-                case EMazeDirection.Forward:
-                    currentNode.ClearWall(EMazeDirection.Backward);
-                    break;
-                case EMazeDirection.Backward:
-                    currentNode.ClearWall(EMazeDirection.Forward);
-                    break;
-                case EMazeDirection.None:
-                    break;
             }
         }
 
@@ -275,6 +261,51 @@ namespace Maze.Generation
 
             return EMazeDirection.None;
         }
+        #endregion
+
+        public void ListenToOnMazePathGenerated(System.Action action)
+        {
+            if (!_hasGeneratedMazePath)
+            {
+                OnMazePathGenerated += action;
+            }
+            else
+            {
+                action?.Invoke();
+            }
+        }
+
+        public void UnlistenToMazePathGenerated(System.Action action)
+        {
+            OnMazePathGenerated -= action;
+        }
+
+        private void ClearWalls(MazeNode previousNode, MazeNode currentNode, EMazeDirection directionMoving)
+        {
+            if (previousNode == null)
+            {
+                return;
+            }
+
+            previousNode.ClearWall(directionMoving);
+            switch (directionMoving)
+            {
+                case EMazeDirection.Left:
+                    currentNode.ClearWall(EMazeDirection.Right);
+                    break;
+                case EMazeDirection.Right:
+                    currentNode.ClearWall(EMazeDirection.Left);
+                    break;
+                case EMazeDirection.Forward:
+                    currentNode.ClearWall(EMazeDirection.Backward);
+                    break;
+                case EMazeDirection.Backward:
+                    currentNode.ClearWall(EMazeDirection.Forward);
+                    break;
+                case EMazeDirection.None:
+                    break;
+            }
+        }
 
         protected override int GetDifficultySizeModifier()
         {
@@ -286,30 +317,27 @@ namespace Maze.Generation
             return ParentObjectsManager.Instance.MazeNodesParent;
         }
 
-        protected override void GiveResultsToSolver(List<MazeCompletionResult> results)
-        {
-            MazeSolverComponent.Instance.SetGameCompletionResults(results);
-        }
-
         public override void GenerateGame(MazeGeneratorData generationData)
         {
+            base.GenerateGame(generationData);
             SetGameGenerationData(generationData);
-            MazeDifficultyManager.Instance.ChangeShakeIntensity(generationData.ShakeIntensity);
-            MazeDifficultyManager.Instance.ChangeRotationRate(generationData.RotationSpeed);
-            MazeSolverComponent.Instance.SetTimeToCompleteGame(generationData.TimeToSolveMaze);
-            MazeSolverComponent.Instance.SetFakeTime(generationData.IsMazeFake ? generationData.FakeMazeTime : 0);
+            if (generationData.RotationSpeed > 0)
+            {
+                MazeDifficultyManager.Instance.InitializeRotationRate(generationData.RotationSpeed, generationData.ForceDifficultySettings);
+                MazeDifficultyManager.Instance.InitializeShakeIntensityRate(0, true);
+            }
+            else
+            {
+                MazeDifficultyManager.Instance.InitializeShakeIntensityRate(generationData.ShakeIntensity, generationData.ForceDifficultySettings);
+            }
+
+            GameSolverComponent.SetTimeToCompleteGame(generationData.TimeToSolveMaze);
+            GameSolverComponent.SetFakeTime(generationData.IsMazeFake ? generationData.FakeMazeTime : 0);
 
             _needsKeys = generationData.NeedsKeys;
             _keysNeeded = _needsKeys ? generationData.KeysNeeded : 0;
-            CreateGrid(generationData.GridSize, generationData.GameCompletionResults);
-
-           //Cursor.visible = false;
+            CreateGrid(generationData.GridSize);
         }
-
-        //protected override GameSolverComponent<MazeCompletionResult> GetAssociatedGameSolver()
-        //{
-        //    return MazeSolverComponent.Instance;
-        //}
     }
 }
 

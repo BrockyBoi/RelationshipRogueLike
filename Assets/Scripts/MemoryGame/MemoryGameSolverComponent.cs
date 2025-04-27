@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MemoryGame
 {
-    public class MemoryGameSolverComponent : GameSolverComponent<MemoryGameGenerator, MemoryGameCompletionResult>
+    public class MemoryGameSolverComponent : GameSolverComponent<MemoryGameGeneratorData, MemoryGameCompletionResult>
     {
         public static MemoryGameSolverComponent Instance { get; private set; }
 
@@ -24,9 +24,7 @@ namespace MemoryGame
         public int GuessesLeft { get; private set; }
         public int TotalGuessesAllowed { get; private set; }
 
-        public EMemoryType MemoryTypeToSearchFor { get { return GameGeneratorInstance.MemoryTypeToSearchFor; } }
-
-        protected override MemoryGameGenerator GameGeneratorInstance { get { return MemoryGameGenerator.Instance; } }
+        public EMemoryType MemoryTypeToSearchFor { get { return MemoryGameGenerator.Instance.MemoryTypeToSearchFor; } }
 
         private HashSet<EMemoryType>_memoryTypesSearchedForPreviously;
 
@@ -41,13 +39,13 @@ namespace MemoryGame
         protected override void Start()
         {
             base.Start();
-            GameGeneratorInstance.ListenToOnCardValuesSet(OnCardValuesSet);
+            MemoryGameGenerator.Instance.ListenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
 
         private void OnDestroy()
         {
-            GameGeneratorInstance.UnlistenToOnGameGenerated(OnCardValuesSet);
+            MemoryGameGenerator.Instance.UnlistenToOnGameGenerated(OnCardValuesSet);
             MemoryGameCard.OnCardClicked -= SelectCard;
         }
 
@@ -138,8 +136,6 @@ namespace MemoryGame
 
         protected override void ApplyEndGameResults()
         {
-            base.ApplyEndGameResults();
-
             MemoryGameCompletionResult result = IsLookingForSingleMemoryType ? GetGameCompletionResultToApplyBySucceeding() : GetGameCompletionResultToApplyByGuessesLeft();
             result.ApplyEffects();
         }
@@ -185,10 +181,9 @@ namespace MemoryGame
         {
             return GetGameCompletionIndexBasedOnGuessesLeft();
         }
-
-        protected override void OnGameDataSet()
+        public override void SetGenerationGameData(MemoryGameGeneratorData generationData)
         {
-            throw new System.NotImplementedException();
+            base.SetGenerationGameData(generationData);
         }
     }
 }

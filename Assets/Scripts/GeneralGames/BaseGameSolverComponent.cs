@@ -23,8 +23,9 @@ namespace GeneralGame
         protected float _totalPenaltyTime = 0f;
         protected float _bonusTimeGained = 0f;
 
-        [SerializeField]
         protected float _timeToCompleteGame = 10f;
+
+        [SerializeField]
         protected float _countDownTimeGiven = 3f;
 
         protected float _timeLeftToFinish = 0;
@@ -183,7 +184,5 @@ namespace GeneralGame
 
         protected abstract GameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
-
-        protected abstract void OnGameDataSet();
     }
 }

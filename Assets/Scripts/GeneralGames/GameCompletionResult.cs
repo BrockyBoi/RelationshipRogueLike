@@ -10,7 +10,7 @@ namespace GeneralGame.Results
     public abstract class GameCompletionResult
     {
         [FoldoutGroup("@GetResultTitleString")]
-        public string PotentialPlayerDialogueDescription;
+        public string PotentialPlayerDialogueDescription = "Default Description";
 
         [FoldoutGroup("@GetResultTitleString"), HideLabel]
         public GameHealthResult HealthResult;

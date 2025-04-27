@@ -8,7 +8,7 @@ namespace Maze.Gameplay
     {
         protected override void OnPickup()
         {
-            MazeSolverComponent.Instance.OnKeyCollected();
+            MazeSolverComponent.Instance.CollectKey();
         }
     }
 }

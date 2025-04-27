@@ -10,6 +10,7 @@ using MemoryGame;
 using MemoryGame.Generation;
 using GeneralGame.Results;
 using Characters;
+using WhackAMole;
 
 namespace Dialogue
 {
@@ -90,7 +91,7 @@ namespace Dialogue
                     case EDialogueObjectType.SpawnMaze:
                         {
                             MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
-                            yield return YieldUntilMazeCompletion();
+                            yield return YieldUntilGameIsInFinishedStage(MazeSolverComponent.Instance);
                             MazeGenerator.Instance.DestroyGrid();
                             MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
@@ -109,7 +110,7 @@ namespace Dialogue
                             yield return ProcessStandardDialogueObject(openingDialogue);
 
                             MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
-                            yield return YieldUntilMemoryGameCompletion();
+                            yield return YieldUntilGameIsInFinishedStage(instance);
                             MemoryGameGenerator.Instance.DestroyGrid();
 
                             MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
@@ -125,6 +126,18 @@ namespace Dialogue
                             {
                                 yield return ProcessGameResult(result);
                             }
+                            break;
+                        }
+                    case EDialogueObjectType.SpawnWhackAMole:
+                        {
+                            WhackAMoleGenerator.Instance.GenerateGame(dialogueObject.WhackAMoleGameSpawnerData);
+                            yield return YieldUntilGameIsInFinishedStage(WhackAMoleSolver.Instance);
+                            WhackAMoleGenerator.Instance.DeleteGameObjects();
+
+                            WhackAMoleCompletionResult result = WhackAMoleSolver.Instance.GetResultByHealthRemaining();
+
+                            yield return ProcessResultDialogueIntoCharacterDialogue();
+                            yield return ProcessGameResult(result);
                             break;
                         }
                     case EDialogueObjectType.EndConversation:
@@ -229,19 +242,9 @@ namespace Dialogue
             yield return new WaitForEndOfFrame();
         }
 
-        private IEnumerator YieldUntilMazeCompletion()
+        private IEnumerator YieldUntilGameIsInFinishedStage(BaseGameSolverComponent gameSolver)
         {
-            MazeSolverComponent mazeSolverComponent = MazeSolverComponent.Instance;
-            while (mazeSolverComponent && !mazeSolverComponent.IsStage(EGameStage.GameFinished))
-            {
-                yield return null;
-            }
-        }
-
-        private IEnumerator YieldUntilMemoryGameCompletion()
-        {
-            MemoryGameSolverComponent memoryGameSolverComponent = MemoryGameSolverComponent.Instance;
-            while (memoryGameSolverComponent && !memoryGameSolverComponent.IsStage(EGameStage.GameFinished))
+            while (gameSolver && !gameSolver.IsStage(EGameStage.GameFinished))
             {
                 yield return null;
             }

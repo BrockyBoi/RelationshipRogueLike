@@ -8,13 +8,14 @@ using UnityEngine;
 
 namespace GeneralGame
 {
-    public abstract class GameSolverComponent<GameGenerator, CompletionResultType> : BaseGameSolverComponent where GameGenerator : BaseGameGenerator where CompletionResultType : GameCompletionResult
+    public abstract class GameSolverComponent<GenerationData, CompletionResultType> : BaseGameSolverComponent where GenerationData : GameGenerationData<CompletionResultType> where CompletionResultType : GameCompletionResult, new()
     {
         protected List<CompletionResultType> _gameCompletionResults;
 
         private Coroutine _highlightIndexCoroutine;
 
-        protected abstract GameGenerator GameGeneratorInstance { get; }
+        protected GenerationData _gameData;
+        public GenerationData GameData { get { return _gameData; } }
 
         #region Completion Results
         public void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
@@ -31,8 +32,9 @@ namespace GeneralGame
             _highlightIndexCoroutine = StartCoroutine(HighlightCurrentGameResultIndex());
         }
 
-        protected override void ApplyEndGameResults()
+        public virtual void SetGenerationGameData(GenerationData generationData)
         {
+            _gameData = generationData;
         }
 
         private IEnumerator HighlightCurrentGameResultIndex()

@@ -6,7 +6,7 @@ using Maze.UI;
 
 namespace Maze
 {
-    public class MazeSolverComponent : GameSolverComponent<MazeGenerator, MazeCompletionResult>
+    public class MazeSolverComponent : GameSolverComponent<MazeGeneratorData, MazeCompletionResult>
     {
         public static MazeSolverComponent Instance { get; private set; }
 
@@ -20,11 +20,12 @@ namespace Maze
 
         private int _keysNeeded = 0;
 
+        public int KeysNeeded {  get { return _keysNeeded; } }
+
         private bool IsFakeGame { get { return !Mathf.Approximately(_fakeMazeTime, 0) && _fakeMazeTime > 0; } }
 
-        protected override MazeGenerator GameGeneratorInstance { get { return MazeGenerator.Instance; } }
-
         public System.Action OnWallHit;
+        public System.Action OnKeyCollected;
         public System.Action OnMazeSolved;
         public System.Action OnMazeFailed;
 
@@ -36,8 +37,7 @@ namespace Maze
         protected override void Start()
         {
             base.Start();
-            GameGeneratorInstance.ListenToOnMazePathGenerated(OnMazePathGenerated);
-            GameGeneratorInstance.OnGameGenerationDataSet += OnGameDataSet;
+            MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
         }
 
         private void OnMazePathGenerated()
@@ -66,8 +66,7 @@ namespace Maze
 
         private void OnDisable()
         {
-            GameGeneratorInstance.UnlistenToMazePathGenerated(OnMazePathGenerated);
-            GameGeneratorInstance.OnGameGenerationDataSet -= OnGameDataSet;
+            MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
 
             if (_startNode != null)
             {
@@ -120,9 +119,11 @@ namespace Maze
             }
         }
 
-        public void OnKeyCollected()
+        public void CollectKey()
         {
             _keysNeeded--;
+            Debug.Log("Keys left in map: " + _keysNeeded);
+            OnKeyCollected?.Invoke();
         }
 
         public void OnTimePickupCollected(float timeAdded)
@@ -150,7 +151,6 @@ namespace Maze
         {
             if (!IsFakeGame)
             {
-                base.ApplyEndGameResults();
                 MazeCompletionResult result = GetGameCompletionResultToApplyByTimeRemaining();
                 result.ApplyEffects();
             }
@@ -168,9 +168,10 @@ namespace Maze
             return GetGameCompletionResultIndexByTimeRemaining();
         }
 
-        protected override void OnGameDataSet()
+        public override void SetGenerationGameData(MazeGeneratorData generationData)
         {
-            _keysNeeded = GameGeneratorInstance.GameData.KeysNeeded;
+            base.SetGenerationGameData(generationData);
+            _keysNeeded = generationData.NeedsKeys ? generationData.KeysNeeded : 0;
         }
     }
 }
