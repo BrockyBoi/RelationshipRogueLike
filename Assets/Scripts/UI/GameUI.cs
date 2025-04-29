@@ -1,24 +1,106 @@
+using CustomUI;
+using Dialogue.UI;
+using GeneralGame;
+using GeneralGame.Generation;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-namespace CustomUI
+public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI where GameGeneratorClass : BaseGameGenerator where GameSolverClass : BaseGameSolverComponent
 {
-    public abstract class GameUI : MonoBehaviour
+    protected abstract GameGeneratorClass GameGenerator { get; }
+    protected abstract GameSolverClass GameSolver { get; }
+
+    [SerializeField]
+    protected TextMeshProUGUI _timerText;
+
+    protected virtual void Start()
     {
-        [SerializeField]
-        private Canvas _uiCanvas;
-
-        public System.Action OnShowUI;
-        public System.Action OnHideUI;
-        protected void ShowUI()
+        if (GameGenerator)
         {
-            _uiCanvas.enabled = true;
-            OnShowUI?.Invoke();
+            GameGenerator.ListenToOnGameGenerated(OnGameGenerated);
         }
 
-        protected void HideUI()
+        if (GameSolver)
         {
-            _uiCanvas.enabled = false;
-            OnHideUI?.Invoke();
+            GameSolver.OnGameStart += OnGameStart;
+            GameSolver.OnGameStop += OnGameEnd;
+            GameSolver.OnGameCompleted += OnGameCompleted;
+            GameSolver.OnGameFailed += OnGameFailed;
+            GameSolver.OnMainTimerValueChange += OnGameTimerValueChange;
+            GameSolver.OnCountdownValueChange += OnCountdownTimerValueChange;
         }
+
+        DialogueUI dialogueUI = DialogueUI.Instance;
+        if (dialogueUI)
+        {
+            dialogueUI.OnShowUI += HideUI;
+        }
+    }
+
+    protected virtual void OnDestroy()
+    {
+        if (GameGenerator)
+        {
+            GameGenerator.UnlistenToOnGameGenerated(OnGameGenerated);
+        }
+
+        if (GameSolver)
+        {
+            GameSolver.OnGameStart -= OnGameStart;
+            GameSolver.OnGameStop -= OnGameEnd;
+            GameSolver.OnGameCompleted -= OnGameCompleted;
+            GameSolver.OnGameFailed -= OnGameFailed;
+            GameSolver.OnMainTimerValueChange -= OnGameTimerValueChange;
+            GameSolver.OnCountdownValueChange -= OnCountdownTimerValueChange;
+        }
+
+        DialogueUI dialogueUI = DialogueUI.Instance;
+        if (dialogueUI)
+        {
+            dialogueUI.OnShowUI -= HideUI;
+        }
+    }
+
+    protected virtual void OnGameStart()
+    {
+
+    }
+
+    protected virtual void OnGameEnd()
+    {
+
+    }
+
+    protected virtual void OnGameGenerated()
+    {
+        ShowUI();
+    }
+
+    protected virtual void OnGameCompleted()
+    {
+
+    }
+
+    protected virtual void OnGameFailed()
+    {
+
+    }
+
+    protected void ClearTimerText()
+    {
+        _timerText.text = string.Empty;
+    }
+
+    protected virtual void OnCountdownTimerValueChange(float value)
+    {
+        ShowUI();
+        _timerText.text = "CountDown : " + value.ToString("F2");
+    }
+
+    protected virtual void OnGameTimerValueChange(float value)
+    {
+        _timerText.text = "Time Left : " + value.ToString("F2");
     }
 }

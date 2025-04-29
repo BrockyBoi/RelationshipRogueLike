@@ -229,6 +229,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -400,6 +422,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -476,6 +520,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -611,7 +677,7 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: Oh, you will not be talking to me like that.
+            _standardDialogue: You will not be talking to me like that.
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 1
@@ -670,6 +736,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -768,6 +856,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -866,6 +976,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -952,6 +1084,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1050,6 +1204,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1136,6 +1312,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1291,6 +1489,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1368,6 +1588,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1575,6 +1817,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1651,6 +1915,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1749,6 +2035,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1837,6 +2145,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1935,6 +2265,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2010,6 +2362,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2173,6 +2547,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2248,6 +2644,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2400,6 +2818,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2557,6 +2997,28 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsAppear: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

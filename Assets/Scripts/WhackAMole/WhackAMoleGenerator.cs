@@ -16,7 +16,6 @@ namespace WhackAMole
         private WhackAMoleHole _holePrefab;
 
         private WhackAMoleHole[] _holes = new WhackAMoleHole[8];
-        public WhackAMoleHole[] Holes { get { return _holes; } }
 
         protected override WhackAMoleSolver GameSolverComponent { get { return WhackAMoleSolver.Instance; } }
 
@@ -38,6 +37,8 @@ namespace WhackAMole
                 _holes[i] = Instantiate(_holePrefab, finalPos, Quaternion.Euler(90, 0,0));
             }
             SetGameGenerationData(generationData);
+
+            GameGenerated();
         }
 
         public WhackAMoleHole GetHoleNearestToAngle(float angle)
@@ -68,6 +69,24 @@ namespace WhackAMole
             }
 
             return _holes[bestIndex];
+        }
+
+        public WhackAMoleHole GetRandomUnoccupiedHole()
+        {
+            WhackAMoleHole unoccupiedHole = null;
+            int maxCounter = 0;
+            do
+            {
+                unoccupiedHole = _holes.GetRandomElement();
+                if (maxCounter > 50)
+                {
+                    Debug.LogError("In loop too long");
+                    break;
+                }
+            }
+            while (unoccupiedHole && unoccupiedHole.HasObjectInHole);
+
+            return unoccupiedHole;
         }
 
         public void DeleteGameObjects()

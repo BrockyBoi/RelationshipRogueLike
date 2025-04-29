@@ -45,6 +45,7 @@ namespace GeneralGame
 
         public System.Action<float> OnCountdownValueChange;
         public System.Action<float> OnMainTimerValueChange;
+        public System.Action OnMainTimerEnd;
 
         public System.Action OnGameCompleted;
         public System.Action OnGameFailed;
@@ -82,9 +83,7 @@ namespace GeneralGame
                 yield return null;
             }
 
-            SetGameStage(EGameStage.InGame);
-
-            yield return RunGameTimer();
+            StartGameTimer();
         }
 
         protected void StopCountdown()
@@ -106,6 +105,11 @@ namespace GeneralGame
             SetGameStage(EGameStage.InGame);
         }
 
+        protected void StartGameTimer()
+        {
+            StartCoroutine(RunGameTimer());
+        }
+
         private IEnumerator RunGameTimer()
         {
             StartGame();
@@ -120,7 +124,7 @@ namespace GeneralGame
                 yield return null;
             }
 
-            FailGame();
+            OnMainTimerEnd?.Invoke();
         }
         protected float GetPercentageOfTimeLeftToCompleteGame()
         {
@@ -182,7 +186,7 @@ namespace GeneralGame
             _timeToCompleteGame = time;
         }
 
-        protected abstract GameUI GetGameUIInstance();
+        protected abstract BaseGameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
     }
 }

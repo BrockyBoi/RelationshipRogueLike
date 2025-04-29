@@ -38,6 +38,7 @@ namespace Maze
         {
             base.Start();
             MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
+            OnMainTimerEnd += FailGame;
         }
 
         private void OnMazePathGenerated()
@@ -67,6 +68,8 @@ namespace Maze
         private void OnDisable()
         {
             MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
+
+            OnMainTimerEnd -= FailGame;
 
             if (_startNode != null)
             {
@@ -158,7 +161,7 @@ namespace Maze
             Cursor.visible = true;
         }
 
-        protected override GameUI GetGameUIInstance()
+        protected override BaseGameUI GetGameUIInstance()
         {
             return MazeSolverUI.Instance;
         }

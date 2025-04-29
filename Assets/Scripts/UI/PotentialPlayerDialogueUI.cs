@@ -10,7 +10,7 @@ using UnityEngine.UI;
 namespace Dialogue.UI
 {
     [RequireComponent(typeof(VerticalAlignmentOptions))]
-    public class PotentialPlayerDialogueUI : GameUI
+    public class PotentialPlayerDialogueUI : BaseGameUI
     {
         public static PotentialPlayerDialogueUI Instance { get; private set; }
 

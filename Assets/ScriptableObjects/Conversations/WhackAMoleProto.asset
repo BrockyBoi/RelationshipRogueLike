@@ -223,8 +223,9 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
-      HasDistractionObjects: 0
+      TimeObjectsStayInPlay: 1
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 1
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
@@ -426,7 +427,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1

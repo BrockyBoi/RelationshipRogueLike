@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Dialogue.UI
 {
-    public class DialogueUI : GameUI
+    public class DialogueUI : BaseGameUI
     {
         public static DialogueUI Instance { get; private set; }
 

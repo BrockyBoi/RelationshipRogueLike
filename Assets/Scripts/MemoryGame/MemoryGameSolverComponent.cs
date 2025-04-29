@@ -172,7 +172,7 @@ namespace MemoryGame
             _defaultGuessesAllowed = baseNumberOfGuesses;
         }
 
-        protected override GameUI GetGameUIInstance()
+        protected override BaseGameUI GetGameUIInstance()
         {
             throw new System.NotImplementedException();
         }

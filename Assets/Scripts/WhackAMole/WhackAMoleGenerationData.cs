@@ -14,7 +14,10 @@ namespace WhackAMole
         public float TimeToPlay = 15f;
 
         [FoldoutGroup("Game Data")]
-        public float TimeObjectsAppear = .75f;
+        public float TimeObjectsStayInPlay = .75f;
+
+        [FoldoutGroup("Game Data")]
+        public float TimeBetweenSpawns = .75f;
 
         [FoldoutGroup("Game Data")]
         public bool HasDistractionObjects = false;

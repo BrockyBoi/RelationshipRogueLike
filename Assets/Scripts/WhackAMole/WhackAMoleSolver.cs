@@ -1,6 +1,7 @@
 using CustomUI;
 using GeneralGame;
 using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,19 +20,45 @@ namespace WhackAMole
         private int _startingHealth = 10;
         private int _currentHealth = 10;
 
+        public int CurrentHealth { get { return _currentHealth; } }
+
+        private int _spawnsWithoutDistractions = 0;
+        private int _spawnsBetweenDistractions = 0;
+
         private WhackAMoleHole _currentlyHighlightedHole;
+
+        public System.Action OnTakeDamage;
 
         private void Awake()
         {
             Instance = this;
         }
 
+        protected override void Start()
+        {
+            base.Start();
+
+            OnMainTimerEnd += EndGame;
+        }
+
         protected override void StartGame()
         {
             base.StartGame();
+
+            StartCoroutine(RunSpawningLogic());
+        }
+
+        protected void OnDestroy()
+        {
+            OnMainTimerEnd -= EndGame;
         }
 
         protected void Update()
+        {
+            HandlePlayerInput();
+        }
+
+        private void HandlePlayerInput()
         {
             if (IsStage(EGameStage.InGame))
             {
@@ -59,8 +86,14 @@ namespace WhackAMole
                         {
                             _currentlyHighlightedHole.StopHighlighting();
                         }
-                        _currentlyHighlightedHole = holeToHighlight;
-                        _currentlyHighlightedHole.Highlight();
+
+                        if (holeToHighlight != _currentlyHighlightedHole)
+                        {
+                            _currentlyHighlightedHole = holeToHighlight;
+
+                            _currentlyHighlightedHole.Highlight();
+                        }
+                      
                         if (Input.GetKeyDown(KeyCode.Space))
                         {
                             _currentlyHighlightedHole.PlayerHitHole();
@@ -79,21 +112,84 @@ namespace WhackAMole
             }
         }
 
-        private void OnAppearingObjectDestroyed(bool isDistraction)
+        private IEnumerator RunSpawningLogic()
         {
-            if (isDistraction)
+            if (_appearingObjectPrefabs.Count == 0)
             {
-                _currentHealth -= _gameData.HealthLostPerDistraction;
-                CheckDeath();
+                Debug.LogError("Nothing to spawn");
+                yield break;
+            }
+
+            while (IsStage(EGameStage.InGame))
+            {
+                yield return new WaitForSeconds(GameData.TimeBetweenSpawns);
+
+                WhackAMoleHole randomHole = WhackAMoleGenerator.Instance.GetRandomUnoccupiedHole();
+                if (randomHole)
+                {
+                    WhackAMoleAppearingObject appearingObject = Instantiate(GetObjectToSpawn(), randomHole.transform.position + Vector3.up, Quaternion.Euler(90, 0, 0));
+                    if (appearingObject)
+                    {
+                        randomHole.SetObjectInHole(appearingObject);
+                        appearingObject.SetHoleExistingIn(randomHole);
+                        ListenToAppearingObjectEvents(appearingObject);
+                    }
+                }
             }
         }
 
-        private void OnAppearingObjectDisappearedFromTime(bool isDistraction)
+        private void ListenToAppearingObjectEvents(WhackAMoleAppearingObject appearingObject)
         {
-            if (!isDistraction)
+            if (appearingObject)
+            {
+                appearingObject.OnAppearingObjectDestroyed += OnAppearingObjectDestroyed;
+                appearingObject.OnAppearingObjectFailedToBeDestroyed += OnAppearingObjectDisappearedFromTime;
+            }
+        }
+
+        private void UnlistenToApeparingObjectEvents(WhackAMoleAppearingObject appearingObject)
+        {
+            if (appearingObject)
+            {
+                appearingObject.OnAppearingObjectDestroyed -= OnAppearingObjectDestroyed;
+                appearingObject.OnAppearingObjectFailedToBeDestroyed -= OnAppearingObjectDisappearedFromTime;
+            }
+        }
+
+        private WhackAMoleAppearingObject GetObjectToSpawn()
+        {
+            if (GameData.HasDistractionObjects && ++_spawnsWithoutDistractions == _spawnsBetweenDistractions)
+            {
+                _spawnsBetweenDistractions = Random.Range(1, 7);
+                return _distactionObjectPrefabs.GetRandomElement();
+            }
+
+            return _appearingObjectPrefabs.GetRandomElement();
+        }
+
+        private void OnAppearingObjectDestroyed(WhackAMoleAppearingObject appearingObject)
+        {
+            if (appearingObject && appearingObject.IsDistraction)
+            {
+                _currentHealth -= _gameData.HealthLostPerDistraction;
+                CheckDeath();
+
+                UnlistenToApeparingObjectEvents(appearingObject);
+
+                OnTakeDamage?.Invoke();
+            }
+        }
+
+        private void OnAppearingObjectDisappearedFromTime(WhackAMoleAppearingObject appearingObject)
+        {
+            if (appearingObject && !appearingObject.IsDistraction)
             {
                 _currentHealth -= _gameData.HealthLostPerEnemy;
                 CheckDeath();
+
+                UnlistenToApeparingObjectEvents(appearingObject);
+
+                OnTakeDamage?.Invoke();
             }
         }
 
@@ -105,7 +201,7 @@ namespace WhackAMole
             }
         }
 
-        protected override GameUI GetGameUIInstance()
+        protected override BaseGameUI GetGameUIInstance()
         {
             throw new System.NotImplementedException();
         }
@@ -120,7 +216,12 @@ namespace WhackAMole
             base.SetGenerationGameData(generationData);
             _timeToCompleteGame = generationData.TimeToPlay;
             _startingHealth = _currentHealth = generationData.StartingHealth;
-            StartGame();
+            if (generationData.HasDistractionObjects)
+            {
+                _spawnsBetweenDistractions = Random.Range(1, 7);
+            }
+
+            StartGameTimer();
         }
 
         protected override void ApplyEndGameResults()
@@ -137,8 +238,8 @@ namespace WhackAMole
                 return 0;
             }
 
-            int index = Mathf.Clamp(Mathf.FloorToInt(_gameCompletionResults.Count * (_currentHealth / _startingHealth)), 0, _gameCompletionResults.Count - 1);
-            return _gameCompletionResults.Count - 1 - index;
+            float healthPercentage = 1f - (_currentHealth / (float)_startingHealth);
+            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * healthPercentage), 0, _gameCompletionResults.Count - 1);
         }
 
         public WhackAMoleCompletionResult GetResultByHealthRemaining()

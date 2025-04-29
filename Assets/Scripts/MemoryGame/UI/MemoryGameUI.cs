@@ -6,18 +6,23 @@ using TMPro;
 
 using MemoryGame;
 using CustomUI;
+using MemoryGame.Generation;
 
 namespace MemoryGame.UI
 {
-    public class MemoryGameUI : GameUI
+    public class MemoryGameUI : GameUI<MemoryGameGenerator, MemoryGameSolverComponent>
     {
         public static MemoryGameUI Instance { get; private set; }
 
-        [SerializeField]
-        TextMeshProUGUI _memorySearchingForText;
+        protected override MemoryGameGenerator GameGenerator { get { return MemoryGameGenerator.Instance; } }
+
+        protected override MemoryGameSolverComponent GameSolver { get { return MemoryGameSolverComponent.Instance; } }
 
         [SerializeField]
-        TextMeshProUGUI _guessesLeftText;
+        private TextMeshProUGUI _memorySearchingForText;
+
+        [SerializeField]
+        private TextMeshProUGUI _guessesLeftText;
 
         private void Awake()
         {
@@ -25,29 +30,32 @@ namespace MemoryGame.UI
             HideUI();
         }
 
-        private void Start()
+        protected override void Start()
         {
-            MemoryGameSolverComponent solver = MemoryGameSolverComponent.Instance;
-            if (solver != null)
+            base.Start();
+
+            if (GameSolver)
             {
-                solver.OnGuessMade += OnGuessMade;
-                solver.OnGameStart += OnGameStart;
-                solver.OnGameStop += OnGameEnd;
+                GameSolver.OnGuessMade += OnGuessMade;
+                GameSolver.OnGameStart += OnGameStart;
             }
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
-            MemoryGameSolverComponent solver = MemoryGameSolverComponent.Instance;
-            if (solver != null)
+            base.OnDestroy();
+
+            if (GameSolver)
             {
-                solver.OnGuessMade -= OnGuessMade;
-                solver.OnGameStart -= OnGameStart;
+                GameSolver.OnGuessMade -= OnGuessMade;
+                GameSolver.OnGameStart -= OnGameStart;
             }
         }
 
-        private void OnGameStart()
+        protected override void OnGameStart()
         {
+            base.OnGameStart();
+
             EMemoryType memoryType = MemoryGameSolverComponent.Instance.MemoryTypeToSearchFor;
             bool isSearchingForSingleMemoryType = MemoryGameSolverComponent.Instance.IsLookingForSingleMemoryType;
             _memorySearchingForText.text = isSearchingForSingleMemoryType ? "Memory Searching For: " + memoryType.ToString() : string.Empty;
@@ -55,8 +63,10 @@ namespace MemoryGame.UI
             ShowUI();
         }
 
-        private void OnGameEnd()
+        protected override void OnGameEnd()
         {
+            base.OnGameEnd();
+
             HideUI();
         }
 

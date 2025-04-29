@@ -7,12 +7,13 @@ using Maze.Generation;
 
 namespace Maze.UI
 {
-    public class MazeSolverUI : GameUI
+    public class MazeSolverUI : GameUI<MazeGenerator, MazeSolverComponent>
     {
         public static MazeSolverUI Instance { get; private set; }
 
-        [SerializeField]
-        TextMeshProUGUI _timerText;
+        protected override MazeGenerator GameGenerator { get { return MazeGenerator.Instance; } }
+
+        protected override MazeSolverComponent GameSolver { get { return MazeSolverComponent.Instance; } }
 
         bool _runningWallHitAnim = false;
 
@@ -25,61 +26,20 @@ namespace Maze.UI
             HideUI();
         }
 
-        void Start()
+        protected override void Start()
         {
-            MazeSolverComponent mazeSolver = MazeSolverComponent.Instance;
-            if (mazeSolver != null)
-            {
-                mazeSolver.OnMazeFailed += OnMazeFailed;
-                mazeSolver.OnMazeSolved += OnMazeSolved;
-                mazeSolver.OnCountdownValueChange += OnCountdownTimerValueChange;
-                mazeSolver.OnMainTimerValueChange += OnGameTimerValueChange;
-                mazeSolver.OnStartGameCountdownLeft += HideUI;
-                mazeSolver.OnWallHit += OnWallHit;
-            }
+            base.Start();
 
-            MazeGenerator mazeGenerator = MazeGenerator.Instance;
-            if (mazeGenerator != null)
-            {
-                mazeGenerator.ListenToOnGameGenerated(ShowUI);
-            }
-
-            DialogueUI dialogueUI = DialogueUI.Instance;
-            if (dialogueUI != null)
-            {
-                dialogueUI.OnShowUI += HideUI;
-            }
+            GameSolver.OnStartGameCountdownLeft += HideUI;
+            GameSolver.OnWallHit += OnWallHit;
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
-            MazeSolverComponent mazeSolver = MazeSolverComponent.Instance;
-            if (mazeSolver != null)
-            {
-                mazeSolver.OnMazeFailed -= OnMazeFailed;
-                mazeSolver.OnMazeSolved -= OnMazeSolved;
-                mazeSolver.OnCountdownValueChange -= OnCountdownTimerValueChange;
-                mazeSolver.OnMainTimerValueChange -= OnGameTimerValueChange;
-                mazeSolver.OnStartGameCountdownLeft -= HideUI;
-                mazeSolver.OnWallHit -= OnWallHit;
-            }
+            base.OnDestroy();
 
-            MazeGenerator mazeGenerator = MazeGenerator.Instance;
-            if (mazeGenerator != null)
-            {
-                mazeGenerator.UnlistenToOnGameGenerated(ShowUI);
-            }
-
-            DialogueUI dialogueUI = DialogueUI.Instance;
-            if (dialogueUI != null)
-            {
-                dialogueUI.OnShowUI -= HideUI;
-            }
-        }
-
-        private void ClearText()
-        {
-            _timerText.text = string.Empty;
+            GameSolver.OnStartGameCountdownLeft -= HideUI;
+            GameSolver.OnWallHit -= OnWallHit;
         }
 
         private void ResetTextVisuals()
@@ -87,29 +47,22 @@ namespace Maze.UI
             _timerText.color = Color.white;
         }
 
-        private void OnMazeSolved()
+        protected override void OnGameCompleted()
         {
-            _timerText.text = "Ta daaaaa";
+            base.OnGameCompleted();
+
             StopAllCoroutines();
+            ClearTimerText();
             ResetTextVisuals();
         }
 
-        private void OnMazeFailed()
+        protected override void OnGameFailed()
         {
-            _timerText.text = "You suck LOLOLOLOl";
+            base.OnGameFailed();
+
             StopAllCoroutines();
             ResetTextVisuals();
-        }
-
-        private void OnCountdownTimerValueChange(float value)
-        {
-            ShowUI();
-            _timerText.text = "CountDown : " + value.ToString("F2");
-        }
-
-        private void OnGameTimerValueChange(float value)
-        {
-            _timerText.text = "Time Left : " + value.ToString("F2"); ;
+            ClearTimerText();
         }
 
         private void OnWallHit()
