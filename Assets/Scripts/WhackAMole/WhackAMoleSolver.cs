@@ -57,7 +57,7 @@ namespace WhackAMole
         {
             base.Update();
 
-            HandlePlayerInput();
+            //HandlePlayerInput();
         }
 
         private void HandlePlayerInput()

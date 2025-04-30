@@ -38,6 +38,11 @@ namespace WhackAMole
             _objectInHole = null;
         }
 
+        private void OnMouseDown()
+        {
+            PlayerHitHole();
+        }
+
         public void PlayerHitHole()
         {
             StartCoroutine(ShowHoleHit());
