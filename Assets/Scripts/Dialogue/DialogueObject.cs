@@ -29,27 +29,31 @@ namespace Dialogue
     [Serializable]
     public class DialogueObject
     {
+        [FoldoutGroup("@Description")]
+        public string Description;
+
+        [FoldoutGroup("@Description")]
         public EDialogueObjectType DialogueObjectType;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.StandardDialogue)]
         public List<StandardDialogueObject> StandardDialogueObjects;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.SentimentDialogue)]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SentimentDialogue)]
         public SentimentDialogueObject SentimentDialogueObject;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMaze)]
         public MazeGeneratorData MazeSpawnerData;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnMemoryGame)]
         public MemoryGameGeneratorData MemoryGameSpawnerData;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.SpawnWhackAMole)]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnWhackAMole)]
         public WhackAMoleGenerationData WhackAMoleGameSpawnerData;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
         public NewConversationObject LinkedConverssationObject;
 
-        [ShowIf("DialogueObjectType", EDialogueObjectType.EndConversation), HideLabel]
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.EndConversation), HideLabel]
         public EndConversationObject EndConversationObject;
     }
 
@@ -59,7 +63,7 @@ namespace Dialogue
     [Serializable]
     public class DialogueData
     {
-        [HorizontalGroup]
+        [HorizontalGroup, Required]
         public CharacterData CharacterData;
         [HorizontalGroup]
         public ECharacterSentiment CharacterSentiment = ECharacterSentiment.Neutral;

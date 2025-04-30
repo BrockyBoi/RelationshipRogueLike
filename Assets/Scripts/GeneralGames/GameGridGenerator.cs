@@ -54,11 +54,11 @@ namespace GeneralGame.Generation
             // https://www.youtube.com/watch?v=3xXlnSetHPM
             if (cameraHeight >= cameraWidth)
             {
-                Camera.main.orthographicSize = cameraHeight / 2;
+                Camera.main.orthographicSize = (GridHeight + 2) * _spaceBetweenGridObjects / 2;
             }
             else
             {
-                Camera.main.orthographicSize = ((GridWidth + 4) * _spaceBetweenGridObjects) * Screen.height / Screen.width / 2;
+                Camera.main.orthographicSize = ((GridWidth + 5) * _spaceBetweenGridObjects) * Screen.height / Screen.width / 2;
             }
 
             Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10) + (Vector3.right * finalLoc.x / 2);

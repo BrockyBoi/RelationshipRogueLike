@@ -328,6 +328,7 @@ namespace Maze.Generation
             }
             else
             {
+                MazeDifficultyManager.Instance.InitializeRotationRate(0, true);
                 MazeDifficultyManager.Instance.InitializeShakeIntensityRate(generationData.ShakeIntensity, generationData.ForceDifficultySettings);
             }
 

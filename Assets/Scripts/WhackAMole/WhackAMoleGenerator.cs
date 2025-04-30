@@ -39,6 +39,9 @@ namespace WhackAMole
             SetGameGenerationData(generationData);
 
             GameGenerated();
+
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10) + (Vector3.right * _spawnDistanceFromCenter);
+            Camera.main.orthographicSize = 1.5f * _spawnDistanceFromCenter;
         }
 
         public WhackAMoleHole GetHoleNearestToAngle(float angle)

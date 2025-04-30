@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9553685d03949f6468ef4348f0e4e140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _conversationToRun: {fileID: 11400000, guid: 9fe8a35eff05dba49b12ef109a48992f, type: 2}
+  _conversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
   _conversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
 --- !u!4 &888546738
 Transform:
@@ -2426,9 +2426,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384704451}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2443,7 +2443,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1384704456
 MonoBehaviour:
@@ -3035,7 +3035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I HAVE A WHOLE LOT TO SAY SO LET'S FIGURE THIS OUT
+  m_text: I GOT SOME SHIT TO SAY SO LISTEN UP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3062,12 +3062,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 60
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 50
+  m_fontSizeMax: 60
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256

@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   DialogueObjects:
-  - DialogueObjectType: 0
+  - Description: Opening Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -45,7 +46,7 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I can\u2019t believe you\u2019ve never had it either! 
-        How is you\u2019ve never even heard of it?"
+        How have you never even heard of it?"
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
         CharacterSentiment: 1
@@ -246,7 +247,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -255,7 +257,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: First Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -439,7 +442,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -448,7 +452,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -537,7 +542,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -546,7 +552,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: First Maze With Key
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -753,7 +760,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -762,7 +770,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Dialogue About Jokes
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -873,7 +882,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -882,7 +892,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: First Fake Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -993,7 +1004,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1002,7 +1014,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Cutting Off Maddie Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -1101,7 +1114,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1110,7 +1124,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: 30x30 Fake Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -1221,7 +1236,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1230,7 +1246,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Maddie Still Being Cut Off
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -1329,7 +1346,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1338,7 +1356,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: Rotating Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -1437,8 +1456,8 @@ MonoBehaviour:
           MazeShakeModifier: 0
           MazeRotateModifier: 0
       GridSize: {x: 9, y: 9}
-      ShakeIntensity: 0.015
-      RotationSpeed: 0
+      ShakeIntensity: 0
+      RotationSpeed: 0.0696
       TimeToSolveMaze: 45
       NeedsKeys: 1
       NeedsNumberedKeys: 0
@@ -1506,7 +1525,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1515,7 +1535,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Asking About Favorite Food Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -1529,12 +1550,117 @@ MonoBehaviour:
       _standardDialogue: "Maybe it\u2019s just a cultural difference, but in India
         calling someone a monster is always an insult.  We don\u2019t joke around
         with words like that.  Whether or not you meant it, it was hurtful to me."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: I mean, it's just food.  Is your love for food greater than
+        your love for me or something?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: What?  No.  Yeah I like the food but -
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Oh so the food is important to you?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Yes, the biryani tastes good, Lekshmy.  What's the fucking
+        problem?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: What's my favorite food?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: ...
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: What?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: I can see that food is so important to you, so clearly you
+        should have no problem telling me what my favorite food is.
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameCompletionResults: []
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -1546,7 +1672,101 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameCompletionResults: []
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1605,7 +1825,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1614,25 +1835,50 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
-    StandardDialogueObjects:
-    - _dialogueData:
-        CharacterData: {fileID: 0}
-        CharacterSentiment: 1
-        CustomDialogueOptions:
-          UsesCustomName: 0
-          CustomName: 
-          UsesCustomSprite: 0
-          CustomSprite: {fileID: 0}
-          UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: 
+  - Description: Favorite Food Memory Game
+    DialogueObjectType: 3
+    StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
         valueData: []
     MazeSpawnerData:
       GameCompletionResults:
-      - PotentialPlayerDialogueDescription: Good Response
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      TimeToSolveMaze: 10
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Remember Her Favorite Food
         HealthResult:
           HealthAmountToChange: 0
         BranchingDialogue:
@@ -1640,16 +1886,15 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 4
+              CharacterSentiment: 2
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "I honestly didn\u2019t know that.  If I knew that
-              beforehand then I would have never said it.  I promise I\u2019ll never
-              say that again."
+            _standardDialogue: Look, I don't remember the name, but isn't it that
+              Indian rice porridge that you ate growing up when you felt sick?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 4
@@ -1659,57 +1904,50 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: I understand that you may not know everything about
-              my culture and our differences, but you're still just too casual with
-              the things you say sometimes.
+            _standardDialogue: Kanji?  Oh my gosh you do actually remember.  Sorry,
+              honey.
           NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-      - PotentialPlayerDialogueDescription: Defensive Response
-        HealthResult:
-          HealthAmountToChange: -1
-        BranchingDialogue:
-          OnlyUsesDialogue: 1
-          DialogueObjects:
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 2
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "Well I didn\u2019t know that!  I\u2019m sorry ok? "
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 2
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: Ok well don't start getting defensive with me.
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 2
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: You're on the offensive, and you just want me to sit
-              here and take it?  Hard pass.
-          NewConversation: {fileID: 0}
-        DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-      - PotentialPlayerDialogueDescription: Agressive Response
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: You Forgot?
         HealthResult:
           HealthAmountToChange: -3
         BranchingDialogue:
@@ -1724,9 +1962,7 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "Well look around.  We\u2019re not in India.  I\u2019m
-              not in Poland either, so we have to get used to some cultural differences
-              and move on."
+            _standardDialogue: I don't know, fucking, pizza or something?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 3
@@ -1736,9 +1972,8 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "I hope you\u2019re getting the sass you have in you
-              out now because if you think you\u2019re going to talk to me like this
-              again, you\u2019re mistaken."
+            _standardDialogue: Pizza?  You think my Indian ass thinks pizza is the
+              best food?  It's Kanji, idiot.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
               CharacterSentiment: 3
@@ -1748,34 +1983,88 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: ....
+            _standardDialogue: ...
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 2
+              CharacterSentiment: 3
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: Yeah, sorry.
+            _standardDialogue: What the fuck is Kanji?
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: It's an Indian rice porridge!
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: How the fuck was I supposed to know that?!
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: I don't know!
           NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-      GridSize: {x: 8, y: 8}
-      ShakeIntensity: 0.006
-      RotationSpeed: 0
-      TimeToSolveMaze: 25
-      NeedsKeys: 0
-      NeedsNumberedKeys: 0
-      KeysNeeded: 0
-      IsMazeFake: 0
-      FakeMazeTime: 2
-      ForceDifficultySettings: 1
-    MemoryGameSpawnerData:
-      GameCompletionResults: []
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1802,21 +2091,21 @@ MonoBehaviour:
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
-          CharacterData: {fileID: 0}
-          CharacterSentiment: 1
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CharacterSentiment: 2
           CustomDialogueOptions:
             UsesCustomName: 0
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
             UseCurrentPlayerHealthForSentimentSprite: 0
-      _searchForSingleMemoryType: 0
-      _forceMemoryTypeToSearchFor: 0
-      _forcedMemoryTypeToSearchFor: 0
+      _searchForSingleMemoryType: 1
+      _forceMemoryTypeToSearchFor: 1
+      _forcedMemoryTypeToSearchFor: 128
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
-      NumberOfGuesses: 5
+      GridSize: {x: 4, y: 4}
+      NumberOfGuesses: 10
     WhackAMoleGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1834,7 +2123,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1843,7 +2133,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Start Crying Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -1932,7 +2223,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -1941,7 +2233,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: Small Fake Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -2052,7 +2345,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2061,7 +2355,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Still Crying Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -2162,7 +2457,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2171,7 +2467,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: Super Quick Fake Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -2282,7 +2579,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2291,7 +2589,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Lekshmy Asking Maddie To Say Something
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -2379,7 +2678,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2388,7 +2688,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: Easy Maze
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -2564,7 +2865,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2573,8 +2875,21 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Maddie Thinking To Self Before Whack A Mole
+    DialogueObjectType: 0
     StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Thinking*  Jesus this has been a whole lot of emotions
+        at once.  I''m glad we''re getting past this, but I don''t know if I can
+        take much more.'
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 4
@@ -2584,7 +2899,17 @@ MonoBehaviour:
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "*Crying* So... you don\u2019t think I\u2019m a monster?"
+      _standardDialogue: '*Crying* So... you do you still think I''m a monster?'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Thinking* Son of a bitch'
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -2661,7 +2986,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -2670,7 +2996,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: Whack A Mole Game
+    DialogueObjectType: 6
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -2678,105 +3005,134 @@ MonoBehaviour:
         valueData: []
     MazeSpawnerData:
       GameCompletionResults:
-      - PotentialPlayerDialogueDescription: Reassurance
+      - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
           HealthAmountToChange: 0
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects:
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 0
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "Of course not! I\u2019m sorry I made you feel that
-              way, but I promise I think you\u2019re amazing"
+          DialogueObjects: []
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - PotentialPlayerDialogueDescription: Annoyance
+      - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
-          HealthAmountToChange: -1
+          HealthAmountToChange: 0
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects:
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 2
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "*Sighing*  No, Lekshmy.  I don\u2019t.  I told you
-              before.  I don\u2019t think you\u2019re a monster"
+          DialogueObjects: []
           NewConversation: {fileID: 0}
         DifficultyModifierResult:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - PotentialPlayerDialogueDescription: Aggressive
-        HealthResult:
-          HealthAmountToChange: -3
-        BranchingDialogue:
-          OnlyUsesDialogue: 1
-          DialogueObjects:
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 3
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "Were you listening to anything I said?  I\u2019m
-              I talking to a wall?  Is there any point in even answering you?"
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 4
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*crying* So you do think so?'
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 2
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: <b>Jesus Christ</b>, no, I do not think you are a
-              monster
-          NewConversation: {fileID: 0}
-        DifficultyModifierResult:
-          MazeSizeModifier: 0
-          MazeShakeModifier: 0
-          MazeRotateModifier: 0
-      GridSize: {x: 8, y: 8}
+      GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
-      RotationSpeed: 0.045
-      TimeToSolveMaze: 50
-      NeedsKeys: 1
+      RotationSpeed: 0
+      TimeToSolveMaze: 10
+      NeedsKeys: 0
       NeedsNumberedKeys: 0
-      KeysNeeded: 3
+      KeysNeeded: 0
       IsMazeFake: 0
       FakeMazeTime: 2
-      ForceDifficultySettings: 1
+      ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameCompletionResults: []
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2820,23 +3176,132 @@ MonoBehaviour:
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameCompletionResults:
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: Help Lekshmy Understand
         HealthResult:
           HealthAmountToChange: 0
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*Thinking* Ok, this isn''t the situation either of
+              us want to be in, but that''s ok.  People fight.  People say things
+              they don''t mean. We''re no different.'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*Out loud*  Ok, I know that you got hurt, and you''re
+              still having some time processing everything, but I already told you
+              that you''re not a monster, and I need you to believe me.'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Ok.  Sorry for asking you again.  I just got worried.
           NewConversation: {fileID: 0}
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: Put Lekshmy Down
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -1
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 2
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Lekshmy, I already told you.  You're not a monster.
+              Nobody is a monster.  You took a bite of my food.  That's it.  You
+              need to move on.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Ok.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Sorry.
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
-      TimeObjectsAppear: 0.75
-      HasDistractionObjects: 0
+      - PotentialPlayerDialogueDescription: Fully Misintrepret This Whole Situation
+        HealthResult:
+          HealthAmountToChange: -3
+        BranchingDialogue:
+          OnlyUsesDialogue: 0
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*Thinking* Lekshmy is literally only doing this to
+              make you upset.  She knows what she''s doing.  This is a test, and
+              you''re no lab rat.'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*Out loud*  You think I''m falling for your little
+              trap?  I know what you''re doing here, and I''m not nearly as dumb
+              as you think I am.'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Literally what the fuck are you talking about?  You
+              think I'm doing all of this on purpose?
+          NewConversation: {fileID: 11400000, guid: 0f6b3bd7afd5ea742a7f08dafc56d084, type: 2}
+      TimeToPlay: 20
+      TimeObjectsStayInPlay: 1.25
+      TimeBetweenSpawns: 0.5
+      HasDistractionObjects: 1
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
@@ -2844,7 +3309,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
+  - Description: Final Dialogue
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -2936,7 +3402,7 @@ MonoBehaviour:
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "There is 0 chance I\u2019ll ever use that word again. 
+      _standardDialogue: "There is zero chance I\u2019ll ever use that word again. 
         Don\u2019t worry."
     SentimentDialogueObject:
       SentimentDialogue:
@@ -3014,7 +3480,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsAppear: 0.75
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1

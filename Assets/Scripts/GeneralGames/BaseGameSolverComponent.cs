@@ -57,6 +57,14 @@ namespace GeneralGame
             
         }
 
+        protected virtual void Update()
+        {
+            if (IsStage(EGameStage.InGame) && Input.GetKeyDown(KeyCode.Tab))
+            {
+                CompletedGame();
+            }
+        }
+
         #region Countdown
         protected void StartCountDown()
         {

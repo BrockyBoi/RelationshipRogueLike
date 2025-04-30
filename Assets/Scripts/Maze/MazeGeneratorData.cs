@@ -11,10 +11,10 @@ namespace Maze
         [FoldoutGroup("@FoldoutGroupName")]
         public Vector2Int GridSize = new Vector2Int(4,4);
 
-        [FoldoutGroup("@FoldoutGroupName"), Range(0, .2f), DisableIf("@RotationSpeed > 0")]
+        [FoldoutGroup("@FoldoutGroupName"), Range(0, .15f), DisableIf("@RotationSpeed > 0")]
         public float ShakeIntensity = 0;
 
-        [FoldoutGroup("@FoldoutGroupName"), Range(0, .2f)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(0, .1f)]
         public float RotationSpeed = 0;
 
         [FoldoutGroup("@FoldoutGroupName"), Range(5, 120)]

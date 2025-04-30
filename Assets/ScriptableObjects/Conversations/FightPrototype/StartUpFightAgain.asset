@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
-  m_Name: WhackAMoleProto
+  m_Name: StartUpFightAgain
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -25,15 +25,41 @@ MonoBehaviour:
   - DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
-        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 1
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 3
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: BONJOUR MON AMI
+      _standardDialogue: '*Thinking* Lekshmy is literally only doing this to make
+        you upset.  She knows what she''s doing.  This is a test, and you''re no
+        lab rat.'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 3
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Out loud*  You think I''m falling for your little trap? 
+        I know what you''re doing here, and I''m not nearly as dumb as you think
+        I am.'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 3
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Literally what the fuck are you talking about?  You think
+        I'm doing all of this on purpose?  You think I <b>enjoy</b> thinking my partner
+        hates me?
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -415,31 +441,98 @@ MonoBehaviour:
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameCompletionResults:
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: No Of Course Not!
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -1
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 4
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*sigh*  You''re right.  I''m sorry that I got carried
+              away.  I got way too defensive there and I fucked up.'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Yeah, you really did.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: But I haven't been so great here today either, so
+              I get it.  Let's just try to pretend this didn't happen.
           NewConversation: {fileID: 0}
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: Yup, That's Exactly What I Think.
         HealthResult:
-          HealthAmountToChange: 0
+          HealthAmountToChange: -5
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
-          NewConversation: {fileID: 0}
-      - PotentialPlayerDialogueDescription: Default Description
-        HealthResult:
-          HealthAmountToChange: 0
-        BranchingDialogue:
-          OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: You just want to see what I'll do in this situation
+              to see if I'll defend myself or not! You just want to prod me and push
+              me to know I'll let you walk all over me!
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: Why the fuck would I do that?
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: I. Have. No. Idea.
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 3
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: You sound delusional.
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsStayInPlay: 2
-      TimeBetweenSpawns: 0.4
-      HasDistractionObjects: 1
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
@@ -447,8 +540,21 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
-    StandardDialogueObjects: []
+  - DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Listen.  This has been a long night.  We'll still meet up
+        this weekend to hang out again, but I think we need to take a breather right
+        now.  Sorry things got carried away, but I don't want to be talked to like
+        this in my own home.  I hope you have a good night.
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 

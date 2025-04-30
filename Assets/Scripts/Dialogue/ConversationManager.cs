@@ -24,8 +24,11 @@ namespace Dialogue
 
         private Coroutine _conversationCoroutine;
 
+        private bool _playerHasDied = false;
+
         private void Start ()
         {
+            _playerHasDied = false;
             _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationToRun));
             Player player = Player.Instance;
             if (player)
@@ -53,8 +56,7 @@ namespace Dialogue
 
         private void OnPlayerDeath()
         {
-            StopCoroutine(_conversationCoroutine);
-            StartCoroutine(ProcessConversation(_conversationOnPlayerDeath));
+            _playerHasDied = true;
         }
 
         private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
@@ -68,6 +70,13 @@ namespace Dialogue
 
             foreach (DialogueObject dialogueObject in dialogueObjects)
             {
+                if (_playerHasDied)
+                {
+                    _playerHasDied = false;
+                    yield return StartCoroutine(ProcessConversation(_conversationOnPlayerDeath));
+                    yield break;
+                }
+
                 switch (dialogueObject.DialogueObjectType)
                 {
                     case EDialogueObjectType.StandardDialogue:
@@ -95,7 +104,6 @@ namespace Dialogue
                             MazeGenerator.Instance.DestroyGrid();
                             MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
-                            yield return ProcessResultDialogueIntoCharacterDialogue();
                             yield return ProcessGameResult(result);
                             break;
                         }
@@ -105,9 +113,12 @@ namespace Dialogue
                             MemoryGameSolverComponent instance = MemoryGameSolverComponent.Instance;
                             StandardDialogueObject openingDialogue;
 
-                            openingDialogue = dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.GetGameCreationDialogueObject();
+                            if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasOpeningDialogue)
+                            {
+                                openingDialogue = dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.GetGameCreationDialogueObject();
 
-                            yield return ProcessStandardDialogueObject(openingDialogue);
+                                yield return ProcessStandardDialogueObject(openingDialogue);
+                            }
 
                             MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
                             yield return YieldUntilGameIsInFinishedStage(instance);
@@ -115,12 +126,14 @@ namespace Dialogue
 
                             MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
                                                                                                         instance.GetGameCompletionResultToApplyByGuessesLeft();
-                            yield return ProcessResultDialogueIntoCharacterDialogue();
-                            if (instance.IsLookingForSingleMemoryType)
+                            if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasClosingDialogue)
                             {
-                                StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
+                                if (instance.IsLookingForSingleMemoryType)
+                                {
+                                    StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
 
-                                yield return ProcessStandardDialogueObject(closingDialogue);
+                                    yield return ProcessStandardDialogueObject(closingDialogue);
+                                }
                             }
                             else
                             {
@@ -136,7 +149,6 @@ namespace Dialogue
 
                             WhackAMoleCompletionResult result = WhackAMoleSolver.Instance.GetResultByHealthRemaining();
 
-                            yield return ProcessResultDialogueIntoCharacterDialogue();
                             yield return ProcessGameResult(result);
                             break;
                         }
@@ -196,6 +208,8 @@ namespace Dialogue
 
         private IEnumerator ProcessGameResult(GameCompletionResult gameResult)
         {
+            yield return ProcessResultDialogueIntoCharacterDialogue();
+
             if (gameResult.BranchingDialogue.OnlyUsesDialogue)
             {
                 yield return ProcessStandardDialogueObjects(gameResult.BranchingDialogue.DialogueObjects);
