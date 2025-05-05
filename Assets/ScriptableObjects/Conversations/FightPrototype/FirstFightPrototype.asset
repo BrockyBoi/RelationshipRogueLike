@@ -3299,8 +3299,8 @@ MonoBehaviour:
               think I'm doing all of this on purpose?
           NewConversation: {fileID: 11400000, guid: 0f6b3bd7afd5ea742a7f08dafc56d084, type: 2}
       TimeToPlay: 20
-      TimeObjectsStayInPlay: 1.25
-      TimeBetweenSpawns: 0.5
+      TimeObjectsStayInPlay: 1
+      TimeBetweenSpawns: 0.35
       HasDistractionObjects: 1
       StartingHealth: 10
       HealthLostPerEnemy: 1

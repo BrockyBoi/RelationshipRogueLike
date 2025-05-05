@@ -11,6 +11,9 @@ namespace Dialogue.UI
         private Image _backgroundImage;
 
         [SerializeField]
+        private Slider _backgroundSlider;
+
+        [SerializeField]
         private TextMeshProUGUI _dialogueText;
 
         [SerializeField]
@@ -26,6 +29,7 @@ namespace Dialogue.UI
         private void Start()
         {
             _startScale = transform.localScale;
+            _backgroundSlider.gameObject.SetActive(false);
         }
 
         public void SetGameCompletionResult(GameCompletionResult result)
@@ -50,15 +54,22 @@ namespace Dialogue.UI
             }
         }
 
+        public void SetProgressPercentage(float progressPercentage)
+        {
+            _backgroundSlider.value = progressPercentage;
+        }
+
         public void HighlightObject()
         {
+            _backgroundSlider.gameObject.SetActive(true);
+
             _backgroundImage.color = Color.yellow;
             transform.localScale = _startScale * 1.25f;
-
         }
 
         public void StopHighlightingObject()
         {
+            _backgroundSlider.gameObject.SetActive(false);
             _backgroundImage.color = Color.white;
             transform.localScale = _startScale;
         }

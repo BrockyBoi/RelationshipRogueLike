@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   DialogueObjects:
-  - DialogueObjectType: 0
+  - Description: 
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
@@ -236,7 +237,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 6
+  - Description: 
+    DialogueObjectType: 6
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
@@ -437,8 +439,8 @@ MonoBehaviour:
           DialogueObjects: []
           NewConversation: {fileID: 0}
       TimeToPlay: 15
-      TimeObjectsStayInPlay: 2
-      TimeBetweenSpawns: 0.4
+      TimeObjectsStayInPlay: 1
+      TimeBetweenSpawns: 0.35
       HasDistractionObjects: 1
       StartingHealth: 10
       HealthLostPerEnemy: 1
@@ -447,7 +449,8 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 2
+  - Description: 
+    DialogueObjectType: 2
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:

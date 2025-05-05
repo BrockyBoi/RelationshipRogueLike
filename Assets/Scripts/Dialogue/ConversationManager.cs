@@ -16,6 +16,8 @@ namespace Dialogue
 {
     public class ConversationManager : MonoBehaviour
     {
+        public static ConversationManager Instance { get; private set; }
+
         [SerializeField]
         private Conversation _conversationToRun;
 
@@ -25,6 +27,12 @@ namespace Dialogue
         private Coroutine _conversationCoroutine;
 
         private bool _playerHasDied = false;
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this);
+            Instance = this;
+        }
 
         private void Start ()
         {
@@ -58,6 +66,13 @@ namespace Dialogue
         {
             _playerHasDied = true;
         }
+
+        public void SetConversationsForLevel(Conversation conversationToRun, Conversation deathConversation)
+        {
+            _conversationToRun = conversationToRun;
+            _conversationOnPlayerDeath = deathConversation;
+        }
+
 
         private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
         {

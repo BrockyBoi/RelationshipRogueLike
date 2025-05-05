@@ -66,16 +66,17 @@ namespace WhackAMole.UI
 
         private void OnPlayerTakeDamage()
         {
+            SetHealthText();
+
             if (!_isRunningTakeDamageAnimation)
             {
-                SetHealthText();
                 StartCoroutine(FlashHealthTextRed());
             }
         }
 
         private void SetHealthText()
         {
-            _healthText.text = "Health: " + GameSolver.CurrentHealth;
+            _healthText.text = "Mental Health: " + GameSolver.CurrentHealth;
         }
 
         private IEnumerator FlashHealthTextRed()

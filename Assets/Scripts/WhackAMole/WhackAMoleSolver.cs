@@ -248,6 +248,11 @@ namespace WhackAMole
         {
             return _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining()];
         }
+
+        public override float GetCurrentPotentialDialoguePercentage()
+        {
+            return GetCurrentPotentialDialoguePercentageByGameHealthRemaining(_currentHealth, _startingHealth);
+        }
     }
 }
 

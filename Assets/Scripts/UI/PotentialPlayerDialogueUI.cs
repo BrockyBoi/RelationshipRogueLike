@@ -72,7 +72,7 @@ namespace Dialogue.UI
             HideUI();
         }
 
-        public void HighlightResult(int indexResult)
+        public void HighlightResult(int indexResult, float percentage)
         {
             //_verticalLayoutGroup.enabled = false;
 
@@ -97,6 +97,11 @@ namespace Dialogue.UI
                 _dialogueObjects[indexResult].HighlightObject();
 
                 _currentlyHighlightedIndex = indexResult;
+            }
+
+            if (_dialogueObjects.IsValidIndex(_currentlyHighlightedIndex))
+            {
+                _dialogueObjects[_currentlyHighlightedIndex].SetProgressPercentage(percentage);
             }
         }
     }

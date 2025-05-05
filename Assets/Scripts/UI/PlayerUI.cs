@@ -17,16 +17,23 @@ namespace MainPlayer.UI
 
             OnHealthChange(0, healthComponent.Health);
             healthComponent.OnHealthChange += OnHealthChange;
+            healthComponent.OnMaxHealthChange += OnMaxHealthCHange;
         }
 
         private void OnDestroy()
         {
             Player.Instance.HealthComponent.OnHealthChange -= OnHealthChange;
+            Player.Instance.HealthComponent.OnMaxHealthChange -= OnMaxHealthCHange;
         }
 
         private void OnHealthChange(int oldHealth, int newHealth)
         {
-            _healthText.text = "Health: " + newHealth + " / " + Player.Instance.HealthComponent.MaxHealth;
+            _healthText.text = newHealth + " / " + Player.Instance.HealthComponent.MaxHealth;
+        }
+
+        private void OnMaxHealthCHange(int oldHealth, int newHealth)
+        {
+            OnHealthChange(0, Player.Instance.HealthComponent.Health);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace MainPlayer
 
         public System.Action OnDeath;
         public System.Action<int, int> OnHealthChange;
+        public System.Action<int, int> OnMaxHealthChange;
 
         [Title("Sentiment Thresholds")]
         [SerializeField]
@@ -43,6 +44,18 @@ namespace MainPlayer
             else if (amountToChange > 0)
             {
                 HealHealth(amountToChange);   
+            }
+        }
+
+        public void ChangeMaxHealth(int amountToChange)
+        {
+            if (amountToChange != 0)
+            {
+                int maxHealth = _maxHealth;
+                _maxHealth += amountToChange;
+                OnMaxHealthChange?.Invoke(maxHealth, _maxHealth);
+
+                SetHealth(amountToChange > 0 ? Health + amountToChange : Health);
             }
         }
 

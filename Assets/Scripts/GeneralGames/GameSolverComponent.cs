@@ -41,7 +41,7 @@ namespace GeneralGame
         {
             while (IsStage(EGameStage.InGame))
             {
-                PotentialPlayerDialogueUI.Instance.HighlightResult(GetCurrentPotentialDialogueIndex());
+                PotentialPlayerDialogueUI.Instance.HighlightResult(GetCurrentPotentialDialogueIndex(), GetCurrentPotentialDialoguePercentage());
                 yield return null;
             }
         }
@@ -60,6 +60,46 @@ namespace GeneralGame
             // Ex there are only 3 results, so value is 33%
 
             return _gameCompletionResults.Count - 1 - index;
+        }
+
+        public float GetCurrentPotentialDialoguePercentageByTimeRemaining()
+        {
+            if (_gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float percentageTimeLeftToSolveMaze = GetPercentageOfTimeLeftToCompleteGame();
+
+            float count = _gameCompletionResults.Count;
+            int currentIndex = GetCurrentPotentialDialogueIndex();
+            float maxPercentage = (count - currentIndex) / count;
+            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
+            float modifiedMax = maxPercentage - minPercentage;
+
+
+            return (percentageTimeLeftToSolveMaze - minPercentage) / modifiedMax;
+        }
+
+        public float GetCurrentPotentialDialoguePercentageByGameHealthRemaining(int currentHealth, int maxHealth)
+        {
+            if (_gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float percentageHealthRemaining = currentHealth / (float)maxHealth;
+
+            float count = _gameCompletionResults.Count;
+            int currentIndex = GetCurrentPotentialDialogueIndex();
+            float maxPercentage = (count - currentIndex) / count;
+            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
+            float modifiedMax = maxPercentage - minPercentage;
+
+
+            return (percentageHealthRemaining - minPercentage) / modifiedMax;
         }
 
         public CompletionResultType GetGameCompletionResultToApplyByTimeRemaining()

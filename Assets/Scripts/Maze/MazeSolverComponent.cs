@@ -171,6 +171,11 @@ namespace Maze
             return GetGameCompletionResultIndexByTimeRemaining();
         }
 
+        public override float GetCurrentPotentialDialoguePercentage()
+        {
+            return GetCurrentPotentialDialoguePercentageByTimeRemaining();
+        }
+
         public override void SetGenerationGameData(MazeGeneratorData generationData)
         {
             base.SetGenerationGameData(generationData);

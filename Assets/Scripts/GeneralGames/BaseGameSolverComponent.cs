@@ -196,5 +196,6 @@ namespace GeneralGame
 
         protected abstract BaseGameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
+        public abstract float GetCurrentPotentialDialoguePercentage();
     }
 }

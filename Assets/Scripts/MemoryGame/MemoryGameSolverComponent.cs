@@ -162,6 +162,11 @@ namespace MemoryGame
             return Mathf.Clamp(Mathf.FloorToInt(_gameCompletionResults.Count * percentageOfGuessesUsed), 0, _gameCompletionResults.Count - 1);
         }
 
+        public override float GetCurrentPotentialDialoguePercentage()
+        {
+            return GetCurrentPotentialDialoguePercentageByGameHealthRemaining(GuessesLeft, TotalGuessesAllowed);
+        }
+
         public MemoryGameCompletionResult GetGameCompletionResultToApplyByGuessesLeft()
         {
             return _gameCompletionResults[GetGameCompletionIndexBasedOnGuessesLeft()];

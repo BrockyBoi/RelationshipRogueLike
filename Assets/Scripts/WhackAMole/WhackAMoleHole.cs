@@ -55,11 +55,18 @@ namespace WhackAMole
 
         private IEnumerator ShowHoleHit()
         {
-            _spriteRenderer.color = Color.yellow;
+            if (_objectInHole)
+            {
+                _spriteRenderer.color = _objectInHole.IsDistraction ? Color.red : Color.green;
+            }
+            else
+            {
+                _spriteRenderer.color = Color.white;
+            }
 
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(.1f);
 
             _spriteRenderer.color = _isHighlighted ? Color.white : Color.black;
-        }    
+        }
     }
 }

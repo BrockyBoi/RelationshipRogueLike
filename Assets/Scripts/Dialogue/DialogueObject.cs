@@ -30,7 +30,7 @@ namespace Dialogue
     public class DialogueObject
     {
         [FoldoutGroup("@Description")]
-        public string Description;
+        public string Description = "Default Description";
 
         [FoldoutGroup("@Description")]
         public EDialogueObjectType DialogueObjectType;
