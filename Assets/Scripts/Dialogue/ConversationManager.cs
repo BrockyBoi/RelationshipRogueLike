@@ -263,7 +263,7 @@ namespace Dialogue
         {
             yield return new WaitForEndOfFrame();
 
-            while (!Input.anyKeyDown)
+            while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
             }

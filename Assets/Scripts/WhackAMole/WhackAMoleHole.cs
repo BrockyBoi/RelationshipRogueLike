@@ -40,7 +40,10 @@ namespace WhackAMole
 
         private void OnMouseDown()
         {
-            PlayerHitHole();
+            if (WhackAMoleSolver.Instance.CanPlayGame())
+            {
+                PlayerHitHole();
+            }
         }
 
         public void PlayerHitHole()

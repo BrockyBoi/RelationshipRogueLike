@@ -57,7 +57,10 @@ namespace MemoryGame
 
         public void OnMouseDown()
         {
-            OnCardClicked?.Invoke(this);
+            if (MemoryGameSolverComponent.Instance.CanPlayGame())
+            {
+                OnCardClicked?.Invoke(this);
+            }
         }
 
         public void ShowCard()

@@ -67,7 +67,7 @@ namespace Maze
 
         private void Update()
         {
-            if (MazeSolverComponent.Instance.IsStage(GeneralGame.EGameStage.InGame))
+            if (MazeSolverComponent.Instance.CanPlayGame())
             {
                 if (_difficultyManager.ShouldRotate)
                 {

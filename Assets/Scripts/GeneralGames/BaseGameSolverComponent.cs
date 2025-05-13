@@ -197,5 +197,10 @@ namespace GeneralGame
         protected abstract BaseGameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
         public abstract float GetCurrentPotentialDialoguePercentage();
+
+        public virtual bool CanPlayGame()
+        {
+            return CurrentGameState == EGameStage.InGame && !PauseController.Instance.IsPaused;
+        }
     }
 }
