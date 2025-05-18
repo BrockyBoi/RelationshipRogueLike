@@ -12,6 +12,9 @@ using GeneralGame.Results;
 using Characters;
 using WhackAMole;
 
+using static GlobalFunctions;
+using Sirenix.OdinInspector;
+
 namespace Dialogue
 {
     public class ConversationManager : MonoBehaviour
@@ -21,22 +24,31 @@ namespace Dialogue
         [SerializeField]
         private LevelConversationData _conversationData;
 
+        public LevelConversationData ConversationData { get { return _conversationData; } }
+
         private Coroutine _conversationCoroutine;
 
         private bool _playerHasDied = false;
 
+
         private void Awake()
         {
-            DontDestroyOnLoad(this);
-            Instance = this;
+            if (Instance == null)
+            {
+                DontDestroyOnLoad(this);
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void Start ()
         {
             _playerHasDied = false;
-            _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
             Player player = Player.Instance;
-            if (player)
+            if (ensure(player, "Player is not valid"))
             {
                 HealthComponent healthComponent = player.HealthComponent;
                 if (healthComponent)
@@ -56,6 +68,15 @@ namespace Dialogue
                 {
                     healthComponent.OnDeath -= OnPlayerDeath;
                 }
+            }
+        }
+
+        [Button]
+        public void StartConversation()
+        {
+            if (ensure(_conversationData != null, "No conversation data present"))
+            {
+                _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
             }
         }
 
@@ -173,7 +194,10 @@ namespace Dialogue
                     case EDialogueObjectType.EndConversation:
                         {
                             yield return ProcessStandardDialogueObjects(dialogueObject.EndConversationObject.FinalDialogue);
+
+                            yield return YieldUntilInput();
                             StopCoroutine(_conversationCoroutine);
+                            GameSceneManager.Instance.LoadMapLevel();
                             yield break;
                         }
                     case EDialogueObjectType.LinkNewConversation:

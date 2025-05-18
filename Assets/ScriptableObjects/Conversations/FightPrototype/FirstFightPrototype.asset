@@ -3490,3 +3490,208 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
+  - Description: End Conversation
+    DialogueObjectType: 4
+    StandardDialogueObjects: []
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      TimeToSolveMaze: 10
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      GridSize: {x: 0, y: 0}
+      NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeToPlay: 15
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []

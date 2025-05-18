@@ -9,9 +9,10 @@ using UnityEngine;
 [Serializable]
 public class LevelConversationData
 {
-    [SerializeField]
+    [Title("Conversations")]
     public Conversation ConversationToRun;
-
-    [SerializeField]
     public Conversation ConversationOnPlayerDeath;
+
+    [Title("Background")]
+    public Sprite BackgroundImage;
 }

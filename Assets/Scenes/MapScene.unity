@@ -664,8 +664,10 @@ MonoBehaviour:
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
   _levelConversationData:
-    ConversationToRun: {fileID: 0}
-    ConversationOnPlayerDeath: {fileID: 0}
+    ConversationToRun: {fileID: 11400000, guid: 260b19abb0252dc4ebacad2047575fdf, type: 2}
+    ConversationOnPlayerDeath: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
+    BackgroundImage: {fileID: 21300000, guid: 5534b33f8e17f64489f58dc20e674aab, type: 3}
+  _button: {fileID: 1133152243}
 --- !u!114 &1133152243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +750,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133152240}
   m_CullTransparentMesh: 1
+--- !u!1 &1142725148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142725149}
+  - component: {fileID: 1142725150}
+  m_Layer: 0
+  m_Name: MapSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1142725149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142725148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1142725150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142725148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827b89b1272151548aa4e885c138efe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188680935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1164,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425250949}
   m_CullTransparentMesh: 1
+--- !u!1 &1578287707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578287709}
+  - component: {fileID: 1578287708}
+  m_Layer: 0
+  m_Name: Controllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1578287708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578287707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11648f00ecfd0241a5631d4011c8c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameSceneName: GameScene
+  _mapSceneName: MapScene
+--- !u!4 &1578287709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578287707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610240269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1335,8 @@ MonoBehaviour:
   _levelConversationData:
     ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
+    BackgroundImage: {fileID: 0}
+  _button: {fileID: 1771823756}
 --- !u!114 &1771823756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,19 +1380,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1771823757}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1771823755}
-        m_TargetAssemblyTypeName: Map.SelectableMapObject, Assembly-CSharp
-        m_MethodName: SelectMapObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1771823757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1337,6 +1419,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771823753}
   m_CullTransparentMesh: 1
+--- !u!1 &1847964099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847964101}
+  - component: {fileID: 1847964100}
+  m_Layer: 0
+  m_Name: ConversationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1847964100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847964099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9553685d03949f6468ef4348f0e4e140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _conversationData:
+    ConversationToRun: {fileID: 0}
+    ConversationOnPlayerDeath: {fileID: 0}
+    BackgroundImage: {fileID: 0}
+--- !u!4 &1847964101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847964099}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1974709349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +1658,8 @@ MonoBehaviour:
   _levelConversationData:
     ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
+    BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+  _button: {fileID: 2101682633}
 --- !u!114 &2101682633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,3 +1752,6 @@ SceneRoots:
   - {fileID: 1219245687}
   - {fileID: 328587295}
   - {fileID: 250661000}
+  - {fileID: 1847964101}
+  - {fileID: 1578287709}
+  - {fileID: 1142725149}

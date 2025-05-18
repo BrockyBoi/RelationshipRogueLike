@@ -1513,6 +1513,7 @@ GameObject:
   - component: {fileID: 725307482}
   - component: {fileID: 725307481}
   - component: {fileID: 725307480}
+  - component: {fileID: 725307484}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1603,6 +1604,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &725307484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725307479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b2bf08b62e4d646b9e6c54f872cc90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backgroundImage: {fileID: 898349246}
 --- !u!1 &732746253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2118,7 @@ MonoBehaviour:
   _conversationData:
     ConversationToRun: {fileID: 0}
     ConversationOnPlayerDeath: {fileID: 0}
+    _backgroundImage: {fileID: 0}
 --- !u!4 &888546738
 Transform:
   m_ObjectHideFlags: 0
@@ -2432,7 +2447,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3f014b781915bcf4eaadc84bf90145da, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.674
   m_Pitch: 1
