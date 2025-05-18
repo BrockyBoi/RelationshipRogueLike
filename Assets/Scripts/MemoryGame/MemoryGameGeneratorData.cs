@@ -7,6 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace MemoryGame
 {
     [Serializable]
@@ -46,7 +48,7 @@ namespace MemoryGame
                 int iterations = 0;
                 do
                 {
-                    memoryType = GlobalFunctions.RandomEnumValue(EMemoryType.ALL, EMemoryType.Bomb);
+                    memoryType = RandomEnumValue(EMemoryType.ALL, EMemoryType.Bomb);
                     if (iterations++ >= 100)
                     {
                         Debug.LogError("Stuck in while loop");

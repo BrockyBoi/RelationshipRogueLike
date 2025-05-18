@@ -1,7 +1,10 @@
 using Dialogue;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using static GlobalFunctions;
 
 namespace Map
 {
@@ -10,25 +13,30 @@ namespace Map
         MinorEvent,
         StartNewScene
     }
+
     public class SelectableMapObject : MonoBehaviour
     {
         [SerializeField]
         private EMapObjectType _mapObjectType;
 
-        [SerializeField]
-        private Conversation _conversationToRun;
+        [SerializeField, ShowIf("@_mapObjectType", EMapObjectType.MinorEvent)]
+        private MinorMapEvent _minorMapEvent;
 
-        [SerializeField]
-        private Conversation _conversationOnPlayerDeath;
+        [SerializeField, ShowIf("@_mapObjectType", EMapObjectType.StartNewScene)]
+        private LevelConversationData _levelConversationData;
 
-        private void OnMouseDown()
+        public void SelectMapObject()
         {
             switch (_mapObjectType)
             {
                 case EMapObjectType.MinorEvent:
+                    {
+                        MinorMapEventUI.Instance.SetCurrentMapEvent(_minorMapEvent);
+                        break;
+                    }
                 case EMapObjectType.StartNewScene:
                     {
-                        ConversationManager.Instance.SetConversationsForLevel(_conversationToRun, _conversationOnPlayerDeath);
+                        ConversationManager.Instance.SetConversationsForLevel(_levelConversationData);
                         break;
                     }
             }

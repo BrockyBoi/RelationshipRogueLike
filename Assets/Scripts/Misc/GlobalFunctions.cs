@@ -124,4 +124,14 @@ public static class GlobalFunctions
 
         return enumList;
     }
+
+    public static bool ensure(bool condition, string message = "")
+    {
+        if (!condition)
+        {
+            Debug.LogError(message != string.Empty ? message : "Ensure is fired");
+        }
+
+        return condition;
+    }
 }

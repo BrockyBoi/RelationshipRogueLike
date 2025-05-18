@@ -19,10 +19,7 @@ namespace Dialogue
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField]
-        private Conversation _conversationToRun;
-
-        [SerializeField]
-        private Conversation _conversationOnPlayerDeath;
+        private LevelConversationData _conversationData;
 
         private Coroutine _conversationCoroutine;
 
@@ -37,7 +34,7 @@ namespace Dialogue
         private void Start ()
         {
             _playerHasDied = false;
-            _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationToRun));
+            _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
             Player player = Player.Instance;
             if (player)
             {
@@ -67,10 +64,16 @@ namespace Dialogue
             _playerHasDied = true;
         }
 
-        public void SetConversationsForLevel(Conversation conversationToRun, Conversation deathConversation)
+        public void SetConversationsForLevel(LevelConversationData levelConversationData)
         {
-            _conversationToRun = conversationToRun;
-            _conversationOnPlayerDeath = deathConversation;
+            if (levelConversationData == null ||
+                levelConversationData.ConversationToRun == null ||
+                levelConversationData.ConversationOnPlayerDeath == null)
+            {
+                Debug.LogError("Level Conversation Data has invalid elements");
+            }
+
+            _conversationData = levelConversationData;
         }
 
 
@@ -88,7 +91,7 @@ namespace Dialogue
                 if (_playerHasDied)
                 {
                     _playerHasDied = false;
-                    yield return StartCoroutine(ProcessConversation(_conversationOnPlayerDeath));
+                    yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
                     yield break;
                 }
 
