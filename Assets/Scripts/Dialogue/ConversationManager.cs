@@ -11,6 +11,7 @@ using MemoryGame.Generation;
 using GeneralGame.Results;
 using Characters;
 using WhackAMole;
+using CatchingButterflies;
 
 namespace Dialogue
 {
@@ -162,8 +163,17 @@ namespace Dialogue
                             yield return YieldUntilGameIsInFinishedStage(WhackAMoleSolver.Instance);
                             WhackAMoleGenerator.Instance.DeleteGameObjects();
 
-                            WhackAMoleCompletionResult result = WhackAMoleSolver.Instance.GetResultByHealthRemaining();
+                            WhackAMoleCompletionResult result = WhackAMoleSolver.Instance.GetCurrentCompletionResult();
 
+                            yield return ProcessGameResult(result);
+                            break;
+                        }
+                    case EDialogueObjectType.SpawnButterflyCatching:
+                        {
+                            CatchingButterfliesGenerator.Instance.GenerateGame(dialogueObject.CatchingButterflyGameSpawnerData);
+                            yield return YieldUntilGameIsInFinishedStage(CatchingButterfliesSolver.Instance);
+
+                            CatchingButterfliesCompletionResult result = CatchingButterfliesSolver.Instance.GetCurrentCompletionResult();
                             yield return ProcessGameResult(result);
                             break;
                         }

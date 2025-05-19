@@ -101,6 +101,7 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine("");
             outFile.WriteLine("namespace " + NewGameName);
             outFile.WriteLine("{");
+            outFile.WriteLine("[Serializable]");
             outFile.WriteLine("public class " + className + " : GameGenerationData<" + NewGameName + "CompletionResult> \n{");
             outFile.WriteLine(" ");
             outFile.WriteLine("}");
@@ -122,6 +123,7 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine("");
             outFile.WriteLine("namespace " + NewGameName);
             outFile.WriteLine("{");
+            outFile.WriteLine("[Serializable]");
             outFile.WriteLine("public class " + className + " : GameCompletionResult \n{");
             outFile.WriteLine(" ");
             outFile.WriteLine("}");

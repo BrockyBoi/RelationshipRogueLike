@@ -162,7 +162,7 @@ namespace WhackAMole
         {
             if (GameData.HasDistractionObjects && ++_spawnsWithoutDistractions == _spawnsBetweenDistractions)
             {
-                _spawnsBetweenDistractions = Random.Range(1, 7);
+                _spawnsBetweenDistractions = Random.Range(1, 5);
                 return _distactionObjectPrefabs.GetRandomElement();
             }
 
@@ -210,13 +210,13 @@ namespace WhackAMole
 
         public override int GetCurrentPotentialDialogueIndex()
         {
-            return GetGameCompletionResultIndexByHealthRemaining();
+            return GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth);
         }
 
         public override void SetGenerationGameData(WhackAMoleGenerationData generationData)
         {
             base.SetGenerationGameData(generationData);
-            _timeToCompleteGame = generationData.TimeToPlay;
+            SetTimeToCompleteGame(generationData.TimeToPlay);
             _startingHealth = _currentHealth = generationData.StartingHealth;
             if (generationData.HasDistractionObjects)
             {
@@ -228,25 +228,13 @@ namespace WhackAMole
 
         protected override void ApplyEndGameResults()
         {
-            WhackAMoleCompletionResult result = _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining()];
+            WhackAMoleCompletionResult result = _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth)];
             result.ApplyEffects();
-        }
-
-        private int GetGameCompletionResultIndexByHealthRemaining()
-        {
-            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
-
-            float healthPercentage = 1f - (_currentHealth / (float)_startingHealth);
-            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * healthPercentage), 0, _gameCompletionResults.Count - 1);
         }
 
         public WhackAMoleCompletionResult GetResultByHealthRemaining()
         {
-            return _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining()];
+            return _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth)];
         }
 
         public override float GetCurrentPotentialDialoguePercentage()

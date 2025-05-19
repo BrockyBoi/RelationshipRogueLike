@@ -11,6 +11,8 @@ using MemoryGame.Generation;
 using MemoryGame;
 
 using WhackAMole;
+
+using CatchingButterflies;
 using UnityEditor;
 
 namespace Dialogue
@@ -23,7 +25,8 @@ namespace Dialogue
         SpawnMemoryGame,
         EndConversation,
         LinkNewConversation,
-        SpawnWhackAMole
+        SpawnWhackAMole,
+        SpawnButterflyCatching
     }
 
     [Serializable]
@@ -49,6 +52,9 @@ namespace Dialogue
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnWhackAMole)]
         public WhackAMoleGenerationData WhackAMoleGameSpawnerData;
+
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnButterflyCatching)]
+        public CatchingButterfliesGenerationData CatchingButterflyGameSpawnerData;
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
         public NewConversationObject LinkedConverssationObject;

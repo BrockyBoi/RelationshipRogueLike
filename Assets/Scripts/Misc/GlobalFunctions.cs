@@ -124,4 +124,12 @@ public static class GlobalFunctions
 
         return enumList;
     }
+
+    public static Vector3 GetRandomWorldPosOnScreen(float minX, float maxX, float minY, float maxY)
+    {
+        float x = UnityEngine.Random.Range(minX, maxX);
+        float y = UnityEngine.Random.Range(minY, maxY);
+
+        return Camera.main.ViewportToWorldPoint(new Vector3(x, y, 0));
+    }
 }

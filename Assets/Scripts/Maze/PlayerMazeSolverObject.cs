@@ -50,25 +50,28 @@ namespace Maze
 
         private void Update()
         {
-            Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 currentLoc = transform.position;
-            float distanceToMove = _moveSpeed * Time.deltaTime;
-            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Y, _objectHeight), distanceToMove);
-            Vector3 dir = nextPos - currentLoc;
-
-            Debug.DrawLine(currentLoc, currentLoc + dir * _distanceCheckToWalls);
-            RaycastHit hit;
-            bool hitMazeWall = Physics.Raycast(currentLoc, dir, out hit, _distanceCheckToWalls, 1 << LayerMask.NameToLayer("MazeWall"));
-            if (hitMazeWall)
+            if (MazeSolverComponent.Instance.CanPlayGame())
             {
-                //Debug.Log("Hit " +  hit.collider.name);
-            }
+                Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 currentLoc = transform.position;
+                float distanceToMove = _moveSpeed * Time.deltaTime;
+                Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Y, _objectHeight), distanceToMove);
+                Vector3 dir = nextPos - currentLoc;
 
-            _isBlockedFromMoving = hitMazeWall;
-            if (!_isBlockedFromMoving)
-            {
-                //Debug.Log("Is not blocked from moving");
-                transform.position = nextPos;
+                Debug.DrawLine(currentLoc, currentLoc + dir * _distanceCheckToWalls);
+                RaycastHit hit;
+                bool hitMazeWall = Physics.Raycast(currentLoc, dir, out hit, _distanceCheckToWalls, 1 << LayerMask.NameToLayer("MazeWall"));
+                if (hitMazeWall)
+                {
+                    //Debug.Log("Hit " +  hit.collider.name);
+                }
+
+                _isBlockedFromMoving = hitMazeWall;
+                if (!_isBlockedFromMoving)
+                {
+                    //Debug.Log("Is not blocked from moving");
+                    transform.position = nextPos;
+                }
             }
         }
 

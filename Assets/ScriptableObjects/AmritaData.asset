@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d75d33d1f1d97374ba4b4a8f5b71f859, type: 3}
-  m_Name: LekshmyData
+  m_Name: AmritaData
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  CharacterName: Lekshmy
+  CharacterName: Amrita
   DefaultSprite: {fileID: 21300000, guid: 938157888c074ef4fbf9175b9d16799e, type: 3}
   SentimentPortraits:
     keyData: 0000000001000000020000000300000004000000

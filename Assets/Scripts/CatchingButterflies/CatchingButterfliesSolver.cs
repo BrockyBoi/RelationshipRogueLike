@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using GeneralGame;
 using CustomUI;
+using WhackAMole;
 
 namespace CatchingButterflies
 {
@@ -10,24 +11,59 @@ namespace CatchingButterflies
 
         public static CatchingButterfliesSolver Instance { get; private set; }
 
+        private int _butterfliesCaught = 0;
+
         private void Awake()
         {
             Instance = this;
         }
 
+        protected override void StartGame()
+        {
+            base.StartGame();
+            _butterfliesCaught = 0;
+            CatchingButterfliesGenerator.Instance.StartSpawningButterflies();
+
+            OnMainTimerEnd += FailGame;
+        }
+
+        protected void OnDestroy()
+        {
+            OnMainTimerEnd -= FailGame;
+        }
+
+        public override void SetGenerationGameData(CatchingButterfliesGenerationData generationData)
+        {
+            base.SetGenerationGameData(generationData);
+
+            SetTimeToCompleteGame(generationData.GameDuration - 3);
+            StartGameTimer();
+        }
+
+        public void CatchButterfly()
+        {
+            _butterfliesCaught++;
+
+            if (_butterfliesCaught >= _gameData.ButterfliesNeededToCatch)
+            {
+                CompletedGame();
+            }
+        }
+
         public override int GetCurrentPotentialDialogueIndex()
         {
-            throw new System.NotImplementedException();
+            return GetGameCompletionResultIndexByPointsNeededToScore(_butterfliesCaught, _gameData.ButterfliesNeededToCatch);
         }
 
         public override float GetCurrentPotentialDialoguePercentage()
         {
-            throw new System.NotImplementedException();
+            return GetCurrentPotentialDialoguePercentageByPointsNeededToScore(_butterfliesCaught, _gameData.ButterfliesNeededToCatch);
         }
 
         protected override void ApplyEndGameResults()
         {
-            throw new System.NotImplementedException();
+            CatchingButterfliesCompletionResult result = _gameCompletionResults[GetCurrentPotentialDialogueIndex()];
+            result.ApplyEffects();
         }
 
         protected override BaseGameUI GetGameUIInstance()

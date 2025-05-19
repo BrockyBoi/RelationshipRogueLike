@@ -93,13 +93,62 @@ namespace GeneralGame
             float percentageHealthRemaining = currentHealth / (float)maxHealth;
 
             float count = _gameCompletionResults.Count;
-            int currentIndex = GetCurrentPotentialDialogueIndex();
+            int currentIndex = GetGameCompletionResultIndexByHealthRemaining(currentHealth, maxHealth);
             float maxPercentage = (count - currentIndex) / count;
             float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
             float modifiedMax = maxPercentage - minPercentage;
 
 
             return (percentageHealthRemaining - minPercentage) / modifiedMax;
+        }
+
+        public int GetGameCompletionResultIndexByHealthRemaining(int currentHealth, int maxHealth)
+        {
+            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float healthPercentage = 1f - (currentHealth / (float)maxHealth);
+            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * healthPercentage), 0, _gameCompletionResults.Count - 1);
+        }
+
+        public float GetCurrentPotentialDialoguePercentageByPointsNeededToScore(int currentScore, int maxScore)
+        {
+            if (_gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float percentageScoreGained = currentScore / (float)maxScore;
+
+            float count = _gameCompletionResults.Count;
+            int currentIndex = GetGameCompletionResultIndexByPointsNeededToScore(currentScore, maxScore);
+            float maxPercentage = (count - currentIndex) / count;
+            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
+            float modifiedMax = maxPercentage - minPercentage;
+
+
+            return (percentageScoreGained - minPercentage) / modifiedMax;
+        }
+
+        public int GetGameCompletionResultIndexByPointsNeededToScore(int currentPoints, int maxPoints)
+        {
+            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
+            {
+                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            float scorePercentage = currentPoints / (float)maxPoints;
+            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * scorePercentage), 0, _gameCompletionResults.Count - 1);
+        }
+
+        public CompletionResultType GetCurrentCompletionResult()
+        {
+            return _gameCompletionResults.IsValidIndex(GetCurrentPotentialDialogueIndex()) ? _gameCompletionResults[GetCurrentPotentialDialogueIndex()] : default(CompletionResultType);
         }
 
         public CompletionResultType GetGameCompletionResultToApplyByTimeRemaining()
