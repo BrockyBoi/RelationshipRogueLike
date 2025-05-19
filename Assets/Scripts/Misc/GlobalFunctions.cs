@@ -132,4 +132,14 @@ public static class GlobalFunctions
 
         return Camera.main.ViewportToWorldPoint(new Vector3(x, y, 0));
     }
+
+    public static bool ensure(bool condition, string message = "")
+    {
+        if (!condition)
+        {
+            Debug.LogError(message != string.Empty ? message : "Ensure is fired");
+        }
+
+        return condition;
+    }
 }

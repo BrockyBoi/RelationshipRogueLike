@@ -13,6 +13,9 @@ using Characters;
 using WhackAMole;
 using CatchingButterflies;
 
+using static GlobalFunctions;
+using Sirenix.OdinInspector;
+
 namespace Dialogue
 {
     public class ConversationManager : MonoBehaviour
@@ -20,27 +23,33 @@ namespace Dialogue
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField]
-        private Conversation _conversationToRun;
+        private LevelConversationData _conversationData;
 
-        [SerializeField]
-        private Conversation _conversationOnPlayerDeath;
+        public LevelConversationData ConversationData { get { return _conversationData; } }
 
         private Coroutine _conversationCoroutine;
 
         private bool _playerHasDied = false;
 
+
         private void Awake()
         {
-            DontDestroyOnLoad(this);
-            Instance = this;
+            if (Instance == null)
+            {
+                DontDestroyOnLoad(this);
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void Start ()
         {
             _playerHasDied = false;
-            _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationToRun));
             Player player = Player.Instance;
-            if (player)
+            if (ensure(player, "Player is not valid"))
             {
                 HealthComponent healthComponent = player.HealthComponent;
                 if (healthComponent)
@@ -63,15 +72,30 @@ namespace Dialogue
             }
         }
 
+        [Button]
+        public void StartConversation()
+        {
+            if (ensure(_conversationData != null, "No conversation data present"))
+            {
+                _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
+            }
+        }
+
         private void OnPlayerDeath()
         {
             _playerHasDied = true;
         }
 
-        public void SetConversationsForLevel(Conversation conversationToRun, Conversation deathConversation)
+        public void SetConversationsForLevel(LevelConversationData levelConversationData)
         {
-            _conversationToRun = conversationToRun;
-            _conversationOnPlayerDeath = deathConversation;
+            if (levelConversationData == null ||
+                levelConversationData.ConversationToRun == null ||
+                levelConversationData.ConversationOnPlayerDeath == null)
+            {
+                Debug.LogError("Level Conversation Data has invalid elements");
+            }
+
+            _conversationData = levelConversationData;
         }
 
 
@@ -89,7 +113,7 @@ namespace Dialogue
                 if (_playerHasDied)
                 {
                     _playerHasDied = false;
-                    yield return StartCoroutine(ProcessConversation(_conversationOnPlayerDeath));
+                    yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
                     yield break;
                 }
 
@@ -180,7 +204,10 @@ namespace Dialogue
                     case EDialogueObjectType.EndConversation:
                         {
                             yield return ProcessStandardDialogueObjects(dialogueObject.EndConversationObject.FinalDialogue);
+
+                            yield return YieldUntilInput();
                             StopCoroutine(_conversationCoroutine);
+                            GameSceneManager.Instance.LoadMapLevel();
                             yield break;
                         }
                     case EDialogueObjectType.LinkNewConversation:

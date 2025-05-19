@@ -125,7 +125,6 @@ namespace Maze
         public void CollectKey()
         {
             _keysNeeded--;
-            Debug.Log("Keys left in map: " + _keysNeeded);
             OnKeyCollected?.Invoke();
         }
 

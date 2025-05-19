@@ -171,7 +171,6 @@ namespace GeneralGame
         #region Game Completion
         protected void FailGame()
         {
-            Debug.Log("Failed game");
             WonPreviousGame = false;
             OnGameFailed?.Invoke();
 
@@ -182,7 +181,6 @@ namespace GeneralGame
 
         protected void CompletedGame()
         {
-            Debug.Log("Won game");
             WonPreviousGame = true;
             OnGameCompleted?.Invoke();
             EndGame();
