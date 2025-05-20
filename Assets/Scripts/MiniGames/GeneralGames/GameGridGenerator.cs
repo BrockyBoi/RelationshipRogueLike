@@ -39,7 +39,7 @@ namespace GeneralGame.Generation
             {
                 for (int xPos = 0; xPos < GridWidth; xPos++)
                 {
-                    GridObjectType gridObject = Instantiate<GridObjectType>(_objectPrefab, new Vector3(xPos * _spaceBetweenGridObjects, 0, yPos * _spaceBetweenGridObjects), Quaternion.identity, parentObject.transform);
+                    GridObjectType gridObject = Instantiate<GridObjectType>(_objectPrefab, new Vector3(xPos * _spaceBetweenGridObjects, yPos * _spaceBetweenGridObjects, 0), _objectPrefab.transform.localRotation, parentObject.transform);
                     gridObject.SetPositionInGrid(new Vector2Int(xPos, yPos));
                     _objectGrid[xPos, yPos] = gridObject;
                 }
@@ -48,7 +48,7 @@ namespace GeneralGame.Generation
             float cameraWidth = (GridWidth + 1) * _spaceBetweenGridObjects;
             float cameraHeight = (GridHeight + 1) * _spaceBetweenGridObjects;
 
-            Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, 0, (GridHeight - 1) * _spaceBetweenGridObjects);
+            Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, (GridHeight - 1) * _spaceBetweenGridObjects, 0);
             parentObject.transform.position = finalLoc;
 
             // https://www.youtube.com/watch?v=3xXlnSetHPM
@@ -61,7 +61,7 @@ namespace GeneralGame.Generation
                 Camera.main.orthographicSize = ((GridWidth + 5) * _spaceBetweenGridObjects) * Screen.height / Screen.width / 2;
             }
 
-            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Y, 10) + (Vector3.right * finalLoc.x / 2);
+            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Z, -30) + (Vector3.right * finalLoc.x / 2);
 
             _hasGeneratedGame = true;
 

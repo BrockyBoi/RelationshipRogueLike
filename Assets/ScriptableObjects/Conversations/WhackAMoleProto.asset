@@ -233,6 +233,26 @@ MonoBehaviour:
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 0
+      ButterfliesNeededToCatch: 0
+      PercentageOfSpecialButterflies: 0
+      GameDuration: 15
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -438,13 +458,33 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
+      TimeToPlay: 100
       TimeObjectsStayInPlay: 1
       TimeBetweenSpawns: 0.35
-      HasDistractionObjects: 1
-      StartingHealth: 10
+      HasDistractionObjects: 0
+      StartingHealth: 100
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 0
+      ButterfliesNeededToCatch: 0
+      PercentageOfSpecialButterflies: 0
+      GameDuration: 15
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -650,6 +690,26 @@ MonoBehaviour:
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 0
+      ButterfliesNeededToCatch: 0
+      PercentageOfSpecialButterflies: 0
+      GameDuration: 15
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

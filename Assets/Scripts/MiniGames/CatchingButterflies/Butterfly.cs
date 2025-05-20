@@ -29,7 +29,7 @@ namespace CatchingButterflies
         [SerializeField]
         private float _potentialMoveSpeedVariance = 1.25f;
 
-        private float minX, maxX, minZ, maxZ;
+        private float minX, maxX, minY, maxY;
 
         public void SetColor(Color color)
         {
@@ -38,9 +38,9 @@ namespace CatchingButterflies
 
         private void PickRandomDirectionToMove()
         {
-            transform.position = new Vector3(Random.Range(minX * .95f, maxX * .95f), 0, Random.value > .5f ? minZ * .95f : maxZ * .95f);
+            transform.position = new Vector3(Random.Range(minX * .95f, maxX * .95f), Random.value > .5f ? minY * .95f : maxY * .95f, 0);
             Vector3 randomPointInWorld = GlobalFunctions.GetRandomWorldPosOnScreen(.25f, .75f, .5f, .5f);
-            _directionToMove = (randomPointInWorld - transform.position).ChangeAxis(ExtensionMethods.VectorAxis.Y, 0);
+            _directionToMove = (randomPointInWorld - transform.position).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
             _directionToMove.Normalize();
         }
 
@@ -55,8 +55,8 @@ namespace CatchingButterflies
             minX = Camera.main.ViewportToWorldPoint(new Vector3(-.3f, 0)).x;
             maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.3f, 0)).x;
 
-            minZ = Camera.main.ViewportToWorldPoint(new Vector3(0, -.3f)).z;
-            maxZ = Camera.main.ViewportToWorldPoint(new Vector3(0, 1.3f)).z;
+            minY = Camera.main.ViewportToWorldPoint(new Vector3(0, -.3f)).y;
+            maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1.3f)).y;
 
 
             float randomValue = Random.value;
@@ -75,8 +75,6 @@ namespace CatchingButterflies
 
             SetColor(color);
             PickRandomDirectionToMove();
-
-            transform.rotation = Quaternion.Euler(90f, 0, 0);
         }
 
         public void Update()
@@ -87,7 +85,7 @@ namespace CatchingButterflies
                 switch (_movementType)
                 {
                     case EButterflyMovementType.Sin:
-                        extraMovement = new Vector3(0, 0, Mathf.Sin(Time.time) * .75f);
+                        extraMovement = new Vector3(0, Mathf.Sin(Time.time) * .75f, 0);
                         break;
                     case EButterflyMovementType.Cos:
                         extraMovement = new Vector3(Mathf.Cos(Time.time) * .75f, 0, 0f);
@@ -96,7 +94,7 @@ namespace CatchingButterflies
                         break;
                 }
 
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, Time.deltaTime * _moveSpeed).ChangeAxis(ExtensionMethods.VectorAxis.Y, 0);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, Time.deltaTime * _moveSpeed).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
 
                 if (IsOutOfBounds())
                 {
@@ -119,9 +117,9 @@ namespace CatchingButterflies
         private bool IsOutOfBounds()
         {
             float x = transform.position.x;
-            float z = transform.position.z;
+            float y = transform.position.y;
 
-            return x < minX || x > maxX || z < minZ || z > maxZ;
+            return x < minX || x > maxX || y < minY || y > maxY;
         }
     }
 }

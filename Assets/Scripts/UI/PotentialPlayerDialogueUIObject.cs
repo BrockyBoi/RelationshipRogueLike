@@ -29,7 +29,6 @@ namespace Dialogue.UI
         private void Start()
         {
             _startScale = transform.localScale;
-            _backgroundSlider.gameObject.SetActive(false);
         }
 
         public void SetGameCompletionResult(GameCompletionResult result)

@@ -32,18 +32,15 @@ namespace CatchingButterflies
 
         void Update()
         {
-            if (CatchingButterfliesSolver.Instance.CanPlayGame())
-            {
-                Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 currentLoc = transform.position;
-                float distanceToMove = _moveSpeed * Time.deltaTime;
-                Vector3 nextPos = Vector3.MoveTowards(currentLoc, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Y, _objectHeight), distanceToMove);
+            Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 currentLoc = transform.position;
+            float distanceToMove = _moveSpeed * Time.deltaTime;
+            Vector3 nextPos = Vector3.MoveTowards(currentLoc, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Z, _objectHeight), distanceToMove);
 
-                transform.position = nextPos;
-            }
+            transform.position = nextPos;
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             Butterfly butterfly = collision.gameObject.GetComponent<Butterfly>();
             if (butterfly)

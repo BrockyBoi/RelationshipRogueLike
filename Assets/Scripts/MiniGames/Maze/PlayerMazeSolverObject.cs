@@ -50,28 +50,19 @@ namespace Maze
 
         private void Update()
         {
-            if (MazeSolverComponent.Instance.CanPlayGame())
+            Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 currentLoc = transform.position;
+            float distanceToMove = _moveSpeed * Time.deltaTime;
+            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Z, _objectHeight), distanceToMove);
+            Vector3 dir = nextPos - currentLoc;
+
+            Debug.DrawLine(currentLoc, currentLoc + dir * distanceToMove * 1.25f);
+            RaycastHit hit;
+            bool hitMazeWall = Physics.Raycast(currentLoc, dir, out hit, distanceToMove * 1.25f, 1 << LayerMask.NameToLayer("MazeWall"));
+            _isBlockedFromMoving = hitMazeWall;
+            if (!_isBlockedFromMoving)
             {
-                Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 currentLoc = transform.position;
-                float distanceToMove = _moveSpeed * Time.deltaTime;
-                Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Y, _objectHeight), distanceToMove);
-                Vector3 dir = nextPos - currentLoc;
-
-                Debug.DrawLine(currentLoc, currentLoc + dir * _distanceCheckToWalls);
-                RaycastHit hit;
-                bool hitMazeWall = Physics.Raycast(currentLoc, dir, out hit, _distanceCheckToWalls, 1 << LayerMask.NameToLayer("MazeWall"));
-                if (hitMazeWall)
-                {
-                    //Debug.Log("Hit " +  hit.collider.name);
-                }
-
-                _isBlockedFromMoving = hitMazeWall;
-                if (!_isBlockedFromMoving)
-                {
-                    //Debug.Log("Is not blocked from moving");
-                    transform.position = nextPos;
-                }
+                transform.position = nextPos;
             }
         }
 

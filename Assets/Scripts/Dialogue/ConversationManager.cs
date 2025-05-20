@@ -31,6 +31,8 @@ namespace Dialogue
 
         private bool _playerHasDied = false;
 
+        [SerializeField]
+        private bool _runDialogueOnStart = false;
 
         private void Awake()
         {
@@ -56,6 +58,11 @@ namespace Dialogue
                 {
                     healthComponent.OnDeath += OnPlayerDeath;
                 }
+            }
+
+            if (_runDialogueOnStart)
+            {
+                StartConversation();
             }
         }
 

@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace GeneralGame
 {
     public abstract class GameSolverComponent<GenerationData, CompletionResultType> : BaseGameSolverComponent where GenerationData : GameGenerationData<CompletionResultType> where CompletionResultType : GameCompletionResult, new()
@@ -48,102 +50,79 @@ namespace GeneralGame
 
         public int GetGameCompletionResultIndexByTimeRemaining()
         {
-            if (_gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
-
-            float percentageTimeLeftToSolveMaze = GetPercentageOfTimeLeftToCompleteGame();
-            // Ex player solved while only taking 25% of time, so value is 75%
-            int index = Mathf.Clamp(Mathf.FloorToInt(_gameCompletionResults.Count * percentageTimeLeftToSolveMaze), 0, _gameCompletionResults.Count - 1);
-            // Ex there are only 3 results, so value is 33%
-
-            return _gameCompletionResults.Count - 1 - index;
+            return GetRoundedAndClampedResultIndex(GetPercentageOfTimeLeftToCompleteGame());
         }
 
         public float GetCurrentPotentialDialoguePercentageByTimeRemaining()
         {
-            if (_gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
-
-            float percentageTimeLeftToSolveMaze = GetPercentageOfTimeLeftToCompleteGame();
-
-            float count = _gameCompletionResults.Count;
-            int currentIndex = GetCurrentPotentialDialogueIndex();
-            float maxPercentage = (count - currentIndex) / count;
-            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
-            float modifiedMax = maxPercentage - minPercentage;
-
-
-            return (percentageTimeLeftToSolveMaze - minPercentage) / modifiedMax;
+            return GetPercentageOfResultIndex(GetPercentageOfTimeLeftToCompleteGame());
         }
 
         public float GetCurrentPotentialDialoguePercentageByGameHealthRemaining(int currentHealth, int maxHealth)
         {
-            if (_gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
+            return GetPercentageOfResultIndex(currentHealth / (float)maxHealth);
+        }
 
-            float percentageHealthRemaining = currentHealth / (float)maxHealth;
-
+        public float GetPercentageOfResultIndex(float totalPercentage)
+        {
             float count = _gameCompletionResults.Count;
-            int currentIndex = GetGameCompletionResultIndexByHealthRemaining(currentHealth, maxHealth);
-            float maxPercentage = (count - currentIndex) / count;
-            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
+            int index = GetCurrentPotentialDialogueIndex();
+            float maxPercentage = (count - index) / count;
+            if (!ensure(totalPercentage <= maxPercentage, "The total percentage can't be greater than the new max percentage: Total Percentage: " + totalPercentage + " vs : Max Percentage: " + maxPercentage))
+            {
+                return 0f;
+            }
+            float minPercentage = Mathf.Clamp((count - index - 1) / count, 0, 1);
             float modifiedMax = maxPercentage - minPercentage;
 
+            if (!ensure(totalPercentage > minPercentage, "The total percentage should not be less than the modified min percentage: Total Percentage: " + totalPercentage))
+            {
+                return 0f;
+            }
 
-            return (percentageHealthRemaining - minPercentage) / modifiedMax;
+            float modifiedPercentage = (totalPercentage - minPercentage) / modifiedMax;
+            if (!ensure(modifiedPercentage <= 1, "The modified percentage cannot go over 100%: Modified Percentage: " + modifiedPercentage))
+            {
+                return 0f;
+            }
+
+            return modifiedPercentage;
         }
 
         public int GetGameCompletionResultIndexByHealthRemaining(int currentHealth, int maxHealth)
         {
-            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
+            return GetRoundedAndClampedResultIndex((currentHealth / (float)maxHealth));
+        }
+
+        private int GetRoundedAndClampedResultIndex(float currentPercentage)
+        {
+            if (!ensure(_gameCompletionResults != null && _gameCompletionResults.Count != 0, "There are no completion results"))
             {
-                Debug.LogError("There are no completion results");
                 return 0;
             }
 
-            float healthPercentage = 1f - (currentHealth / (float)maxHealth);
-            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * healthPercentage), 0, _gameCompletionResults.Count - 1);
+            // 0 - 33%   [0]
+            // 33 - 67%  [1]
+            // 67 - 100% [2]
+            // If 50%, do .5 * 3 = 1.5 = 1
+            // If 75%, do .75 * 3 = 2.25 = 2
+            // If 100%, do 1 * 3 = 2
+            // If 99%, do .99 * 3 = 2.97
+            // If 10%, do .1 * 3 = .3 = 0
+
+            currentPercentage = 1 - currentPercentage;
+            int roundedValue = Mathf.FloorToInt(_gameCompletionResults.Count * currentPercentage);
+            return Mathf.Clamp(roundedValue, 0, _gameCompletionResults.Count - 1);
         }
 
         public float GetCurrentPotentialDialoguePercentageByPointsNeededToScore(int currentScore, int maxScore)
         {
-            if (_gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
-
-            float percentageScoreGained = currentScore / (float)maxScore;
-
-            float count = _gameCompletionResults.Count;
-            int currentIndex = GetGameCompletionResultIndexByPointsNeededToScore(currentScore, maxScore);
-            float maxPercentage = (count - currentIndex) / count;
-            float minPercentage = Mathf.Clamp((count - currentIndex - 1) / count, 0, count - 1);
-            float modifiedMax = maxPercentage - minPercentage;
-
-
-            return (percentageScoreGained - minPercentage) / modifiedMax;
+            return GetPercentageOfResultIndex(currentScore / (float)maxScore);
         }
 
         public int GetGameCompletionResultIndexByPointsNeededToScore(int currentPoints, int maxPoints)
         {
-            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
-            {
-                Debug.LogError("There are no completion results");
-                return 0;
-            }
-
-            float scorePercentage = currentPoints / (float)maxPoints;
-            return Mathf.Clamp(Mathf.RoundToInt(_gameCompletionResults.Count * scorePercentage), 0, _gameCompletionResults.Count - 1);
+            return GetRoundedAndClampedResultIndex(currentPoints / (float)maxPoints);
         }
 
         public CompletionResultType GetCurrentCompletionResult()

@@ -1,4 +1,5 @@
 using Maze.Generation;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace Maze
 {
     public enum EMazeDirection
     {
-        None, Forward, Backward, Left, Right, COUNT
+        None, Upward, Downward, Left, Right, COUNT
     }
 
     public enum ENodeState
@@ -109,10 +110,10 @@ namespace Maze
             GameObject wall = null;
             switch (direction)
             {
-                case EMazeDirection.Forward:
-                    wall = _frontWall; ;
+                case EMazeDirection.Upward:
+                    wall = _frontWall;
                     break;
-                case EMazeDirection.Backward:
+                case EMazeDirection.Downward:
                     wall = _backWall;
                     break;
                 case EMazeDirection.Left:
@@ -128,6 +129,12 @@ namespace Maze
                 wall.SetActive(false);
                 wall.GetComponent<Collider>().enabled = false;
             }
+        }
+
+        [Button]
+        public void ShowWalls()
+        {
+            ShowWalls(true);
         }
 
         private void ShowWalls(bool shouldShow)
@@ -169,8 +176,8 @@ namespace Maze
 
         public void ClearAllWalls()
         {
-            ClearWall(EMazeDirection.Forward);
-            ClearWall(EMazeDirection.Backward);
+            ClearWall(EMazeDirection.Upward);
+            ClearWall(EMazeDirection.Downward);
             ClearWall(EMazeDirection.Left);
             ClearWall(EMazeDirection.Right);
         }

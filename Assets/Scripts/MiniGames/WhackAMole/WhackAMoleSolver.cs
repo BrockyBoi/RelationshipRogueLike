@@ -129,7 +129,7 @@ namespace WhackAMole
                 WhackAMoleHole randomHole = WhackAMoleGenerator.Instance.GetRandomUnoccupiedHole();
                 if (randomHole)
                 {
-                    WhackAMoleAppearingObject appearingObject = Instantiate(GetObjectToSpawn(), randomHole.transform.position + Vector3.up, Quaternion.Euler(90, 0, 0));
+                    WhackAMoleAppearingObject appearingObject = Instantiate(GetObjectToSpawn(), randomHole.transform.position + Vector3.back, Quaternion.identity);
                     if (appearingObject)
                     {
                         randomHole.SetObjectInHole(appearingObject);

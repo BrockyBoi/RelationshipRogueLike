@@ -28,7 +28,7 @@ namespace CatchingButterflies
             SetGameGenerationData(generationData);
             GameGenerated();
 
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Y, 10);
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Z, -30);
             Camera.main.orthographicSize = 5f;
         }
 
@@ -42,7 +42,7 @@ namespace CatchingButterflies
             float timeElapsed = 0;
             float timeInterval = duration / amountToSpawn;
             float nextSpawnTime = 0;
-            while (timeElapsed < duration)
+            while (timeElapsed < duration && GameSolverComponent.IsStage(GeneralGame.EGameStage.InGame))
             {
                 timeElapsed += Time.deltaTime;
 

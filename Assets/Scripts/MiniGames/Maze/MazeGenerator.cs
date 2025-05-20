@@ -170,9 +170,10 @@ namespace Maze.Generation
                     {
                         potentialStartNodes.Remove(node);
 
-                        KeyPickupObject keyPickupObject = Instantiate(_keyPrefab, node.transform);
+                        KeyPickupObject keyPickupObject = Instantiate(_keyPrefab, node.transform.position, Quaternion.identity, node.transform);
                         if (keyPickupObject)
                         {
+                            keyPickupObject.transform.localPosition = keyPickupObject.transform.localPosition.ChangeAxis(ExtensionMethods.VectorAxis.Y, .5f);
                             _keysInGame.Add(keyPickupObject);
                             keyPickupObject.DeactivateObject();
                             keysToSpawn--;
@@ -218,45 +219,45 @@ namespace Maze.Generation
 
             if (nodePos.y + 1 < _objectGrid.GetLength(1))
             {
-                MazeNode frontNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y + 1));
-                if (frontNode != null && frontNode.NodeState == desiredState)
+                MazeNode aboveNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y + 1));
+                if (aboveNode != null && aboveNode.NodeState == desiredState)
                 {
-                    neighborNodes.Add(frontNode);
+                    neighborNodes.Add(aboveNode);
                 }
             }
 
             if (nodePos.y - 1 >= 0)
             {
-                MazeNode backNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y - 1));
-                if (backNode != null && backNode.NodeState == desiredState)
+                MazeNode belowNode = GetGridObject(new Vector2Int(nodePos.x, nodePos.y - 1));
+                if (belowNode != null && belowNode.NodeState == desiredState)
                 {
-                    neighborNodes.Add(backNode);
+                    neighborNodes.Add(belowNode);
                 }
             }
 
             return neighborNodes;
         }
 
-        private static EMazeDirection GetDirectionMovingIn(Vector2Int node1, Vector2Int node2)
+        private static EMazeDirection GetDirectionMovingIn(Vector2Int from, Vector2Int to)
         {
-            if (node1.x > node2.x)
+            if (from.x > to.x)
             {
                 return EMazeDirection.Left;
             }
 
-            if (node1.x < node2.x)
+            if (from.x < to.x)
             {
                 return EMazeDirection.Right;
             }
 
-            if (node1.y > node2.y)
+            if (from.y > to.y)
             {
-                return EMazeDirection.Backward;
+                return EMazeDirection.Downward;
             }
 
-            if (node1.y < node2.y)
+            if (from.y < to.y)
             {
-                return EMazeDirection.Forward;
+                return EMazeDirection.Upward;
             }
 
             return EMazeDirection.None;
@@ -280,27 +281,27 @@ namespace Maze.Generation
             OnMazePathGenerated -= action;
         }
 
-        private void ClearWalls(MazeNode previousNode, MazeNode currentNode, EMazeDirection directionMoving)
+        private void ClearWalls(MazeNode from, MazeNode to, EMazeDirection directionMoving)
         {
-            if (previousNode == null)
+            if (from == null)
             {
                 return;
             }
 
-            previousNode.ClearWall(directionMoving);
+            from.ClearWall(directionMoving);
             switch (directionMoving)
             {
                 case EMazeDirection.Left:
-                    currentNode.ClearWall(EMazeDirection.Right);
+                    to.ClearWall(EMazeDirection.Right);
                     break;
                 case EMazeDirection.Right:
-                    currentNode.ClearWall(EMazeDirection.Left);
+                    to.ClearWall(EMazeDirection.Left);
                     break;
-                case EMazeDirection.Forward:
-                    currentNode.ClearWall(EMazeDirection.Backward);
+                case EMazeDirection.Upward:
+                    to.ClearWall(EMazeDirection.Downward);
                     break;
-                case EMazeDirection.Backward:
-                    currentNode.ClearWall(EMazeDirection.Forward);
+                case EMazeDirection.Downward:
+                    to.ClearWall(EMazeDirection.Upward);
                     break;
                 case EMazeDirection.None:
                     break;
