@@ -47,22 +47,11 @@ namespace Maze.UI
             _timerText.color = Color.white;
         }
 
-        protected override void OnGameCompleted()
+        protected override void OnGameEnd()
         {
-            base.OnGameCompleted();
+            base.OnGameEnd();
 
-            StopAllCoroutines();
-            ClearTimerText();
             ResetTextVisuals();
-        }
-
-        protected override void OnGameFailed()
-        {
-            base.OnGameFailed();
-
-            StopAllCoroutines();
-            ResetTextVisuals();
-            ClearTimerText();
         }
 
         private void OnWallHit()

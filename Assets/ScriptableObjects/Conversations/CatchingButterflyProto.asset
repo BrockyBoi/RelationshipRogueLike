@@ -501,10 +501,10 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: You lose
           NewConversation: {fileID: 0}
-      ButterfliesToSpawn: 60
-      ButterfliesNeededToCatch: 45
+      ButterfliesToSpawn: 200
+      ButterfliesNeededToCatch: 75
       PercentageOfSpecialButterflies: 0
-      GameDuration: 30
+      GameDuration: 45
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

@@ -27,7 +27,7 @@ namespace CatchingButterflies
         private void OnDestroy()
         {
             CatchingButterfliesGenerator.Instance.UnlistenToOnGameGenerated(OnGameCreated);
-            CatchingButterfliesSolver.Instance.OnGameCompleted -= OnGameEnd;
+            CatchingButterfliesSolver.Instance.OnGameWin -= OnGameEnd;
         }
 
         void Update()
@@ -57,7 +57,7 @@ namespace CatchingButterflies
 
         private void OnGameEnd()
         {
-
+            gameObject.SetActive(false);
         }
     }
 }

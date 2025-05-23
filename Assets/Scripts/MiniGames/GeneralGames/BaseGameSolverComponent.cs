@@ -47,7 +47,7 @@ namespace GeneralGame
         public System.Action<float> OnMainTimerValueChange;
         public System.Action OnMainTimerEnd;
 
-        public System.Action OnGameCompleted;
+        public System.Action OnGameWin;
         public System.Action OnGameFailed;
 
         public System.Action<EGameStage> OnStageChange;
@@ -182,7 +182,7 @@ namespace GeneralGame
         protected void CompletedGame()
         {
             WonPreviousGame = true;
-            OnGameCompleted?.Invoke();
+            OnGameWin?.Invoke();
             EndGame();
         }
         #endregion

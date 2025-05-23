@@ -58,8 +58,7 @@ namespace WhackAMole.UI
         {
             base.OnGameEnd();
 
-            StopAllCoroutines();
-            ClearTimerText();
+            
             _healthText.color = Color.white;
             _healthText.enabled = false;
         }

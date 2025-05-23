@@ -12,6 +12,10 @@ namespace CatchingButterflies
         public static CatchingButterfliesSolver Instance { get; private set; }
 
         private int _butterfliesCaught = 0;
+        public int ButterfliesCaught { get { return _butterfliesCaught; } }
+        public int ButterfliesNeededToCatch { get { return _gameData.ButterfliesNeededToCatch; } }
+
+        public System.Action<int> OnButterflyCountChange;
 
         private void Awake()
         {
@@ -43,6 +47,8 @@ namespace CatchingButterflies
         public void CatchButterfly()
         {
             _butterfliesCaught++;
+
+            OnButterflyCountChange?.Invoke(_butterfliesCaught);
 
             if (_butterfliesCaught >= _gameData.ButterfliesNeededToCatch)
             {

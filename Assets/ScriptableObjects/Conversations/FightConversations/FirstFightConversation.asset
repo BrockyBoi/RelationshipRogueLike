@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
-  m_Name: FirstFightPrototype
+  m_Name: FirstFightConversation
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
