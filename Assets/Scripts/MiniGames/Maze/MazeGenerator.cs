@@ -333,7 +333,7 @@ namespace Maze.Generation
                 MazeDifficultyManager.Instance.InitializeShakeIntensityRate(generationData.ShakeIntensity, generationData.ForceDifficultySettings);
             }
 
-            GameSolverComponent.SetTimeToCompleteGame(generationData.TimeToSolveMaze);
+            GameSolverComponent.SetTimeToCompleteGame(generationData.GameDuration);
             GameSolverComponent.SetFakeTime(generationData.IsMazeFake ? generationData.FakeMazeTime : 0);
 
             _needsKeys = generationData.NeedsKeys;

@@ -1,3 +1,4 @@
+using CatchingButterflies;
 using Dialogue.UI;
 using GeneralGame.Generation;
 using GeneralGame.Results;
@@ -19,6 +20,9 @@ namespace GeneralGame
         protected GenerationData _gameData;
         public GenerationData GameData { get { return _gameData; } }
 
+        [SerializeField]
+        protected bool _startGameTimerOnInitialize = true;
+
         #region Completion Results
         public void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
         {
@@ -37,6 +41,13 @@ namespace GeneralGame
         public virtual void SetGenerationGameData(GenerationData generationData)
         {
             _gameData = generationData;
+
+            SetTimeToCompleteGame(generationData.GameDuration);
+
+            if (_startGameTimerOnInitialize)
+            {
+                StartGameTimer();
+            }
         }
 
         private IEnumerator HighlightCurrentGameResultIndex()
@@ -123,6 +134,14 @@ namespace GeneralGame
         public int GetGameCompletionResultIndexByPointsNeededToScore(int currentPoints, int maxPoints)
         {
             return GetRoundedAndClampedResultIndex(currentPoints / (float)maxPoints);
+        }
+
+        protected override void ApplyEndGameResults()
+        {
+            base.ApplyEndGameResults();
+
+            CompletionResultType result = _gameCompletionResults[GetCurrentPotentialDialogueIndex()];
+            result.ApplyEffects();
         }
 
         public CompletionResultType GetCurrentCompletionResult()

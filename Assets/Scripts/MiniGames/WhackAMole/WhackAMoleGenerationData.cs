@@ -11,9 +11,6 @@ namespace WhackAMole
     public class WhackAMoleGenerationData : GameGenerationData<WhackAMoleCompletionResult>
     {
         [FoldoutGroup("Game Data")]
-        public float TimeToPlay = 15f;
-
-        [FoldoutGroup("Game Data")]
         public float TimeObjectsStayInPlay = .75f;
 
         [FoldoutGroup("Game Data")]

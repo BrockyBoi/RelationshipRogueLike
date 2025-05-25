@@ -177,11 +177,6 @@ namespace MemoryGame
             _defaultGuessesAllowed = baseNumberOfGuesses;
         }
 
-        protected override BaseGameUI GetGameUIInstance()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public override int GetCurrentPotentialDialogueIndex()
         {
             return GetGameCompletionIndexBasedOnGuessesLeft();

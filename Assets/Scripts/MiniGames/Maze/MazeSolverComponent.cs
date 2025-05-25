@@ -32,6 +32,7 @@ namespace Maze
         private void Awake()
         {
             Instance = this;
+            _startGameTimerOnInitialize = false;
         }
 
         protected override void Start()
@@ -153,16 +154,10 @@ namespace Maze
         {
             if (!IsFakeGame)
             {
-                MazeCompletionResult result = GetGameCompletionResultToApplyByTimeRemaining();
-                result.ApplyEffects();
+                base.ApplyEndGameResults();
             }
 
             Cursor.visible = true;
-        }
-
-        protected override BaseGameUI GetGameUIInstance()
-        {
-            return MazeSolverUI.Instance;
         }
 
         public override int GetCurrentPotentialDialogueIndex()

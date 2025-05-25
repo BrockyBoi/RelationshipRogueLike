@@ -203,11 +203,6 @@ namespace WhackAMole
             }
         }
 
-        protected override BaseGameUI GetGameUIInstance()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public override int GetCurrentPotentialDialogueIndex()
         {
             return GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth);
@@ -216,20 +211,11 @@ namespace WhackAMole
         public override void SetGenerationGameData(WhackAMoleGenerationData generationData)
         {
             base.SetGenerationGameData(generationData);
-            SetTimeToCompleteGame(generationData.TimeToPlay);
             _startingHealth = _currentHealth = generationData.StartingHealth;
             if (generationData.HasDistractionObjects)
             {
                 _spawnsBetweenDistractions = Random.Range(1, 7);
             }
-
-            StartGameTimer();
-        }
-
-        protected override void ApplyEndGameResults()
-        {
-            WhackAMoleCompletionResult result = _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth)];
-            result.ApplyEffects();
         }
 
         public WhackAMoleCompletionResult GetResultByHealthRemaining()

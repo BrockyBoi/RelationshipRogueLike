@@ -148,7 +148,10 @@ namespace GeneralGame
             ApplyEndGameResults();
         }
 
-        protected abstract void ApplyEndGameResults();
+        protected virtual void ApplyEndGameResults()
+        {
+
+        }
         #endregion
 
         #region EGameStage
@@ -192,7 +195,6 @@ namespace GeneralGame
             _timeToCompleteGame = time;
         }
 
-        protected abstract BaseGameUI GetGameUIInstance();
         public abstract int GetCurrentPotentialDialogueIndex();
         public abstract float GetCurrentPotentialDialoguePercentage();
 

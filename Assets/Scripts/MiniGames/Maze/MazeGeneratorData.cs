@@ -17,9 +17,6 @@ namespace Maze
         [FoldoutGroup("@FoldoutGroupName"), Range(0, .1f)]
         public float RotationSpeed = 0;
 
-        [FoldoutGroup("@FoldoutGroupName"), Range(5, 120)]
-        public float TimeToSolveMaze = 10;
-
         [FoldoutGroup("@FoldoutGroupName")]
         public bool NeedsKeys = false;
 

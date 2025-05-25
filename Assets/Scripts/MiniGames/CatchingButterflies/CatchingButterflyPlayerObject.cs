@@ -1,4 +1,3 @@
-using Maze;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +44,7 @@ namespace CatchingButterflies
             Butterfly butterfly = collision.gameObject.GetComponent<Butterfly>();
             if (butterfly)
             {
-                butterfly.CaptureButterfly();
+                butterfly.CollectItem();
             }
         }
 

@@ -2,12 +2,14 @@ using GeneralGame.Results;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace GeneralGame.Generation
 {
     public abstract class BaseGameGenerationData
     {
-
+        [FoldoutGroup("Game Data"), Range(0, 120)]
+        public float GameDuration = 15;
     }
 
     [Serializable]

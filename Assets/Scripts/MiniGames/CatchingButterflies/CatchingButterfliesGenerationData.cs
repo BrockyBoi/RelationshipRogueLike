@@ -19,8 +19,5 @@ namespace CatchingButterflies
 
         [Range(.5f, 1.5f)]
         public float ButterflySpeedMultiplier = 1f;
-
-        [Range(0, 120f)]
-        public float GameDuration = 15f;
     }
 }

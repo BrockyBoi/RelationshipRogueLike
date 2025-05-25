@@ -15,7 +15,7 @@ namespace CatchingButterflies
     }
 
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Butterfly : MonoBehaviour
+    public class Butterfly : CollectableMiniGameObject<CatchingButterfliesSolver>
     {
         [SerializeField, Required]
         private SpriteRenderer _spriteRenderer;
@@ -37,19 +37,14 @@ namespace CatchingButterflies
 
         private float _randomDirectionMultiplier = 1;
 
-        private float minX, maxX, minY, maxY;
+        protected override CatchingButterfliesSolver _gameSolver { get { return CatchingButterfliesSolver.Instance; } }
 
-
-        private void Start()
+        protected override void Start()
         {
-            CatchingButterfliesSolver.Instance.OnGameStop += OnGameEnd;
+            base.Start();
+
             _waveAmplitude = Random.Range(1 / _potentialWaveAmplitudeVariance, 1 * _potentialWaveAmplitudeVariance);
             _randomDirectionMultiplier = Random.value > .5f ? 1 : -1;
-        }
-
-        private void OnDestroy()
-        {
-            CatchingButterfliesSolver.Instance.OnGameStop -= OnGameEnd;
         }
 
         public void SetColor(Color color)
@@ -57,9 +52,13 @@ namespace CatchingButterflies
             _spriteRenderer.color = color;
         }
 
+        public override void SpawnInRandomLocation()
+        {
+            transform.position = new Vector3(Random.Range(_minX * .95f, _maxX * .35f), Random.value > .5f ? _minY * .95f : _maxY * .95f, 0);
+        }
+
         private void PickRandomDirectionToMove()
         {
-            transform.position = new Vector3(Random.Range(minX * .95f, maxX * .35f), Random.value > .5f ? minY * .95f : maxY * .95f, 0);
             Vector3 randomPointInWorld = GlobalFunctions.GetRandomWorldPosOnScreen(.25f, .45f, .5f, .5f);
             _directionToMove = (randomPointInWorld - transform.position).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
             _directionToMove.Normalize();
@@ -68,17 +67,6 @@ namespace CatchingButterflies
         public void Initialize(Color color)
         {
             _moveSpeed = _moveSpeed * Random.Range(_moveSpeed / _potentialMoveSpeedVariance, _moveSpeed * _potentialMoveSpeedVariance);
-
-            var bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-            var topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 1));
-
-
-            minX = Camera.main.ViewportToWorldPoint(new Vector3(-.3f, 0)).x;
-            maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.3f, 0)).x;
-
-            minY = Camera.main.ViewportToWorldPoint(new Vector3(0, -.3f)).y;
-            maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1.3f)).y;
-
 
             float randomValue = Random.value;
             if (randomValue > .75f)
@@ -102,61 +90,36 @@ namespace CatchingButterflies
             PickRandomDirectionToMove();
         }
 
-        public void Update()
+        public override void CollectItem()
         {
-            if (CatchingButterfliesSolver.Instance.CanPlayGame())
+            CatchingButterfliesSolver.Instance.CollectObject();
+
+            base.CollectItem();
+        }
+
+        protected override void MoveObject()
+        {
+            Vector3 extraMovement = Vector3.zero;
+            switch (_movementType)
             {
-                Vector3 extraMovement = Vector3.zero;
-                switch (_movementType)
-                {
-                    case EButterflyMovementType.Sin:
-                        extraMovement = new Vector3(0, Mathf.Sin(Time.time * _randomDirectionMultiplier) * _waveAmplitude, 0);
-                        break;
-                    case EButterflyMovementType.Cos:
-                        extraMovement = new Vector3(Mathf.Cos(Time.time * _randomDirectionMultiplier) * _waveAmplitude, 0, 0f);
-                        break;
-                    case EButterflyMovementType.Loop:
-                        extraMovement = new Vector3(Mathf.Cos(-Time.time * _randomDirectionMultiplier) * _waveAmplitude, Mathf.Sin(Time.time * _randomDirectionMultiplier) * _potentialWaveAmplitudeVariance, 0f);
-                        break;
-                    case EButterflyMovementType.FleeMouse:
-                        break;
-                    default:
-                        extraMovement = Vector3.zero;
-                        break;
-                }
-
-                float speed = Time.deltaTime * _moveSpeed * CatchingButterfliesSolver.Instance.GameData.ButterflySpeedMultiplier;
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, speed).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
-
-                if (IsOutOfBounds())
-                {
-                    ButterflyEscaped();
-                }
+                case EButterflyMovementType.Sin:
+                    extraMovement = new Vector3(0, Mathf.Sin(Time.time * _randomDirectionMultiplier) * _waveAmplitude, 0);
+                    break;
+                case EButterflyMovementType.Cos:
+                    extraMovement = new Vector3(Mathf.Cos(Time.time * _randomDirectionMultiplier) * _waveAmplitude, 0, 0f);
+                    break;
+                case EButterflyMovementType.Loop:
+                    extraMovement = new Vector3(Mathf.Cos(-Time.time * _randomDirectionMultiplier) * _waveAmplitude, Mathf.Sin(Time.time * _randomDirectionMultiplier) * _potentialWaveAmplitudeVariance, 0f);
+                    break;
+                case EButterflyMovementType.FleeMouse:
+                    break;
+                default:
+                    extraMovement = Vector3.zero;
+                    break;
             }
-        }
 
-        private void ButterflyEscaped()
-        {
-            Destroy(gameObject);
-        }
-
-        public void CaptureButterfly()
-        {
-            CatchingButterfliesSolver.Instance.CatchButterfly();
-            Destroy(gameObject);
-        }
-
-        private void OnGameEnd()
-        {
-            Destroy(gameObject);
-        }
-
-        private bool IsOutOfBounds()
-        {
-            float x = transform.position.x;
-            float y = transform.position.y;
-
-            return x < minX || x > maxX || y < minY || y > maxY;
+            float speed = Time.deltaTime * _moveSpeed * CatchingButterfliesSolver.Instance.GameData.ButterflySpeedMultiplier;
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, speed).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
         }
     }
 }

@@ -27,7 +27,7 @@ public class NewGameCreatorWindow : EditorWindow
     }
     private void CreateNewGameFiles()
     {
-        string folderPath = "Assets/Scripts/" + NewGameName;
+        string folderPath = "Assets/Scripts/MiniGames/" + NewGameName;
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
@@ -36,6 +36,7 @@ public class NewGameCreatorWindow : EditorWindow
             CreateGameSolver(folderPath);
             CreateGenerationData(folderPath);
             CreateCompletionResult(folderPath);
+            CreateGameUI(folderPath);
         }
     }
 
@@ -95,6 +96,7 @@ public class NewGameCreatorWindow : EditorWindow
         Debug.Log("Creating " + fileName + ".cs");
         using (StreamWriter outFile = new StreamWriter(fileName + ".cs"))
         {
+            outFile.WriteLine("using System;");
             outFile.WriteLine("using UnityEngine;");
             outFile.WriteLine("using System.Collections;");
             outFile.WriteLine("using GeneralGame.Generation;");
@@ -117,6 +119,7 @@ public class NewGameCreatorWindow : EditorWindow
         Debug.Log("Creating " + fileName + ".cs");
         using (StreamWriter outFile = new StreamWriter(fileName + ".cs"))
         {
+            outFile.WriteLine("using System;");
             outFile.WriteLine("using UnityEngine;");
             outFile.WriteLine("using System.Collections;");
             outFile.WriteLine("using GeneralGame.Results;");
@@ -126,6 +129,32 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine("[Serializable]");
             outFile.WriteLine("public class " + className + " : GameCompletionResult \n{");
             outFile.WriteLine(" ");
+            outFile.WriteLine("}");
+            outFile.WriteLine("}");
+        }
+    }
+
+    private void CreateGameUI(string startingFileName)
+    {
+        string className = NewGameName + "UI";
+        string generatorClass = NewGameName + "Generator";
+        string solverClass = NewGameName + "Solver";
+        string fileName = startingFileName + className;
+
+        Debug.Log("Creating " + fileName + ".cs");
+        using (StreamWriter outFile = new StreamWriter(fileName + ".cs"))
+        {
+            outFile.WriteLine("using UnityEngine;");
+            outFile.WriteLine("using System.Collections;");
+            outFile.WriteLine("using TMPro;");
+            outFile.WriteLine("using Sirenix.OdinInspector;");
+            outFile.WriteLine("");
+            outFile.WriteLine("namespace " + NewGameName);
+            outFile.WriteLine("{");
+            outFile.WriteLine("public class " + className + " : GameUI<" + NewGameName + "Generator, " + NewGameName + "Solver>\n{");
+            outFile.WriteLine(" ");
+            outFile.WriteLine("protected override " + generatorClass + " GameGenerator { get { return " + generatorClass + ".Instance; } }");
+            outFile.WriteLine("protected override " + solverClass + " GameSolver { get { return " + solverClass + ".Instance; } }");
             outFile.WriteLine("}");
             outFile.WriteLine("}");
         }

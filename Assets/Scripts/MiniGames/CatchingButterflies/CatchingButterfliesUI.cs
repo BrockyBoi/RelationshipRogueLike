@@ -18,12 +18,12 @@ namespace CatchingButterflies
         {
             base.Start();
 
-            GameSolver.OnButterflyCountChange += OnButterflyCountChange;
+            GameSolver.OnCollectableCountChange += OnButterflyCountChange;
         }
 
         protected override void OnDestroy()
         {
-            GameSolver.OnButterflyCountChange -= OnButterflyCountChange;
+            GameSolver.OnCollectableCountChange -= OnButterflyCountChange;
 
             base.OnDestroy();
         }
@@ -32,12 +32,12 @@ namespace CatchingButterflies
         {
             base.OnGameStart();
 
-            _currentCatchCountText.text = "Caught 0 out of " + GameSolver.ButterfliesNeededToCatch;
+            _currentCatchCountText.text = "Caught 0 out of " + GameSolver.CollectablesNeeded;
         }
 
         private void OnButterflyCountChange(int count)
         {
-            _currentCatchCountText.text = "Caught " + count.ToString() + " out of " + GameSolver.ButterfliesNeededToCatch;
+            _currentCatchCountText.text = "Caught " + count.ToString() + " out of " + GameSolver.CollectablesNeeded;
         }
     }
 }
