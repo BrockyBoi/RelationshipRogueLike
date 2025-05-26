@@ -14,6 +14,7 @@ using WhackAMole;
 
 using CatchingButterflies;
 using UnityEditor;
+using EndlessRunner;
 
 namespace Dialogue
 {
@@ -26,7 +27,8 @@ namespace Dialogue
         EndConversation,
         LinkNewConversation,
         SpawnWhackAMole,
-        SpawnButterflyCatching
+        SpawnButterflyCatching,
+        SpawnEndlessRunner,
     }
 
     [Serializable]
@@ -55,6 +57,9 @@ namespace Dialogue
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnButterflyCatching)]
         public CatchingButterfliesGenerationData CatchingButterflyGameSpawnerData;
+
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SpawnEndlessRunner)]
+        public EndlessRunnerGenerationData EndlessRunnerSpawnerData;
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
         public NewConversationObject LinkedConverssationObject;

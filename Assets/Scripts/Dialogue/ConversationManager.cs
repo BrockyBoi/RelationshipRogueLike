@@ -15,6 +15,9 @@ using CatchingButterflies;
 
 using static GlobalFunctions;
 using Sirenix.OdinInspector;
+using EndlessRunner;
+using GeneralGame.Generation;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Dialogue
 {
@@ -148,7 +151,6 @@ namespace Dialogue
                         {
                             MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
                             yield return YieldUntilGameIsInFinishedStage(MazeSolverComponent.Instance);
-                            MazeGenerator.Instance.DestroyGrid();
                             MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
 
                             yield return ProcessGameResult(result);
@@ -205,6 +207,15 @@ namespace Dialogue
                             yield return YieldUntilGameIsInFinishedStage(CatchingButterfliesSolver.Instance);
 
                             CatchingButterfliesCompletionResult result = CatchingButterfliesSolver.Instance.GetCurrentCompletionResult();
+                            yield return ProcessGameResult(result);
+                            break;
+                        }
+                    case EDialogueObjectType.SpawnEndlessRunner:
+                        {
+                            EndlessRunnerGenerator.Instance.GenerateGame(dialogueObject.EndlessRunnerSpawnerData);
+                            yield return YieldUntilGameIsInFinishedStage(EndlessRunnerSolver.Instance);
+
+                            EndlessRunnerCompletionResult result = EndlessRunnerSolver.Instance.GetCurrentCompletionResult();
                             yield return ProcessGameResult(result);
                             break;
                         }

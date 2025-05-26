@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndlessRunnerCoin : MonoBehaviour
+namespace EndlessRunner
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EndlessRunnerCoin : EndlessRunnerCollectable
     {
-        
-    }
+        protected override void OnItemCollected()
+        {
+            EndlessRunnerSolver.Instance.CollectObject();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            base.OnItemCollected();
+        }
     }
 }

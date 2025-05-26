@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CatchingButterflies
 {
-    public class CatchingButterflyPlayerObject : MonoBehaviour
+    public class CatchingButterflyPlayerObject : MiniGameGameObject<CatchingButterfliesSolver, CatchingButterfliesGenerator>
     {
         [SerializeField]
         private float _moveSpeed = 5f;
@@ -18,15 +18,7 @@ namespace CatchingButterflies
         {
             _camera = Camera.main;
 
-            CatchingButterfliesGenerator.Instance.ListenToOnGameGenerated(OnGameCreated);
-            CatchingButterfliesSolver.Instance.OnGameStop += OnGameEnd;
             gameObject.SetActive(false);
-        }
-
-        private void OnDestroy()
-        {
-            CatchingButterfliesGenerator.Instance.UnlistenToOnGameGenerated(OnGameCreated);
-            CatchingButterfliesSolver.Instance.OnGameWin -= OnGameEnd;
         }
 
         void Update()
@@ -48,15 +40,10 @@ namespace CatchingButterflies
             }
         }
 
-        private void OnGameCreated()
+        protected override void OnGameGenerated()
         {
-            gameObject.SetActive(true);
+            base.OnGameGenerated();
             transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-        private void OnGameEnd()
-        {
-            gameObject.SetActive(false);
         }
     }
 }

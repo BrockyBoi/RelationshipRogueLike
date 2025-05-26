@@ -15,7 +15,7 @@ namespace CatchingButterflies
     }
 
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Butterfly : CollectableMiniGameObject<CatchingButterfliesSolver>
+    public class Butterfly : CollectableMiniGameObject<CatchingButterfliesSolver, CatchingButterfliesGenerator>
     {
         [SerializeField, Required]
         private SpriteRenderer _spriteRenderer;
@@ -37,12 +37,8 @@ namespace CatchingButterflies
 
         private float _randomDirectionMultiplier = 1;
 
-        protected override CatchingButterfliesSolver _gameSolver { get { return CatchingButterfliesSolver.Instance; } }
-
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
-
             _waveAmplitude = Random.Range(1 / _potentialWaveAmplitudeVariance, 1 * _potentialWaveAmplitudeVariance);
             _randomDirectionMultiplier = Random.value > .5f ? 1 : -1;
         }
@@ -87,14 +83,15 @@ namespace CatchingButterflies
             }
 
             SetColor(color);
+            SpawnInRandomLocation();
             PickRandomDirectionToMove();
         }
 
-        public override void CollectItem()
+        protected override void OnItemCollected()
         {
             CatchingButterfliesSolver.Instance.CollectObject();
 
-            base.CollectItem();
+            base.OnItemCollected();
         }
 
         protected override void MoveObject()
@@ -118,7 +115,7 @@ namespace CatchingButterflies
                     break;
             }
 
-            float speed = Time.deltaTime * _moveSpeed * CatchingButterfliesSolver.Instance.GameData.ButterflySpeedMultiplier;
+            float speed = Time.deltaTime * _moveSpeed * _gameSolver.GameData.ButterflySpeedMultiplier;
             transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, speed).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
         }
     }

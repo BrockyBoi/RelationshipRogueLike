@@ -19,6 +19,8 @@ namespace GeneralGame
 
     public abstract class BaseGameSolverComponent : MonoBehaviour
     {
+        public static BaseGameSolverComponent BaseInstance { get; private set; }
+
         [ShowInInspector, ReadOnly]
         protected float _totalPenaltyTime = 0f;
         protected float _bonusTimeGained = 0f;
@@ -51,6 +53,11 @@ namespace GeneralGame
         public System.Action OnGameFailed;
 
         public System.Action<EGameStage> OnStageChange;
+
+        protected virtual void Awake()
+        {
+            BaseInstance = this;
+        }
 
         protected virtual void Start()
         {
@@ -134,6 +141,12 @@ namespace GeneralGame
 
             OnMainTimerEnd?.Invoke();
         }
+
+        public void AddPenaltyTime(float penalty)
+        {
+            _totalPenaltyTime += penalty;
+        }
+
         protected float GetPercentageOfTimeLeftToCompleteGame()
         {
             return (_timeLeftToFinish - _totalPenaltyTime + _bonusTimeGained) / _timeToCompleteGame;

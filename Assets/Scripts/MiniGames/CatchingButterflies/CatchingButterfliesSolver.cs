@@ -12,8 +12,10 @@ namespace CatchingButterflies
 
         public override int CollectablesNeeded { get { return _gameData.ButterfliesNeededToCatch; } }
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             Instance = this;
         }
 

@@ -29,8 +29,10 @@ namespace WhackAMole
 
         public System.Action OnTakeDamage;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             Instance = this;
         }
 

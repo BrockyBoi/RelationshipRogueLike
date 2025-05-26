@@ -29,8 +29,10 @@ namespace Maze
         public System.Action OnMazeSolved;
         public System.Action OnMazeFailed;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             Instance = this;
             _startGameTimerOnInitialize = false;
         }
@@ -141,7 +143,7 @@ namespace Maze
 
         public void HitMazeWall()
         {
-            _totalPenaltyTime += _penaltyOnWallHit;
+            AddPenaltyTime(_penaltyOnWallHit);
             OnWallHit?.Invoke();
         }
 

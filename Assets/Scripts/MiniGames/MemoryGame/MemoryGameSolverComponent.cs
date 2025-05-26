@@ -30,8 +30,10 @@ namespace MemoryGame
 
         public System.Action OnGuessMade;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             Instance = this;
             _memoryTypesSearchedForPreviously = new HashSet<EMemoryType>();
         }

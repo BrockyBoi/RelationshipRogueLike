@@ -53,6 +53,7 @@ namespace Maze.Generation
 
         private void OnGameEnd()
         {
+            DestroyGrid();
             _keysInGame.Clear();
         }
 

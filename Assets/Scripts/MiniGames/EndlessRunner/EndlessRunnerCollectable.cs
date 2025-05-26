@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 namespace EndlessRunner
 {
-    public class EndlessRunnerCollectable : CollectableMiniGameObject<EndlessRunnerSolver>
+    public class EndlessRunnerCollectable : CollectableMiniGameObject<EndlessRunnerSolver, EndlessRunnerGenerator>
     {
-        protected override EndlessRunnerSolver _gameSolver { get { return EndlessRunnerSolver.Instance; } }
-
         public override void SpawnInRandomLocation()
         {
             transform.position = new Vector3(_maxX * .95f, Random.Range( _minY * .5f , _maxY * .9f), 0);

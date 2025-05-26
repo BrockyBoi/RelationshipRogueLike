@@ -1,10 +1,9 @@
-using Maze;
 using Maze.Generation;
 using UnityEngine;
 
 namespace Maze
 {
-    public class PlayerMazeSolverObject : MonoBehaviour
+    public class PlayerMazeSolverObject : MiniGameGameObject<MazeSolverComponent, MazeGenerator>
     {
         [SerializeField]
         private float _moveSpeed = 1f;
@@ -24,28 +23,10 @@ namespace Maze
 
         private float _lastTimeHitWall = 0f;
 
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (Time.time > _lastTimeHitWall + _gracePeriodBetweenWallHits)
-            {
-                MazeSolverComponent.Instance.HitMazeWall();
-                _lastTimeHitWall = Time.time;
-            }
-        }
-
         private void Start()
         {
             _camera = Camera.main;
-            MazeSolverComponent.Instance.OnGameStop += OnMazeGameEnd;
-            MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
             gameObject.SetActive(false);
-        }
-
-        private void OnDestroy()
-        {
-            MazeSolverComponent.Instance.OnGameStop -= OnMazeGameEnd;
-            MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
         }
 
         private void Update()
@@ -66,15 +47,19 @@ namespace Maze
             }
         }
 
-        private void OnMazePathGenerated()
+        private void OnCollisionEnter(Collision collision)
         {
-            gameObject.SetActive(true);
-            transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
+            if (Time.time > _lastTimeHitWall + _gracePeriodBetweenWallHits)
+            {
+                MazeSolverComponent.Instance.HitMazeWall();
+                _lastTimeHitWall = Time.time;
+            }
         }
 
-        private void OnMazeGameEnd()
+        protected override void OnGameGenerated()
         {
-            gameObject.SetActive(false);
+            base.OnGameGenerated();
+            transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
     }
 }

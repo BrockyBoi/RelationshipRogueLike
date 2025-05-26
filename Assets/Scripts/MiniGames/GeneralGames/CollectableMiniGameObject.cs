@@ -1,17 +1,22 @@
 using GeneralGame;
+using GeneralGame.Generation;
+using Sirenix.OdinInspector.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CollectableMiniGameObject<GameSolverComponent> : MonoBehaviour where GameSolverComponent : BaseGameSolverComponent
+using static GlobalFunctions;
+
+public abstract class CollectableMiniGameObject<GameSolverComponent, GameGeneratorComponent> : MiniGameGameObject<GameSolverComponent, GameGeneratorComponent> where GameSolverComponent : BaseGameSolverComponent where GameGeneratorComponent : BaseGameGenerator
 {
     protected float _minX, _maxX, _minY, _maxY;
 
-    protected abstract GameSolverComponent _gameSolver { get; }
+    protected bool _wasCollected = false;
 
-    protected virtual void Start()
+    protected override void Awake()
     {
-        _gameSolver.OnGameStop += OnGameEnd;
+        base.Awake();
+
         _minX = Camera.main.ViewportToWorldPoint(new Vector3(-.3f, 0)).x;
         _maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.3f, 0)).x;
 
@@ -19,14 +24,9 @@ public abstract class CollectableMiniGameObject<GameSolverComponent> : MonoBehav
         _maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1.3f)).y;
     }
 
-    protected virtual void OnDestroy()
-    {
-        _gameSolver.OnGameStop -= OnGameEnd;
-    }
-
     protected virtual void Update()
     {
-        if (_gameSolver.CanPlayGame())
+        if (ensure(_gameSolver != null) && _gameSolver.CanPlayGame())
         {
             MoveObject();
 
@@ -40,7 +40,7 @@ public abstract class CollectableMiniGameObject<GameSolverComponent> : MonoBehav
     protected abstract void MoveObject();
     public abstract void SpawnInRandomLocation();
 
-    protected virtual void OnGameEnd()
+    protected override void OnGameStop()
     {
         Destroy(gameObject);
     }
@@ -50,7 +50,16 @@ public abstract class CollectableMiniGameObject<GameSolverComponent> : MonoBehav
         Destroy(gameObject);
     }
 
-    public virtual void CollectItem()
+    public void CollectItem()
+    {
+        if (!_wasCollected)
+        {
+            _wasCollected = true;
+            OnItemCollected();
+        }
+    }
+
+    protected virtual void OnItemCollected()
     {
         Destroy(gameObject);
     }
