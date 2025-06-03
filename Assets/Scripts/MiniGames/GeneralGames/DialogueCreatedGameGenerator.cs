@@ -1,8 +1,11 @@
 using GeneralGame.Results;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+
+using static GlobalFunctions;
 
 namespace GeneralGame.Generation
 {
@@ -15,8 +18,12 @@ namespace GeneralGame.Generation
 
         public virtual void GenerateGame(GenerationData generationData)
         {
-            GameSolverComponent.SetGameCompletionResults(generationData.GameCompletionResults);
+            if (ensure(GameSolverComponent != null, "Game Solver is null") && ensure(generationData != null, "Generation data is null"))
+            {
+                GameSolverComponent.SetGameCompletionResults(generationData.GameCompletionResults);
+            }
         }
+
         protected void SetGameGenerationData(GenerationData data)
         {
             _gameData = data;

@@ -37,6 +37,8 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
         {
             dialogueUI.OnShowUI += HideUI;
         }
+
+        HideUI();
     }
 
     protected virtual void OnDestroy()

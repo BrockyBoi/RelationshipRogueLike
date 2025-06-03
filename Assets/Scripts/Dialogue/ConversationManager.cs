@@ -18,6 +18,7 @@ using Sirenix.OdinInspector;
 using EndlessRunner;
 using GeneralGame.Generation;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using ShootYourShotGame;
 
 namespace Dialogue
 {
@@ -149,11 +150,7 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnMaze:
                         {
-                            MazeGenerator.Instance.GenerateGame(dialogueObject.MazeSpawnerData);
-                            yield return YieldUntilGameIsInFinishedStage(MazeSolverComponent.Instance);
-                            MazeCompletionResult result = MazeSolverComponent.Instance.GetGameCompletionResultToApplyByTimeRemaining();
-
-                            yield return ProcessGameResult(result);
+                            yield return ProcessStandardGameLogic<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameTypes.Maze, dialogueObject.MazeSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnMemoryGame:
@@ -192,31 +189,23 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnWhackAMole:
                         {
-                            WhackAMoleGenerator.Instance.GenerateGame(dialogueObject.WhackAMoleGameSpawnerData);
-                            yield return YieldUntilGameIsInFinishedStage(WhackAMoleSolver.Instance);
+                            yield return ProcessStandardGameLogic<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameTypes.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
                             WhackAMoleGenerator.Instance.DeleteGameObjects();
-
-                            WhackAMoleCompletionResult result = WhackAMoleSolver.Instance.GetCurrentCompletionResult();
-
-                            yield return ProcessGameResult(result);
                             break;
                         }
                     case EDialogueObjectType.SpawnButterflyCatching:
                         {
-                            CatchingButterfliesGenerator.Instance.GenerateGame(dialogueObject.CatchingButterflyGameSpawnerData);
-                            yield return YieldUntilGameIsInFinishedStage(CatchingButterfliesSolver.Instance);
-
-                            CatchingButterfliesCompletionResult result = CatchingButterfliesSolver.Instance.GetCurrentCompletionResult();
-                            yield return ProcessGameResult(result);
+                            yield return ProcessStandardGameLogic<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameTypes.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnEndlessRunner:
                         {
-                            EndlessRunnerGenerator.Instance.GenerateGame(dialogueObject.EndlessRunnerSpawnerData);
-                            yield return YieldUntilGameIsInFinishedStage(EndlessRunnerSolver.Instance);
-
-                            EndlessRunnerCompletionResult result = EndlessRunnerSolver.Instance.GetCurrentCompletionResult();
-                            yield return ProcessGameResult(result);
+                            yield return ProcessStandardGameLogic<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameTypes.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
+                            break;
+                        }
+                    case EDialogueObjectType.SpawnShootYourShot:
+                        {
+                            yield return ProcessStandardGameLogic<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameTypes.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.EndConversation:
@@ -237,6 +226,21 @@ namespace Dialogue
                         break;
                 }
             }
+        }
+
+        private IEnumerator ProcessStandardGameLogic<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameTypes gameType, GenerationDataType generationData) 
+            where GeneratorType : DialogueCreatedGameGenerator<SolverType, GenerationDataType, CompletionResultType> 
+            where SolverType : GameSolverComponent<GenerationDataType, CompletionResultType> 
+            where GenerationDataType : GameGenerationData<CompletionResultType>
+            where CompletionResultType : GameCompletionResult, new()
+        {
+            SolverType solver;
+            GeneratorType generator;
+            MiniGameControllersManager.Instance.GetBothControllers(out solver, out generator, gameType);
+
+            generator.GenerateGame(generationData);
+            yield return YieldUntilGameIsInFinishedStage(solver);
+            yield return ProcessGameResult(solver.GetCurrentCompletionResult());
         }
 
         private IEnumerator ProcessConversation(Conversation conversation)

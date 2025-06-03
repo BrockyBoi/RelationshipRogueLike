@@ -13,10 +13,8 @@ public abstract class CollectableMiniGameObject<GameSolverComponent, GameGenerat
 
     protected bool _wasCollected = false;
 
-    protected override void Awake()
+    protected virtual void Awake()
     {
-        base.Awake();
-
         _minX = Camera.main.ViewportToWorldPoint(new Vector3(-.3f, 0)).x;
         _maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.3f, 0)).x;
 
@@ -26,7 +24,7 @@ public abstract class CollectableMiniGameObject<GameSolverComponent, GameGenerat
 
     protected virtual void Update()
     {
-        if (ensure(_gameSolver != null) && _gameSolver.CanPlayGame())
+        if (ensure(_gameSolver != null, "Game solver is not set") && _gameSolver.CanPlayGame())
         {
             MoveObject();
 

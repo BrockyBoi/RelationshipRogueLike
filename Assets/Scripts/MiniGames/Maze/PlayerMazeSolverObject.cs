@@ -23,8 +23,10 @@ namespace Maze
 
         private float _lastTimeHitWall = 0f;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
+
             _camera = Camera.main;
             gameObject.SetActive(false);
         }

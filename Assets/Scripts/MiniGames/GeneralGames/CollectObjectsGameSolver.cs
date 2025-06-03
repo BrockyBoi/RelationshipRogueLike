@@ -38,7 +38,7 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
 
         if (_collectablesCaught >= CollectablesNeeded)
         {
-            CompletedGame();
+            CompleteGame();
         }
     }
 

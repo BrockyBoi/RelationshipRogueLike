@@ -1,4 +1,5 @@
 using CustomUI;
+using GeneralGame;
 using GeneralGame.Results;
 using Sirenix.OdinInspector;
 using System.Collections;
@@ -90,7 +91,11 @@ namespace Dialogue.UI
                     if (oldResult)
                     {
                         oldResult.StopHighlightingObject();
-                        oldResult.RemoveResult();
+
+                        if (MiniGameControllersManager.Instance.GetSolverComponent(MiniGameControllersManager.Instance.CurrentGameType).IsStage(EGameStage.InGame))
+                        {
+                            oldResult.RemoveResult();
+                        }
                     }
                 }
 

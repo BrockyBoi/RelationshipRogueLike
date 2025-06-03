@@ -37,8 +37,10 @@ namespace CatchingButterflies
 
         private float _randomDirectionMultiplier = 1;
 
-        protected void Start()
+        protected override void Start()
         {
+            base.Start();
+
             _waveAmplitude = Random.Range(1 / _potentialWaveAmplitudeVariance, 1 * _potentialWaveAmplitudeVariance);
             _randomDirectionMultiplier = Random.value > .5f ? 1 : -1;
         }

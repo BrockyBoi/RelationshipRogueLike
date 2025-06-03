@@ -5,7 +5,7 @@ namespace CustomUI
     public abstract class BaseGameUI : MonoBehaviour
     {
         [SerializeField]
-        private Canvas _uiCanvas;
+        protected Canvas _uiCanvas;
 
         public System.Action OnShowUI;
         public System.Action OnHideUI;

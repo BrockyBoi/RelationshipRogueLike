@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace GeneralGame
 {
@@ -68,7 +69,7 @@ namespace GeneralGame
         {
             if (IsStage(EGameStage.InGame) && Input.GetKeyDown(KeyCode.Tab))
             {
-                CompletedGame();
+                CompleteGame();
             }
         }
 
@@ -120,15 +121,14 @@ namespace GeneralGame
             SetGameStage(EGameStage.InGame);
         }
 
-        protected void StartGameTimer()
+        protected virtual void StartGameTimer()
         {
+            StartGame();
             StartCoroutine(RunGameTimer());
         }
 
-        private IEnumerator RunGameTimer()
+        protected IEnumerator RunGameTimer()
         {
-            StartGame();
-
             float countDownTimeWithPenalties = _timeLeftToFinish;
             while (countDownTimeWithPenalties > 0f && IsStage(EGameStage.InGame))
             {
@@ -195,7 +195,7 @@ namespace GeneralGame
             EndGame();
         }
 
-        protected void CompletedGame()
+        protected void CompleteGame()
         {
             WonPreviousGame = true;
             OnGameWin?.Invoke();
@@ -206,6 +206,7 @@ namespace GeneralGame
         public void SetTimeToCompleteGame(float time)
         {
             _timeToCompleteGame = time;
+            _timeLeftToFinish = time;
         }
 
         public abstract int GetCurrentPotentialDialogueIndex();

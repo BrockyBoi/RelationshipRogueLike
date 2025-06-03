@@ -105,11 +105,11 @@ namespace MemoryGame
 
                     if (IsLookingForSingleMemoryType && card.MemoryType == MemoryTypeToSearchFor)
                     {
-                        CompletedGame();
+                        CompleteGame();
                     }
                     else if (!IsLookingForSingleMemoryType && _cardsCollected == MemoryGameGenerator.Instance.TotalElementsCount)
                     {
-                        CompletedGame();
+                        CompleteGame();
                     }
                     else
                     {

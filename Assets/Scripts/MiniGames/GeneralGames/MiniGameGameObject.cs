@@ -17,7 +17,7 @@ public abstract class MiniGameGameObject<GameSolverComponent, GameGeneratorCompo
     [SerializeField]
     private bool _disableOnInitialize = false;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         BaseGameGenerator generator;
         BaseGameSolverComponent solver;

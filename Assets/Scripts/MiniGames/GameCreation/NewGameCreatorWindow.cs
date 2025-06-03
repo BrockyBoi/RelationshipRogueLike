@@ -1,3 +1,4 @@
+using ShootYourShotGame;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -57,6 +58,7 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine("public class " + className + " : DialogueCreatedGameGenerator<" + NewGameName + "Solver, " + NewGameName + "GenerationData, " + NewGameName + "CompletionResult> \n{");
             outFile.WriteLine(" ");
             outFile.WriteLine("public static " + className + " Instance { get; private set; }");
+            outFile.WriteLine("protected override ShootYourShotGameSolver GameSolverComponent { get { return " + NewGameName + ".Instance; } }");
             outFile.WriteLine(" ");
             outFile.WriteLine("private void Awake()\n{\nInstance = this;\n}");
             outFile.WriteLine("}");
@@ -82,7 +84,7 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine(" ");
             outFile.WriteLine("public static " + className + " Instance { get; private set; }");
             outFile.WriteLine(" ");
-            outFile.WriteLine("private void Awake()\n{\nInstance = this;\n}");
+            outFile.WriteLine("protected override void Awake()\n{\nbase.Awake();\nInstance = this;\n}");
             outFile.WriteLine("}");
             outFile.WriteLine("}");
         }

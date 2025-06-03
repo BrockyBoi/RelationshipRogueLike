@@ -86,7 +86,7 @@ namespace GeneralGame
             float minPercentage = Mathf.Clamp((count - index - 1) / count, 0, 1);
             float modifiedMax = maxPercentage - minPercentage;
 
-            if (!ensure(totalPercentage >= minPercentage, "The total percentage should not be less than the modified min percentage: Total Percentage: " + totalPercentage))
+            if (!Mathf.Approximately(minPercentage, 0) && !ensure(totalPercentage >= minPercentage, "The total percentage should not be less than the modified min percentage: Total Percentage: " + totalPercentage))
             {
                 return 0f;
             }

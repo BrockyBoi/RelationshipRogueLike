@@ -111,7 +111,7 @@ namespace Maze
         {
             if (IsStage(EGameStage.InGame) && _keysNeeded == 0)
             {
-                CompletedGame();
+                CompleteGame();
             }
         }
 
@@ -138,7 +138,7 @@ namespace Maze
 
         private void OnFakeTimerEnd()
         {
-            CompletedGame();
+            CompleteGame();
         }
 
         public void HitMazeWall()

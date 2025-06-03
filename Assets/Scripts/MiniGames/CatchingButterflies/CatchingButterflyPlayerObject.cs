@@ -14,8 +14,10 @@ namespace CatchingButterflies
 
         private Camera _camera;
 
-        void Start()
+        protected override void Start()
         {
+            base.Start();
+
             _camera = Camera.main;
 
             gameObject.SetActive(false);

@@ -17,7 +17,8 @@ namespace GeneralGame
         CatchingButterflies,
         EndlessRunner,
         Memory,
-        WhackAMole
+        WhackAMole,
+        ShootYourShot
     }
 
     [Serializable]
@@ -30,6 +31,9 @@ namespace GeneralGame
         [SerializeField]
         private ControllersDictionary _controllerReferences;
 
+        private EGameTypes _currentGameType;
+        public EGameTypes CurrentGameType { get { return _currentGameType; } }
+
         private void Awake()
         {
             if (Instance == null)
@@ -41,6 +45,11 @@ namespace GeneralGame
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void SetCurrentGameType(EGameTypes currentGameType)
+        {
+            _currentGameType = currentGameType;
         }
 
         public void GetBothControllers(out BaseGameSolverComponent solver, out BaseGameGenerator generator, EGameTypes gameType)
