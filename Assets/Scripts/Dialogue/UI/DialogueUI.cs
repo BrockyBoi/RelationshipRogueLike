@@ -31,7 +31,7 @@ namespace Dialogue.UI
             HideUI();
         }
 
-        private void Start()
+        private void OnEnable()
         {
            BaseGameGenerator.OnAnyGameGenerated += HideUI;
         }

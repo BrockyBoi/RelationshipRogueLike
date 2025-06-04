@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using GeneralGame;
+using System.Linq;
 
 namespace ShootYourShotGame
 {
     public class ShootYourShotGameSolver : GameSolverComponent<ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>
     {
-
         public static ShootYourShotGameSolver Instance { get; private set; }
         public System.Action<float> OnCustomTimerValueSet;
         public System.Action OnCustomTimerEnd;
@@ -16,27 +16,24 @@ namespace ShootYourShotGame
         [SerializeField]
         private GameObject _bullseye;
 
-        public override int GetCurrentPotentialDialogueIndex()
-        {
-            return GetGameCompletionResultIndexByTimeRemaining();
-        }
-
-        public override float GetCurrentPotentialDialoguePercentage()
-        {
-            return GetPercentageOfTimeLeftToCompleteGame();
-        }
-
         protected override void Awake()
         {
             base.Awake();
             Instance = this;
+            _startGameTimerOnInitialize = false;
         }
 
-        protected override void StartGame()
+        //protected override void StartGame()
+        //{
+        //    base.StartGame();
+        //    _timeLeftToFinish = 0;
+        //}
+
+        protected override void StartCountDown()
         {
-            base.StartGame();
-            _timeLeftToFinish = 0;
+            OnStartGameCountdownBegin?.Invoke();
             _bullseye.SetActive(true);
+            StartCoroutine(StartCustomTimer());
         }
 
         protected override void EndGame()
@@ -46,11 +43,16 @@ namespace ShootYourShotGame
             _bullseye.SetActive(false);
         }
 
-        protected override void StartGameTimer()
+        public override void SetGenerationGameData(ShootYourShotGameGenerationData generationData)
         {
-            StartGame();
-            StartCoroutine(StartCustomTimer());
+            base.SetGenerationGameData(generationData);
+            StartCountDown();
         }
+
+        //protected override void StartGameTimer()
+        //{
+        //    SetGameStage(EGameStage.DuringCountdown);
+        //}
 
         private IEnumerator StartCustomTimer()
         {
@@ -79,13 +81,13 @@ namespace ShootYourShotGame
             _hasCustomTimerEnded = true;
             OnCustomTimerEnd?.Invoke();
 
-            yield return RunAimingTimer();
+              yield return RunAimingTimer();
         }
 
         private IEnumerator RunAimingTimer()
         {
             SetTimeToCompleteGame(_gameData.TimeAllowedToShootTarget);
-            StartCoroutine(RunGameTimer());
+            StartGameTimer();
 
             yield return new WaitForSeconds(_gameData.TimeAllowedToShootTarget);
 
@@ -94,11 +96,14 @@ namespace ShootYourShotGame
 
         protected override void Update()
         {
-            base.Update();
-
-            if (CanPlayGame() && Input.GetKeyDown(KeyCode.Space))
+            if (!PauseController.Instance.IsPaused && Input.GetKeyDown(KeyCode.Space))
             {
                 AttemptShootTarget();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                CompleteGame();
             }
         }
 
@@ -112,6 +117,16 @@ namespace ShootYourShotGame
             {
                 CompleteGame();
             }
+        }
+
+        public override int GetCurrentPotentialDialogueIndex()
+        {
+            return IsStage(EGameStage.InGame) || IsStage(EGameStage.GameFinished) ? GetGameCompletionResultIndexByTimeRemaining() : _gameCompletionResults.Count - 1;
+        }
+
+        public override float GetCurrentPotentialDialoguePercentage()
+        {
+            return GetPercentageOfTimeLeftToCompleteGame();
         }
     }
 }

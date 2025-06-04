@@ -38,16 +38,18 @@ namespace MemoryGame
             _memoryTypesSearchedForPreviously = new HashSet<EMemoryType>();
         }
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             MemoryGameGenerator.Instance.ListenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked += SelectCard;
         }
 
-        private void OnDestroy()
+        protected override void OnDisable()
         {
-            MemoryGameGenerator.Instance.UnlistenToOnGameGenerated(OnCardValuesSet);
+            base.OnDisable();
+
+            MemoryGameGenerator.Instance.UnlistenToOnCardValuesSet(OnCardValuesSet);
             MemoryGameCard.OnCardClicked -= SelectCard;
         }
 

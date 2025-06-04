@@ -92,7 +92,7 @@ namespace Dialogue.UI
                     {
                         oldResult.StopHighlightingObject();
 
-                        if (MiniGameControllersManager.Instance.GetSolverComponent(MiniGameControllersManager.Instance.CurrentGameType).IsStage(EGameStage.InGame))
+                        if (MiniGameControllersManager.Instance.GetCurrentGameSolver().IsStage(EGameStage.InGame))
                         {
                             oldResult.RemoveResult();
                         }

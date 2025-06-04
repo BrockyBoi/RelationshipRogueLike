@@ -25,6 +25,8 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
         if (GameSolver)
         {
             GameSolver.OnGameStart += OnGameStart;
+            GameSolver.OnStartGameCountdownBegin += OnGameCountdownStart;
+            GameSolver.OnStartGameCountdownEnd += OnGameCountdownStop;
             GameSolver.OnGameStop += OnGameEnd;
             GameSolver.OnGameWin += OnGameWon;
             GameSolver.OnGameFailed += OnGameFailed;
@@ -51,6 +53,8 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
         if (GameSolver)
         {
             GameSolver.OnGameStart -= OnGameStart;
+            GameSolver.OnStartGameCountdownBegin -= OnGameCountdownStart;
+            GameSolver.OnStartGameCountdownEnd -= OnGameCountdownStop;
             GameSolver.OnGameStop -= OnGameEnd;
             GameSolver.OnGameWin -= OnGameWon;
             GameSolver.OnGameFailed -= OnGameFailed;
@@ -68,6 +72,16 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
     protected virtual void OnGameStart()
     {
 
+    }
+
+    protected virtual void OnGameCountdownStart()
+    {
+
+    }
+
+    protected virtual void OnGameCountdownStop()
+    {
+        
     }
 
     protected virtual void OnGameEnd()

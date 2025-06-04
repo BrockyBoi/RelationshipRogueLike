@@ -9,17 +9,16 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
     public abstract int CollectablesNeeded { get; }
     public System.Action<int> OnCollectableCountChange;
 
-    protected override void Start()
+    protected override void OnEnable()
     {
-        base.Start();
-
-        _collectablesCaught = 0;
+        base.OnEnable();
 
         OnMainTimerEnd += FailGame;
     }
 
-    protected virtual void OnDestroy()
+    protected override void OnDisable()
     {
+        base.OnDisable();
         OnMainTimerEnd -= FailGame;
     }
 

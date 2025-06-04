@@ -12,7 +12,7 @@ public abstract class MiniGameGameObject<GameSolverComponent, GameGeneratorCompo
     protected GameGeneratorComponent _gameGenerator;
 
     [SerializeField]
-    protected EGameTypes _gameType;
+    protected EGameType _gameType;
 
     [SerializeField]
     private bool _disableOnInitialize = false;

@@ -10,9 +10,9 @@ namespace ShootYourShotGame
         protected override ShootYourShotGameGenerator GameGenerator { get { return ShootYourShotGameGenerator.Instance; } }
         protected override ShootYourShotGameSolver GameSolver { get { return ShootYourShotGameSolver.Instance; } }
 
-        protected override void OnGameStart()
+        protected override void OnGameCountdownStart()
         {
-            base.OnGameStart();
+            base.OnGameCountdownStart();
 
             GameSolver.OnCustomTimerValueSet += SetCustomTimerText;
             GameSolver.OnCustomTimerEnd += OnCustomTimerEnd;

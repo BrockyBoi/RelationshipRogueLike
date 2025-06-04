@@ -587,7 +587,7 @@ MonoBehaviour:
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
-      TimeAllowedToShootTarget: 0.5
+      TimeAllowedToShootTarget: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

@@ -819,7 +819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &243704037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,6 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 3
+  _gameType: 1
   _startGameTimerOnInitialize: 1
 --- !u!114 &243704038
 MonoBehaviour:
@@ -986,6 +987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 3
+  _gameType: 2
   _startGameTimerOnInitialize: 1
   _groundReference: {fileID: 1850230651}
 --- !u!114 &257427591
@@ -2085,7 +2087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &649024510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,6 +2714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 100
+  _gameType: 4
   _startGameTimerOnInitialize: 1
   _appearingObjectPrefabs:
   - {fileID: 9151727555390291364, guid: b861b3a5a39873445981303282a4b2e5, type: 3}
@@ -2749,7 +2752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &820322509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,6 +3053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 1
+  _gameType: 0
   _startGameTimerOnInitialize: 1
   _penaltyOnWallHit: 0.5
 --- !u!114 &999954014
@@ -3493,6 +3497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 3
+  _gameType: 5
   _startGameTimerOnInitialize: 1
   _bullseye: {fileID: 1580476671}
 --- !u!114 &1122467938
@@ -4104,7 +4109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameType: 0
   _disableOnInitialize: 1
-  _moveSpeed: 17
+  _moveSpeed: 50
   _objectHeight: -0.25
   _distanceCheckToWalls: 0.15
   _gracePeriodBetweenWallHits: 1
@@ -4142,7 +4147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1389799487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4295,7 +4300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1521440378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,7 +4847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1728503163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5115,7 +5120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1892114859
 Transform:
   m_ObjectHideFlags: 0
@@ -5148,7 +5153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1919293098
 Transform:
   m_ObjectHideFlags: 0
@@ -6016,6 +6021,10 @@ PrefabInstance:
     - target: {fileID: 1264597294073205055, guid: fc457876b254fe14593134e81171bc15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702073040661719961, guid: fc457876b254fe14593134e81171bc15, type: 3}
+      propertyPath: _gameType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

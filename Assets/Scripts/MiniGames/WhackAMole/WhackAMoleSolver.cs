@@ -36,9 +36,9 @@ namespace WhackAMole
             Instance = this;
         }
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
 
             OnMainTimerEnd += EndGame;
         }
@@ -50,8 +50,9 @@ namespace WhackAMole
             StartCoroutine(RunSpawningLogic());
         }
 
-        protected void OnDestroy()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             OnMainTimerEnd -= EndGame;
         }
 

@@ -150,7 +150,7 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnMaze:
                         {
-                            yield return ProcessStandardGameLogic<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameTypes.Maze, dialogueObject.MazeSpawnerData);
+                            yield return ProcessStandardGameLogic<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameType.Maze, dialogueObject.MazeSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnMemoryGame:
@@ -189,23 +189,23 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnWhackAMole:
                         {
-                            yield return ProcessStandardGameLogic<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameTypes.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
+                            yield return ProcessStandardGameLogic<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameType.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
                             WhackAMoleGenerator.Instance.DeleteGameObjects();
                             break;
                         }
                     case EDialogueObjectType.SpawnButterflyCatching:
                         {
-                            yield return ProcessStandardGameLogic<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameTypes.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
+                            yield return ProcessStandardGameLogic<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameType.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnEndlessRunner:
                         {
-                            yield return ProcessStandardGameLogic<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameTypes.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
+                            yield return ProcessStandardGameLogic<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameType.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnShootYourShot:
                         {
-                            yield return ProcessStandardGameLogic<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameTypes.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
+                            yield return ProcessStandardGameLogic<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.EndConversation:
@@ -228,7 +228,7 @@ namespace Dialogue
             }
         }
 
-        private IEnumerator ProcessStandardGameLogic<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameTypes gameType, GenerationDataType generationData) 
+        private IEnumerator ProcessStandardGameLogic<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameType gameType, GenerationDataType generationData) 
             where GeneratorType : DialogueCreatedGameGenerator<SolverType, GenerationDataType, CompletionResultType> 
             where SolverType : GameSolverComponent<GenerationDataType, CompletionResultType> 
             where GenerationDataType : GameGenerationData<CompletionResultType>

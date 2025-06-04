@@ -30,7 +30,7 @@ namespace Maze.UI
         {
             base.Start();
 
-            GameSolver.OnStartGameCountdownLeft += HideUI;
+            GameSolver.OnStartGameCountdownEnd += HideUI;
             GameSolver.OnWallHit += OnWallHit;
         }
 
@@ -38,7 +38,7 @@ namespace Maze.UI
         {
             base.OnDestroy();
 
-            GameSolver.OnStartGameCountdownLeft -= HideUI;
+            GameSolver.OnStartGameCountdownEnd -= HideUI;
             GameSolver.OnWallHit -= OnWallHit;
         }
 

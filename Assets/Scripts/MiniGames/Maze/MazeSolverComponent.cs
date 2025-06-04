@@ -37,16 +37,15 @@ namespace Maze
             _startGameTimerOnInitialize = false;
         }
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
             OnMainTimerEnd += FailGame;
         }
 
         private void OnMazePathGenerated()
         {
-            SetGameStage(EGameStage.PreCountdown);
             _startNode = MazeGenerator.Instance.StartNode;
             _endNode = MazeGenerator.Instance.EndNode;
 
@@ -68,8 +67,9 @@ namespace Maze
             }
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             MazeGenerator.Instance.UnlistenToMazePathGenerated(OnMazePathGenerated);
 
             OnMainTimerEnd -= FailGame;

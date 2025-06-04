@@ -73,7 +73,7 @@ namespace Maze
                 if (_difficultyManager.ShouldRotate)
                 {
                     float speed = _difficultyManager.RotateSpeed;
-                    transform.RotateAround(transform.parent.localPosition * 1.5f, Vector3.up, speed);
+                    transform.RotateAround(transform.parent.localPosition * 1.5f, Vector3.forward, speed);
                 }
             }
         }

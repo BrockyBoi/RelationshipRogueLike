@@ -22,9 +22,9 @@ namespace EndlessRunner
             Instance = this;
         }
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
 
             _groundReference.SetActive(false);
         }

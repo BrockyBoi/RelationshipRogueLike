@@ -11,7 +11,7 @@ using static GlobalFunctions;
 
 namespace GeneralGame
 {
-    public enum EGameTypes
+    public enum EGameType
     {
         Maze,
         CatchingButterflies,
@@ -22,37 +22,49 @@ namespace GeneralGame
     }
 
     [Serializable]
-    public class ControllersDictionary : UnitySerializedDictionary<EGameTypes, Controllers> { }
+    public class ControllersDictionary : UnitySerializedDictionary<EGameType, Controllers> { }
 
     public class MiniGameControllersManager : MonoBehaviour
     {
-        public static MiniGameControllersManager Instance { get; private set; }
+        private static MiniGameControllersManager _instance;
+        public static MiniGameControllersManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    return GameObject.FindFirstObjectByType(typeof(MiniGameControllersManager)) as MiniGameControllersManager;
+                }
+
+                return _instance;
+            }
+        }
 
         [SerializeField]
         private ControllersDictionary _controllerReferences;
 
-        private EGameTypes _currentGameType;
-        public EGameTypes CurrentGameType { get { return _currentGameType; } }
+        private EGameType _currentGameType;
+        public EGameType CurrentGameType { get { return _currentGameType; } }
 
         private void Awake()
         {
-            if (Instance == null)
+            if (_instance == null)
             {
-                Instance = this;
+                _instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else
+            else if (_instance != this)
             {
                 Destroy(gameObject);
             }
         }
 
-        public void SetCurrentGameType(EGameTypes currentGameType)
+        public void SetCurrentGameType(EGameType currentGameType)
         {
             _currentGameType = currentGameType;
         }
 
-        public void GetBothControllers(out BaseGameSolverComponent solver, out BaseGameGenerator generator, EGameTypes gameType)
+        public void GetBothControllers(out BaseGameSolverComponent solver, out BaseGameGenerator generator, EGameType gameType)
         {
             solver = null;
             generator = null;
@@ -64,7 +76,7 @@ namespace GeneralGame
             }
         }
 
-        public void GetBothControllers<Solver, Generator>(out Solver solver, out Generator generator, EGameTypes gameType) where Generator : BaseGameGenerator where Solver : BaseGameSolverComponent
+        public void GetBothControllers<Solver, Generator>(out Solver solver, out Generator generator, EGameType gameType) where Generator : BaseGameGenerator where Solver : BaseGameSolverComponent
         {
             solver = null;
             generator = null;
@@ -76,7 +88,7 @@ namespace GeneralGame
             }
         }
 
-        public BaseGameSolverComponent GetSolverComponent(EGameTypes gameType)
+        public BaseGameSolverComponent GetSolverComponent(EGameType gameType)
         {
             if (ensure(_controllerReferences.ContainsKey(gameType), gameType + " is not in the mini game controllers manager"))
             {
@@ -86,7 +98,17 @@ namespace GeneralGame
             return null;
         }
 
-        public BaseGameGenerator GetGeneratorComponent(EGameTypes gameType)
+        public BaseGameSolverComponent GetCurrentGameSolver()
+        {
+            if (ensure(_controllerReferences.ContainsKey(CurrentGameType), CurrentGameType + " is not in the mini game controllers manager"))
+            {
+                return _controllerReferences[CurrentGameType].GameSolver;
+            }
+
+            return null;
+        }
+
+        public BaseGameGenerator GetGeneratorComponent(EGameType gameType)
         {
             if (ensure(_controllerReferences.ContainsKey(gameType), gameType + " is not in the mini game controllers manager"))
             {

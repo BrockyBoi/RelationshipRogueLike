@@ -12,7 +12,8 @@ namespace MemoryGame.Generation
 {
     public class MemoryGameGenerator : GameGridGenerator<MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult, MemoryGameCard>
     {
-        public static MemoryGameGenerator Instance {  get; private set; }
+        private static MemoryGameGenerator _instance;
+        public static MemoryGameGenerator Instance { get { return _instance == null ? MiniGameControllersManager.Instance.GetGeneratorComponent(EGameType.Memory) as MemoryGameGenerator : _instance; } }
 
         public EMemoryType MemoryTypeToSearchFor { get; private set; }
 
@@ -28,7 +29,7 @@ namespace MemoryGame.Generation
 
         private void Awake()
         {
-            Instance = this;
+            _instance = this;
         }
 
         private void Start()
