@@ -43,7 +43,7 @@ namespace ShootYourShotGame
             float timeToMove = _gameSolver.GameData.TimeAllowedToShootTarget;
             float time = 0;
             Vector3 startPos = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
-            Vector3 endPos = Camera.main.ViewportToWorldPoint(new Vector3(1, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
+            Vector3 endPos = Camera.main.ViewportToWorldPoint(new Vector3(0, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
 
             while (time < timeToMove)
             {

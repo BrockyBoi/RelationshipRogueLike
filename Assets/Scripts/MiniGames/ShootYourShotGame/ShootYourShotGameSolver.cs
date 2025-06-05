@@ -126,7 +126,7 @@ namespace ShootYourShotGame
 
         public override float GetCurrentPotentialDialoguePercentage()
         {
-            return GetPercentageOfTimeLeftToCompleteGame();
+            return GetCurrentPotentialDialoguePercentageByTimeRemaining();
         }
     }
 }

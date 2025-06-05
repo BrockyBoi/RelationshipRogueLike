@@ -56,9 +56,8 @@ public class NewGameCreatorWindow : EditorWindow
             outFile.WriteLine("namespace " + NewGameName);
             outFile.WriteLine("{");
             outFile.WriteLine("public class " + className + " : DialogueCreatedGameGenerator<" + NewGameName + "Solver, " + NewGameName + "GenerationData, " + NewGameName + "CompletionResult> \n{");
-            outFile.WriteLine(" ");
             outFile.WriteLine("public static " + className + " Instance { get; private set; }");
-            outFile.WriteLine("protected override ShootYourShotGameSolver GameSolverComponent { get { return " + NewGameName + ".Instance; } }");
+            outFile.WriteLine("protected override "+ NewGameName + "Solver GameSolverComponent { get { return " + NewGameName + "Solver" + ".Instance; } }");
             outFile.WriteLine(" ");
             outFile.WriteLine("private void Awake()\n{\nInstance = this;\n}");
             outFile.WriteLine("}");
