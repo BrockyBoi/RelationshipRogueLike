@@ -28,7 +28,7 @@ namespace CatchingButterflies
             Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 currentLoc = transform.position;
             float distanceToMove = _moveSpeed * Time.deltaTime;
-            Vector3 nextPos = Vector3.MoveTowards(currentLoc, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Z, _objectHeight), distanceToMove);
+            Vector3 nextPos = Vector3.MoveTowards(currentLoc, mousePos.ChangeAxis(ExtensionMethods.EVectorAxis.Z, _objectHeight), distanceToMove);
 
             transform.position = nextPos;
         }

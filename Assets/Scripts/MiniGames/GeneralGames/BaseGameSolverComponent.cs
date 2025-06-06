@@ -21,8 +21,6 @@ namespace GeneralGame
 
     public abstract class BaseGameSolverComponent : MonoBehaviour
     {
-        public static BaseGameSolverComponent BaseInstance { get; private set; }
-
         [ShowInInspector, ReadOnly]
         protected float _totalPenaltyTime = 0f;
         protected float _bonusTimeGained = 0f;
@@ -35,7 +33,7 @@ namespace GeneralGame
         protected float _timeLeftToFinish = 0;
 
         [SerializeField]
-        private EGameType _gameType;
+        protected EGameType _gameType;
 
         public bool WonPreviousGame { get; protected set; }
 
@@ -61,7 +59,6 @@ namespace GeneralGame
 
         protected virtual void Awake()
         {
-            BaseInstance = this;
         }
 
         protected virtual void OnEnable()

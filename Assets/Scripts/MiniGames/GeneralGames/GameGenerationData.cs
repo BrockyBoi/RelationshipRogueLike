@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace GeneralGame.Generation
 {
+    [Serializable]
     public abstract class BaseGameGenerationData
     {
         [FoldoutGroup("Game Data"), Range(0, 120)]
@@ -19,5 +20,12 @@ namespace GeneralGame.Generation
         public List<GameResult> GameCompletionResults = new List<GameResult>() { new GameResult(), new GameResult() };
 
         private bool HasEnoughResults { get { return GameCompletionResults != null && GameCompletionResults.Count >= 2; } }
+    }
+
+    [Serializable]
+    public abstract class GridGameGenerationData<GameResult> : GameGenerationData<GameResult> where GameResult : GameCompletionResult, new ()
+    {
+        [FoldoutGroup("Game Data")]
+        public Vector2Int GridSize = new Vector2Int(4, 4);
     }
 }

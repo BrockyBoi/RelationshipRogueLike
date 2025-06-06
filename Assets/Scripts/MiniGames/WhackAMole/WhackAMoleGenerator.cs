@@ -40,7 +40,7 @@ namespace WhackAMole
 
             GameGenerated();
 
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Z, -30) + (Vector3.right * _spawnDistanceFromCenter);
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * _spawnDistanceFromCenter);
             Camera.main.orthographicSize = 1.5f * _spawnDistanceFromCenter;
         }
 

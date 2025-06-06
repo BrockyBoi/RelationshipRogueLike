@@ -19,6 +19,7 @@ using EndlessRunner;
 using GeneralGame.Generation;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using ShootYourShotGame;
+using FireFighting;
 
 namespace Dialogue
 {
@@ -206,6 +207,11 @@ namespace Dialogue
                     case EDialogueObjectType.SpawnShootYourShot:
                         {
                             yield return ProcessStandardGameLogic<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
+                            break;
+                        }
+                    case EDialogueObjectType.SpawnFireFighting:
+                        {
+                            yield return ProcessStandardGameLogic<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.EndConversation:

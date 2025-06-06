@@ -58,7 +58,7 @@ namespace CatchingButterflies
         private void PickRandomDirectionToMove()
         {
             Vector3 randomPointInWorld = GlobalFunctions.GetRandomWorldPosOnScreen(.25f, .45f, .5f, .5f);
-            _directionToMove = (randomPointInWorld - transform.position).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
+            _directionToMove = (randomPointInWorld - transform.position).ChangeAxis(ExtensionMethods.EVectorAxis.Z, 0);
             _directionToMove.Normalize();
         }
 
@@ -118,7 +118,7 @@ namespace CatchingButterflies
             }
 
             float speed = Time.deltaTime * _moveSpeed * _gameSolver.GameData.ButterflySpeedMultiplier;
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, speed).ChangeAxis(ExtensionMethods.VectorAxis.Z, 0);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + _directionToMove + extraMovement, speed).ChangeAxis(ExtensionMethods.EVectorAxis.Z, 0);
         }
     }
 }

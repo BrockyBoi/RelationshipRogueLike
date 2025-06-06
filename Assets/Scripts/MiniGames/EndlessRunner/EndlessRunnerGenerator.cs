@@ -35,10 +35,8 @@ namespace EndlessRunner
         public override void GenerateGame(EndlessRunnerGenerationData generationData)
         {
             base.GenerateGame(generationData);
-            SetGameGenerationData(generationData);
-            GameGenerated();
 
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Z, -30);
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
             Camera.main.orthographicSize = 5f;
         }
 

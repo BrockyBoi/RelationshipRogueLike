@@ -11,12 +11,12 @@ namespace FireFighting
 
         protected override int GetDifficultySizeModifier()
         {
-            throw new System.NotImplementedException();
+            return 0;
         }
 
         protected override GameObject GetGridParentObject()
         {
-            throw new System.NotImplementedException();
+            return ParentObjectsManager.Instance.FireFightingWindowParent;
         }
 
         private void Awake()
@@ -30,14 +30,6 @@ namespace FireFighting
             foreach (FireFightingWindow window in _objectGrid)
             {
                 window.IncreaseFireLevel(Random.Range(1, _gameData.MaxStartingFireLevel));
-            }
-        }
-
-        private void Update()
-        {
-            foreach (FireFightingWindow window in _objectGrid)
-            {
-                window.IncreaseFireLevel(_gameData.FireIncreasePerSecond * Time.deltaTime);
             }
         }
     }

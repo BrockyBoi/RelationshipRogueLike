@@ -174,7 +174,7 @@ namespace Maze.Generation
                         KeyPickupObject keyPickupObject = Instantiate(_keyPrefab, node.transform.position, Quaternion.identity, node.transform);
                         if (keyPickupObject)
                         {
-                            keyPickupObject.transform.localPosition = keyPickupObject.transform.localPosition.ChangeAxis(ExtensionMethods.VectorAxis.Y, .5f);
+                            keyPickupObject.transform.localPosition = keyPickupObject.transform.localPosition.ChangeAxis(ExtensionMethods.EVectorAxis.Y, .5f);
                             _keysInGame.Add(keyPickupObject);
                             keyPickupObject.DeactivateObject();
                             keysToSpawn--;
@@ -322,7 +322,6 @@ namespace Maze.Generation
         public override void GenerateGame(MazeGeneratorData generationData)
         {
             base.GenerateGame(generationData);
-            SetGameGenerationData(generationData);
             if (generationData.RotationSpeed > 0)
             {
                 MazeDifficultyManager.Instance.InitializeRotationRate(generationData.RotationSpeed, generationData.ForceDifficultySettings);
@@ -339,7 +338,6 @@ namespace Maze.Generation
 
             _needsKeys = generationData.NeedsKeys;
             _keysNeeded = _needsKeys ? generationData.KeysNeeded : 0;
-            CreateGrid(generationData.GridSize);
         }
     }
 }

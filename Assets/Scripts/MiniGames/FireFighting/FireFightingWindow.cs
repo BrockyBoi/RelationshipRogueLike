@@ -8,7 +8,10 @@ namespace FireFighting
     public class FireFightingWindow : GridObject
     {
         [SerializeField, Required]
-        private SpriteRenderer _spriteRenderer;
+        private SpriteRenderer _windowSpriteRenderer;
+
+        [SerializeField, Required]
+        private SpriteRenderer _fireSpriteRenderer;
 
         private float _fireLevel = 0;
 
@@ -34,7 +37,7 @@ namespace FireFighting
         private void SetFireLevel(float level)
         {
             _fireLevel = Mathf.Clamp(level, 0, 100);
-            _spriteRenderer.color = Color.Lerp(Color.white, Color.red, _fireLevel / 100);
+            _fireSpriteRenderer.color = _fireSpriteRenderer.color.ChangeColorAxis(ExtensionMethods.EColorAxis.A, _fireLevel / 100 * 255);
 
             if (Mathf.Approximately(_fireLevel, 0))
             {

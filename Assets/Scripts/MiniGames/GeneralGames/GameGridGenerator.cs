@@ -8,7 +8,7 @@ using UnityEngine;
 namespace GeneralGame.Generation
 {
     public abstract class GameGridGenerator<GameSolverClass, GenerationData, CompletionResultType, GridObjectType> : DialogueCreatedGameGenerator<GameSolverClass, GenerationData, CompletionResultType>
-        where GameSolverClass : GameSolverComponent<GenerationData, CompletionResultType> where GenerationData : GameGenerationData<CompletionResultType> where CompletionResultType : GameCompletionResult, new() where GridObjectType : GridObject
+        where GameSolverClass : GameSolverComponent<GenerationData, CompletionResultType> where GenerationData : GridGameGenerationData<CompletionResultType> where CompletionResultType : GameCompletionResult, new() where GridObjectType : GridObject
     {
         [SerializeField, AssetsOnly, Required]
         protected GridObjectType _objectPrefab;
@@ -61,11 +61,9 @@ namespace GeneralGame.Generation
                 Camera.main.orthographicSize = ((GridWidth + 5) * _spaceBetweenGridObjects) * Screen.height / Screen.width / 2;
             }
 
-            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.VectorAxis.Z, -30) + (Vector3.right * finalLoc.x / 2);
+            Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * finalLoc.x / 2);
 
             _hasGeneratedGame = true;
-
-            GameGenerated();
         }
 
         public virtual void DestroyGrid()
@@ -81,9 +79,21 @@ namespace GeneralGame.Generation
             _objectGrid = new GridObjectType[0, 0];
         }
 
+        public override void GenerateGame(GenerationData generationData)
+        {
+            base.GenerateGame(generationData);
+
+            CreateGrid(generationData.GridSize);
+        }
+
         public GridObjectType GetGridObject(Vector2Int objectPosition)
         {
             return _objectGrid[objectPosition.x, objectPosition.y];
+        }
+
+        public GridObjectType[,] GetGrid()
+        {
+            return _objectGrid;
         }
 
         protected abstract int GetDifficultySizeModifier();

@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace FireFighting
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(SpriteRenderer))]
     public class FireFightingPlayerControlledObject : MiniGameGameObject<FireFightingSolver, FireFightingGenerator>
     {
@@ -29,16 +28,18 @@ namespace FireFighting
 
         protected override void Start()
         {
-            base.Start();
             _camera = Camera.main;
             _startingScale = transform.localScale;
+
+            transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
+            base.Start();
         }
 
         private void Update()
         {
             Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
             float distanceToMove = _moveSpeed * Time.deltaTime * _currentMoveSpeedSlowdownMultiplier;
-            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Z, _objectHeight), distanceToMove);
+            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.EVectorAxis.Z, _objectHeight), distanceToMove);
 
             transform.position = nextPos;
 

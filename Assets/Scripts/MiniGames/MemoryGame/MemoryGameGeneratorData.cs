@@ -12,7 +12,7 @@ using static GlobalFunctions;
 namespace MemoryGame
 {
     [Serializable]
-    public class MemoryGameGeneratorData : GameGenerationData<MemoryGameCompletionResult>
+    public class MemoryGameGeneratorData : GridGameGenerationData<MemoryGameCompletionResult>
     {
         public MemoryGameRelatedDialogue MemoryGameRelatedDialogue;
 
@@ -28,9 +28,6 @@ namespace MemoryGame
         private bool _showLimitedMemoryTypesAvailable;
         [ShowIf("_showLimitedMemoryTypesAvailable"), FoldoutGroup("Memory Game Data")]
         public EMemoryType _allowedMemoryTypes = EMemoryType.ALL;
-
-        [FoldoutGroup("Memory Game Data")]
-        public Vector2Int GridSize;
 
         [FoldoutGroup("Memory Game Data")]
         public int NumberOfGuesses = 5;

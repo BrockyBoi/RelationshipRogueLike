@@ -30,7 +30,7 @@ namespace ShootYourShotGame
         {
             base.OnGameGenerated();
 
-            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
+            transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -5);
         }
 
         private void StartMovingReticle()
@@ -42,8 +42,8 @@ namespace ShootYourShotGame
         {
             float timeToMove = _gameSolver.GameData.TimeAllowedToShootTarget;
             float time = 0;
-            Vector3 startPos = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
-            Vector3 endPos = Camera.main.ViewportToWorldPoint(new Vector3(0, .5f)).ChangeAxis(ExtensionMethods.VectorAxis.Z, -5);
+            Vector3 startPos = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -5);
+            Vector3 endPos = Camera.main.ViewportToWorldPoint(new Vector3(0, .5f)).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -5);
 
             while (time < timeToMove)
             {

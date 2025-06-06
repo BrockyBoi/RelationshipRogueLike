@@ -18,7 +18,8 @@ namespace GeneralGame
         EndlessRunner,
         Memory,
         WhackAMole,
-        ShootYourShot
+        ShootYourShot,
+        FireFighting
     }
 
     [Serializable]

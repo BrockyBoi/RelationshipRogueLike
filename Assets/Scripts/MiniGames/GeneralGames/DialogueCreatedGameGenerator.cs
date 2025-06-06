@@ -21,6 +21,8 @@ namespace GeneralGame.Generation
             if (ensure(GameSolverComponent != null, "Game Solver is null") && ensure(generationData != null, "Generation data is null"))
             {
                 GameSolverComponent.SetGameCompletionResults(generationData.GameCompletionResults);
+                GameGenerated();
+                SetGameGenerationData(generationData);
             }
         }
 

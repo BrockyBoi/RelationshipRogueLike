@@ -6,11 +6,8 @@ using UnityEngine;
 namespace Maze
 {
     [Serializable]
-    public class MazeGeneratorData : GameGenerationData<MazeCompletionResult>
+    public class MazeGeneratorData : GridGameGenerationData<MazeCompletionResult>
     {
-        [FoldoutGroup("@FoldoutGroupName")]
-        public Vector2Int GridSize = new Vector2Int(4,4);
-
         [FoldoutGroup("@FoldoutGroupName"), Range(0, .15f), DisableIf("@RotationSpeed > 0")]
         public float ShakeIntensity = 0;
 

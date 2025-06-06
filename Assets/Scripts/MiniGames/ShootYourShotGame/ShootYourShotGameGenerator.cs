@@ -23,7 +23,7 @@ namespace ShootYourShotGame
             SetGameGenerationData(generationData);
             GameGenerated();
 
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.VectorAxis.Z, -30);
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
             Camera.main.orthographicSize = 5f;
         }
     }

@@ -36,7 +36,7 @@ namespace Maze
             Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 currentLoc = transform.position;
             float distanceToMove = _moveSpeed * Time.deltaTime;
-            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.VectorAxis.Z, _objectHeight), distanceToMove);
+            Vector3 nextPos = Vector3.MoveTowards(transform.position, mousePos.ChangeAxis(ExtensionMethods.EVectorAxis.Z, _objectHeight), distanceToMove);
             Vector3 dir = nextPos - currentLoc;
 
             Debug.DrawLine(currentLoc, currentLoc + dir * distanceToMove * 1.25f);
