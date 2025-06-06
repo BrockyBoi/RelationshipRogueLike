@@ -211,7 +211,7 @@ namespace WhackAMole
             return GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth);
         }
 
-        public override void SetGenerationGameData(WhackAMoleGenerationData generationData)
+        protected override void SetGenerationGameData(WhackAMoleGenerationData generationData)
         {
             base.SetGenerationGameData(generationData);
             _startingHealth = _currentHealth = generationData.StartingHealth;

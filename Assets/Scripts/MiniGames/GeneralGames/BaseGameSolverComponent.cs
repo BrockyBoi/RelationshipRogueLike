@@ -63,11 +63,7 @@ namespace GeneralGame
 
         protected virtual void OnEnable()
         {
-            BaseGameGenerator generator = MiniGameControllersManager.Instance.GetGeneratorComponent(_gameType);
-            if (ensure(generator != null, "Has no generator"))
-            {
-                generator.ListenToOnGameGenerated(OnGameGenerated);
-            }
+
         }
 
         protected virtual void Update()
@@ -80,16 +76,7 @@ namespace GeneralGame
 
         protected virtual void OnDisable()
         {
-            BaseGameGenerator generator = MiniGameControllersManager.Instance?.GetGeneratorComponent(_gameType);
-            if (generator != null)
-            {
-                generator.UnlistenToOnGameGenerated(OnGameGenerated);
-            }
-        }
 
-        protected virtual void OnGameGenerated()
-        {
-            SetGameStage(EGameStage.PreCountdown);
         }
 
         #region Countdown

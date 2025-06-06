@@ -185,9 +185,5 @@ namespace MemoryGame
         {
             return GetGameCompletionIndexBasedOnGuessesLeft();
         }
-        public override void SetGenerationGameData(MemoryGameGeneratorData generationData)
-        {
-            base.SetGenerationGameData(generationData);
-        }
     }
 }

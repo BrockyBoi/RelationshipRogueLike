@@ -172,7 +172,7 @@ namespace Maze
             return GetCurrentPotentialDialoguePercentageByTimeRemaining();
         }
 
-        public override void SetGenerationGameData(MazeGeneratorData generationData)
+        protected override void SetGenerationGameData(MazeGeneratorData generationData)
         {
             base.SetGenerationGameData(generationData);
             _keysNeeded = generationData.NeedsKeys ? generationData.KeysNeeded : 0;

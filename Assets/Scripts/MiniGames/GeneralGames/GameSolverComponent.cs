@@ -24,12 +24,23 @@ namespace GeneralGame
         protected bool _startGameTimerOnInitialize = true;
 
         #region Completion Results
-        public void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
+        private void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
         {
-            _gameCompletionResults = gameCompletionResults;
+            if (ensure(gameCompletionResults != null && gameCompletionResults.Count > 0, "There are no game completion results"))
+            {
+                _gameCompletionResults = gameCompletionResults;
 
-            List<GameCompletionResult> results = new List<GameCompletionResult>(gameCompletionResults);
-            PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results);
+                List<GameCompletionResult> results = new List<GameCompletionResult>(gameCompletionResults);
+                PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results);
+            }
+        }
+
+        public void GeneratorInitializeSolver(List<CompletionResultType> gameCompletionResults, GenerationData data)
+        {
+            SetGameStage(EGameStage.PreCountdown);
+            MiniGameControllersManager.Instance.SetCurrentGameType(_gameType);
+            SetGameCompletionResults(gameCompletionResults);
+            SetGenerationGameData(data);
         }
 
         protected override void StartGame()
@@ -38,15 +49,18 @@ namespace GeneralGame
             _highlightIndexCoroutine = StartCoroutine(HighlightCurrentGameResultIndex());
         }
 
-        public virtual void SetGenerationGameData(GenerationData generationData)
+        protected virtual void SetGenerationGameData(GenerationData generationData)
         {
-            _gameData = generationData;
-
-            SetTimeToCompleteGame(generationData.GameDuration);
-
-            if (_startGameTimerOnInitialize)
+            if (ensure(generationData != null, "There is no generation data"))
             {
-                StartGameTimer();
+                _gameData = generationData;
+
+                SetTimeToCompleteGame(generationData.GameDuration);
+
+                if (_startGameTimerOnInitialize)
+                {
+                    StartGameTimer();
+                }
             }
         }
 
@@ -76,6 +90,11 @@ namespace GeneralGame
 
         public float GetPercentageOfResultIndex(float totalPercentage)
         {
+            if (!ensure(_gameCompletionResults.Count > 0, "There are no game completion results"))
+            {
+                return 0f;
+            }
+
             float count = _gameCompletionResults.Count;
             int index = GetCurrentPotentialDialogueIndex();
             float maxPercentage = (count - index) / count;

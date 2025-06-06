@@ -16,20 +16,23 @@ namespace GeneralGame.Generation
 
         protected abstract GameSolver GameSolverComponent { get; }
 
-        public virtual void GenerateGame(GenerationData generationData)
+        public void GenerateGame(GenerationData generationData)
         {
+            _gameData = generationData;
+
+            GenerateGameAssets();
             if (ensure(GameSolverComponent != null, "Game Solver is null") && ensure(generationData != null, "Generation data is null"))
             {
-                GameSolverComponent.SetGameCompletionResults(generationData.GameCompletionResults);
-                GameGenerated();
-                SetGameGenerationData(generationData);
+                GameSolverComponent.GeneratorInitializeSolver(generationData.GameCompletionResults, _gameData);
             }
+
+            OnGameGenerated?.Invoke();
+            OnAnyGameGenerated?.Invoke();
         }
 
-        protected void SetGameGenerationData(GenerationData data)
+        protected virtual void GenerateGameAssets()
         {
-            _gameData = data;
-            GameSolverComponent.SetGenerationGameData(data);
+
         }
     }
 }

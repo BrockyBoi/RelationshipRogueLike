@@ -8,7 +8,7 @@ namespace GeneralGame.Generation
     {
         protected bool _hasGeneratedGame = false;
 
-        private System.Action OnGameGenerated;
+        protected System.Action OnGameGenerated;
         public static System.Action OnAnyGameGenerated;
 
         public void ListenToOnGameGenerated(System.Action action)
@@ -26,12 +26,6 @@ namespace GeneralGame.Generation
         public void UnlistenToOnGameGenerated(System.Action action)
         {
             OnGameGenerated -= action;
-        }
-
-        protected virtual void GameGenerated()
-        {
-            OnGameGenerated?.Invoke();
-            OnAnyGameGenerated?.Invoke();
         }
     }
 }

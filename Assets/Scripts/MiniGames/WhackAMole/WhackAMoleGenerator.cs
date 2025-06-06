@@ -27,18 +27,15 @@ namespace WhackAMole
             Instance = this;
         }
 
-        public override void GenerateGame(WhackAMoleGenerationData generationData)
+        protected override void GenerateGameAssets()
         {
-            base.GenerateGame(generationData);
+            base.GenerateGameAssets();
             for (int i = 0; i < _holes.Length; i++)
             {
                 float degrees = i * (360 / _holes.Length) * Mathf.Deg2Rad;
                 Vector3 finalPos = new Vector3(Mathf.Cos(degrees) * _spawnDistanceFromCenter, Mathf.Sin(degrees) * _spawnDistanceFromCenter, 0);
                 _holes[i] = Instantiate(_holePrefab, finalPos, Quaternion.identity);
             }
-            SetGameGenerationData(generationData);
-
-            GameGenerated();
 
             Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * _spawnDistanceFromCenter);
             Camera.main.orthographicSize = 1.5f * _spawnDistanceFromCenter;

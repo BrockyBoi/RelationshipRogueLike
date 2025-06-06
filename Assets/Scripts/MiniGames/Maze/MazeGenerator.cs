@@ -319,25 +319,25 @@ namespace Maze.Generation
             return ParentObjectsManager.Instance.MazeNodesParent;
         }
 
-        public override void GenerateGame(MazeGeneratorData generationData)
+        protected override void GenerateGameAssets()
         {
-            base.GenerateGame(generationData);
-            if (generationData.RotationSpeed > 0)
+            base.GenerateGameAssets();
+            if (_gameData.RotationSpeed > 0)
             {
-                MazeDifficultyManager.Instance.InitializeRotationRate(generationData.RotationSpeed, generationData.ForceDifficultySettings);
+                MazeDifficultyManager.Instance.InitializeRotationRate(_gameData.RotationSpeed, _gameData.ForceDifficultySettings);
                 MazeDifficultyManager.Instance.InitializeShakeIntensityRate(0, true);
             }
             else
             {
                 MazeDifficultyManager.Instance.InitializeRotationRate(0, true);
-                MazeDifficultyManager.Instance.InitializeShakeIntensityRate(generationData.ShakeIntensity, generationData.ForceDifficultySettings);
+                MazeDifficultyManager.Instance.InitializeShakeIntensityRate(_gameData.ShakeIntensity, _gameData.ForceDifficultySettings);
             }
 
-            GameSolverComponent.SetTimeToCompleteGame(generationData.GameDuration);
-            GameSolverComponent.SetFakeTime(generationData.IsMazeFake ? generationData.FakeMazeTime : 0);
+            GameSolverComponent.SetTimeToCompleteGame(_gameData.GameDuration);
+            GameSolverComponent.SetFakeTime(_gameData.IsMazeFake ? _gameData.FakeMazeTime : 0);
 
-            _needsKeys = generationData.NeedsKeys;
-            _keysNeeded = _needsKeys ? generationData.KeysNeeded : 0;
+            _needsKeys = _gameData.NeedsKeys;
+            _keysNeeded = _needsKeys ? _gameData.KeysNeeded : 0;
         }
     }
 }

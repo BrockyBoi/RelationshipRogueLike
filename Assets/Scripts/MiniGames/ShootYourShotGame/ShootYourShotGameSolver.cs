@@ -43,7 +43,7 @@ namespace ShootYourShotGame
             _bullseye.SetActive(false);
         }
 
-        public override void SetGenerationGameData(ShootYourShotGameGenerationData generationData)
+        protected override void SetGenerationGameData(ShootYourShotGameGenerationData generationData)
         {
             base.SetGenerationGameData(generationData);
             StartCountDown();

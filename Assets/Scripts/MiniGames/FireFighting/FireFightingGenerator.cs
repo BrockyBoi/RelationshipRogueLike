@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using GeneralGame.Generation;
 
+using static GlobalFunctions;
+
 namespace FireFighting
 {
     public class FireFightingGenerator : GameGridGenerator<FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult, FireFightingWindow>
@@ -29,7 +31,10 @@ namespace FireFighting
             base.CreateGrid(gridSize);
             foreach (FireFightingWindow window in _objectGrid)
             {
-                window.IncreaseFireLevel(Random.Range(1, _gameData.MaxStartingFireLevel));
+                if (ensure(window != null, "Window is null"))
+                {
+                    window.IncreaseFireLevel(Random.Range(1, _gameData.MaxStartingFireLevel));
+                }
             }
         }
     }

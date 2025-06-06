@@ -79,11 +79,11 @@ namespace GeneralGame.Generation
             _objectGrid = new GridObjectType[0, 0];
         }
 
-        public override void GenerateGame(GenerationData generationData)
+        protected override void GenerateGameAssets()
         {
-            base.GenerateGame(generationData);
+            base.GenerateGameAssets();
 
-            CreateGrid(generationData.GridSize);
+            CreateGrid(_gameData.GridSize);
         }
 
         public GridObjectType GetGridObject(Vector2Int objectPosition)

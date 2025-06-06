@@ -213,11 +213,11 @@ namespace MemoryGame.Generation
             GlobalFunctions.LerpObjectToLocation(card2,card2.gameObject, card1StartPos, .75f);
         }
 
-        public override void GenerateGame(MemoryGameGeneratorData generationData)
+        protected override void GenerateGameAssets()
         {
-            base.GenerateGame(generationData);
-            MemoryGameSolverComponent.Instance.SetBaseNumberOfGuesses(generationData.NumberOfGuesses);
-            CreateGrid(generationData.GridSize);
+            MemoryGameSolverComponent.Instance.SetBaseNumberOfGuesses(_gameData.NumberOfGuesses);
+
+            base.GenerateGameAssets();
         }
 
         [Button]

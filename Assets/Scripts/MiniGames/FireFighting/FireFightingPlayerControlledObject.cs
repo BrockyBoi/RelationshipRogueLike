@@ -65,5 +65,14 @@ namespace FireFighting
                 window.DecreaseFireLevel(_currentWaterLevel * Time.deltaTime);
             }
         }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            FireFightingWindow window = collision.gameObject.GetComponent<FireFightingWindow>();
+            if (window != null)
+            {
+                window.DecreaseFireLevel(_currentWaterLevel * Time.deltaTime);
+            }
+        }
     }
 }

@@ -41,12 +41,6 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
         }
     }
 
-    public override void SetGenerationGameData(GenerationData generationData)
-    {
-        base.SetGenerationGameData(generationData);
-
-    }
-
     public override int GetCurrentPotentialDialogueIndex()
     {
         return GetGameCompletionResultIndexByPointsNeededToScore(_collectablesCaught, CollectablesNeeded);
