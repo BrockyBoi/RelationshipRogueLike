@@ -525,10 +525,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameType: 6
   _disableOnInitialize: 1
-  _moveSpeed: 20
-  _moveSpeedSlowdownAtMaxModifier: 0.5
-  _maxWaterLevel: 10
-  _objectHeight: 0.5
+  _moveSpeed: 15
+  _moveSpeedSlowdownAtMaxModifier: 0.05
+  _maxWaterLevel: 75
+  _scaleMultiplier: 1.75
+  _objectHeight: -10
 --- !u!212 &64134778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5393,7 +5394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 3588865902722229042, guid: cd05e64fe69200743adf8a6500a5b996, type: 3}
-  _spaceBetweenGridObjects: 5
+  _spaceBetweenGridObjects: 6
 --- !u!4 &1899931902
 Transform:
   m_ObjectHideFlags: 0

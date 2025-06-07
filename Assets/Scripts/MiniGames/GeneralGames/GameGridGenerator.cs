@@ -22,6 +22,16 @@ namespace GeneralGame.Generation
         [SerializeField]
         private float _spaceBetweenGridObjects = 5f;
 
+        protected virtual void Start()
+        {
+            GameSolverComponent.OnGameStop += OnGameEnd;
+        }
+
+        protected virtual void OnDisable()
+        {
+            GameSolverComponent.OnGameStop -= OnGameEnd;
+        }
+
         protected virtual void CreateGrid(Vector2Int gridSize)
         {
             if (gridSize.x == 0 || gridSize.y == 0)
@@ -64,6 +74,11 @@ namespace GeneralGame.Generation
             Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * finalLoc.x / 2);
 
             _hasGeneratedGame = true;
+        }
+
+        protected virtual void OnGameEnd()
+        {
+            DestroyGrid();
         }
 
         public virtual void DestroyGrid()

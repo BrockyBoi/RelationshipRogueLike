@@ -32,8 +32,9 @@ namespace MemoryGame.Generation
             _instance = this;
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             MemoryGameSolverComponent.Instance.OnGuessMade += OnGuessMade;
         }
 

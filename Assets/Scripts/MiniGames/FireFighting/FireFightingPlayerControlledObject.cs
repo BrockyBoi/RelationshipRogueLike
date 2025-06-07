@@ -17,9 +17,12 @@ namespace FireFighting
         [SerializeField]
         private float _moveSpeedSlowdownAtMaxModifier = .5f;
 
-        [SerializeField, Range(0, 10)]
+        [SerializeField, Range(1, 1000)]
         private float _maxWaterLevel = 10;
         private float _currentWaterLevel = 1;
+
+        [SerializeField, Range(1, 5)]
+        private float _scaleMultiplier = 2.5f;
 
         [SerializeField]
         private float _objectHeight = .5f;
@@ -46,15 +49,15 @@ namespace FireFighting
             float waterPressureChange = Input.GetAxis("Vertical");
             if (waterPressureChange != 0)
             {
-                ChangeWaterPressure(waterPressureChange);
+                ChangeWaterPressure(waterPressureChange * .5f);
             }
         }
 
         private void ChangeWaterPressure(float pressureChange)
         {
             _currentWaterLevel = Mathf.Clamp(_currentWaterLevel + pressureChange, 1f, _maxWaterLevel);
-            _currentMoveSpeedSlowdownMultiplier = Mathf.Clamp(_moveSpeedSlowdownAtMaxModifier, 1f,  1 - (_currentWaterLevel / _maxWaterLevel));
-            transform.localScale = _startingScale * (1 + (1 - _currentMoveSpeedSlowdownMultiplier));
+            _currentMoveSpeedSlowdownMultiplier = Mathf.Lerp(_moveSpeedSlowdownAtMaxModifier, 1f,  1 - (_currentWaterLevel / _maxWaterLevel));
+            transform.localScale = _startingScale * (1 + (1 - _currentMoveSpeedSlowdownMultiplier) * _scaleMultiplier);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

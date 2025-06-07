@@ -37,7 +37,7 @@ namespace FireFighting
         private void SetFireLevel(float level)
         {
             _fireLevel = Mathf.Clamp(level, 0, 100);
-            _fireSpriteRenderer.color = _fireSpriteRenderer.color.ChangeColorAxis(ExtensionMethods.EColorAxis.A, _fireLevel / 100 * 255);
+            _fireSpriteRenderer.color = _fireSpriteRenderer.color.ChangeColorAxis(ExtensionMethods.EColorAxis.A, _fireLevel / 100);
 
             if (Mathf.Approximately(_fireLevel, 0))
             {

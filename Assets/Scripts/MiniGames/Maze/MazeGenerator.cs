@@ -32,10 +32,10 @@ namespace Maze.Generation
             Instance = this;
         }
 
-        protected void Start()
+        protected override void Start()
         {
+            base.Start();
             MazeSolverComponent.Instance.OnGameStart += OnGameStart;
-            MazeSolverComponent.Instance.OnGameStop += OnGameEnd;
         }
 
         private void OnDestroy()
@@ -51,9 +51,9 @@ namespace Maze.Generation
             }
         }
 
-        private void OnGameEnd()
+        protected override void OnGameEnd()
         {
-            DestroyGrid();
+            base.OnGameEnd();
             _keysInGame.Clear();
         }
 

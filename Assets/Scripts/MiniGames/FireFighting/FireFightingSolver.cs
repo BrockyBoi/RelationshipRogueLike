@@ -26,6 +26,20 @@ namespace FireFighting
             Instance = this;
         }
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            OnMainTimerEnd += FailGame;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            OnMainTimerEnd -= FailGame;
+        }
+
         protected override void StartGame()
         {
             base.StartGame();
