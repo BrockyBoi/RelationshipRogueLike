@@ -8,7 +8,7 @@ namespace EndlessRunner
     {
         public override void SpawnInRandomLocation()
         {
-            transform.position = new Vector3(_maxX * .95f, Random.Range( _minY * .5f , _maxY * .9f), 0);
+            //transform.position = new Vector3(_maxX * .95f, Random.Range( _minY * .5f , _maxY * .9f), 0);
         }
 
         protected override void MoveObject()

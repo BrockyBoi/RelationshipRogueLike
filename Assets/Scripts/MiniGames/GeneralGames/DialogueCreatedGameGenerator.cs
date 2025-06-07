@@ -21,6 +21,7 @@ namespace GeneralGame.Generation
             _gameData = generationData;
 
             GenerateGameAssets();
+            InitializeCameraPosition();
             if (ensure(GameSolverComponent != null, "Game Solver is null") && ensure(generationData != null, "Generation data is null"))
             {
                 GameSolverComponent.GeneratorInitializeSolver(generationData.GameCompletionResults, _gameData);
@@ -33,6 +34,12 @@ namespace GeneralGame.Generation
         protected virtual void GenerateGameAssets()
         {
 
+        }
+
+        protected virtual void InitializeCameraPosition()
+        {
+            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
+            Camera.main.orthographicSize = 5f;
         }
     }
 }

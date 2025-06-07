@@ -13,10 +13,7 @@ namespace EndlessRunner
         protected override EndlessRunnerSolver GameSolverComponent { get { return EndlessRunnerSolver.Instance; } }
 
         [Title("Prefabs"), SerializeField, Required]
-        private EndlessRunnerCoin _coinPrefab;
-
-        [SerializeField, Required]
-        private EndlessRunnerObstacleObject _obstaclePrefab;
+        private GameObject[] _coinPatternPrefabs;
 
         [Title("Spawn Data"), SerializeField]
         private float _spawnX = 10;
@@ -42,11 +39,10 @@ namespace EndlessRunner
 
         public void StartSpawningObjects()
         {
-            StartCoroutine(SpawnCoinsOverTime(_gameData.CoinsToSpawn, _gameData.GameDuration - 5, _coinPrefab));
-            StartCoroutine(SpawnObstaclesOverTime(_gameData.ObstaclesToSpawn, _gameData.GameDuration - 5, _obstaclePrefab));
+            StartCoroutine(SpawnCoinPatternsOverTime(_gameData.CoinsToSpawn, _gameData.GameDuration - 5));
         }
 
-        private IEnumerator SpawnCoinsOverTime(int amountToSpawn, float duration, EndlessRunnerCollectable prefab)
+        private IEnumerator SpawnCoinPatternsOverTime(int amountToSpawn, float duration)
         {
             if (amountToSpawn > 0)
             {
@@ -60,7 +56,7 @@ namespace EndlessRunner
                     if (timeElapsed >= nextSpawnTime)
                     {
                         Vector3 spawnLoc = new Vector3(_spawnX, _baseCoinHeight);
-                        EndlessRunnerCollectable collectable = Instantiate(prefab, spawnLoc, Quaternion.identity);
+                        Instantiate(_coinPatternPrefabs.GetRandomElement(), spawnLoc, Quaternion.identity);
                         nextSpawnTime = timeElapsed + timeInterval;
                     }
                     yield return null;

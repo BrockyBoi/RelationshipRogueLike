@@ -20,7 +20,7 @@ namespace GeneralGame.Generation
         public int TotalElementsCount { get { return _objectGrid.Length; } }
 
         [SerializeField]
-        private float _spaceBetweenGridObjects = 5f;
+        protected float _spaceBetweenGridObjects = 5f;
 
         protected virtual void Start()
         {
@@ -55,11 +55,18 @@ namespace GeneralGame.Generation
                 }
             }
 
+            Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, (GridHeight - 1) * _spaceBetweenGridObjects, 0);
+            parentObject.transform.position = finalLoc;
+
+            _hasGeneratedGame = true;
+        }
+
+        protected override void InitializeCameraPosition()
+        {
             float cameraWidth = (GridWidth + 1) * _spaceBetweenGridObjects;
             float cameraHeight = (GridHeight + 1) * _spaceBetweenGridObjects;
 
             Vector3 finalLoc = new Vector3((GridWidth - 1) * _spaceBetweenGridObjects, (GridHeight - 1) * _spaceBetweenGridObjects, 0);
-            parentObject.transform.position = finalLoc;
 
             // https://www.youtube.com/watch?v=3xXlnSetHPM
             if (cameraHeight >= cameraWidth)
@@ -72,8 +79,6 @@ namespace GeneralGame.Generation
             }
 
             Camera.main.transform.position = (finalLoc * 1.5f).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * finalLoc.x / 2);
-
-            _hasGeneratedGame = true;
         }
 
         protected virtual void OnGameEnd()

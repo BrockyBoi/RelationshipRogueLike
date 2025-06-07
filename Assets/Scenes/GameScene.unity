@@ -571,12 +571,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 210552b9dac18be4597de021f79ee70b, type: 3}
-  m_Color: {r: 0, g: 0.037703037, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5b92a2daa211cf34d91da51a4375c996, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 3.6, y: 2.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -591,8 +591,8 @@ Transform:
   m_GameObject: {fileID: 64134776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -128.32, y: -53.75, z: -8}
-  m_LocalScale: {x: 5.6315, y: 5.6315, z: 5.6315}
+  m_LocalPosition: {x: -128.32, y: -46.43, z: -8}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -633,14 +633,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 12, y: 12}
+    newSize: {x: 3.6, y: 2.49}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 12, y: 12}
   m_EdgeRadius: 0
 --- !u!50 &64134782
 Rigidbody2D:
@@ -1181,9 +1181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c725d2744ba424fa141147071dd39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinPrefab: {fileID: 8583024723706945455, guid: add3ab6859d28b2429b42e7a3954cac3, type: 3}
-  _obstaclePrefab: {fileID: -1865597251332507676, guid: 7a4cd168f76485d4d877b64d4f391d8c, type: 3}
-  _spawnX: 5
+  _coinPatternPrefabs:
+  - {fileID: 6803428344953394107, guid: 65e617c94e6e81f42a91db22540d37fc, type: 3}
+  - {fileID: 5976867500772912609, guid: 58394ab011595414cb985a2cb65faef5, type: 3}
+  - {fileID: 5725846226624994831, guid: 915465b67bc0e6b4580f4873af006110, type: 3}
+  _spawnX: 15
   _obstacleSpawnHeight: -2
   _baseCoinHeight: 2.5
 --- !u!1 &267030021
@@ -3076,7 +3078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conversationData:
-    ConversationToRun: {fileID: 11400000, guid: d3429d6ad6cfcc44393b9abf8a04534a, type: 2}
+    ConversationToRun: {fileID: 11400000, guid: bbcf91cfbd2ae8e449979268b6f54cfc, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
     BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
   _runDialogueOnStart: 1
@@ -5381,6 +5383,7 @@ MonoBehaviour:
   _countDownTimeGiven: 3
   _gameType: 6
   _startGameTimerOnInitialize: 1
+  _amountToMoveUpPerSecond: 2.5
 --- !u!114 &1899931901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5395,6 +5398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 3588865902722229042, guid: cd05e64fe69200743adf8a6500a5b996, type: 3}
   _spaceBetweenGridObjects: 6
+  _windowRowsToShowAtStart: 3
 --- !u!4 &1899931902
 Transform:
   m_ObjectHideFlags: 0

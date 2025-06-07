@@ -625,8 +625,8 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: bad
           NewConversation: {fileID: 0}
-      GridSize: {x: 5, y: 5}
-      FireIncreasePerSecond: 3
+      GridSize: {x: 4, y: 30}
+      FireIncreasePerSecond: 1.5
       MaxStartingFireLevel: 65
     LinkedConverssationObject:
       NewConversation: {fileID: 0}

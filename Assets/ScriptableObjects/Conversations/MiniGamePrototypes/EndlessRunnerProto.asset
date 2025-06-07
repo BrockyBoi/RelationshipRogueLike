@@ -170,6 +170,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -209,7 +210,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -276,6 +276,48 @@ MonoBehaviour:
       CoinsToCollect: 50
       CoinsToSpawn: 50
       ObstaclesToSpawn: 10
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -418,6 +460,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -457,7 +500,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -504,7 +546,7 @@ MonoBehaviour:
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 30
+      GameDuration: 35
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Good
         HealthResult:
@@ -542,8 +584,50 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 15
-      CoinsToSpawn: 35
+      CoinsToSpawn: 10
       ObstaclesToSpawn: 12
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

@@ -16,13 +16,5 @@ namespace ShootYourShotGame
         {
             Instance = this;
         }
-
-        protected override void GenerateGameAssets()
-        {
-            base.GenerateGameAssets();
-
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
-            Camera.main.orthographicSize = 5f;
-        }
     }
 }

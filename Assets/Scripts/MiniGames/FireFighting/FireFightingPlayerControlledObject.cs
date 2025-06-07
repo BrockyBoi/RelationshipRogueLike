@@ -34,7 +34,6 @@ namespace FireFighting
             _camera = Camera.main;
             _startingScale = transform.localScale;
 
-            transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
             base.Start();
         }
 
@@ -58,6 +57,12 @@ namespace FireFighting
             _currentWaterLevel = Mathf.Clamp(_currentWaterLevel + pressureChange, 1f, _maxWaterLevel);
             _currentMoveSpeedSlowdownMultiplier = Mathf.Lerp(_moveSpeedSlowdownAtMaxModifier, 1f,  1 - (_currentWaterLevel / _maxWaterLevel));
             transform.localScale = _startingScale * (1 + (1 - _currentMoveSpeedSlowdownMultiplier) * _scaleMultiplier);
+        }
+
+        protected override void OnGameGenerated()
+        {
+            base.OnGameGenerated();
+            transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

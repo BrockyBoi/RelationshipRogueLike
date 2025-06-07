@@ -10,6 +10,9 @@ namespace FireFighting
 
         private FireFightingWindow[,] _windows;
 
+        [SerializeField]
+        private float _amountToMoveUpPerSecond = 2f;
+
         public override int GetCurrentPotentialDialogueIndex()
         {
             return GetGameCompletionResultIndexByTimeRemaining();
@@ -62,6 +65,8 @@ namespace FireFighting
                         window.IncreaseFireLevel(_gameData.FireIncreasePerSecond * Time.deltaTime);
                     }
                 }
+
+                Camera.main.transform.position = Camera.main.transform.position + Vector3.up * _amountToMoveUpPerSecond * Time.deltaTime;
 
                 if (!stillHasAFire)
                 {

@@ -16,7 +16,7 @@ public abstract class CollectableMiniGameObject<GameSolverComponent, GameGenerat
     protected virtual void Awake()
     {
         _minX = Camera.main.ViewportToWorldPoint(new Vector3(-.3f, 0)).x;
-        _maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.3f, 0)).x;
+        _maxX = Camera.main.ViewportToWorldPoint(new Vector3(1.5f, 0)).x;
 
         _minY = Camera.main.ViewportToWorldPoint(new Vector3(0, -.3f)).y;
         _maxY = Camera.main.ViewportToWorldPoint(new Vector3(0, 1.3f)).y;
