@@ -275,11 +275,9 @@ namespace Dialogue
         {
             if (branchingDialogue != null)
             {
-                if (branchingDialogue.OnlyUsesDialogue)
-                {
-                    yield return ProcessStandardDialogueObjects(branchingDialogue.DialogueObjects);
-                }
-                else
+                yield return ProcessStandardDialogueObjects(branchingDialogue.DialogueObjects);
+
+                if (!branchingDialogue.OnlyUsesDialogue)
                 {
                     yield return ProcessConversation(branchingDialogue.NewConversation);
                 }

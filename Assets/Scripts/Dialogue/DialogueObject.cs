@@ -293,7 +293,6 @@ namespace Dialogue
     public class BranchingDialogueObject
     {
         public bool OnlyUsesDialogue = true;
-        [ShowIf("OnlyUsesDialogue")]
         public List<StandardDialogueObject> DialogueObjects;
         [HideIf("OnlyUsesDialogue")]
         public Conversation NewConversation;
