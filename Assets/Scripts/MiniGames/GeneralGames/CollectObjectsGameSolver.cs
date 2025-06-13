@@ -41,6 +41,18 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
         }
     }
 
+    public void ModifyCollectablesCount(int amountToChange)
+    {
+        _collectablesCaught += amountToChange;
+
+        OnCollectableCountChange?.Invoke(_collectablesCaught);
+
+        if (_collectablesCaught >= CollectablesNeeded)
+        {
+            CompleteGame();
+        }
+    }
+
     public override int GetCurrentPotentialDialogueIndex()
     {
         return GetGameCompletionResultIndexByPointsNeededToScore(_collectablesCaught, CollectablesNeeded);

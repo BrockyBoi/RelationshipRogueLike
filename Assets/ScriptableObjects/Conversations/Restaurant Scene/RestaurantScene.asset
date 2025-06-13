@@ -361,8 +361,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 50
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -633,7 +635,7 @@ MonoBehaviour:
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
+      GameDuration: 45
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Order Whatever You Like!
         HealthResult:
@@ -665,17 +667,18 @@ MonoBehaviour:
               with one fish and then we can see where we go from there?"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: Fine, fine, maybe we can buy ten meals next time.
+            _standardDialogue: Fine, fine.  Guess we'll just need to have another
+              10 dinners together to catch up.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -857,9 +860,11 @@ MonoBehaviour:
             _standardDialogue: Ok.
           NewConversation: {fileID: 11400000, guid: da76b8da2036cbe408f7b931304d18ea, type: 2}
       ObjectMoveSpeed: 5
-      CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinsToCollect: 60
+      CoinPatternsToSpawn: 14
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1184,8 +1189,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 50
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1456,7 +1463,7 @@ MonoBehaviour:
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
+      GameDuration: 45
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: "You\u2019ll Never Have To Pay With Me"
         HealthResult:
@@ -1762,10 +1769,12 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Uh huh.
           NewConversation: {fileID: 0}
-      ObjectMoveSpeed: 5
-      CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      ObjectMoveSpeed: 6.5
+      CoinsToCollect: 75
+      CoinPatternsToSpawn: 45
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -2086,8 +2095,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 50
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -2358,7 +2369,7 @@ MonoBehaviour:
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
+      GameDuration: 60
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Let Her Eat Cake
         HealthResult:
@@ -2565,10 +2576,12 @@ MonoBehaviour:
               Guess you won\u2019t have to worry about me being a gold digger and
               stealing everything that you\u2019re worth."
           NewConversation: {fileID: 0}
-      ObjectMoveSpeed: 5
-      CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      ObjectMoveSpeed: 6
+      CoinsToCollect: 100
+      CoinPatternsToSpawn: 13
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 7105970923738383032, guid: 5161f4aa40eb6ca4c995c93ff69e58a4, type: 3}
+      TimeToSpawnExtraObject: 20
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -2857,8 +2870,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 50
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
