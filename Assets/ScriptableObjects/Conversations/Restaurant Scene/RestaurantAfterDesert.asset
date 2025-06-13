@@ -346,8 +346,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -618,7 +620,7 @@ MonoBehaviour:
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
+      GameDuration: 30
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: I Literally Invented Google
         HealthResult:
@@ -681,9 +683,11 @@ MonoBehaviour:
             _standardDialogue: You fancy bitch.
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
-      CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinsToCollect: 100
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 1
+      ExtraObjectToSpawn: {fileID: 7105970923738383032, guid: 5161f4aa40eb6ca4c995c93ff69e58a4, type: 3}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -972,8 +976,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:

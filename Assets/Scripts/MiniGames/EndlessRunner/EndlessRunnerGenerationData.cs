@@ -16,9 +16,15 @@ namespace EndlessRunner
         public int CoinsToCollect = 50;
 
         [FoldoutGroup("Game Data"), Range(10, 250)]
-        public int CoinsToSpawn = 50;
+        public int CoinPatternsToSpawn = 10;
 
-        [FoldoutGroup("Game Data"), Range(0, 20)]
-        public int ObstaclesToSpawn = 10;
+        [FoldoutGroup("Game Data")]
+        public bool ShouldSpawnExtraObjects = false;
+
+        [FoldoutGroup("Game Data"), ShowIf("@ShouldSpawnExtraObjects")]
+        public GameObject ExtraObjectToSpawn;
+
+        [FoldoutGroup("Game Data"), ShowIf("@ShouldSpawnExtraObjects")]
+        public float TimeToSpawnExtraObject = 5;
     }
 }

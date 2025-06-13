@@ -286,8 +286,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -334,7 +336,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Money Mini Game
+  - Description: Endless Runner
     DialogueObjectType: 8
     StandardDialogueObjects: []
     SentimentDialogueObject:
@@ -775,8 +777,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:

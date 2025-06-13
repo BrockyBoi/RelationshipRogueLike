@@ -29,17 +29,16 @@ namespace EndlessRunner
             Instance = this;
         }
 
-        protected override void GenerateGameAssets()
+        protected override void InitializeCameraPosition()
         {
-            base.GenerateGameAssets();
+            base.InitializeCameraPosition();
 
-            Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
-            Camera.main.orthographicSize = 5f;
+            Camera.main.transform.position = (Vector3.up * 5).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30);
         }
 
         public void StartSpawningObjects()
         {
-            StartCoroutine(SpawnCoinPatternsOverTime(_gameData.CoinsToSpawn, _gameData.GameDuration - 5));
+            StartCoroutine(SpawnCoinPatternsOverTime(_gameData.CoinPatternsToSpawn, _gameData.GameDuration - 5));
         }
 
         private IEnumerator SpawnCoinPatternsOverTime(int amountToSpawn, float duration)
