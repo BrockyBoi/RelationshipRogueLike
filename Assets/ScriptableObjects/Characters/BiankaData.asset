@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75d33d1f1d97374ba4b4a8f5b71f859, type: 3}
+  m_Name: BiankaData
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  CharacterName: Bianka
+  DefaultSprite: {fileID: 21300000, guid: 1ae77bab0db99c74f8e309da9aad9a2a, type: 3}
+  SentimentPortraits:
+    keyData: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+    valueData:
+    - {fileID: 21300000, guid: 6496b1dd11713f246856b77abf480c5d, type: 3}
+    - {fileID: 21300000, guid: 1ae77bab0db99c74f8e309da9aad9a2a, type: 3}
+    - {fileID: 21300000, guid: 9a8a9547e131e2c4dbe7e79046b093e3, type: 3}
+    - {fileID: 21300000, guid: 0b84c5db0bdf7a24392be6b54952bfcf, type: 3}
+    - {fileID: 21300000, guid: bd1ba0625b4caf84f80bfd44eaeb712c, type: 3}
+    - {fileID: 21300000, guid: 867b786d3c025274a8b94648b20a19a3, type: 3}
+    - {fileID: 21300000, guid: d06a42d804c1995469067e78e6fa0791, type: 3}
+    - {fileID: 21300000, guid: 6e9b66f4a8e00954791f015d72b52a7a, type: 3}
+    - {fileID: 21300000, guid: 6bf9fe01b9e19714fbd9e028836da930, type: 3}
+    - {fileID: 21300000, guid: a1968e705d4fb5d4893223d8d9fbbf02, type: 3}
+  IsMainCharacter: 1

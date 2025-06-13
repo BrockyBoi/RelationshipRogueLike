@@ -153,7 +153,7 @@ MonoBehaviour:
       _standardDialogue: ...
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-        CharacterSentiment: 1
+        CharacterSentiment: 6
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -190,6 +190,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -229,7 +230,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -318,6 +318,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -450,6 +470,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -489,7 +510,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -578,6 +598,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -615,6 +655,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -654,7 +695,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -743,6 +783,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -898,6 +958,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -937,7 +998,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1026,6 +1086,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1085,6 +1165,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1124,7 +1205,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1213,6 +1293,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1272,6 +1372,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1311,7 +1412,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1400,6 +1500,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1447,6 +1567,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1486,7 +1607,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1575,6 +1695,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1634,6 +1774,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1673,7 +1814,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1762,6 +1902,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -1809,6 +1969,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1848,7 +2009,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -1937,6 +2097,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2053,6 +2233,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2092,7 +2273,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -2181,6 +2361,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2418,6 +2618,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2457,7 +2658,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -2546,6 +2746,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2781,6 +3001,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2820,7 +3041,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 128
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 4, y: 4}
       NumberOfGuesses: 10
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -2909,6 +3129,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -2946,6 +3186,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2985,7 +3226,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -3074,6 +3314,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -3133,6 +3393,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -3172,7 +3433,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -3261,6 +3521,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -3310,6 +3590,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -3349,7 +3630,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -3438,6 +3718,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -3497,6 +3797,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -3536,7 +3837,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -3625,6 +3925,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -3661,6 +3981,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -3700,7 +4021,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -3789,6 +4109,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -3913,6 +4253,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -3952,7 +4293,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -4041,6 +4381,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -4099,6 +4459,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -4138,7 +4499,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -4227,6 +4587,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -4369,6 +4749,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -4408,7 +4789,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -4605,6 +4985,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -4723,6 +5123,7 @@ MonoBehaviour:
     MemoryGameSpawnerData:
       GameDuration: 15
       GameCompletionResults: []
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -4762,7 +5163,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -4851,6 +5251,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
@@ -4993,6 +5413,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -5032,7 +5453,6 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
       GameDuration: 15
@@ -5121,6 +5541,26 @@ MonoBehaviour:
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:

@@ -13,8 +13,13 @@ namespace Characters
         Happy,
         Neutral,
         Annoyed,
-        FuckingPissed,
-        Sad
+        Angry,
+        Sad,
+        Blushing,
+        Confused,
+        Embarrassed,
+        Suggestive,
+        Tired
     }
 
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CharacterData", order = 1)]

@@ -28,7 +28,7 @@ namespace MainPlayer
         [SerializeField]
         private int _annoyedSentimentThreshold = 4;
         [SerializeField]
-        private int _pissedSentimentThreshold = 2;
+        private int _angrySentimentThreshold = 2;
 
         private void Start()
         {
@@ -98,9 +98,9 @@ namespace MainPlayer
 
         public ECharacterSentiment GetCharacterSentiment()
         {
-            if (Health <= _pissedSentimentThreshold)
+            if (Health <= _angrySentimentThreshold)
             {
-                return ECharacterSentiment.FuckingPissed;
+                return ECharacterSentiment.Angry;
             }
 
             if (Health <= _annoyedSentimentThreshold)
