@@ -797,7 +797,7 @@ MonoBehaviour:
               water?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 6
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1473,7 +1473,7 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1484,7 +1484,7 @@ MonoBehaviour:
               of you.  You don\u2019t have a spend a dime if you don\u2019t want."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1495,7 +1495,7 @@ MonoBehaviour:
               a good job, we can split things evenly."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1571,7 +1571,7 @@ MonoBehaviour:
               I want us to be even."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1582,7 +1582,7 @@ MonoBehaviour:
               evenly going forward, but just not today.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1600,7 +1600,7 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1645,7 +1645,7 @@ MonoBehaviour:
             _standardDialogue: Oh, well do you not like your job?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 7
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1847,7 +1847,7 @@ MonoBehaviour:
       _standardDialogue: You still have some room in you?
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 1
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -2379,7 +2379,7 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2390,7 +2390,7 @@ MonoBehaviour:
               is amazing.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2401,7 +2401,7 @@ MonoBehaviour:
               then?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2418,7 +2418,7 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2439,7 +2439,7 @@ MonoBehaviour:
             _standardDialogue: Oh, are you full?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 0
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -2490,7 +2490,7 @@ MonoBehaviour:
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: You already know the answer.  Just buy the slice.
+            _standardDialogue: You already know the answer.  Just get the cake.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 1

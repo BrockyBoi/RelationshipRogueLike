@@ -13,13 +13,13 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
     {
         base.OnEnable();
 
-        OnMainTimerEnd += FailGame;
+        OnMainTimerEnd += CompleteGame;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        OnMainTimerEnd -= FailGame;
+        OnMainTimerEnd -= CompleteGame;
     }
 
     protected override void StartGame()

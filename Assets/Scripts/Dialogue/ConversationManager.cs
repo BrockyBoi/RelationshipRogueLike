@@ -17,7 +17,6 @@ using static GlobalFunctions;
 using Sirenix.OdinInspector;
 using EndlessRunner;
 using GeneralGame.Generation;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using ShootYourShotGame;
 using FireFighting;
 
@@ -33,11 +32,20 @@ namespace Dialogue
         public LevelConversationData ConversationData { get { return _conversationData; } }
 
         private Coroutine _conversationCoroutine;
+        private Conversation _currentConversation;
+        private Conversation _newConversationOnFinishDialogue;
 
         private bool _playerHasDied = false;
 
         [SerializeField]
         private bool _runDialogueOnStart = false;
+
+        private bool _isInGame = false;
+
+        private int _currentDialogueIndex = 0;
+        private int _currentConversationObjectIndex = 0;
+
+        private List<StandardDialogueObject> _dialogueObjectsThisConversation;
 
         private void Awake()
         {
@@ -52,7 +60,7 @@ namespace Dialogue
             }
         }
 
-        private void Start ()
+        private void Start()
         {
             _playerHasDied = false;
             Player player = Player.Instance;
@@ -68,6 +76,26 @@ namespace Dialogue
             if (_runDialogueOnStart)
             {
                 StartConversation();
+            }
+        }
+
+        private void Update()
+        {
+            if (_isInGame)
+            {
+                return;
+            }
+
+            bool pressedNext = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space);
+            bool pressedBack = Input.GetKeyDown(KeyCode.LeftArrow);
+
+            if (pressedNext)
+            {
+                PressedNextDialogue();
+            }
+            else if (pressedBack)
+            {
+                PressedPreviousDialogue();
             }
         }
 
@@ -89,7 +117,20 @@ namespace Dialogue
         {
             if (ensure(_conversationData != null, "No conversation data present"))
             {
-                _conversationCoroutine = StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
+                _dialogueObjectsThisConversation = new List<StandardDialogueObject>();
+
+                _currentDialogueIndex = -1;
+                StartNewConversation(_conversationData.ConversationToRun);
+            }
+        }
+
+        private void StartNewConversation(Conversation conversation)
+        {
+            if (ensure(conversation != null && conversation.DialogueObjects.Count > 0, "Conversation is not valid"))
+            {
+                _currentConversation = conversation;
+                _currentConversationObjectIndex = 0;
+                _conversationCoroutine = StartCoroutine(ProcessDialogueObject(_currentConversation.DialogueObjects[_currentConversationObjectIndex]));//StartCoroutine(ProcessConversation(_conversationData.ConversationToRun));
             }
         }
 
@@ -111,7 +152,7 @@ namespace Dialogue
         }
 
 
-        private IEnumerator ProcessDialogues(List<DialogueObject> dialogueObjects)
+        private IEnumerator ProcessDialogueObject(DialogueObject dialogueObject)
         {
             Player player = Player.Instance;
             if (!player)
@@ -120,12 +161,14 @@ namespace Dialogue
                 yield break;
             }
 
-            foreach (DialogueObject dialogueObject in dialogueObjects)
-            {
+            //foreach (DialogueObject dialogueObject in dialogueObject)
+            //{
                 if (_playerHasDied)
                 {
                     _playerHasDied = false;
-                    yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
+                    StartNewConversation(_conversationData.ConversationOnPlayerDeath);
+                    //_newConversationOnFinishDialogue = _conversationData.ConversationOnPlayerDeath;
+                    //yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
                     yield break;
                 }
 
@@ -133,25 +176,21 @@ namespace Dialogue
                 {
                     case EDialogueObjectType.StandardDialogue:
                         {
-                            yield return ProcessStandardDialogueObjects(dialogueObject.StandardDialogueObjects);
+                            AddAndDisplayNewDialogue(dialogueObject.StandardDialogueObjects);
                             break;
                         }
                     case EDialogueObjectType.SentimentDialogue:
                         {
                             ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
-                            if (dialogueObject.SentimentDialogueObject.SentimentDialogue.ContainsKey(sentiment))
+                            if (ensure(dialogueObject.SentimentDialogueObject.SentimentDialogue.ContainsKey(sentiment), sentiment + " was not in sentiment dialogue dictionary"))
                             {
-                                yield return ProcessBranchingDialogueObject(dialogueObject.SentimentDialogueObject.SentimentDialogue[sentiment]);
-                            }
-                            else
-                            {
-                                Debug.LogWarning(sentiment + " was not in sentiment dialogue dictionary");
+                                ProcessBranchingDialogueObject(dialogueObject.SentimentDialogueObject.SentimentDialogue[sentiment]);
                             }
                             break;
                         }
                     case EDialogueObjectType.SpawnMaze:
                         {
-                            yield return ProcessStandardGameLogic<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameType.Maze, dialogueObject.MazeSpawnerData);
+                            RunGame<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameType.Maze, dialogueObject.MazeSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnMemoryGame:
@@ -190,33 +229,32 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.SpawnWhackAMole:
                         {
-                            yield return ProcessStandardGameLogic<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameType.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
-                            WhackAMoleGenerator.Instance.DeleteGameObjects();
+                            RunGame<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameType.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnButterflyCatching:
                         {
-                            yield return ProcessStandardGameLogic<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameType.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
+                            RunGame<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameType.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnEndlessRunner:
                         {
-                            yield return ProcessStandardGameLogic<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameType.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
+                            RunGame<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameType.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnShootYourShot:
                         {
-                            yield return ProcessStandardGameLogic<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
+                            RunGame<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.SpawnFireFighting:
                         {
-                            yield return ProcessStandardGameLogic<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
+                            RunGame<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
                             break;
                         }
                     case EDialogueObjectType.EndConversation:
                         {
-                            yield return ProcessStandardDialogueObjects(dialogueObject.EndConversationObject.FinalDialogue);
+                            AddAndDisplayNewDialogue(dialogueObject.EndConversationObject.FinalDialogue);
 
                             yield return YieldUntilInput();
                             StopCoroutine(_conversationCoroutine);
@@ -225,13 +263,13 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.LinkNewConversation:
                         {
-                            yield return ProcessConversation(dialogueObject.LinkedConverssationObject.NewConversation);
-                            yield break;
+                            StartNewConversation(dialogueObject.LinkedConverssationObject.NewConversation);
+                            break;
                         }
                     default:
                         break;
                 }
-            }
+            //}
         }
 
         private IEnumerator ProcessStandardGameLogic<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameType gameType, GenerationDataType generationData) 
@@ -240,26 +278,31 @@ namespace Dialogue
             where GenerationDataType : GameGenerationData<CompletionResultType>
             where CompletionResultType : GameCompletionResult, new()
         {
+            _isInGame = true;
             SolverType solver;
             GeneratorType generator;
             MiniGameControllersManager.Instance.GetBothControllers(out solver, out generator, gameType);
 
             generator.GenerateGame(generationData);
             yield return YieldUntilGameIsInFinishedStage(solver);
+            yield return new WaitForSeconds(2.5f);
+            _isInGame = false;
             yield return ProcessGameResult(solver.GetCurrentCompletionResult());
         }
 
-        private IEnumerator ProcessConversation(Conversation conversation)
-        {
-            yield return ProcessDialogues(conversation.DialogueObjects);
-        }
+        //private void ProcessConversation(Conversation conversation)
+        //{
+        //    yield return ProcessDialogueObject(conversation.DialogueObjects);
+        //}
 
         private IEnumerator ProcessStandardDialogueObjects(List<StandardDialogueObject> dialogueObjects)
         {
-            foreach (StandardDialogueObject dialogueObject in dialogueObjects)
-            {
-                yield return ProcessStandardDialogueObject(dialogueObject);
-            }
+            AddAndDisplayNewDialogue(dialogueObjects);
+            //foreach (StandardDialogueObject dialogueObject in dialogueObjects)
+            //{
+            //    yield return ProcessStandardDialogueObject(dialogueObject);
+            //}
+            yield break;
         }
 
         private IEnumerator ProcessStandardDialogueObject(StandardDialogueObject dialogueObject)
@@ -271,15 +314,16 @@ namespace Dialogue
             }
         }
 
-        private IEnumerator ProcessBranchingDialogueObject(BranchingDialogueObject branchingDialogue)
+        private void ProcessBranchingDialogueObject(BranchingDialogueObject branchingDialogue)
         {
             if (branchingDialogue != null)
             {
-                yield return ProcessStandardDialogueObjects(branchingDialogue.DialogueObjects);
+                AddAndDisplayNewDialogue(branchingDialogue.DialogueObjects);
 
                 if (!branchingDialogue.OnlyUsesDialogue)
                 {
-                    yield return ProcessConversation(branchingDialogue.NewConversation);
+                    _newConversationOnFinishDialogue = branchingDialogue.NewConversation;
+                    //yield return ProcessConversation(branchingDialogue.NewConversation);
                 }
             }
         }
@@ -288,13 +332,10 @@ namespace Dialogue
         {
             yield return ProcessResultDialogueIntoCharacterDialogue();
 
-            if (gameResult.BranchingDialogue.OnlyUsesDialogue)
+            AddAndDisplayNewDialogue(gameResult.BranchingDialogue.DialogueObjects);
+            if (!gameResult.BranchingDialogue.OnlyUsesDialogue)
             {
-                yield return ProcessStandardDialogueObjects(gameResult.BranchingDialogue.DialogueObjects);
-            }
-            else
-            {
-                yield return ProcessConversation(gameResult.BranchingDialogue.NewConversation);
+                _newConversationOnFinishDialogue = gameResult.BranchingDialogue.NewConversation;
             }
         }
 
@@ -326,20 +367,89 @@ namespace Dialogue
         {
             yield return new WaitForEndOfFrame();
 
-            while (!Input.GetMouseButtonDown(0))
-            {
-                yield return null;
-            }
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
             yield return new WaitForEndOfFrame();
         }
 
         private IEnumerator YieldUntilGameIsInFinishedStage(BaseGameSolverComponent gameSolver)
         {
-            while (gameSolver && !gameSolver.IsStage(EGameStage.GameFinished))
+            yield return new WaitUntil(() => gameSolver && !gameSolver.IsStage(EGameStage.GameFinished));
+        }
+
+        public void PressedNextDialogue()
+        {
+            if (_currentDialogueIndex < _dialogueObjectsThisConversation.Count - 1)
             {
-                yield return null;
+                _currentDialogueIndex++;
+                DisplayCurrentDialogue();
             }
+            else if (_newConversationOnFinishDialogue == null)
+            {
+                _currentConversationObjectIndex++;
+                StartCoroutine(ProcessDialogueObject(_currentConversation.DialogueObjects[_currentConversationObjectIndex]));
+            }
+            else if (_newConversationOnFinishDialogue != null)
+            {
+                Conversation conversation = _newConversationOnFinishDialogue;
+                _newConversationOnFinishDialogue = null;
+                StartNewConversation(conversation);
+            }
+        }
+
+        public void PressedPreviousDialogue()
+        {
+            _currentDialogueIndex = Mathf.Max(0, _currentDialogueIndex - 1);
+            DisplayCurrentDialogue();
+        }
+
+        private void DisplayCurrentDialogue()
+        {
+            if (ensure(_dialogueObjectsThisConversation.IsValidIndex(_currentDialogueIndex), _currentDialogueIndex + " is not valid index"))
+            {
+                DialogueUI.Instance.ShowDialogue(_dialogueObjectsThisConversation[_currentDialogueIndex]);
+            }
+        }
+
+        private void AddDialogueObjects(List<StandardDialogueObject> dialogueObjects)
+        {
+            _dialogueObjectsThisConversation.AddRange(dialogueObjects);
+        }
+
+        private void AddAndDisplayNewDialogue(List<StandardDialogueObject> dialogueObjects)
+        {
+            AddDialogueObjects(dialogueObjects);
+            _currentDialogueIndex++;
+            DisplayCurrentDialogue();
+        }
+
+        public void RunGame<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameType gameType, GenerationDataType generationData)
+            where GeneratorType : DialogueCreatedGameGenerator<SolverType, GenerationDataType, CompletionResultType>
+            where SolverType : GameSolverComponent<GenerationDataType, CompletionResultType>
+            where GenerationDataType : GameGenerationData<CompletionResultType>
+            where CompletionResultType : GameCompletionResult, new()
+        {
+            _isInGame = true;
+            SolverType solver;
+            GeneratorType generator;
+            MiniGameControllersManager.Instance.GetBothControllers(out solver, out generator, gameType);
+            System.Action callback = null;
+            callback = () => 
+            {
+                solver.OnGameStop -= callback;
+                PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+                CompletionResultType completionResult = solver.GetCurrentCompletionResult();
+                AddAndDisplayNewDialogue(completionResult.BranchingDialogue.DialogueObjects);
+                _isInGame = false;
+
+                if (!completionResult.BranchingDialogue.OnlyUsesDialogue)
+                {
+                    _newConversationOnFinishDialogue = completionResult.BranchingDialogue.NewConversation;
+                }
+            };
+            solver.OnGameStop += callback;
+
+            generator.GenerateGame(generationData);
         }
     }
 }

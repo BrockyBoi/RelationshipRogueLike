@@ -39,6 +39,8 @@ namespace WhackAMole
 
             Camera.main.transform.position = Vector3.zero.ChangeAxis(ExtensionMethods.EVectorAxis.Z, -30) + (Vector3.right * _spawnDistanceFromCenter);
             Camera.main.orthographicSize = 1.5f * _spawnDistanceFromCenter;
+
+            GameSolverComponent.OnGameStop += DeleteGameObjects;
         }
 
         public WhackAMoleHole GetHoleNearestToAngle(float angle)
@@ -89,12 +91,14 @@ namespace WhackAMole
             return unoccupiedHole;
         }
 
-        public void DeleteGameObjects()
+        private void DeleteGameObjects()
         {
             for (int i = 0; i < _holes.Length; i++)
             {
                 Destroy(_holes[i].gameObject);
             }
+
+            GameSolverComponent.OnGameStop -= DeleteGameObjects;
         }
     }
 }

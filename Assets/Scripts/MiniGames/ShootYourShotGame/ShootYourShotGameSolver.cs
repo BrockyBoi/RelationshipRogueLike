@@ -96,14 +96,17 @@ namespace ShootYourShotGame
 
         protected override void Update()
         {
-            if (!PauseController.Instance.IsPaused && Input.GetKeyDown(KeyCode.Space))
+            if (CanPlayGame())
             {
-                AttemptShootTarget();
-            }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    AttemptShootTarget();
+                }
 
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                CompleteGame();
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    CompleteGame();
+                }
             }
         }
 
