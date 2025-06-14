@@ -1,0 +1,833 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb7ca37da4e63478321c9d7db89724, type: 3}
+  m_Name: MovieTheaterConversation
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  DialogueObjects:
+  - Description: Bianka Showing Up and Eating Spicy Peanuts
+    DialogueObjectType: 0
+    StandardDialogueObjects:
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*In movie theater sitting in her seat*'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "*Thinking*  Hopefully she gets here soon.  Nice of her
+        to text that she\u2019s running a bit late and to go on without her to get
+        the seats.  My ex would have just shown up 20 minutes late while my dumb
+        ass waited for them out in the lobby."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "*Sitting down*  Oh my gosh, I\u2019m so sorry for being
+        late!  Every time I set foot out the door, I had to run back inside and grab
+        something I forgot!"
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "It\u2019s no problem at all!  I\u2019m not sure I\u2019ve
+        actually remembered to grab my cell phone while leaving my apartment a single
+        time in the last ten years."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "Oh I know, but for me it\u2019s snacks.  If I\u2019m going
+        to the movies I have to bring something with me."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 2
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Have you seen the prices for all the food here?  Do white
+        people have so little water you have to charge $10 for a bottle?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Picks up her $10 while giving a glance*'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "Oh!  I didn\u2019t mean you!  You\u2019re fine!  I didn\u2019t
+        mean all white people and -"
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Amrita?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: ... Yes?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "It\u2019s fine."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "Ok, I\u2019ll shut up.  "
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Ummm.... do you want some snacks?  I brought lots of little
+        Indian snacks that I always go to the theatre with.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "Anything I\u2019d like?"
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "How about some masala peanuts?  Just some peanuts mixed
+        with lots of tasty spices, and only has a tiny bit of heat.  You don\u2019t
+        have to eat it if you don\u2019t want."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: "No, that actually does sound pretty good.  And don\u2019t
+        worry, I can take a little spice."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Bianka takes a big bite*'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Mumbling to herself* Well, only has a little spice for
+        me any ways.'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Mouth on fire*'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Thinking* FUCK'
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 7
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: '*Thinking* ME'
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      GridSize: {x: 4, y: 4}
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []
+  - Description: Fire Mini Game
+    DialogueObjectType: 10
+    StandardDialogueObjects: []
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      GridSize: {x: 4, y: 4}
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}
+    EndConversationObject:
+      FinalDialogue: []

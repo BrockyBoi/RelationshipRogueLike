@@ -24,11 +24,16 @@ MonoBehaviour:
   CharacterName: Amrita
   DefaultSprite: {fileID: 21300000, guid: 938157888c074ef4fbf9175b9d16799e, type: 3}
   SentimentPortraits:
-    keyData: 0000000001000000020000000300000004000000
+    keyData: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
     valueData:
     - {fileID: 21300000, guid: 3a9d5e796f226ce43af37039b0a6fd43, type: 3}
     - {fileID: 21300000, guid: 938157888c074ef4fbf9175b9d16799e, type: 3}
     - {fileID: 21300000, guid: 71c8adb3fc8ffc147b86b85e6f9a88e5, type: 3}
     - {fileID: 21300000, guid: dc9ce07f88ece114088339774e87d4dd, type: 3}
+    - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}
+    - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}
+    - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}
+    - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}
+    - {fileID: 21300000, guid: 3a9d5e796f226ce43af37039b0a6fd43, type: 3}
     - {fileID: 21300000, guid: 6d9fcda278ccc2a44b5cc2e812b01b18, type: 3}
   IsMainCharacter: 0
