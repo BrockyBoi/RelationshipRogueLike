@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   DialogueObjects:
-  - DialogueObjectType: 0
+  - Description: Default Description
+    DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
@@ -65,6 +66,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -91,7 +93,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -99,6 +100,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -194,6 +196,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -233,9 +236,9 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -251,24 +254,111 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 6
+  - Description: Whack A Mole Game
+    DialogueObjectType: 6
     StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -295,7 +385,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -303,6 +392,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -398,6 +488,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -437,9 +528,9 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: No Of Course Not!
         HealthResult:
@@ -470,7 +561,7 @@ MonoBehaviour:
             _standardDialogue: Yeah, you really did.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 4
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -480,7 +571,7 @@ MonoBehaviour:
             _standardDialogue: But I haven't been so great here today either, so
               I get it.  Let's just try to pretend this didn't happen.
           NewConversation: {fileID: 0}
-      - PotentialPlayerDialogueDescription: Yup, That's Exactly What I Think.
+      - PotentialPlayerDialogueDescription: Yup, That's Exactly What I Think
         HealthResult:
           HealthAmountToChange: -5
         BranchingDialogue:
@@ -529,37 +620,111 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: You sound delusional.
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - DialogueObjectType: 0
-    StandardDialogueObjects:
-    - _dialogueData:
-        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 2
-        CustomDialogueOptions:
-          UsesCustomName: 0
-          CustomName: 
-          UsesCustomSprite: 0
-          CustomSprite: {fileID: 0}
-          UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: Listen.  This has been a long night.  We'll still meet up
-        this weekend to hang out again, but I think we need to take a breather right
-        now.  Sorry things got carried away, but I don't want to be talked to like
-        this in my own home.  I hope you have a good night.
+  - Description: End Conversation
+    DialogueObjectType: 4
+    StandardDialogueObjects: []
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -586,7 +751,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -594,6 +758,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -689,6 +854,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -728,9 +894,9 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -746,14 +912,122 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
       StartingHealth: 10
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
     EndConversationObject:
-      FinalDialogue: []
+      FinalDialogue:
+      - _dialogueData:
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CharacterSentiment: 2
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+        _standardDialogue: 'Listen.  This has been a long night.  We''ll still meet
+          up this weekend to hang out again, but I think we need to take a breather
+          right now.  '
+      - _dialogueData:
+          CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            UseCurrentPlayerHealthForSentimentSprite: 0
+        _standardDialogue: Sorry things got carried away, but I don't want to be
+          talked to like this in my own home.  I hope you have a good night.

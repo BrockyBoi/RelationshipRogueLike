@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace Maze.Generation
 {
     public class MazeGenerator : GameGridGenerator<MazeSolverComponent, MazeGeneratorData, MazeCompletionResult, MazeNode>
@@ -15,9 +17,6 @@ namespace Maze.Generation
         public MazeNode EndNode { get; private set; }
 
         protected override MazeSolverComponent GameSolverComponent { get { return MazeSolverComponent.Instance; } }
-
-        bool _needsKeys = false;
-        int _keysNeeded = 0;
 
         bool _hasGeneratedMazePath = false;
         private System.Action OnMazePathGenerated;
@@ -161,10 +160,10 @@ namespace Maze.Generation
         private void GenerateKeysInMaze(List<MazeNode> potentialStartNodes)
         {
             int startPotentialStartNodesCount = potentialStartNodes.Count;
-            int keysToSpawn = _keysNeeded;
-            if (_needsKeys && _keysNeeded > 0)
+            int keysToSpawn = _gameData.KeysNeeded;
+            if (_gameData.NeedsKeys && keysToSpawn > 0)
             {
-                for (int i = 0; i < _keysNeeded; i++)
+                for (int i = 0; i < keysToSpawn; i++)
                 {
                     MazeNode node = potentialStartNodes.GetRandomElement();
                     if (node)
@@ -181,7 +180,7 @@ namespace Maze.Generation
 
                             if (potentialStartNodes.Count == 0 && keysToSpawn > 0)
                             {
-                                _keysNeeded = startPotentialStartNodesCount;
+                                ensure(false, "More keys need to be spawned, but not enough potential start nodes left");
                                 break;
                             }
 
@@ -335,9 +334,6 @@ namespace Maze.Generation
 
             GameSolverComponent.SetTimeToCompleteGame(_gameData.GameDuration);
             GameSolverComponent.SetFakeTime(_gameData.IsMazeFake ? _gameData.FakeMazeTime : 0);
-
-            _needsKeys = _gameData.NeedsKeys;
-            _keysNeeded = _needsKeys ? _gameData.KeysNeeded : 0;
         }
     }
 }

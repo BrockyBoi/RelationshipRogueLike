@@ -29,6 +29,9 @@ namespace Dialogue
         [SerializeField]
         private LevelConversationData _conversationData;
 
+        [SerializeField]
+        private Conversation _defaultEndSceneConversation;
+
         public LevelConversationData ConversationData { get { return _conversationData; } }
 
         private Coroutine _conversationCoroutine;
@@ -254,9 +257,6 @@ namespace Dialogue
                         }
                     case EDialogueObjectType.EndConversation:
                         {
-                            AddAndDisplayNewDialogue(dialogueObject.EndConversationObject.FinalDialogue);
-
-                            yield return YieldUntilInput();
                             StopCoroutine(_conversationCoroutine);
                             GameSceneManager.Instance.LoadMapLevel();
                             yield break;
@@ -384,7 +384,7 @@ namespace Dialogue
                 _currentDialogueIndex++;
                 DisplayCurrentDialogue();
             }
-            else if (_newConversationOnFinishDialogue == null)
+            else if (_newConversationOnFinishDialogue == null && ensure(_currentConversation.DialogueObjects.IsValidIndex(_currentConversationObjectIndex + 1), (_currentConversationObjectIndex + 1) + " is out of index for the dialogue object count"))
             {
                 _currentConversationObjectIndex++;
                 StartCoroutine(ProcessDialogueObject(_currentConversation.DialogueObjects[_currentConversationObjectIndex]));
@@ -418,9 +418,12 @@ namespace Dialogue
 
         private void AddAndDisplayNewDialogue(List<StandardDialogueObject> dialogueObjects)
         {
-            AddDialogueObjects(dialogueObjects);
-            _currentDialogueIndex++;
-            DisplayCurrentDialogue();
+            if (dialogueObjects.Count > 0)
+            {
+                AddDialogueObjects(dialogueObjects);
+                _currentDialogueIndex++;
+                DisplayCurrentDialogue();
+            }
         }
 
         public void RunGame<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameType gameType, GenerationDataType generationData)

@@ -294,8 +294,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -574,8 +576,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -622,7 +626,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Dialogue
+  - Description: Amrita Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -759,8 +763,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1062,8 +1068,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1269,8 +1277,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1476,8 +1486,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1524,7 +1536,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Cutting Off Maddie Dialogue
+  - Description: Amrita Cutting Off Maddie Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -1671,8 +1683,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1878,8 +1892,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -1926,7 +1942,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Maddie Still Being Cut Off
+  - Description: Bianka Still Being Cut Off
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -2073,8 +2089,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -2337,8 +2355,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -2385,7 +2405,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Asking About Favorite Food Dialogue
+  - Description: Amrita Asking About Favorite Food Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -2722,8 +2742,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3105,8 +3127,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3153,7 +3177,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Start Crying Dialogue
+  - Description: Amrita Start Crying Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -3166,7 +3190,7 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "*crying* I just don\u2019t want you to call me that.  I
-        love you and it hurts so much when you call me that!"
+        care about you and it hurts so much when you call me that!"
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -3290,8 +3314,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3497,8 +3523,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3545,7 +3573,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Still Crying Dialogue
+  - Description: Amrita Still Crying Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -3694,8 +3722,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3901,8 +3931,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -3949,7 +3981,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Lekshmy Asking Maddie To Say Something
+  - Description: Amrita Asking Maddie To Say Something
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -4085,8 +4117,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -4357,8 +4391,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -4405,7 +4441,7 @@ MonoBehaviour:
       NewConversation: {fileID: 0}
     EndConversationObject:
       FinalDialogue: []
-  - Description: Maddie Thinking To Self Before Whack A Mole
+  - Description: Bianka Thinking To Self Before Whack A Mole
     DialogueObjectType: 0
     StandardDialogueObjects:
     - _dialogueData:
@@ -4563,8 +4599,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -4961,8 +4999,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -5227,8 +5267,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:
@@ -5517,8 +5559,10 @@ MonoBehaviour:
           NewConversation: {fileID: 0}
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
-      CoinsToSpawn: 50
-      ObstaclesToSpawn: 10
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
       GameDuration: 15
       GameCompletionResults:

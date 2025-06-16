@@ -18,9 +18,8 @@ namespace Maze
         private MazeNode _startNode;
         private MazeNode _endNode;
 
-        private int _keysNeeded = 0;
-
-        public int KeysNeeded {  get { return _keysNeeded; } }
+        private int _keysToCollect = 0;
+        public int KeysToCollect {  get { return _keysToCollect; } }
 
         private bool IsFakeGame { get { return !Mathf.Approximately(_fakeMazeTime, 0) && _fakeMazeTime > 0; } }
 
@@ -109,7 +108,7 @@ namespace Maze
 
         public void EnteredExitZone()
         {
-            if (IsStage(EGameStage.InGame) && _keysNeeded == 0)
+            if (IsStage(EGameStage.InGame) && _keysToCollect == 0)
             {
                 CompleteGame();
             }
@@ -127,7 +126,7 @@ namespace Maze
 
         public void CollectKey()
         {
-            _keysNeeded--;
+            _keysToCollect--;
             OnKeyCollected?.Invoke();
         }
 
@@ -175,7 +174,7 @@ namespace Maze
         protected override void SetGenerationGameData(MazeGeneratorData generationData)
         {
             base.SetGenerationGameData(generationData);
-            _keysNeeded = generationData.NeedsKeys ? generationData.KeysNeeded : 0;
+            _keysToCollect = generationData.NeedsKeys ? generationData.KeysNeeded : 0;
         }
     }
 }

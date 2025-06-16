@@ -158,7 +158,7 @@ namespace Maze
 
             if (IsEndNode)
             {
-                SetFloorColor(MazeSolverComponent.Instance.KeysNeeded > 0 ? Color.red : Color.green);
+                SetFloorColor(MazeSolverComponent.Instance.GameData.NeedsKeys ? Color.red : Color.green);
             }
             else if (IsStartNode)
             {
@@ -168,7 +168,7 @@ namespace Maze
 
         private void OnKeyCollected()
         {
-            if (IsEndNode && MazeSolverComponent.Instance.KeysNeeded == 0)
+            if (IsEndNode && MazeSolverComponent.Instance.KeysToCollect == 0)
             {
                 SetFloorColor(Color.green);
             }

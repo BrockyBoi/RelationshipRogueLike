@@ -33,6 +33,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Hey there, I got your text and I got here as quick as I
         could.  Is everything alright?  Are you ok?
@@ -44,6 +45,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Oh my gosh, yes, everything is fine.  Why would you assume
         everything isn\u2019t ok?"
@@ -55,6 +57,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "You texted me \u201CI need to talk to you right now.  It\u2019s
         urgent.  Please come quick.\u201D"
@@ -66,6 +69,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: ' I mean, yeah I guess that is a weird thing to get out
         of the blue.'
@@ -77,6 +81,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Yeah!
     - _dialogueData:
@@ -87,6 +92,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: I thought you just got diagnosed with a terminal illness
         or you were being mauled by an animal and needed help or something.
@@ -98,6 +104,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: You thought I was being mauled by an animal while texting
         you without any spelling errors?
@@ -109,6 +116,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I don\u2019t know, I panicked! "
     - _dialogueData:
@@ -119,6 +127,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I\u2019m sorry, I shouldn\u2019t have texted you like that. 
         I just feel like I had something to say, and I\u2019ve been putting it off
@@ -132,6 +141,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Um, alright.  Talk to me then.
     SentimentDialogueObject:
@@ -139,6 +149,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -165,7 +176,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -173,6 +183,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -194,6 +205,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -205,6 +217,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -215,6 +228,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -241,6 +255,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -252,6 +267,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -262,12 +278,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -280,6 +298,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -291,6 +310,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -301,15 +321,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -325,7 +346,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -333,6 +353,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -352,11 +373,73 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 0
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
       GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: First Butterfly Game
     DialogueObjectType: 7
     StandardDialogueObjects: []
@@ -365,6 +448,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -391,7 +475,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -399,6 +482,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -420,6 +504,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -431,6 +516,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -441,6 +527,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -467,6 +554,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -478,6 +566,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -488,12 +577,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -506,6 +597,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -517,6 +609,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -527,15 +620,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -551,7 +645,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -559,6 +652,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 20
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Start Talking About the Beginning of
           Your Relationship
@@ -575,6 +669,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I know we haven\u2019t been going out for the longest
               time, but I want you to know that the last few months have really meant
@@ -587,6 +682,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I know we\u2019ve already had a few very real disagreements
               and have had a few rough moments, but I just wanted to say that I really
@@ -599,6 +695,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m so glad you said that!"
           - _dialogueData:
@@ -609,6 +706,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I know it\u2019s not always the easiest to be with
               me, but I feel the same way."
@@ -627,6 +725,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "So, the thing is, that, when, when, when I was growing
               up, you were ... growing up, and then I!  I!  You!  Do you know what
@@ -639,6 +738,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "In the nicest way I can say this, I literally have
               no fucking idea what you\u2019re talking about."
@@ -657,6 +757,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Whew* is it warm in here?  It\u2019s just,  I didn\u2019t
               think you\u2019d actually show up tonight and hrrrk"
@@ -668,6 +769,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Oh my god, are you ok?
           - _dialogueData:
@@ -678,6 +780,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m good, I\u2019m good."
           - _dialogueData:
@@ -688,6 +791,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: There is a non zero chance that I will throw up all
               over you right now, so maybe give me some distance.
@@ -699,6 +803,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Takes a few steps back* Ehhhh, ok.'
           NewConversation: {fileID: 0}
@@ -706,11 +811,73 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 50
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 0.75
-      GameDuration: 20
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Quick Question Before Next Minigame
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -722,6 +889,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Bianka, what are you trying to say here?
     SentimentDialogueObject:
@@ -729,6 +897,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -755,7 +924,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -763,6 +931,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -784,6 +953,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -795,6 +965,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -805,6 +976,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -831,6 +1003,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -842,6 +1015,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -852,12 +1026,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -870,6 +1046,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -881,6 +1058,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -891,15 +1069,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -915,7 +1094,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -923,6 +1101,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -942,11 +1121,73 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
       GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Second Butterfly Game
     DialogueObjectType: 7
     StandardDialogueObjects: []
@@ -955,6 +1196,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -981,7 +1223,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -989,6 +1230,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1010,6 +1252,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1021,6 +1264,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1031,6 +1275,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1057,6 +1302,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1068,6 +1314,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1078,12 +1325,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1096,6 +1345,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -1107,6 +1357,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -1117,15 +1368,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1141,7 +1393,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -1149,6 +1400,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 30
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Tell Her How Lucky You Are
         HealthResult:
@@ -1164,6 +1416,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m just saying, I\u2019ve met a lot of people
               since I\u2019ve moved out here, and I feel so lucky that I got to meet
@@ -1176,6 +1429,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "It\u2019s so rare to meet someone who you can talk
               to so easily and want to spend all your time with!"
@@ -1187,6 +1441,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Aw, I feel the same!  I know I\u2019ve been lucky
               meeting you too."
@@ -1205,6 +1460,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m just saying that there\u2019s a lot of weird
               people out there, but you and I met each other instead.  I mean, I
@@ -1218,6 +1474,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "As long as you\u2019re with me, you\u2019re a lucky
               gal."
@@ -1229,6 +1486,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Yeah, I\u2019m glad I met you too!"
           - _dialogueData:
@@ -1239,6 +1497,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: You should be.  Lots of creeps out there.
           - _dialogueData:
@@ -1249,6 +1508,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: I know, I said I was.
           NewConversation: {fileID: 0}
@@ -1267,6 +1527,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m just saying that I was looking for someone
               just like you, but thankfully your shitty ex did their thing and made
@@ -1279,6 +1540,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Do you really have to bring up my ex right now?  That
               relationship was really unhealthy.
@@ -1290,6 +1552,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Exactly!  And Now you can see what a good thing is
               like after dealing with them!  I\u2019m such a big step up!"
@@ -1301,6 +1564,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Do you think that I wouldn\u2019t know what a good
               thing is unless something terrible happened to me first?  You\u2019re
@@ -1313,6 +1577,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: ... No?
           - _dialogueData:
@@ -1323,6 +1588,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: No?
           - _dialogueData:
@@ -1333,6 +1599,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "No.  No.  No that was bad.  I\u2019m glad it\u2019s
               over. "
@@ -1344,6 +1611,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I thought I was lucky enough for it to be over, but
               you bringing it up and talking about it for no reason makes it feel
@@ -1353,11 +1621,73 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 75
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
-      GameDuration: 30
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Needs To Come Out And Say It
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -1369,6 +1699,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Is there something you want to actually tell me?
     - _dialogueData:
@@ -1379,6 +1710,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Can\u2019t you just help me out here?  I feel like you
         know what I\u2019m getting at."
@@ -1390,6 +1722,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I can clearly see that you\u2019re nervous, and I know
         talking about relationships and what our future may or may not look like
@@ -1402,6 +1735,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: 'That being said, you''re the one who invited me over here. 
         I want to hear what you have to say directly. '
@@ -1413,6 +1747,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Ughhh, I know I know, but this is tough!  I haven\u2019t
         really had much luck in the past, and I wish I didn\u2019t get so nervous
@@ -1425,6 +1760,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It\u2019s so much easier when you don\u2019t have to feel
         all these things and you can just be alone and not have to spend all day
@@ -1437,6 +1773,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: 'Before I met you I could just sleep in, play some games,
         eat on the couch and just go back to bed.  Now?  Now I have to clean up after
@@ -1449,6 +1786,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Money isn\u2019t just this thing I need to order takeout,
         it\u2019s to lay a foundation for the future.  It\u2019s something I can
@@ -1461,6 +1799,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Everything is so much nicer with you, and it scares the
         absolute shit out of me.  I\u2019m terrified that I\u2019m going to say or
@@ -1474,6 +1813,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I\u2019ve noticed."
     - _dialogueData:
@@ -1484,6 +1824,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: And I know that it annoys you or pisses you off, and worst
         of all, I know it too!  I hate that I hurt you or ruin your day with my bullshit,
@@ -1496,6 +1837,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Bianka-
     - _dialogueData:
@@ -1506,6 +1848,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: No, please, just let me finish.
     - _dialogueData:
@@ -1516,6 +1859,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Let me say what I need to say.
     SentimentDialogueObject:
@@ -1523,6 +1867,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1549,7 +1894,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -1557,6 +1901,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1578,6 +1923,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1589,6 +1935,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1599,6 +1946,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1625,6 +1973,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1636,6 +1985,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1646,12 +1996,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1664,6 +2016,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -1675,6 +2028,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -1685,15 +2039,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1709,7 +2064,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -1717,6 +2071,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1736,11 +2091,73 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
       GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Final Mini Game
     DialogueObjectType: 7
     StandardDialogueObjects: []
@@ -1749,6 +2166,7 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1775,7 +2193,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
-      TimeToSolveMaze: 10
       NeedsKeys: 0
       NeedsNumberedKeys: 0
       KeysNeeded: 0
@@ -1783,6 +2200,7 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1804,6 +2222,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1815,6 +2234,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1825,6 +2245,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1851,6 +2272,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1862,6 +2284,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1872,12 +2295,14 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -1890,6 +2315,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -1901,6 +2327,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -1911,15 +2338,16 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 0
       _allowedMemoryTypes: 8190
-      GridSize: {x: 0, y: 0}
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
+      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1935,7 +2363,6 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
-      TimeToPlay: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -1943,6 +2370,7 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
+      GameDuration: 45
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Tell Her How You Feel
         HealthResult:
@@ -1958,6 +2386,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I didn\u2019t want to call you over here today just
               to say that I care about you, because I don\u2019t just care about
@@ -1970,6 +2399,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: I love you.
           - _dialogueData:
@@ -1980,6 +2410,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I love you, alright?  At times I wish I didn\u2019t
               because of how much it scares me, but I love you so fucking much, and
@@ -1992,6 +2423,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "If this is too much for you, or it\u2019s way too
               soon, I get it.  I\u2019m not asking you to say anything back-"
@@ -2003,6 +2435,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: I love you too.
           - _dialogueData:
@@ -2013,6 +2446,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Oh!
           - _dialogueData:
@@ -2023,6 +2457,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Ok!  Good!  Um, yes!
           - _dialogueData:
@@ -2033,6 +2468,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: So, this went well, and -
           - _dialogueData:
@@ -2043,6 +2479,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Bianka?
           - _dialogueData:
@@ -2053,6 +2490,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 'Yes?  '
           - _dialogueData:
@@ -2063,6 +2501,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Please shut up.
           - _dialogueData:
@@ -2073,6 +2512,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Ok.
           - _dialogueData:
@@ -2083,6 +2523,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*kissy kissy*'
           NewConversation: {fileID: 0}
@@ -2100,6 +2541,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "It\u2019s just, *deep sigh*, it\u2019s just that
               I wanted you to know that I care about you a lot.  You\u2019re a really
@@ -2112,6 +2554,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "And... and I guess that\u2019s it.  That\u2019s what
               I wanted to say.  "
@@ -2123,6 +2566,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "This relationship is a little scary, and I know I\u2019ve
               fucked some things up, so I guess I just wanted to say sorry if I overreacted
@@ -2135,6 +2579,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: You... you texted me to come to your apartment immediately
               in the middle of the night, just to say that dating is a bit scary?
@@ -2146,6 +2591,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I mean, yeah.  Don\u2019t you feel the same?"
           - _dialogueData:
@@ -2156,6 +2602,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Of course.  I know relationships are tough, but I
               also knew that before our talk today.  I think we both knew that before
@@ -2168,6 +2615,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Yeah.  Sorry if I scared you or anything.  Just wanted
               a quick chat I guess.
@@ -2179,6 +2627,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Bianka?
           - _dialogueData:
@@ -2189,6 +2638,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Yes?
           - _dialogueData:
@@ -2199,6 +2649,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Are you sure this is all you want to tell me? This
               is how you want the night to end?
@@ -2210,6 +2661,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Sigh* Yeah.  Sorry I made you come all the way out
               here.'
@@ -2221,6 +2673,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Yeah, I\u2019m sorry too."
           - _dialogueData:
@@ -2231,6 +2684,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: We still on for this weekend?
           - _dialogueData:
@@ -2241,6 +2695,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Yeah. I\u2019ll see you later."
           - _dialogueData:
@@ -2251,6 +2706,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Alright.  Good night!
           - _dialogueData:
@@ -2261,6 +2717,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Good night.
           - _dialogueData:
@@ -2271,6 +2728,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Amrita leaves*'
           - _dialogueData:
@@ -2281,6 +2739,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Fuck.  Fuck fuck fuck!
           NewConversation: {fileID: 0}
@@ -2298,6 +2757,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I don\u2019t think I\u2019m able to handle this. 
               This... this is just way too much for me."
@@ -2309,6 +2769,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: What... what are you saying?
           - _dialogueData:
@@ -2319,6 +2780,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "It\u2019s nothing you did, but I don\u2019t think
               I\u2019m able to handle this much emotion.  I\u2019ve spent so many
@@ -2332,6 +2794,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I love how you make me feel, but my happiness is
               overshadowed by this impending sense of doom that everything I feel
@@ -2344,6 +2807,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "So you\u2019ve decided to just take it away from
               both of us right now?"
@@ -2355,6 +2819,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "At least that way I feel like I can be in control. 
               I know it\u2019s dumb, but I think you deserve someone better than
@@ -2367,6 +2832,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Don\u2019t tell me what I deserve.  I\u2019m capable
               enough to make these decisions for myself.  If I didn\u2019t want to
@@ -2380,6 +2846,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m scared too.  None of this is easy.  But
               ending a relationship because of how happy you are?  I\u2019m sorry,
@@ -2392,6 +2859,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I just can\u2019t live my life in this constant fear
               that at any moment you\u2019re going to realize what a fuck up I am
@@ -2404,6 +2872,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: And that all my happiness will just make me feel embarrassed
               for ever thinking this would ever work between us.
@@ -2415,6 +2884,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "So instead of fear and joy you\u2019re deciding to
               feel nothing."
@@ -2426,6 +2896,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "It\u2019s easier this way."
           - _dialogueData:
@@ -2436,6 +2907,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "You\u2019d rather have an easy life than putting
               in the effort and living a happy one with me? Maybe you are right. 
@@ -2448,6 +2920,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m so sorry if I wasted your time."
           - _dialogueData:
@@ -2458,6 +2931,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Me too.  I hope you find what you\u2019re looking
               for."
@@ -2469,6 +2943,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Amrita leaves*'
           - _dialogueData:
@@ -2479,6 +2954,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Deep sigh*  She\u2019ll be ok.  It\u2019s for the
               best."
@@ -2487,8 +2963,369 @@ MonoBehaviour:
       ButterfliesNeededToCatch: 100
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1.25
-      GameDuration: 45
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
+  - Description: End Conversation
+    DialogueObjectType: 4
+    StandardDialogueObjects: []
+    SentimentDialogueObject:
+      SentimentDialogue:
+        keyData: 
+        valueData: []
+    MazeSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        DifficultyModifierResult:
+          MazeSizeModifier: 0
+          MazeShakeModifier: 0
+          MazeRotateModifier: 0
+      GridSize: {x: 4, y: 4}
+      ShakeIntensity: 0
+      RotationSpeed: 0
+      NeedsKeys: 0
+      NeedsNumberedKeys: 0
+      KeysNeeded: 0
+      IsMazeFake: 0
+      FakeMazeTime: 2
+      ForceDifficultySettings: 0
+    MemoryGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              IsThinking: 0
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+        HasResponseBasedOnSpecificMemoryType: 0
+        GameRelatedDialogue:
+          _hasOpeningDialogue: 0
+          _hasClosingDialogue: 0
+          _defaultOpeningDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _defaultClosingDialogueObject:
+            _dialogueData:
+              CharacterData: {fileID: 0}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: 
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              IsThinking: 0
+              UseCurrentPlayerHealthForSentimentSprite: 0
+        DifficultyModifierResult:
+          GridSizeModifier: 0
+          NumberOfCardsToSwap: 0
+          BombsInGame: 0
+          NumberOfGuesses: 0
+      GridSize: {x: 4, y: 4}
+      MemoryGameRelatedDialogue:
+        _hasOpeningDialogue: 0
+        _hasClosingDialogue: 0
+        _defaultOpeningDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              IsThinking: 0
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _defaultClosingDialogueObject:
+          _dialogueData:
+            CharacterData: {fileID: 0}
+            CharacterSentiment: 1
+            CustomDialogueOptions:
+              UsesCustomName: 0
+              CustomName: 
+              UsesCustomSprite: 0
+              CustomSprite: {fileID: 0}
+              IsThinking: 0
+              UseCurrentPlayerHealthForSentimentSprite: 0
+          _standardDialogue: 
+        _dialogueData:
+          CharacterData: {fileID: 0}
+          CharacterSentiment: 1
+          CustomDialogueOptions:
+            UsesCustomName: 0
+            CustomName: 
+            UsesCustomSprite: 0
+            CustomSprite: {fileID: 0}
+            IsThinking: 0
+            UseCurrentPlayerHealthForSentimentSprite: 0
+      _searchForSingleMemoryType: 0
+      _forceMemoryTypeToSearchFor: 0
+      _forcedMemoryTypeToSearchFor: 0
+      _showLimitedMemoryTypesAvailable: 0
+      _allowedMemoryTypes: 8190
+      NumberOfGuesses: 5
+    WhackAMoleGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      TimeObjectsStayInPlay: 0.75
+      TimeBetweenSpawns: 0.75
+      HasDistractionObjects: 0
+      StartingHealth: 10
+      HealthLostPerEnemy: 1
+      HealthLostPerDistraction: 2
+    CatchingButterflyGameSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ButterfliesToSpawn: 10
+      ButterfliesNeededToCatch: 10
+      PercentageOfSpecialButterflies: 0
+      ButterflySpeedMultiplier: 1
+    EndlessRunnerSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      ObjectMoveSpeed: 5
+      CoinsToCollect: 50
+      CoinPatternsToSpawn: 10
+      ShouldSpawnExtraObjects: 0
+      ExtraObjectToSpawn: {fileID: 0}
+      TimeToSpawnExtraObject: 5
+    ShootYourShotSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      IsStandardCountdown: 0
+      TimeBetween3And2: 1
+      TimeBetween2And1: 1
+      TimeBetween1And0: 1
+      TimeAllowedToShootTarget: 1
+    FireFightingSpawnerData:
+      GameDuration: 15
+      GameCompletionResults:
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      - PotentialPlayerDialogueDescription: Default Description
+        HealthResult:
+          HealthAmountToChange: 0
+        BranchingDialogue:
+          OnlyUsesDialogue: 1
+          DialogueObjects: []
+          NewConversation: {fileID: 0}
+      GridSize: {x: 4, y: 4}
+      FireIncreasePerSecond: 1
+      MaxStartingFireLevel: 1
+    LinkedConverssationObject:
+      NewConversation: {fileID: 0}

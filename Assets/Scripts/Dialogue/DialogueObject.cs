@@ -199,7 +199,7 @@ namespace Dialogue
     [Serializable]
     public class EndConversationObject
     {
-        public List<StandardDialogueObject> FinalDialogue;
+
     }
 
     [Serializable]
@@ -276,15 +276,15 @@ namespace Dialogue
     [Serializable]
     public class CustomDialogueOptions
     {
-        [HorizontalGroup("Row1")]
         public bool UsesCustomName;
-        [ShowIf("UsesCustomName"), HorizontalGroup("Row1")]
+        [ShowIf("UsesCustomName")]
         public string CustomName;
 
-        [HideIf("UseCurrentPlayerHealthForSentimentSprite"), HorizontalGroup("Row2")]
+        [HideIf("UseCurrentPlayerHealthForSentimentSprite")]
         public bool UsesCustomSprite;
-        [ShowIf("UsesCustomSprite"), HorizontalGroup("Row2")]
+        [ShowIf("UsesCustomSprite")]
         public Sprite CustomSprite;
+        public bool IsThinking;
 
         public bool UseCurrentPlayerHealthForSentimentSprite;
     }
