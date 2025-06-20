@@ -674,7 +674,7 @@ MonoBehaviour:
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It\u2019s so nice to meet you, Bianka.  I haven\u2019t
-        gotten out in a while and really met anyone new, let alone gone on a date.  "
+        gotten out in a while or really met anyone new, let alone gone on a date.  "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 1
@@ -2712,7 +2712,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
-      GridSize: {x: 5, y: 4}
+      GridSize: {x: 3, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0

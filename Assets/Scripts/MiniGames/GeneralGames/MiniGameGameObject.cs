@@ -22,7 +22,7 @@ public abstract class MiniGameGameObject<GameSolverComponent, GameGeneratorCompo
         BaseGameGenerator generator;
         BaseGameSolverComponent solver;
         MiniGameControllersManager.Instance.GetBothControllers(out solver, out generator, _gameType);
-        if (ensure(solver != null && generator != null))
+        if (ensure(solver != null && generator != null, "Either solver or generator class is null"))
         {
             if (ensure(solver is GameSolverComponent, "Cannot get " + typeof(GameSolverComponent) + " from " + gameObject.name + " with game type " + _gameType))
             {

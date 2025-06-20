@@ -40,7 +40,10 @@ namespace MemoryGame.Generation
 
         private void OnDestroy()
         {
-            MemoryGameSolverComponent.Instance.OnGuessMade -= OnGuessMade;
+            if (MemoryGameSolverComponent.Instance != null)
+            {
+                MemoryGameSolverComponent.Instance.OnGuessMade -= OnGuessMade;
+            }
         }
 
         protected override void CreateGrid(Vector2Int gridSize)

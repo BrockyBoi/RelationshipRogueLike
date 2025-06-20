@@ -26,6 +26,7 @@ public class LevelDataManager : MonoBehaviour
     private LevelConversationDataDictionary _levelDatas;
 
     private HashSet<ELevel> _levelsCompleted;
+    public HashSet<ELevel> LevelsCompleted { get { return _levelsCompleted; } }
 
     private ELevel _currentLevel;
 
@@ -45,10 +46,14 @@ public class LevelDataManager : MonoBehaviour
         }
     }
 
-    public LevelConversationData GetAndSetLevelData(ELevel level)
+    public LevelConversationData GetLevelConversationData()
+    {
+        return ensure(_levelDatas.ContainsKey(_currentLevel), "Does not have data for " + _currentLevel + " level") ? _levelDatas[_currentLevel] : null;
+    }
+
+    public void SetLevelToPlayOnLoad(ELevel level)
     {
         _currentLevel = level;
-        return ensure(_levelDatas.ContainsKey(level), "Does not have data for " + level + " level") ? _levelDatas[level] : null;
     }
 
     public void CompleteCurrentLevel()

@@ -54,7 +54,6 @@ namespace Dialogue
         {
             if (Instance == null)
             {
-                DontDestroyOnLoad(this);
                 Instance = this;
             }
             else
@@ -118,6 +117,7 @@ namespace Dialogue
         [Button]
         public void StartConversation()
         {
+            SetConversationsForLevel();
             if (ensure(_conversationData != null, "No conversation data present"))
             {
                 _dialogueObjectsThisConversation = new List<StandardDialogueObject>();
@@ -142,15 +142,19 @@ namespace Dialogue
             _playerHasDied = true;
         }
 
-        public void SetConversationsForLevel(ELevel levelToPlay)
+        private void SetConversationsForLevel()
         {
-            if (ensure(LevelDataManager.Instance != null, "Level Data Manager is null"))
+            if (LevelDataManager.Instance != null)
             {
-                LevelConversationData levelConversationData = LevelDataManager.Instance.GetAndSetLevelData(levelToPlay);
+                LevelConversationData levelConversationData = LevelDataManager.Instance.GetLevelConversationData();
                 if (ensure(levelConversationData != null && levelConversationData.ConversationToRun != null && levelConversationData.ConversationOnPlayerDeath != null, "Level Conversation Data has invalid elements"))
                 {
                     _conversationData = levelConversationData;
                 }
+            }
+            else
+            {
+                Debug.LogWarning("Level data manager is null");
             }
         }
 
@@ -257,7 +261,6 @@ namespace Dialogue
                     case EDialogueObjectType.EndConversation:
                         {
                             LevelDataManager.Instance.CompleteCurrentLevel();
-                            StopCoroutine(_conversationCoroutine);
                             GameSceneManager.Instance.LoadMapLevel();
                             yield break;
                         }

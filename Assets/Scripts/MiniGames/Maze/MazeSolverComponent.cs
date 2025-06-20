@@ -39,7 +39,10 @@ namespace Maze
         protected override void OnEnable()
         {
             base.OnEnable();
-            MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
+            if (MazeGenerator.Instance != null)
+            {
+                MazeGenerator.Instance.ListenToOnMazePathGenerated(OnMazePathGenerated);
+            }
             OnMainTimerEnd += FailGame;
         }
 

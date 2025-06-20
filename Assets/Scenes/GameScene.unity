@@ -3215,9 +3215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conversationData:
-    ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
+    ConversationToRun: {fileID: 11400000, guid: 260b19abb0252dc4ebacad2047575fdf, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
     BackgroundImage: {fileID: 21300000, guid: 5534b33f8e17f64489f58dc20e674aab, type: 3}
+  _defaultEndSceneConversation: {fileID: 0}
   _runDialogueOnStart: 0
 --- !u!4 &888546738
 Transform:
@@ -3712,15 +3713,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.70980394}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4ccefe793b777274c8e5bb560b7e298e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6370,12 +6371,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 70
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 50
-  m_fontSizeMax: 60
+  m_fontSizeMin: 40
+  m_fontSizeMax: 70
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -6661,9 +6662,9 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 50
-  m_fontSizeMax: 60
-  m_fontStyle: 0
+  m_fontSizeMin: 40
+  m_fontSizeMax: 70
+  m_fontStyle: 2
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535

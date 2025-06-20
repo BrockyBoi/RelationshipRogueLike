@@ -8,6 +8,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+using static GlobalFunctions;
+
 namespace Dialogue.UI
 {
     [RequireComponent(typeof(VerticalAlignmentOptions))]
@@ -77,9 +79,8 @@ namespace Dialogue.UI
         {
             //_verticalLayoutGroup.enabled = false;
 
-            if (!_dialogueObjects.IsValidIndex(indexResult))
+            if (!ensure(_dialogueObjects.IsValidIndex(indexResult), indexResult + " is not a valid index with a count of " + _dialogueObjects.Count + " dialogue objects"))
             {
-                Debug.LogError(indexResult + " is not a valid index");
                 return;
             }
 

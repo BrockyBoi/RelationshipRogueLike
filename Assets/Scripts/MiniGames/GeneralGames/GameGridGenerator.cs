@@ -29,7 +29,10 @@ namespace GeneralGame.Generation
 
         protected virtual void OnDisable()
         {
-            GameSolverComponent.OnGameStop -= OnGameEnd;
+            if (GameSolverComponent != null)
+            {
+                GameSolverComponent.OnGameStop -= OnGameEnd;
+            }
         }
 
         protected virtual void CreateGrid(Vector2Int gridSize)

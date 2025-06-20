@@ -22,8 +22,11 @@ namespace MainPlayer.UI
 
         private void OnDestroy()
         {
-            Player.Instance.HealthComponent.OnHealthChange -= OnHealthChange;
-            Player.Instance.HealthComponent.OnMaxHealthChange -= OnMaxHealthCHange;
+            if (Player.Instance != null && Player.Instance.HealthComponent != null)
+            {
+                Player.Instance.HealthComponent.OnHealthChange -= OnHealthChange;
+                Player.Instance.HealthComponent.OnMaxHealthChange -= OnMaxHealthCHange;
+            }
         }
 
         private void OnHealthChange(int oldHealth, int newHealth)

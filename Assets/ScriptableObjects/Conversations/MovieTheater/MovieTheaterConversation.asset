@@ -33,6 +33,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*In movie theater sitting in her seat*'
     - _dialogueData:
@@ -43,11 +44,12 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "*Thinking*  Hopefully she gets here soon.  Nice of her
-        to text that she\u2019s running a bit late and to go on without her to get
-        the seats.  My ex would have just shown up 20 minutes late while my dumb
-        ass waited for them out in the lobby."
+      _standardDialogue: "Hopefully she gets here soon.  Nice of her to text that
+        she\u2019s running a bit late and to go on without her to get the seats. 
+        My ex would have just shown up 20 minutes late while my dumb ass waited for
+        them out in the lobby."
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 7
@@ -56,6 +58,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "*Sitting down*  Oh my gosh, I\u2019m so sorry for being
         late!  Every time I set foot out the door, I had to run back inside and grab
@@ -68,6 +71,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It\u2019s no problem at all!  I\u2019m not sure I\u2019ve
         actually remembered to grab my cell phone while leaving my apartment a single
@@ -80,6 +84,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Oh I know, but for me it\u2019s snacks.  If I\u2019m going
         to the movies I have to bring something with me."
@@ -91,6 +96,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Have you seen the prices for all the food here?  Do white
         people have so little water you have to charge $10 for a bottle?
@@ -102,6 +108,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Picks up her $10 while giving a glance*'
     - _dialogueData:
@@ -112,6 +119,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Oh!  I didn\u2019t mean you!  You\u2019re fine!  I didn\u2019t
         mean all white people and -"
@@ -123,6 +131,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Amrita?
     - _dialogueData:
@@ -133,6 +142,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: ... Yes?
     - _dialogueData:
@@ -143,6 +153,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It\u2019s fine."
     - _dialogueData:
@@ -153,6 +164,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Ok, I\u2019ll shut up.  "
     - _dialogueData:
@@ -163,6 +175,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Ummm.... do you want some snacks?  I brought lots of little
         Indian snacks that I always go to the theatre with.
@@ -174,6 +187,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Anything I\u2019d like?"
     - _dialogueData:
@@ -184,6 +198,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "How about some masala peanuts?  Just some peanuts mixed
         with lots of tasty spices, and only has a tiny bit of heat.  You don\u2019t
@@ -196,6 +211,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "No, that actually does sound pretty good.  And don\u2019t
         worry, I can take a little spice."
@@ -207,6 +223,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Bianka takes a big bite*'
     - _dialogueData:
@@ -217,6 +234,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Mumbling to herself* Well, only has a little spice for
         me any ways.'
@@ -228,6 +246,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Mouth on fire*'
     - _dialogueData:
@@ -238,8 +257,9 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: '*Thinking* FUCK'
+      _standardDialogue: FUCK
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
         CharacterSentiment: 7
@@ -248,8 +268,9 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: '*Thinking* ME'
+      _standardDialogue: ME
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -311,6 +332,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -322,6 +344,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -332,6 +355,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -358,6 +382,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -369,6 +394,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -379,6 +405,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -398,6 +425,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -409,6 +437,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -419,6 +448,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -537,8 +567,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Fire Mini Game
     DialogueObjectType: 10
     StandardDialogueObjects: []
@@ -603,6 +631,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -614,6 +643,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -624,6 +654,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -650,6 +681,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -661,6 +693,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -671,6 +704,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -690,6 +724,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -701,6 +736,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -711,6 +747,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -824,6 +861,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Thinking*  Ok, this isn\u2019t something you\u2019re
               used to, but it did taste good, and you can get through this. "
@@ -835,6 +873,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Thinking* A little spice never hurt anyone.  You\u2019re
               stronger than a few fucking peanuts."
@@ -846,6 +885,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Smiles at you*'
           - _dialogueData:
@@ -856,6 +896,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Smiles back*'
           NewConversation: {fileID: 0}
@@ -873,9 +914,10 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "*Thinking* Well, this isn\u2019t amazing.  Just keep
-              breathing, think about how cute she is, and try to not take this personally."
+            _standardDialogue: "Well, this isn\u2019t amazing.  Just keep breathing,
+              think about how cute she is, and try to not take this personally."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
               CharacterSentiment: 1
@@ -884,6 +926,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "If she enjoys the peanuts then great, who cares if
               I\u2019m in pain?"
@@ -895,8 +938,9 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Thinking* Wait, did she do this on purpose?'
+            _standardDialogue: Wait, did she do this on purpose?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 0
@@ -905,6 +949,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Smiles at you*'
           - _dialogueData:
@@ -915,6 +960,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Polite smile back*'
           NewConversation: {fileID: 0}
@@ -932,9 +978,10 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Thinking* Holy shit am I dying?  Did she fucking
-              poison me?  Indian people just eat this for fun?  Like, voluntarily?'
+            _standardDialogue: Holy shit am I dying?  Did she fucking poison me? 
+              Indian people just eat this for fun?  Like, voluntarily?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 0
@@ -943,6 +990,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Smiles at you*'
           - _dialogueData:
@@ -953,6 +1001,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Whispers* Do you hate me?'
           - _dialogueData:
@@ -963,6 +1012,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: What?
           - _dialogueData:
@@ -973,6 +1023,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Hmm?
           NewConversation: {fileID: 0}
@@ -981,8 +1032,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Offer More Peanuts
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -994,6 +1043,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Whispers* Do you want any more?'
     SentimentDialogueObject:
@@ -1057,6 +1107,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1068,6 +1119,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1078,6 +1130,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1104,6 +1157,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1115,6 +1169,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1125,6 +1180,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1144,6 +1200,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -1155,6 +1212,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -1165,6 +1223,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -1283,8 +1342,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Respond To More Peanuts Maze Game
     DialogueObjectType: 2
     StandardDialogueObjects: []
@@ -1309,6 +1366,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "That\u2019s very kind, but I\u2019m not hungry anymore. 
               The treats were tasty though!"
@@ -1320,6 +1378,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: No problem at all!  Let me know if you want anymore!
           NewConversation: {fileID: 0}
@@ -1341,6 +1400,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Actually, I think that those were too much for me. 
               I\u2019m glad you like them, but for me it\u2019s too spicy."
@@ -1352,6 +1412,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Oh no!  I\u2019m really sorry about that.  Can I
               get you anything?  Do you want to go?"
@@ -1363,6 +1424,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Don\u2019t worry, I have my $10 water here to save
               the day!  It\u2019s really not a big deal."
@@ -1374,6 +1436,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Ok. But tell me if you need anything ok?  I\u2019m
               so sorry."
@@ -1396,6 +1459,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Yeah, I\u2019m going to pass on that.  You guys eat
               that for fun?  Jesus dude that\u2019s so fucking spicy.  Nobody can
@@ -1408,6 +1472,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m so sorry, I knew it was a tiny bit spicy,
               but I thought it would be ok.  I didn\u2019t mean to hurt you or anything."
@@ -1419,6 +1484,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "It\u2019s fine, but maybe just assume next time that
               I\u2019m not going to like the food you bring around."
@@ -1430,6 +1496,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Ok. Sorry.
           NewConversation: {fileID: 0}
@@ -1451,9 +1518,9 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Thinking* Just tell her the truth!  She can handle
-              it!'
+            _standardDialogue: Just tell her the truth!  She can handle it!
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
               CharacterSentiment: 0
@@ -1462,6 +1529,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Sure let me take more!  *Takes another big bite*
           - _dialogueData:
@@ -1472,8 +1540,9 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Thinking* WHAT THE FUCK DID YOU DO THAT FOR?'
+            _standardDialogue: WHAT THE FUCK DID YOU DO THAT FOR?
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 0
@@ -1482,6 +1551,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "I\u2019m so glad you love my food!  Makes me so happy!"
           - _dialogueData:
@@ -1492,6 +1562,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*With mouth full* MMMMHMMMMM!'
           - _dialogueData:
@@ -1502,6 +1573,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Are... are you ok?
           - _dialogueData:
@@ -1512,6 +1584,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: These are so god damn fucking spicy.
           - _dialogueData:
@@ -1522,6 +1595,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Then why did you ask for more?
           - _dialogueData:
@@ -1532,6 +1606,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Because chivalry?
           - _dialogueData:
@@ -1542,6 +1617,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: What?
           - _dialogueData:
@@ -1552,6 +1628,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: I don't know!
           NewConversation: {fileID: 0}
@@ -1591,6 +1668,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1602,6 +1680,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1612,6 +1691,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1638,6 +1718,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1649,6 +1730,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1659,6 +1741,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1678,6 +1761,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -1689,6 +1773,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -1699,6 +1784,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -1817,8 +1903,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Thinking To Self and Watching Movie
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -1830,6 +1914,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Ok, this is fine.  You are fine.  The movie is almost over,
         all you have to do is make it a few more minutes, and you don\u2019t have
@@ -1842,6 +1927,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Oh I think the movie is starting!
     - _dialogueData:
@@ -1852,6 +1938,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I\u2019m going to die here today."
     - _dialogueData:
@@ -1862,6 +1949,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: '*Time goes by*'
     - _dialogueData:
@@ -1872,9 +1960,10 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "*Thinking* Ok, the pain means you\u2019re alive, that\u2019s
-        what matters most here."
+      _standardDialogue: "Ok, the pain means you\u2019re alive, that\u2019s what
+        matters most here."
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -1936,6 +2025,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1947,6 +2037,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -1957,6 +2048,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -1983,6 +2075,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -1994,6 +2087,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -2004,6 +2098,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -2023,6 +2118,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -2034,6 +2130,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -2044,6 +2141,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -2162,8 +2260,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Second Fire Game
     DialogueObjectType: 10
     StandardDialogueObjects: []
@@ -2228,6 +2324,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -2239,6 +2336,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -2249,6 +2347,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -2275,6 +2374,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -2286,6 +2386,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -2296,6 +2397,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -2315,6 +2417,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -2326,6 +2429,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -2336,6 +2440,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -2449,10 +2554,11 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "*Thinking* It\u2019s not pleasant, but I\u2019m getting
-              through it just fine.  All I have to do is remain calm and I\u2019ll
-              be out of this in no time."
+            _standardDialogue: "It\u2019s not pleasant, but I\u2019m getting through
+              it just fine.  All I have to do is remain calm and I\u2019ll be out
+              of this in no time."
           NewConversation: {fileID: 0}
       - PotentialPlayerDialogueDescription: Fidget In Your Seat
         HealthResult:
@@ -2462,33 +2568,36 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
-              CustomDialogueOptions:
-                UsesCustomName: 0
-                CustomName: 
-                UsesCustomSprite: 0
-                CustomSprite: {fileID: 0}
-                UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: "*Thinking* I don\u2019t like pain.  I don\u2019t
-              like pain. I don\u2019t like pain. "
-          - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 7
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Glancing over*  Are... are you ok?'
+            _standardDialogue: "I don\u2019t like pain.  I don\u2019t like pain.
+              I don\u2019t like pain. "
           - _dialogueData:
-              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 6
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: '*Glancing over*  Are... are you ok?'
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+              CharacterSentiment: 7
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Me?  Oh yeah.  No problem.  Doing good.  How are you?
           - _dialogueData:
@@ -2499,6 +2608,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Suspicious look* Alright.  I\u2019m doing ok."
           NewConversation: {fileID: 0}
@@ -2511,12 +2621,13 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 7
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Just need to breathe.  That\u2019ll cool me down. 
               Deeeeeep breath."
@@ -2528,6 +2639,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Loudly takes in a deep breath, and breathes out
               just as hard*'
@@ -2539,6 +2651,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Concerned* Are you alright? What\u2019s going on? 
               Do you need help or something?"
@@ -2550,6 +2663,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "Pffffffft, never better dude.  Just getting some
               breathing in.  You\u2019ve done yoga right? They breathe all the time
@@ -2562,6 +2676,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: We breathe while doing yoga?  Yeah how the fuck else
               would you do it?  Holding our breath?
@@ -2573,6 +2688,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Another deep breath* Nope, not me!'
           - _dialogueData:
@@ -2583,6 +2699,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Silently goes back to watching movie, profoundly
               confused*'
@@ -2601,10 +2718,11 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
-            _standardDialogue: '*Thinking* I cannot do another fucking minute of
-              this.  Just get up, go to the lobby, buy more water, and just be smooth
-              about it.  Be cool.  Be cool.'
+            _standardDialogue: I cannot do another fucking minute of this.  Just
+              get up, go to the lobby, buy more water, and just be smooth about it. 
+              Be cool.  Be cool.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
               CharacterSentiment: 1
@@ -2613,6 +2731,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "*Just a bit too loud* Hey I need to get some more
               water do you want anything no ok I\u2019ll be back in a bit bye."
@@ -2624,6 +2743,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Hurries out of theatre*'
           NewConversation: {fileID: 11400000, guid: 37a264b72876abc47a8682ed5bb47143, type: 2}
@@ -2632,8 +2752,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Time Passes
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -2645,6 +2763,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
+          IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: Time Passes
     SentimentDialogueObject:
@@ -2708,6 +2827,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -2719,6 +2839,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -2729,6 +2850,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -2755,6 +2877,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -2766,6 +2889,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -2776,6 +2900,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -2795,6 +2920,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -2806,6 +2932,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -2816,6 +2943,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -2934,8 +3062,6 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
-    EndConversationObject:
-      FinalDialogue: []
   - Description: Link To End Of Movie Conversation
     DialogueObjectType: 5
     StandardDialogueObjects: []
@@ -3000,6 +3126,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -3011,6 +3138,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -3021,6 +3149,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -3047,6 +3176,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _defaultClosingDialogueObject:
@@ -3058,6 +3188,7 @@ MonoBehaviour:
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
+                IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: 
           _dialogueData:
@@ -3068,6 +3199,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
         DifficultyModifierResult:
           GridSizeModifier: 0
@@ -3087,6 +3219,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _defaultClosingDialogueObject:
@@ -3098,6 +3231,7 @@ MonoBehaviour:
               CustomName: 
               UsesCustomSprite: 0
               CustomSprite: {fileID: 0}
+              IsThinking: 0
               UseCurrentPlayerHealthForSentimentSprite: 0
           _standardDialogue: 
         _dialogueData:
@@ -3108,6 +3242,7 @@ MonoBehaviour:
             CustomName: 
             UsesCustomSprite: 0
             CustomSprite: {fileID: 0}
+            IsThinking: 0
             UseCurrentPlayerHealthForSentimentSprite: 0
       _searchForSingleMemoryType: 0
       _forceMemoryTypeToSearchFor: 0
@@ -3226,5 +3361,3 @@ MonoBehaviour:
       MaxStartingFireLevel: 1
     LinkedConverssationObject:
       NewConversation: {fileID: 11400000, guid: 437b3e29dde6d70498a85c31d101ffd0, type: 2}
-    EndConversationObject:
-      FinalDialogue: []

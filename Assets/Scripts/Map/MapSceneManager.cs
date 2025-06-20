@@ -28,9 +28,9 @@ namespace Map
             DisableAlreadyUsedMapObjects();
         }
 
-        public void SelectMapObject(SelectableMapObject obj)
+        public void SelectMapObject(SelectableMapObject selectableMapObject)
         {
-            _alreadySelectedObjects.Add(obj.gameObject.name);
+            _alreadySelectedObjects.Add(selectableMapObject.gameObject.name);
         }
 
         public void DisableAlreadyUsedMapObjects()
@@ -38,9 +38,10 @@ namespace Map
             SelectableMapObject[] selectableObjectsInScene = FindObjectsOfType<SelectableMapObject>();
             foreach (SelectableMapObject mapObject in selectableObjectsInScene)
             {
-                if (_alreadySelectedObjects.Contains(mapObject.gameObject.name))
+                if (_alreadySelectedObjects.Contains(mapObject.gameObject.name) || !mapObject.IsButtonAvailable(LevelDataManager.Instance.LevelsCompleted))
                 {
-                    mapObject.gameObject.SetActive(false);
+                    mapObject.DisableObject();
+                    continue;
                 }
             }
         }

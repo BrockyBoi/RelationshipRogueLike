@@ -50,7 +50,10 @@ namespace MemoryGame
         {
             base.OnDisable();
 
-            MemoryGameGenerator.Instance.UnlistenToOnCardValuesSet(OnCardValuesSet);
+            if (MemoryGameGenerator.Instance != null)
+            {
+                MemoryGameGenerator.Instance.UnlistenToOnCardValuesSet(OnCardValuesSet);
+            }
             MemoryGameCard.OnCardClicked -= SelectCard;
         }
 
