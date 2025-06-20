@@ -24,7 +24,13 @@ namespace Map
         private MinorMapEvent _minorMapEvent;
 
         [SerializeField, ShowIf("@_mapObjectType", EMapObjectType.StartNewScene)]
-        private LevelConversationData _levelConversationData;
+        private ELevel _levelToPlay;
+
+        [SerializeField, Title("Level Requirements")]
+        private List<ELevel> _allLevelsNeededToBeCompleted;
+
+        [SerializeField]
+        private List<ELevel> _possibleLevelsToUnlockThis;
 
         [SerializeField, Required]
         private Button _button;
@@ -54,7 +60,7 @@ namespace Map
                     }
                 case EMapObjectType.StartNewScene:
                     {
-                        ConversationManager.Instance.SetConversationsForLevel(_levelConversationData);
+                        ConversationManager.Instance.SetConversationsForLevel(_levelToPlay);
                         GameSceneManager.Instance.LoadGameLevel();
                         break;
                     }

@@ -518,6 +518,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &436825177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436825179}
+  - component: {fileID: 436825178}
+  m_Layer: 0
+  m_Name: LevelDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436825178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436825177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0343d8746b3becd45a065506e263c063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelDatas:
+    keyData: 0000000001000000020000000400000003000000
+    valueData:
+    - ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 9bb7edb914ae47f418e30c5acf26b517, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 5534b33f8e17f64489f58dc20e674aab, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 502a9062ccb53fb4bb2591f4ae3d5fe7, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: af24fe5f7bf7361419be7478586f53c4, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 822244fe45949814c9ff4052bae157d4, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 057d06e9d43123d44bba42e404db71eb, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 08bd107e22e87f74697dedbfdfa62f3f, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: b556fdcd51024e94b8320e29834f0652, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+--- !u!4 &436825179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436825177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &674386976
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,10 +862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: 057d06e9d43123d44bba42e404db71eb, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: 08bd107e22e87f74697dedbfdfa62f3f, type: 2}
-    BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
+  _levelToPlay: 2
+  _allLevelsNeededToBeCompleted: 00000000
+  _possibleLevelsToUnlockThis: 
   _button: {fileID: 1133152243}
 --- !u!114 &1133152243
 MonoBehaviour:
@@ -1221,10 +1282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: 9bb7edb914ae47f418e30c5acf26b517, type: 2}
-    BackgroundImage: {fileID: 21300000, guid: 5534b33f8e17f64489f58dc20e674aab, type: 3}
+  _levelToPlay: 0
+  _allLevelsNeededToBeCompleted: 
+  _possibleLevelsToUnlockThis: 
   _button: {fileID: 1247826026}
 --- !u!114 &1247826026
 MonoBehaviour:
@@ -1496,10 +1556,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: b556fdcd51024e94b8320e29834f0652, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
-    BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+  _levelToPlay: 3
+  _allLevelsNeededToBeCompleted: 04000000
+  _possibleLevelsToUnlockThis: 
   _button: {fileID: 1450643296}
 --- !u!114 &1450643296
 MonoBehaviour:
@@ -1751,10 +1810,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: 502a9062ccb53fb4bb2591f4ae3d5fe7, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: af24fe5f7bf7361419be7478586f53c4, type: 2}
-    BackgroundImage: {fileID: 21300000, guid: 822244fe45949814c9ff4052bae157d4, type: 3}
+  _levelToPlay: 1
+  _allLevelsNeededToBeCompleted: 00000000
+  _possibleLevelsToUnlockThis: 
   _button: {fileID: 1673709316}
 --- !u!114 &1673709316
 MonoBehaviour:
@@ -1892,10 +1950,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 0
   _minorMapEvent: {fileID: 11400000, guid: 3cb579f2caebe8f4d970ad14b57f5731, type: 2}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
-    BackgroundImage: {fileID: 0}
+  _levelToPlay: 0
+  _allLevelsNeededToBeCompleted: 
+  _possibleLevelsToUnlockThis: 0200000001000000
   _button: {fileID: 1771823756}
 --- !u!114 &1771823756
 MonoBehaviour:
@@ -2485,10 +2542,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapObjectType: 1
   _minorMapEvent: {fileID: 0}
-  _levelConversationData:
-    ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
-    ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
-    BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+  _levelToPlay: 4
+  _allLevelsNeededToBeCompleted: 0200000000000000
+  _possibleLevelsToUnlockThis: 
   _button: {fileID: 2101682633}
 --- !u!114 &2101682633
 MonoBehaviour:
@@ -2585,3 +2641,4 @@ SceneRoots:
   - {fileID: 1847964101}
   - {fileID: 1578287709}
   - {fileID: 1142725149}
+  - {fileID: 436825179}
