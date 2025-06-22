@@ -2,10 +2,11 @@ using CustomUI;
 using Dialogue.UI;
 using GeneralGame;
 using GeneralGame.Generation;
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+
+using static GlobalFunctions;
 
 public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI where GameGeneratorClass : BaseGameGenerator where GameSolverClass : BaseGameSolverComponent
 {
@@ -13,6 +14,9 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
     protected abstract GameSolverClass GameSolver { get; }
 
     [SerializeField]
+    private bool _gameUsesTimer = true;
+
+    [SerializeField, ShowIf("@_gameUsesTimer")]
     protected TextMeshProUGUI _timerText;
 
     protected virtual void Start()
@@ -113,11 +117,17 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
     protected virtual void OnCountdownTimerValueChange(float value)
     {
         ShowUI();
-        _timerText.text = "CountDown : " + value.ToString("F2");
+        if (_gameUsesTimer && ensure(_timerText != null, "Timer text is null on " + gameObject.name))
+        {
+            _timerText.text = "CountDown : " + value.ToString("F2");
+        }
     }
 
     protected virtual void OnGameTimerValueChange(float value)
     {
-        _timerText.text = "Time Left : " + value.ToString("F2");
+        if (_gameUsesTimer && ensure(_timerText != null, "Timer text is null on " + gameObject.name))
+        {
+            _timerText.text = "Time Left : " + value.ToString("F2");
+        }
     }
 }

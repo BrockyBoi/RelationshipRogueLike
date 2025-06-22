@@ -34,6 +34,7 @@ public abstract class CollectObjectsGameSolver<GenerationData, CompletionResultT
         _collectablesCaught++;
 
         OnCollectableCountChange?.Invoke(_collectablesCaught);
+        UpdatePotentialPlayerDialogueUI();
 
         if (_collectablesCaught >= CollectablesNeeded)
         {

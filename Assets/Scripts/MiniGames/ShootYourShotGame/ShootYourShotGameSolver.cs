@@ -23,11 +23,17 @@ namespace ShootYourShotGame
             _startGameTimerOnInitialize = false;
         }
 
-        //protected override void StartGame()
-        //{
-        //    base.StartGame();
-        //    _timeLeftToFinish = 0;
-        //}
+        protected override void StartGame()
+        {
+            base.StartGame();
+
+            OnMainTimerValueChange += MainTimerValueChanged;
+        }
+
+        protected override void MainTimerValueChanged(float newTime)
+        {
+            UpdatePotentialPlayerDialogueUI();
+        }
 
         protected override void StartCountDown()
         {
@@ -40,6 +46,7 @@ namespace ShootYourShotGame
         {
             base.EndGame();
 
+            OnMainTimerValueChange -= MainTimerValueChanged;
             _bullseye.SetActive(false);
         }
 

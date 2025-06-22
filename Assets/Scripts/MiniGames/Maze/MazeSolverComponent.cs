@@ -121,10 +121,26 @@ namespace Maze
         {
             base.StartGame();
 
+            OnMainTimerValueChange += MainTimerValueChanged;
+
             if (!Mathf.Approximately(_fakeMazeTime, 0))
             {
+                MainPlayer.Player.Instance.HealthComponent.SetInvincibility(true);
                 Invoke("OnFakeTimerEnd", _fakeMazeTime);
             }
+        }
+
+        protected override void EndGame()
+        {
+            base.EndGame();
+
+            MainPlayer.Player.Instance.HealthComponent.SetInvincibility(false);
+            OnMainTimerValueChange -= MainTimerValueChanged;
+        }
+
+        protected override void MainTimerValueChanged(float newTime)
+        {
+            UpdatePotentialPlayerDialogueUI();
         }
 
         public void CollectKey()
@@ -156,10 +172,7 @@ namespace Maze
 
         protected override void ApplyEndGameResults()
         {
-            if (!IsFakeGame)
-            {
-                base.ApplyEndGameResults();
-            }
+            base.ApplyEndGameResults();
 
             Cursor.visible = true;
         }

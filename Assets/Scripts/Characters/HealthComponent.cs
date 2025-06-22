@@ -12,6 +12,8 @@ namespace MainPlayer
         public int Health {  get; private set; }
         public bool IsDead { get {  return Health <= 0; } }
 
+        private bool _isInvincible = false;
+
         [SerializeField]
         private int _maxHealth = 10;
         public int MaxHealth { get { return _maxHealth; } }
@@ -35,9 +37,14 @@ namespace MainPlayer
             ResetHealth();
         }
 
+        public void SetInvincibility(bool isInvincible)
+        {
+            _isInvincible = isInvincible;
+        }
+
         public void ChangeHealth(int amountToChange)
         {
-            if (amountToChange < 0)
+            if (amountToChange < 0 && !_isInvincible)
             {
                 RemoveHealth(amountToChange);
             }

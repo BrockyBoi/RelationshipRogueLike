@@ -5,6 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace MemoryGame
 {
     public class MemoryGameSolverComponent : GameSolverComponent<MemoryGameGeneratorData, MemoryGameCompletionResult>
@@ -15,14 +17,11 @@ namespace MemoryGame
 
         private bool _isShowingResults = false;
 
-        [SerializeField]
-        private int _defaultGuessesAllowed = 5;
-
         private int _cardsCollected = 0;
 
         public bool IsLookingForSingleMemoryType { get; private set; }
         public int GuessesLeft { get; private set; }
-        public int TotalGuessesAllowed { get; private set; }
+        public int TotalGuessesAllowed { get { return _gameData.NumberOfGuesses + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier; } }
 
         public EMemoryType MemoryTypeToSearchFor { get { return MemoryGameGenerator.Instance.MemoryTypeToSearchFor; } }
 
@@ -65,12 +64,8 @@ namespace MemoryGame
 
         private void OnCardValuesSet()
         {
-            SetGameStage(EGameStage.PreCountdown);
             _cardsCollected = 0;
-            TotalGuessesAllowed = _defaultGuessesAllowed + MemoryGameDifficultyManager.Instance.NumberOfGuessesModifier;
             GuessesLeft = TotalGuessesAllowed;
-            StartGame();
-
             _memoryTypesSearchedForPreviously.Add(MemoryTypeToSearchFor);
         }
 
@@ -86,6 +81,7 @@ namespace MemoryGame
                 else if (card != _currentlySelectedCard)
                 {
                     StartCoroutine(ShowCardResults(card));
+                    UpdatePotentialPlayerDialogueUI();
                 }
             }
         }
@@ -160,9 +156,13 @@ namespace MemoryGame
 
         public int GetGameCompletionIndexBasedOnGuessesLeft()
         {
-            if (_gameCompletionResults == null || _gameCompletionResults.Count == 0)
+            if (!ensure(_gameCompletionResults == null || _gameCompletionResults.Count == 0, "There are no completion results"))
             {
-                Debug.LogError("There are no completion results");
+                return 0;
+            }
+
+            if (!ensure(TotalGuessesAllowed > 0, "Total guesses allowed must be greater than 0"))
+            {
                 return 0;
             }
 
@@ -178,11 +178,6 @@ namespace MemoryGame
         public MemoryGameCompletionResult GetGameCompletionResultToApplyByGuessesLeft()
         {
             return _gameCompletionResults[GetGameCompletionIndexBasedOnGuessesLeft()];
-        }
-
-        public void SetBaseNumberOfGuesses(int baseNumberOfGuesses)
-        {
-            _defaultGuessesAllowed = baseNumberOfGuesses;
         }
 
         public override int GetCurrentPotentialDialogueIndex()

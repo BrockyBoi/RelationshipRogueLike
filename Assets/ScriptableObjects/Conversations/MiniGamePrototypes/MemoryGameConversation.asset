@@ -259,7 +259,18 @@ MonoBehaviour:
           HealthAmountToChange: 2
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: hi
           NewConversation: {fileID: 0}
         HasResponseBasedOnSpecificMemoryType: 0
         GameRelatedDialogue:
@@ -309,7 +320,18 @@ MonoBehaviour:
           HealthAmountToChange: -2
         BranchingDialogue:
           OnlyUsesDialogue: 1
-          DialogueObjects: []
+          DialogueObjects:
+          - _dialogueData:
+              CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+              CharacterSentiment: 1
+              CustomDialogueOptions:
+                UsesCustomName: 0
+                CustomName: 
+                UsesCustomSprite: 0
+                CustomSprite: {fileID: 0}
+                IsThinking: 0
+                UseCurrentPlayerHealthForSentimentSprite: 0
+            _standardDialogue: hi
           NewConversation: {fileID: 0}
         HasResponseBasedOnSpecificMemoryType: 0
         GameRelatedDialogue:

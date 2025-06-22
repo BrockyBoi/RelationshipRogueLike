@@ -212,10 +212,9 @@ namespace Dialogue
                                 yield return ProcessStandardDialogueObject(openingDialogue);
                             }
 
-                            MemoryGameGenerator.Instance.GenerateGame(dialogueObject.MemoryGameSpawnerData);
-                            yield return YieldUntilGameIsInFinishedStage(instance);
-                            MemoryGameGenerator.Instance.DestroyGrid();
+                            RunGame<MemoryGameGenerator, MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult>(EGameType.Memory, dialogueObject.MemoryGameSpawnerData);
 
+                            yield return YieldUntilGameIsInFinishedStage(MemoryGameSolverComponent.Instance);
                             MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
                                                                                                         instance.GetGameCompletionResultToApplyByGuessesLeft();
                             if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasClosingDialogue)
@@ -377,7 +376,7 @@ namespace Dialogue
 
         private IEnumerator YieldUntilGameIsInFinishedStage(BaseGameSolverComponent gameSolver)
         {
-            yield return new WaitUntil(() => gameSolver && !gameSolver.IsStage(EGameStage.GameFinished));
+            yield return new WaitUntil(() => gameSolver && gameSolver.IsStage(EGameStage.GameFinished));
         }
 
         public void PressedNextDialogue()
@@ -408,7 +407,7 @@ namespace Dialogue
 
         private void DisplayCurrentDialogue()
         {
-            if (ensure(_dialogueObjectsThisConversation.IsValidIndex(_currentDialogueIndex), _currentDialogueIndex + " is not valid index"))
+            if (ensure(_dialogueObjectsThisConversation.IsValidIndex(_currentDialogueIndex), _currentDialogueIndex + " is not valid index out of " + _dialogueObjectsThisConversation.Count + " dialogue objects"))
             {
                 DialogueUI.Instance.ShowDialogue(_dialogueObjectsThisConversation[_currentDialogueIndex]);
             }
@@ -423,9 +422,10 @@ namespace Dialogue
         {
             if (dialogueObjects.Count > 0)
             {
-                AddDialogueObjects(dialogueObjects);
                 _currentDialogueIndex++;
+                AddDialogueObjects(dialogueObjects);
                 DisplayCurrentDialogue();
+
             }
         }
 
@@ -445,7 +445,15 @@ namespace Dialogue
                 solver.OnGameStop -= callback;
                 PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
                 CompletionResultType completionResult = solver.GetCurrentCompletionResult();
-                AddAndDisplayNewDialogue(completionResult.BranchingDialogue.DialogueObjects);
+                if (completionResult.BranchingDialogue.DialogueObjects.Count > 0)
+                {
+                    AddAndDisplayNewDialogue(completionResult.BranchingDialogue.DialogueObjects);
+                }
+                else
+                {
+                    PressedNextDialogue();
+                }
+
                 _isInGame = false;
 
                 if (!completionResult.BranchingDialogue.OnlyUsesDialogue)

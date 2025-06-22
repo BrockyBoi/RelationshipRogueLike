@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 3928742}
+  _gameUsesTimer: 1
   _timerText: {fileID: 355914153}
 --- !u!1 &7888684
 GameObject:
@@ -2285,6 +2286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 649024513}
+  _gameUsesTimer: 1
   _timerText: {fileID: 1298969008}
   _wallHitAnimTime: 0.5
 --- !u!114 &649024511
@@ -4588,6 +4590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 1389799490}
+  _gameUsesTimer: 0
   _timerText: {fileID: 0}
   _memorySearchingForText: {fileID: 737677085}
   _guessesLeftText: {fileID: 1071978651}
@@ -4959,6 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 1521440380}
+  _gameUsesTimer: 1
   _timerText: {fileID: 1637644332}
   _currentCatchCountText: {fileID: 569322432}
 --- !u!1 &1532423325
@@ -5498,6 +5502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 1692728737}
+  _gameUsesTimer: 1
   _timerText: {fileID: 1390598709}
   _coinCountText: {fileID: 668533931}
 --- !u!114 &1692728735
@@ -5617,6 +5622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCanvas: {fileID: 1728503166}
+  _gameUsesTimer: 1
   _timerText: {fileID: 1922245088}
   _takeDamageAnimTime: 0.5
   _healthText: {fileID: 1227456950}

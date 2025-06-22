@@ -148,6 +148,11 @@ namespace GeneralGame
             OnMainTimerEnd?.Invoke();
         }
 
+        protected virtual void MainTimerValueChanged(float newTime)
+        {
+
+        }
+
         public void AddPenaltyTime(float penalty)
         {
             _totalPenaltyTime += penalty;
@@ -155,7 +160,7 @@ namespace GeneralGame
 
         protected float GetPercentageOfTimeLeftToCompleteGame()
         {
-            return (_timeLeftToFinish - _totalPenaltyTime + _bonusTimeGained) / _timeToCompleteGame;
+            return ensure(_timeToCompleteGame > 0, "Time to complete game must be greater than 0") ? (_timeLeftToFinish - _totalPenaltyTime + _bonusTimeGained) / _timeToCompleteGame : 0f;
         }
 
         protected virtual void EndGame()

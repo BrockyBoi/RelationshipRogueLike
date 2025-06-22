@@ -177,6 +177,7 @@ namespace WhackAMole
             if (appearingObject && appearingObject.IsDistraction)
             {
                 _currentHealth -= _gameData.HealthLostPerDistraction;
+                UpdatePotentialPlayerDialogueUI();
                 CheckDeath();
 
                 UnlistenToApeparingObjectEvents(appearingObject);
@@ -190,6 +191,7 @@ namespace WhackAMole
             if (appearingObject && !appearingObject.IsDistraction)
             {
                 _currentHealth -= _gameData.HealthLostPerEnemy;
+                UpdatePotentialPlayerDialogueUI();
                 CheckDeath();
 
                 UnlistenToApeparingObjectEvents(appearingObject);

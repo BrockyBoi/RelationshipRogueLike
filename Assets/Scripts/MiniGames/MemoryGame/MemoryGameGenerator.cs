@@ -76,6 +76,7 @@ namespace MemoryGame.Generation
             SetNumberOfCardsToValue(2, MemoryTypeToSearchFor, ref tempMemoryGameCardsList);
             FillRandomValuesForCardsList(ref tempMemoryGameCardsList);
 
+            _hasCardValuesBeenSet = true;
             OnCardValuesSet?.Invoke();
         }
 
@@ -215,13 +216,6 @@ namespace MemoryGame.Generation
 
             GlobalFunctions.LerpObjectToLocation(card1, card1.gameObject, card2StartPos, .75f);
             GlobalFunctions.LerpObjectToLocation(card2,card2.gameObject, card1StartPos, .75f);
-        }
-
-        protected override void GenerateGameAssets()
-        {
-            MemoryGameSolverComponent.Instance.SetBaseNumberOfGuesses(_gameData.NumberOfGuesses);
-
-            base.GenerateGameAssets();
         }
 
         [Button]

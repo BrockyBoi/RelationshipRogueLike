@@ -43,12 +43,6 @@ namespace GeneralGame
             SetGenerationGameData(data);
         }
 
-        protected override void StartGame()
-        {
-            base.StartGame();
-            _highlightIndexCoroutine = StartCoroutine(HighlightCurrentGameResultIndex());
-        }
-
         protected virtual void SetGenerationGameData(GenerationData generationData)
         {
             if (ensure(generationData != null, "There is no generation data"))
@@ -64,13 +58,9 @@ namespace GeneralGame
             }
         }
 
-        private IEnumerator HighlightCurrentGameResultIndex()
+        protected void UpdatePotentialPlayerDialogueUI()
         {
-            while (IsStage(EGameStage.InGame))
-            {
-                PotentialPlayerDialogueUI.Instance.HighlightResult(GetCurrentPotentialDialogueIndex(), GetCurrentPotentialDialoguePercentage());
-                yield return null;
-            }
+            PotentialPlayerDialogueUI.Instance.HighlightResult(GetCurrentPotentialDialogueIndex(), GetCurrentPotentialDialoguePercentage());
         }
 
         public int GetGameCompletionResultIndexByTimeRemaining()
@@ -85,7 +75,7 @@ namespace GeneralGame
 
         public float GetCurrentPotentialDialoguePercentageByGameHealthRemaining(int currentHealth, int maxHealth)
         {
-            return GetPercentageOfResultIndex(currentHealth / (float)maxHealth);
+            return ensure(maxHealth > 0, "Max health must be greater than 0") ? GetPercentageOfResultIndex(currentHealth / (float)maxHealth) : 0f;
         }
 
         public float GetPercentageOfResultIndex(float totalPercentage)
@@ -105,7 +95,7 @@ namespace GeneralGame
             float minPercentage = Mathf.Clamp((count - index - 1) / count, 0, 1);
             float modifiedMax = maxPercentage - minPercentage;
 
-            if (!Mathf.Approximately(minPercentage, 0) && !ensure(totalPercentage >= minPercentage, "The total percentage should not be less than the modified min percentage: Total Percentage: " + totalPercentage))
+            if (!Mathf.Approximately(minPercentage, 0) && !ensure(totalPercentage >= minPercentage, "The total percentage should not be less than the modified min percentage: Total Percentage: " + totalPercentage + " vs. min percentage: " + minPercentage))
             {
                 return 0f;
             }
