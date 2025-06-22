@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace MemoryGame.Generation
 {
     public class MemoryGameGenerator : GameGridGenerator<MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult, MemoryGameCard>
@@ -48,9 +50,8 @@ namespace MemoryGame.Generation
 
         protected override void CreateGrid(Vector2Int gridSize)
         {
-            if (gridSize.x * gridSize.y % 2 != 0)
+            if (!ensure(gridSize.x * gridSize.y % 2 == 0, "Cannot spawn an odd number of cards"))
             {
-                Debug.LogError("Cannot spawn an odd number of cards");
                 return;
             }
 

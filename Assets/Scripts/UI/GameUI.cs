@@ -111,7 +111,10 @@ public abstract class GameUI<GameGeneratorClass, GameSolverClass> : BaseGameUI w
 
     protected void ClearTimerText()
     {
-        _timerText.text = string.Empty;
+        if (_gameUsesTimer && ensure(_timerText != null, "Timer text is null on " + gameObject.name))
+        {
+            _timerText.text = string.Empty;
+        }
     }
 
     protected virtual void OnCountdownTimerValueChange(float value)

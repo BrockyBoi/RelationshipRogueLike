@@ -81,7 +81,6 @@ namespace MemoryGame
                 else if (card != _currentlySelectedCard)
                 {
                     StartCoroutine(ShowCardResults(card));
-                    UpdatePotentialPlayerDialogueUI();
                 }
             }
         }
@@ -136,6 +135,11 @@ namespace MemoryGame
 
             _currentlySelectedCard = null;
             _isShowingResults = false;
+
+            if (GuessesLeft > 0)
+            {
+                UpdatePotentialPlayerDialogueUI();
+            }
         }
 
         protected override void ApplyEndGameResults()
@@ -156,7 +160,7 @@ namespace MemoryGame
 
         public int GetGameCompletionIndexBasedOnGuessesLeft()
         {
-            if (!ensure(_gameCompletionResults == null || _gameCompletionResults.Count == 0, "There are no completion results"))
+            if (!ensure(_gameCompletionResults != null && _gameCompletionResults.Count != 0, "There are no completion results"))
             {
                 return 0;
             }

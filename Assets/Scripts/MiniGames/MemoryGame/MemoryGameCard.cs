@@ -32,10 +32,10 @@ namespace MemoryGame
         public EMemoryType MemoryType {  get; private set; }
 
         [SerializeField]
-        TextMeshProUGUI _text;
+        private TextMeshProUGUI _text;
 
         [SerializeField]
-        Image _memoryImage;
+        private Image _memoryImage;
 
         public static System.Action<MemoryGameCard> OnCardClicked;
 
