@@ -9,17 +9,17 @@ namespace ShootYourShotGame
     [Serializable]
     public class ShootYourShotGameGenerationData : GameGenerationData<ShootYourShotGameCompletionResult>
     {
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public bool IsStandardCountdown = false;
 
-        [FoldoutGroup("Game Data"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
+        [FoldoutGroup("@FoldoutGroupName"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
         public float TimeBetween3And2 = 1;
-        [FoldoutGroup("Game Data"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
+        [FoldoutGroup("@FoldoutGroupName"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
         public float TimeBetween2And1 = 1;
-        [FoldoutGroup("Game Data"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
+        [FoldoutGroup("@FoldoutGroupName"), HideIf("@IsStandardCountdown"), Range(.1f, 10f)]
         public float TimeBetween1And0 = 1;
 
-        [FoldoutGroup("Game Data"), Range(.5f, 2f)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(.5f, 2f)]
         public float TimeAllowedToShootTarget = 1;
     }
 }

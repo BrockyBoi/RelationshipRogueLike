@@ -226,10 +226,6 @@ namespace Dialogue
                                     yield return ProcessStandardDialogueObject(closingDialogue);
                                 }
                             }
-                            else
-                            {
-                                yield return ProcessGameResult(result);
-                            }
                             break;
                         }
                     case EDialogueObjectType.SpawnWhackAMole:

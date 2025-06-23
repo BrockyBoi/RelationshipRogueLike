@@ -9,22 +9,22 @@ namespace EndlessRunner
     [Serializable]
     public class EndlessRunnerGenerationData : GameGenerationData<EndlessRunnerCompletionResult>
     {
-        [FoldoutGroup("Game Data"), Range(1f, 10f)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(1f, 10f)]
         public float ObjectMoveSpeed = 5;
 
-        [FoldoutGroup("Game Data"), Range(10, 250)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(10, 250)]
         public int CoinsToCollect = 50;
 
-        [FoldoutGroup("Game Data"), Range(10, 250)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(10, 30)]
         public int CoinPatternsToSpawn = 10;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public bool ShouldSpawnExtraObjects = false;
 
-        [FoldoutGroup("Game Data"), ShowIf("@ShouldSpawnExtraObjects")]
+        [FoldoutGroup("@FoldoutGroupName"), ShowIf("@ShouldSpawnExtraObjects")]
         public GameObject ExtraObjectToSpawn;
 
-        [FoldoutGroup("Game Data"), ShowIf("@ShouldSpawnExtraObjects")]
+        [FoldoutGroup("@FoldoutGroupName"), ShowIf("@ShouldSpawnExtraObjects")]
         public float TimeToSpawnExtraObject = 5;
     }
 }

@@ -106,7 +106,7 @@ namespace Dialogue
         public CharacterData CharacterData { get { return _dialogueData.CharacterData; } }
         public CustomDialogueOptions CustomDialogue { get { return _dialogueData.CustomDialogueOptions; } }
 
-        private string DialogueEditorDisplayString { get { return CharacterData ? CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + " dialogue" + " '" + _standardDialogue.Substring(0, Mathf.Min(_standardDialogue.Length, 50)) + "'" : string.Empty; } }
+        private string DialogueEditorDisplayString { get { return CharacterData ? CharacterData.CharacterName + " " + _dialogueData.CharacterSentiment.ToString().ToLower() + (CustomDialogue.IsThinking ? " thinking " : " dialogue") + " '" + _standardDialogue.Substring(0, Mathf.Min(_standardDialogue.Length, 50)) + "'" : string.Empty; } }
 
         public static StandardDialogueObject EmptyDialogueObject
         {

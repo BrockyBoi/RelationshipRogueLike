@@ -30,9 +30,9 @@ namespace Maze
         public float FakeMazeTime = 2f;
 
         [FoldoutGroup("@FoldoutGroupName")]
-        public bool ForceDifficultySettings;
+        public bool ForceDifficultySettings = true;
 
-        private string FoldoutGroupName { get { return  (ShakeIntensity > 0 ? "Shaking " : string.Empty) + (RotationSpeed > 0 ? "Rotating " : string.Empty) + 
+        protected override string FoldoutGroupName { get { return  (ShakeIntensity > 0 ? "Shaking " : string.Empty) + (RotationSpeed > 0 ? "Rotating " : string.Empty) + 
                                                         (IsMazeFake ? "Fake " : string.Empty) + GridSize.x.ToString() + " x " + GridSize.y.ToString() + " Grid" + 
                                                         (NeedsKeys && KeysNeeded > 0 ? " With " + KeysNeeded.ToString() + " Keys" : string.Empty) +
                                                         (ForceDifficultySettings ? " With Set Difficulty Settings" : string.Empty); } }

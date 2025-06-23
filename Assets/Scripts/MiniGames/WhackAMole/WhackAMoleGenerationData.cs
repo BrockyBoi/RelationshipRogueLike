@@ -10,22 +10,22 @@ namespace WhackAMole
     [Serializable]
     public class WhackAMoleGenerationData : GameGenerationData<WhackAMoleCompletionResult>
     {
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public float TimeObjectsStayInPlay = .75f;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public float TimeBetweenSpawns = .75f;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public bool HasDistractionObjects = false;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public int StartingHealth = 10;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public int HealthLostPerEnemy = 1;
 
-        [FoldoutGroup("Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public int HealthLostPerDistraction = 2;
     }
 }

@@ -37,11 +37,14 @@ namespace MemoryGame
         [SerializeField]
         private Image _memoryImage;
 
+        public bool IsCollected { get; private set; }
+
         public static System.Action<MemoryGameCard> OnCardClicked;
 
         private void Start()
         {
             HideCard();
+            IsCollected = false;
         }
 
         public void SetMemoryType(EMemoryType memoryType)
@@ -75,6 +78,7 @@ namespace MemoryGame
 
         public void CollectCard()
         {
+            IsCollected = true;
             gameObject.SetActive(false);
         }
     }

@@ -108,7 +108,7 @@ namespace MemoryGame
                     {
                         CompleteGame();
                     }
-                    else if (!IsLookingForSingleMemoryType && _cardsCollected == MemoryGameGenerator.Instance.TotalElementsCount)
+                    else if (!IsLookingForSingleMemoryType && HasCompletedGame())
                     {
                         CompleteGame();
                     }
@@ -151,6 +151,31 @@ namespace MemoryGame
         public bool AlreadyPlayedForMemoryType(EMemoryType memoryType)
         {
             return _memoryTypesSearchedForPreviously.Contains(memoryType);
+        }
+
+        private bool HasCompletedGame()
+        {
+            // If collected all cards then win
+            if (_cardsCollected == MemoryGameGenerator.Instance.TotalElementsCount)
+            {
+                return true;
+            }
+
+            // Check to see if there are only bombs left in play
+            foreach (MemoryGameCard card in MemoryGameGenerator.Instance.GetGrid())
+            {
+                if (card.IsCollected)
+                {
+                    continue;
+                }
+
+                if (card.MemoryType != EMemoryType.Bomb)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public void SetIsLookingForSingleMemoryType(bool isLookingForSingleMemoryType)

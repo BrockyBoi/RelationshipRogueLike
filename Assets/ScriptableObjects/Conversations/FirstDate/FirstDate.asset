@@ -58,8 +58,8 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -70,8 +70,8 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -117,7 +117,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 0
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -133,6 +132,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -140,7 +140,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -156,12 +155,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -177,6 +176,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -184,7 +184,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -200,13 +199,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -222,6 +221,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -235,7 +235,6 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Sweet Opening
         HealthResult:
@@ -338,6 +337,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
+      GameDuration: 15
       GridSize: {x: 5, y: 1}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -348,7 +348,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Genuinely fascinated
         HealthResult:
@@ -505,6 +504,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GameDuration: 15
       GridSize: {x: 5, y: 2}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 1
@@ -550,7 +550,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 8188
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -566,6 +565,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -573,7 +573,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -589,12 +588,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -610,6 +609,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -617,7 +617,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -633,13 +632,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -655,6 +654,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -707,8 +707,8 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -766,7 +766,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 0
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -782,6 +781,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -789,7 +789,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -805,12 +804,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -826,6 +825,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -833,7 +833,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -849,13 +848,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -871,6 +870,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -884,7 +884,6 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 20
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Talk About the City And Your Interests
         HealthResult:
@@ -1169,7 +1168,8 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 4, y: 4}
+      GameDuration: 20
+      GridSize: {x: 5, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
       NeedsKeys: 0
@@ -1179,7 +1179,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1281,6 +1280,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -1326,7 +1326,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1342,6 +1341,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -1349,7 +1349,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1365,12 +1364,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1386,6 +1385,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -1393,7 +1393,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1409,13 +1408,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1431,6 +1430,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -1484,8 +1484,8 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -1496,8 +1496,8 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -1543,7 +1543,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 0
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1559,6 +1558,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -1566,7 +1566,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1582,12 +1581,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1603,6 +1602,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -1610,7 +1610,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1626,13 +1625,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1648,6 +1647,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -1661,7 +1661,6 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 30
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Looking For Something Serious
         HealthResult:
@@ -1833,7 +1832,8 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GridSize: {x: 6, y: 7}
+      GameDuration: 30
+      GridSize: {x: 7, y: 7}
       ShakeIntensity: 0
       RotationSpeed: 0
       NeedsKeys: 1
@@ -1843,7 +1843,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -1945,6 +1944,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -1990,7 +1990,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2006,6 +2005,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -2013,7 +2013,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2029,12 +2028,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2050,6 +2049,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -2057,7 +2057,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2073,13 +2072,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2095,6 +2094,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -2113,10 +2113,10 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "But yeah, it was really nice of Tabitha to do this for
-        us.  She\u2019s been mentioning it for such a long time, and I kept saying
-        no either becuase I was busy or shy, and finally she just forced me into
-        this, which I honestly am pretty thankful for.  "
+      _standardDialogue: "It was really nice of Tabitha to do this for us.  She\u2019s
+        been mentioning it for such a long time, and I kept saying no either becuase
+        I was busy or shy, and finally she just forced me into this, which I honestly
+        am pretty thankful for.  "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 1
@@ -2175,8 +2175,8 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -2187,8 +2187,8 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -2234,7 +2234,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 0
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2250,6 +2249,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -2257,7 +2257,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2273,12 +2272,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2294,6 +2293,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -2301,7 +2301,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2317,13 +2316,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2339,6 +2338,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -2352,7 +2352,6 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2376,6 +2375,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -2386,7 +2386,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Remember Everything
         HealthResult:
@@ -2712,7 +2711,8 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
-      GridSize: {x: 3, y: 4}
+      GameDuration: 15
+      GridSize: {x: 2, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
         _hasClosingDialogue: 0
@@ -2755,9 +2755,8 @@ MonoBehaviour:
       _forcedMemoryTypeToSearchFor: 0
       _showLimitedMemoryTypesAvailable: 1
       _allowedMemoryTypes: 6040
-      NumberOfGuesses: 10
+      NumberOfGuesses: 12
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2773,6 +2772,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -2780,7 +2780,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2796,12 +2795,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2817,6 +2816,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -2824,7 +2824,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2840,13 +2839,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2862,6 +2861,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -2887,8 +2887,8 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -2899,8 +2899,8 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults: []
+      GameDuration: 15
       GridSize: {x: 0, y: 0}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -2946,7 +2946,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 0
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2962,6 +2961,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -2969,7 +2969,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -2985,12 +2984,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3006,6 +3005,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -3013,7 +3013,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3029,13 +3028,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3051,6 +3050,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -3163,7 +3163,6 @@ MonoBehaviour:
               Bye."
           NewConversation: {fileID: 0}
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3187,6 +3186,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -3197,7 +3197,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3299,6 +3298,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -3344,7 +3344,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3360,6 +3359,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -3367,7 +3367,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3383,12 +3382,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3404,6 +3403,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -3411,7 +3411,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3427,13 +3426,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3449,6 +3448,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
@@ -3462,7 +3462,6 @@ MonoBehaviour:
         keyData: 
         valueData: []
     MazeSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3486,6 +3485,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       ShakeIntensity: 0
       RotationSpeed: 0
@@ -3496,7 +3496,6 @@ MonoBehaviour:
       FakeMazeTime: 2
       ForceDifficultySettings: 0
     MemoryGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3598,6 +3597,7 @@ MonoBehaviour:
           NumberOfCardsToSwap: 0
           BombsInGame: 0
           NumberOfGuesses: 0
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       MemoryGameRelatedDialogue:
         _hasOpeningDialogue: 0
@@ -3643,7 +3643,6 @@ MonoBehaviour:
       _allowedMemoryTypes: 8190
       NumberOfGuesses: 5
     WhackAMoleGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3659,6 +3658,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
@@ -3666,7 +3666,6 @@ MonoBehaviour:
       HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
     CatchingButterflyGameSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3682,12 +3681,12 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ButterfliesToSpawn: 10
       ButterfliesNeededToCatch: 10
       PercentageOfSpecialButterflies: 0
       ButterflySpeedMultiplier: 1
     EndlessRunnerSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3703,6 +3702,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       ObjectMoveSpeed: 5
       CoinsToCollect: 50
       CoinPatternsToSpawn: 10
@@ -3710,7 +3710,6 @@ MonoBehaviour:
       ExtraObjectToSpawn: {fileID: 0}
       TimeToSpawnExtraObject: 5
     ShootYourShotSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3726,13 +3725,13 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       IsStandardCountdown: 0
       TimeBetween3And2: 1
       TimeBetween2And1: 1
       TimeBetween1And0: 1
       TimeAllowedToShootTarget: 1
     FireFightingSpawnerData:
-      GameDuration: 15
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
         HealthResult:
@@ -3748,6 +3747,7 @@ MonoBehaviour:
           OnlyUsesDialogue: 1
           DialogueObjects: []
           NewConversation: {fileID: 0}
+      GameDuration: 15
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1

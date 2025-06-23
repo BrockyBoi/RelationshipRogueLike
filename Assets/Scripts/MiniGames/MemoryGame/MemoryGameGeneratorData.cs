@@ -19,17 +19,17 @@ namespace MemoryGame
         [SerializeField, FoldoutGroup("Memory Game Data")]
         private bool _searchForSingleMemoryType;
 
-        [ShowIf("_searchForSingleMemoryType"), FoldoutGroup("Memory Game Data")]
+        [ShowIf("_searchForSingleMemoryType"), FoldoutGroup("@FoldoutGroupName")]
         public bool _forceMemoryTypeToSearchFor;
-        [ShowIf("_forceMemoryTypeToSearchFor"), FoldoutGroup("Memory Game Data")]
+        [ShowIf("_forceMemoryTypeToSearchFor"), FoldoutGroup("@FoldoutGroupName")]
         public EMemoryType _forcedMemoryTypeToSearchFor;
 
-        [SerializeField, FoldoutGroup("Memory Game Data")]
+        [SerializeField, FoldoutGroup("@FoldoutGroupName")]
         private bool _showLimitedMemoryTypesAvailable;
-        [ShowIf("_showLimitedMemoryTypesAvailable"), FoldoutGroup("Memory Game Data")]
+        [ShowIf("_showLimitedMemoryTypesAvailable"), FoldoutGroup("@FoldoutGroupName")]
         public EMemoryType _allowedMemoryTypes = EMemoryType.ALL;
 
-        [FoldoutGroup("Memory Game Data")]
+        [FoldoutGroup("@FoldoutGroupName")]
         public int NumberOfGuesses = 5;
 
         public void GenerateMemoryGameData()

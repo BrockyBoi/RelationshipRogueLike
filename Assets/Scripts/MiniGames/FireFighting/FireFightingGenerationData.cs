@@ -9,10 +9,10 @@ namespace FireFighting
     [Serializable]
     public class FireFightingGenerationData : GridGameGenerationData<FireFightingCompletionResult>
     {
-        [FoldoutGroup("Game Data"), Range(1f, 10f)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(1f, 10f)]
         public float FireIncreasePerSecond = 1;
 
-        [FoldoutGroup("Game Data"), Range(1, 100)]
+        [FoldoutGroup("@FoldoutGroupName"), Range(1, 100)]
         public float MaxStartingFireLevel = 1;
     }
 }
