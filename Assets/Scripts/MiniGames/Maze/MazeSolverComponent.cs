@@ -121,8 +121,6 @@ namespace Maze
         {
             base.StartGame();
 
-            OnMainTimerValueChange += MainTimerValueChanged;
-
             if (!Mathf.Approximately(_fakeMazeTime, 0))
             {
                 MainPlayer.Player.Instance.HealthComponent.SetInvincibility(true);
@@ -135,7 +133,6 @@ namespace Maze
             base.EndGame();
 
             MainPlayer.Player.Instance.HealthComponent.SetInvincibility(false);
-            OnMainTimerValueChange -= MainTimerValueChanged;
         }
 
         protected override void MainTimerValueChanged(float newTime)

@@ -169,104 +169,115 @@ namespace Dialogue
 
             //foreach (DialogueObject dialogueObject in dialogueObject)
             //{
-                if (_playerHasDied)
-                {
-                    _playerHasDied = false;
-                    StartNewConversation(_conversationData.ConversationOnPlayerDeath);
-                    //_newConversationOnFinishDialogue = _conversationData.ConversationOnPlayerDeath;
-                    //yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
-                    yield break;
-                }
+            if (_playerHasDied)
+            {
+                _playerHasDied = false;
+                StartNewConversation(_conversationData.ConversationOnPlayerDeath);
+                //_newConversationOnFinishDialogue = _conversationData.ConversationOnPlayerDeath;
+                //yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
+                yield break;
+            }
 
-                switch (dialogueObject.DialogueObjectType)
-                {
-                    case EDialogueObjectType.StandardDialogue:
+            switch (dialogueObject.DialogueObjectType)
+            {
+                case EDialogueObjectType.StandardDialogue:
+                    {
+                        AddAndDisplayNewDialogue(dialogueObject.StandardDialogueObjects);
+                        break;
+                    }
+                case EDialogueObjectType.SentimentDialogue:
+                    {
+                        ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
+                        if (dialogueObject.SentimentDialogueObject.SentimentDialogue.ContainsKey(sentiment))
                         {
-                            AddAndDisplayNewDialogue(dialogueObject.StandardDialogueObjects);
-                            break;
+                            ProcessBranchingDialogueObject(dialogueObject.SentimentDialogueObject.SentimentDialogue[sentiment]);
                         }
-                    case EDialogueObjectType.SentimentDialogue:
+                        else
                         {
-                            ECharacterSentiment sentiment = Player.Instance.HealthComponent.GetCharacterSentiment();
-                            if (ensure(dialogueObject.SentimentDialogueObject.SentimentDialogue.ContainsKey(sentiment), sentiment + " was not in sentiment dialogue dictionary"))
+                            PressedNextDialogue();
+                        }
+                        break;
+                    }
+                case EDialogueObjectType.SpawnMaze:
+                    {
+                        RunGame<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameType.Maze, dialogueObject.MazeSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SpawnMemoryGame:
+                    {
+                        dialogueObject.MemoryGameSpawnerData.GenerateMemoryGameData();
+                        MemoryGameSolverComponent instance = MemoryGameSolverComponent.Instance;
+                        StandardDialogueObject openingDialogue;
+
+                        if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasOpeningDialogue)
+                        {
+                            openingDialogue = dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.GetGameCreationDialogueObject();
+
+                            yield return ProcessStandardDialogueObject(openingDialogue);
+                        }
+
+                        RunGame<MemoryGameGenerator, MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult>(EGameType.Memory, dialogueObject.MemoryGameSpawnerData);
+
+                        yield return YieldUntilGameIsInFinishedStage(MemoryGameSolverComponent.Instance);
+                        MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
+                                                                                                    instance.GetGameCompletionResultToApplyByGuessesLeft();
+                        if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasClosingDialogue)
+                        {
+                            if (instance.IsLookingForSingleMemoryType)
                             {
-                                ProcessBranchingDialogueObject(dialogueObject.SentimentDialogueObject.SentimentDialogue[sentiment]);
+                                StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
+
+                                yield return ProcessStandardDialogueObject(closingDialogue);
                             }
-                            break;
                         }
-                    case EDialogueObjectType.SpawnMaze:
-                        {
-                            RunGame<MazeGenerator, MazeSolverComponent, MazeGeneratorData, MazeCompletionResult>(EGameType.Maze, dialogueObject.MazeSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnMemoryGame:
-                        {
-                            dialogueObject.MemoryGameSpawnerData.GenerateMemoryGameData();
-                            MemoryGameSolverComponent instance = MemoryGameSolverComponent.Instance;
-                            StandardDialogueObject openingDialogue;
-
-                            if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasOpeningDialogue)
-                            {
-                                openingDialogue = dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.GetGameCreationDialogueObject();
-
-                                yield return ProcessStandardDialogueObject(openingDialogue);
-                            }
-
-                            RunGame<MemoryGameGenerator, MemoryGameSolverComponent, MemoryGameGeneratorData, MemoryGameCompletionResult>(EGameType.Memory, dialogueObject.MemoryGameSpawnerData);
-
-                            yield return YieldUntilGameIsInFinishedStage(MemoryGameSolverComponent.Instance);
-                            MemoryGameCompletionResult result = instance.IsLookingForSingleMemoryType ? instance.GetGameCompletionResultToApplyBySucceeding() :
-                                                                                                        instance.GetGameCompletionResultToApplyByGuessesLeft();
-                            if (dialogueObject.MemoryGameSpawnerData.MemoryGameRelatedDialogue.HasClosingDialogue)
-                            {
-                                if (instance.IsLookingForSingleMemoryType)
-                                {
-                                    StandardDialogueObject closingDialogue = result.GameRelatedDialogue.GetGameClosingDialogueObject();
-
-                                    yield return ProcessStandardDialogueObject(closingDialogue);
-                                }
-                            }
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnWhackAMole:
-                        {
-                            RunGame<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameType.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnButterflyCatching:
-                        {
-                            RunGame<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameType.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnEndlessRunner:
-                        {
-                            RunGame<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameType.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnShootYourShot:
-                        {
-                            RunGame<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.SpawnFireFighting:
-                        {
-                            RunGame<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
-                            break;
-                        }
-                    case EDialogueObjectType.EndConversation:
+                        break;
+                    }
+                case EDialogueObjectType.SpawnWhackAMole:
+                    {
+                        RunGame<WhackAMoleGenerator, WhackAMoleSolver, WhackAMoleGenerationData, WhackAMoleCompletionResult>(EGameType.WhackAMole, dialogueObject.WhackAMoleGameSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SpawnButterflyCatching:
+                    {
+                        RunGame<CatchingButterfliesGenerator, CatchingButterfliesSolver, CatchingButterfliesGenerationData, CatchingButterfliesCompletionResult>(EGameType.CatchingButterflies, dialogueObject.CatchingButterflyGameSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SpawnEndlessRunner:
+                    {
+                        RunGame<EndlessRunnerGenerator, EndlessRunnerSolver, EndlessRunnerGenerationData, EndlessRunnerCompletionResult>(EGameType.EndlessRunner, dialogueObject.EndlessRunnerSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SpawnShootYourShot:
+                    {
+                        RunGame<ShootYourShotGameGenerator, ShootYourShotGameSolver, ShootYourShotGameGenerationData, ShootYourShotGameCompletionResult>(EGameType.ShootYourShot, dialogueObject.ShootYourShotSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SpawnFireFighting:
+                    {
+                        RunGame<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.EndConversation:
+                    {
+                        if (ensure(LevelDataManager.Instance != null, "Level Data Manager is null"))
                         {
                             LevelDataManager.Instance.CompleteCurrentLevel();
-                            GameSceneManager.Instance.LoadMapLevel();
-                            yield break;
                         }
-                    case EDialogueObjectType.LinkNewConversation:
+
+                        if (ensure(GameSceneManager.Instance != null, "Game Scene manager is null"))
                         {
-                            StartNewConversation(dialogueObject.LinkedConverssationObject.NewConversation);
-                            break;
+                            GameSceneManager.Instance.LoadMapLevel();
                         }
-                    default:
+                        yield break;
+                    }
+                case EDialogueObjectType.LinkNewConversation:
+                    {
+                        StartNewConversation(dialogueObject.LinkedConverssationObject.NewConversation);
                         break;
-                }
+                    }
+                default:
+                    break;
+            }
             //}
         }
 

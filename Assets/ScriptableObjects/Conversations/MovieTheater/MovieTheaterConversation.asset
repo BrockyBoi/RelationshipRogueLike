@@ -565,6 +565,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Fire Mini Game
@@ -1026,10 +1027,11 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Hmm?
           NewConversation: {fileID: 0}
-      GameDuration: 15
-      GridSize: {x: 4, y: 4}
-      FireIncreasePerSecond: 1
-      MaxStartingFireLevel: 1
+      GameDuration: 65
+      GridSize: {x: 5, y: 5}
+      FireIncreasePerSecond: 3
+      MaxStartingFireLevel: 50
+      AmountToMoveUpPerSecond: 0
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Offer More Peanuts
@@ -1340,6 +1342,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Respond To More Peanuts Maze Game
@@ -1901,6 +1904,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Thinking To Self and Watching Movie
@@ -2258,6 +2262,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Second Fire Game
@@ -2746,10 +2751,11 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Hurries out of theatre*'
           NewConversation: {fileID: 11400000, guid: 37a264b72876abc47a8682ed5bb47143, type: 2}
-      GameDuration: 15
-      GridSize: {x: 4, y: 4}
-      FireIncreasePerSecond: 1
-      MaxStartingFireLevel: 1
+      GameDuration: 70
+      GridSize: {x: 4, y: 8}
+      FireIncreasePerSecond: 4
+      MaxStartingFireLevel: 60
+      AmountToMoveUpPerSecond: 0.2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Time Passes
@@ -3060,6 +3066,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Link To End Of Movie Conversation
@@ -3359,5 +3366,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 11400000, guid: 437b3e29dde6d70498a85c31d101ffd0, type: 2}

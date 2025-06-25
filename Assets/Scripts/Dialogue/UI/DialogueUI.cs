@@ -17,6 +17,9 @@ namespace Dialogue.UI
         [SerializeField]
         private TextMeshProUGUI _standardDialogueText;
 
+        [SerializeField]
+        private TextMeshProUGUI _standardCharacterNameText;
+
         [SerializeField, Title("Thinking Dialogue")]
         private Image _thinkingTextBackgroundImage;
 
@@ -24,7 +27,7 @@ namespace Dialogue.UI
         private TextMeshProUGUI _thinkingDialogueText;
 
         [SerializeField]
-        private TextMeshProUGUI _characterNameText;
+        private TextMeshProUGUI _thinkingCharacterNameText;
 
         [SerializeField]
         private Image _playableCharacterImage;
@@ -53,7 +56,9 @@ namespace Dialogue.UI
             ShowUI();
             _standardDialogueText.text = dialogueObject.GetDialogueString();
             _thinkingDialogueText.text = dialogueObject.GetDialogueString();
-            _characterNameText.text = dialogueObject.GetCharacterName();
+
+            _standardCharacterNameText.text = dialogueObject.GetCharacterName();
+            _thinkingCharacterNameText.text = dialogueObject.GetCharacterName();
 
             bool isMainCharacter = dialogueObject.CharacterData.IsMainCharacter;
             _playableCharacterImage.sprite = isMainCharacter ? dialogueObject.GetCharacterSprite() : null;

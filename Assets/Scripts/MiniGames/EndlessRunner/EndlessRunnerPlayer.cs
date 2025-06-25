@@ -28,11 +28,21 @@ namespace EndlessRunner
         [SerializeField, Range(0, 1)]
         private float _amountPerFrameToIncreaseGravity = .02f;
 
+        [SerializeField]
+        private float _baseGravityLevel = 1.5f;
+
         private float _timeStartJump = -1;
 
         private bool _canContinueCurrentJump = false;
 
         private bool _prevInAir = false;
+
+        protected override void Start()
+        {
+            base.Start();
+
+            _rb2D.gravityScale = _baseGravityLevel;
+        }
 
         private void Update()
         {
@@ -104,7 +114,7 @@ namespace EndlessRunner
 
         private void OnPlayerLanded()
         {
-            _rb2D.gravityScale = 1;
+            _rb2D.gravityScale = _baseGravityLevel;
         }
 
         private bool CanJump()

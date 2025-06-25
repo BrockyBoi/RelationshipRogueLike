@@ -14,5 +14,8 @@ namespace FireFighting
 
         [FoldoutGroup("@FoldoutGroupName"), Range(1, 100)]
         public float MaxStartingFireLevel = 1;
+
+        [FoldoutGroup("@FoldoutGroupName"), Range(0, 7.5f)]
+        public float AmountToMoveUpPerSecond = 2f;
     }
 }

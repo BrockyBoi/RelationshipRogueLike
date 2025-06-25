@@ -125,6 +125,8 @@ namespace GeneralGame
 
             OnGameStart?.Invoke();
             SetGameStage(EGameStage.InGame);
+
+            OnMainTimerValueChange += MainTimerValueChanged;
         }
 
         protected virtual void StartGameTimer()
@@ -170,6 +172,8 @@ namespace GeneralGame
             StopAllCoroutines();
 
             ApplyEndGameResults();
+
+            OnMainTimerValueChange -= MainTimerValueChanged;
         }
 
         protected virtual void ApplyEndGameResults()
