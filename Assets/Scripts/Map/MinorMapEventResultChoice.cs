@@ -60,6 +60,7 @@ namespace Map
     [Serializable]
     public class MinorMapEventResult
     {
+        [TextArea]
         public string OutcomeDescription;
 
         public List<ResultModifier> OutcomeModifers = new List<ResultModifier>();

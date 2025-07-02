@@ -17,17 +17,18 @@ namespace WhackAMole
         [SerializeField, AssetsOnly, Required]
         private List<WhackAMoleAppearingObject> _distactionObjectPrefabs;
 
-        private int _startingHealth = 10;
-        private int _currentHealth = 10;
+        private int _enemiesBeaten = 0;
+        public int EnemiesBeaten { get { return _enemiesBeaten; } }
 
-        public int CurrentHealth { get { return _currentHealth; } }
+        [SerializeField]
+        private int _healthLostOnDistraction = 2;
 
         private int _spawnsWithoutDistractions = 0;
         private int _spawnsBetweenDistractions = 0;
 
         private WhackAMoleHole _currentlyHighlightedHole;
 
-        public System.Action OnTakeDamage;
+        public System.Action OnCountChange;
 
         protected override void Awake()
         {
@@ -47,6 +48,7 @@ namespace WhackAMole
         {
             base.StartGame();
 
+            _enemiesBeaten = 0;
             StartCoroutine(RunSpawningLogic());
         }
 
@@ -148,16 +150,14 @@ namespace WhackAMole
             if (appearingObject)
             {
                 appearingObject.OnAppearingObjectDestroyed += OnAppearingObjectDestroyed;
-                appearingObject.OnAppearingObjectFailedToBeDestroyed += OnAppearingObjectDisappearedFromTime;
             }
         }
 
-        private void UnlistenToApeparingObjectEvents(WhackAMoleAppearingObject appearingObject)
+        private void UnlistenToAppearingObjectEvents(WhackAMoleAppearingObject appearingObject)
         {
             if (appearingObject)
             {
                 appearingObject.OnAppearingObjectDestroyed -= OnAppearingObjectDestroyed;
-                appearingObject.OnAppearingObjectFailedToBeDestroyed -= OnAppearingObjectDisappearedFromTime;
             }
         }
 
@@ -174,63 +174,34 @@ namespace WhackAMole
 
         private void OnAppearingObjectDestroyed(WhackAMoleAppearingObject appearingObject)
         {
-            if (appearingObject && appearingObject.IsDistraction)
+            if (appearingObject)
             {
-                _currentHealth -= _gameData.HealthLostPerDistraction;
+                _enemiesBeaten = Mathf.Clamp(_enemiesBeaten + (appearingObject.IsDistraction ? -_healthLostOnDistraction : 1), 0, _gameData.EnemiesNeededToBeat);
                 UpdatePotentialPlayerDialogueUI();
-                CheckDeath();
 
-                UnlistenToApeparingObjectEvents(appearingObject);
+                UnlistenToAppearingObjectEvents(appearingObject);
 
-                OnTakeDamage?.Invoke();
-            }
-        }
-
-        private void OnAppearingObjectDisappearedFromTime(WhackAMoleAppearingObject appearingObject)
-        {
-            if (appearingObject && !appearingObject.IsDistraction)
-            {
-                _currentHealth -= _gameData.HealthLostPerEnemy;
-                UpdatePotentialPlayerDialogueUI();
-                CheckDeath();
-
-                UnlistenToApeparingObjectEvents(appearingObject);
-
-                OnTakeDamage?.Invoke();
-            }
-        }
-
-        private void CheckDeath()
-        {
-            if (_currentHealth <= 0)
-            {
-                EndGame();
+                OnCountChange?.Invoke();
             }
         }
 
         public override int GetCurrentPotentialDialogueIndex()
         {
-            return GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth);
+            return GetGameCompletionResultIndexByPointsNeededToScore(_enemiesBeaten, _gameData.EnemiesNeededToBeat);
+        }
+
+        public override float GetCurrentPotentialDialoguePercentage()
+        {
+            return GetCurrentPotentialDialoguePercentageByPointsNeededToScore(_enemiesBeaten, _gameData.EnemiesNeededToBeat);
         }
 
         protected override void SetGenerationGameData(WhackAMoleGenerationData generationData)
         {
             base.SetGenerationGameData(generationData);
-            _startingHealth = _currentHealth = generationData.StartingHealth;
             if (generationData.HasDistractionObjects)
             {
                 _spawnsBetweenDistractions = Random.Range(1, 7);
             }
-        }
-
-        public WhackAMoleCompletionResult GetResultByHealthRemaining()
-        {
-            return _gameCompletionResults[GetGameCompletionResultIndexByHealthRemaining(_currentHealth, _startingHealth)];
-        }
-
-        public override float GetCurrentPotentialDialoguePercentage()
-        {
-            return GetCurrentPotentialDialoguePercentageByGameHealthRemaining(_currentHealth, _startingHealth);
         }
     }
 }

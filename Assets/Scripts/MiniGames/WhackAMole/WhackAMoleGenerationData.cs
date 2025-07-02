@@ -20,12 +20,9 @@ namespace WhackAMole
         public bool HasDistractionObjects = false;
 
         [FoldoutGroup("@FoldoutGroupName")]
-        public int StartingHealth = 10;
-
-        [FoldoutGroup("@FoldoutGroupName")]
-        public int HealthLostPerEnemy = 1;
-
-        [FoldoutGroup("@FoldoutGroupName")]
         public int HealthLostPerDistraction = 2;
+
+        [FoldoutGroup("@FoldoutGroupName")]
+        public int EnemiesNeededToBeat = 30;
     }
 }

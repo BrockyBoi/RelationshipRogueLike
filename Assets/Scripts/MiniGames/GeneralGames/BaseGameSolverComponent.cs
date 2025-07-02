@@ -157,6 +157,7 @@ namespace GeneralGame
 
         public void AddPenaltyTime(float penalty)
         {
+            Player.Instance.PlayerModifiersComponent.ModifyValue(EDifficultyModiferType.PuzzlePunishmentsModifier, out penalty);
             _totalPenaltyTime += penalty;
         }
 
@@ -220,6 +221,7 @@ namespace GeneralGame
 
         public void SetTimeToCompleteGame(float time)
         {
+            Player.Instance.PlayerModifiersComponent.ModifyValue(EDifficultyModiferType.PuzzleTimeModifier, out time);
             _timeToCompleteGame = time;
             _timeLeftToFinish = time;
         }

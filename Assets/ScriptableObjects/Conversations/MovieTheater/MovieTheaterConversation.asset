@@ -908,7 +908,7 @@ MonoBehaviour:
           DialogueObjects:
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 5
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -920,19 +920,19 @@ MonoBehaviour:
               think about how cute she is, and try to not take this personally."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 5
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
                 UsesCustomSprite: 0
                 CustomSprite: {fileID: 0}
-                IsThinking: 0
+                IsThinking: 1
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "If she enjoys the peanuts then great, who cares if
               I\u2019m in pain?"
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
-              CharacterSentiment: 1
+              CharacterSentiment: 6
               CustomDialogueOptions:
                 UsesCustomName: 0
                 CustomName: 
@@ -1638,16 +1638,16 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      GameDuration: 15
-      GridSize: {x: 4, y: 4}
-      ShakeIntensity: 0
+      GameDuration: 45
+      GridSize: {x: 6, y: 7}
+      ShakeIntensity: 0.0064
       RotationSpeed: 0
-      NeedsKeys: 0
+      NeedsKeys: 1
       NeedsNumberedKeys: 0
-      KeysNeeded: 0
+      KeysNeeded: 2
       IsMazeFake: 0
       FakeMazeTime: 2
-      ForceDifficultySettings: 0
+      ForceDifficultySettings: 1
     MemoryGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1918,7 +1918,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
-          IsThinking: 0
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Ok, this is fine.  You are fine.  The movie is almost over,
         all you have to do is make it a few more minutes, and you don\u2019t have
@@ -1942,7 +1942,7 @@ MonoBehaviour:
           CustomName: 
           UsesCustomSprite: 0
           CustomSprite: {fileID: 0}
-          IsThinking: 0
+          IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "I\u2019m going to die here today."
     - _dialogueData:
@@ -2751,11 +2751,11 @@ MonoBehaviour:
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: '*Hurries out of theatre*'
           NewConversation: {fileID: 11400000, guid: 37a264b72876abc47a8682ed5bb47143, type: 2}
-      GameDuration: 70
-      GridSize: {x: 4, y: 8}
+      GameDuration: 90
+      GridSize: {x: 4, y: 6}
       FireIncreasePerSecond: 4
       MaxStartingFireLevel: 60
-      AmountToMoveUpPerSecond: 0.2
+      AmountToMoveUpPerSecond: 0.3
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Time Passes

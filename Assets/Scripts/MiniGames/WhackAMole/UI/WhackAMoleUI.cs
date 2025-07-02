@@ -34,7 +34,7 @@ namespace WhackAMole.UI
 
             if (GameSolver)
             {
-                GameSolver.OnTakeDamage += OnPlayerTakeDamage;
+                GameSolver.OnCountChange += OnCountChange;
             }
         }
 
@@ -42,7 +42,7 @@ namespace WhackAMole.UI
         {
             if (GameSolver)
             {
-                GameSolver.OnTakeDamage -= OnPlayerTakeDamage;
+                GameSolver.OnCountChange -= OnCountChange;
             }
         }
 
@@ -51,7 +51,7 @@ namespace WhackAMole.UI
             base.OnGameStart();
 
             _healthText.enabled = true;
-            SetHealthText();
+            SetEnemyCountText();
         }
 
         protected override void OnGameEnd()
@@ -63,9 +63,9 @@ namespace WhackAMole.UI
             _healthText.enabled = false;
         }
 
-        private void OnPlayerTakeDamage()
+        private void OnCountChange()
         {
-            SetHealthText();
+            SetEnemyCountText();
 
             if (!_isRunningTakeDamageAnimation)
             {
@@ -73,9 +73,9 @@ namespace WhackAMole.UI
             }
         }
 
-        private void SetHealthText()
+        private void SetEnemyCountText()
         {
-            _healthText.text = "Mental Health: " + GameSolver.CurrentHealth;
+            _healthText.text = GameSolver.EnemiesBeaten + " / " + GameSolver.GameData.EnemiesNeededToBeat;
         }
 
         private IEnumerator FlashHealthTextRed()

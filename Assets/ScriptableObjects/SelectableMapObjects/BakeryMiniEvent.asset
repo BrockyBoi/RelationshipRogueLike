@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0a490d2fdf388d4ca80fd1f1ae68566, type: 3}
-  m_Name: BakeryRandomEvent
+  m_Name: BakeryMiniEvent
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,23 +21,24 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  EventDescriptionText: You go to a bakery and decide to get a lil sumpm sumpm for
-    your partner.  It's near the end of the day so they've almost run out of everything,
-    but they have a few selections left!
+  EventDescriptionText: You go to a bakery and decide to get a lil' something for
+    your yourself.  You've been on your best behaviour; you deserver it.  It's near
+    the end of the day so they've almost run out of everything, but they have a few
+    selections left!
   MinorMapEventResultChoices:
   - _resultIsToCloseUI: 0
     _choiceDescription: 1. Buy an almondine
     _potentialResults:
     - OutcomeDescription: It's perfect.  Sensational.  10/10.  Mmmmwah
       OutcomeModifers:
-      - ModifierType: 0
+      - ModifierType: 1
         AdditiveValue: 2
         MultiplicativeValue: 0
       PercentChanceForOutcome: 0.8
     - OutcomeDescription: I mean, it's an almondine.  Not bad, not great
       OutcomeModifers:
       - ModifierType: 2
-        AdditiveValue: 1
+        AdditiveValue: 1.5
         MultiplicativeValue: 0
       PercentChanceForOutcome: 0.5
     - OutcomeDescription: The crust is burnt, it tastes like shit, a nearby orphanage
@@ -52,11 +53,20 @@ MonoBehaviour:
     _choiceDescription: 2. Buy a chocolate brownie
     _potentialResults:
     - OutcomeDescription: It's a chocolate explosion in your mouth. Mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-      OutcomeModifers: []
+      OutcomeModifers:
+      - ModifierType: 3
+        AdditiveValue: 0
+        MultiplicativeValue: 0.8
       PercentChanceForOutcome: 0.8
     - OutcomeDescription: It's a bit dry
-      OutcomeModifers: []
+      OutcomeModifers:
+      - ModifierType: 0
+        AdditiveValue: -1
+        MultiplicativeValue: 0
       PercentChanceForOutcome: 0.5
-    - OutcomeDescription: I don't like choclate actually? Why did I buy this?
-      OutcomeModifers: []
+    - OutcomeDescription: I don't like choclate actually. Why did I buy this?
+      OutcomeModifers:
+      - ModifierType: 2
+        AdditiveValue: 0.9
+        MultiplicativeValue: 0.9
       PercentChanceForOutcome: 0.5

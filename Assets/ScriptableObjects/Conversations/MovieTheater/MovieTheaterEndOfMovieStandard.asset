@@ -27,7 +27,7 @@ MonoBehaviour:
     StandardDialogueObjects:
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 1
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -39,7 +39,7 @@ MonoBehaviour:
         like musicals much, but that was a pleasant surprise!"
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 1
+        CharacterSentiment: 0
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -455,8 +455,8 @@ MonoBehaviour:
                 IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: Yeah, I think for a first time director this was serviceable
-              enough, but I have a list of films I could send to you that show a
-              true master of the film.
+              enough, but I have a list of films I could send to you the true masters
+              of the artform.
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
               CharacterSentiment: 7
