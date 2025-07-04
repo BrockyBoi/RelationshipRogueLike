@@ -15,6 +15,9 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField]
     private string _mapSceneName = "MapScene";
 
+    [SerializeField]
+    private AudioClip _defaultMapSceneBackgroundMusic;
+
     private void Awake()
     {
         if (Instance == null)
@@ -44,6 +47,7 @@ public class GameSceneManager : MonoBehaviour
         else if (scene.name == _mapSceneName)
         {
             MapSceneManager.Instance.DisableAlreadyUsedMapObjects();
+            AudioManager.Instance.PlayBackgroundMusic(_defaultMapSceneBackgroundMusic);
         }
     }
 

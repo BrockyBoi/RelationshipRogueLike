@@ -150,6 +150,7 @@ namespace Dialogue
                 if (ensure(levelConversationData != null && levelConversationData.ConversationToRun != null && levelConversationData.ConversationOnPlayerDeath != null, "Level Conversation Data has invalid elements"))
                 {
                     _conversationData = levelConversationData;
+                    AudioManager.Instance.PlayBackgroundMusic(levelConversationData.BackgroundMusicOnStart);
                 }
             }
             else
@@ -255,6 +256,16 @@ namespace Dialogue
                 case EDialogueObjectType.SpawnFireFighting:
                     {
                         RunGame<FireFightingGenerator, FireFightingSolver, FireFightingGenerationData, FireFightingCompletionResult>(EGameType.FireFighting, dialogueObject.FireFightingSpawnerData);
+                        break;
+                    }
+                case EDialogueObjectType.SetBackgroundMusic:
+                    {
+                        AudioManager.Instance.PlayBackgroundMusic(dialogueObject.SetBackgroundMusicData.AudioClipToPlay);
+                        break;
+                    }
+                case EDialogueObjectType.PlaySoundEffect:
+                    {
+                        AudioManager.Instance.PlaySoundEffect(dialogueObject.SetBackgroundMusicData.AudioClipToPlay);
                         break;
                     }
                 case EDialogueObjectType.EndConversation:

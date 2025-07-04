@@ -33,6 +33,8 @@ namespace Dialogue
         SpawnEndlessRunner,
         SpawnShootYourShot,
         SpawnFireFighting,
+        SetBackgroundMusic,
+        PlaySoundEffect
     }
 
     [Serializable]
@@ -73,6 +75,12 @@ namespace Dialogue
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.LinkNewConversation), HideLabel]
         public NewConversationObject LinkedConverssationObject;
+
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.SetBackgroundMusic)]
+        public AudioDialogueObject SetBackgroundMusicData;
+
+        [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.PlaySoundEffect)]
+        public AudioDialogueObject PlaySoundEffectData;
 
         [FoldoutGroup("@Description"), ShowIf("DialogueObjectType", EDialogueObjectType.EndConversation), HideLabel]
         public EndConversationObject EndConversationObject;
@@ -200,6 +208,12 @@ namespace Dialogue
     public class EndConversationObject
     {
 
+    }
+
+    [Serializable]
+    public class AudioDialogueObject
+    {
+        public AudioClip AudioClipToPlay;
     }
 
     [Serializable]

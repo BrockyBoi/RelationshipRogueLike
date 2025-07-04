@@ -15,4 +15,7 @@ public class LevelConversationData
 
     [Title("Background")]
     public Sprite BackgroundImage;
+
+    [Title("Music")]
+    public AudioClip BackgroundMusicOnStart;
 }
