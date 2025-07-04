@@ -136,9 +136,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -225,6 +224,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Answer Name Maze
@@ -569,9 +569,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -658,6 +657,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Amrita Yapping
@@ -785,9 +785,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -874,6 +873,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Maze
@@ -1345,9 +1345,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1434,6 +1433,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Amrita's Response
@@ -1562,9 +1562,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1651,6 +1650,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Looking For Relationship Maze Game
@@ -2009,9 +2009,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -2098,6 +2097,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Prime For Memory Game
@@ -2253,9 +2253,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -2342,6 +2341,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Memory Game
@@ -2776,9 +2776,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -2865,6 +2864,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Starting To End Dialogue
@@ -2965,9 +2965,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -3054,6 +3053,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: Rating how the date went by sentiment
@@ -3363,9 +3363,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -3452,6 +3451,7 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
   - Description: End Conversation
@@ -3662,9 +3662,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -3751,5 +3750,6 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}

@@ -3159,6 +3159,7 @@ MonoBehaviour:
   - {fileID: 9151727555390291364, guid: b861b3a5a39873445981303282a4b2e5, type: 3}
   _distactionObjectPrefabs:
   - {fileID: 7728642912365342581, guid: 1d6bad749186b8e4da1833f0265be3e2, type: 3}
+  _healthLostOnDistraction: 2
 --- !u!114 &771144961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3336,7 +3337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _conversationData:
-    ConversationToRun: {fileID: 11400000, guid: 057d06e9d43123d44bba42e404db71eb, type: 2}
+    ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
     BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
   _defaultEndSceneConversation: {fileID: 0}

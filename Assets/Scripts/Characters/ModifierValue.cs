@@ -3,7 +3,7 @@ public class ModifierValue
     public ModifierValue()
     {
         AdditiveValue = 0;
-        MultiplicativeValue = 0;
+        MultiplicativeValue = 1;
     }
 
     public ModifierValue(float additiveValue, float multiplicativeValue)

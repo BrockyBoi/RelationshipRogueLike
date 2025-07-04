@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static GlobalFunctions;
+
 namespace MainPlayer
 {
     public enum EDifficultyModiferType
@@ -18,7 +20,7 @@ namespace MainPlayer
         {
             if (!_modiferValues.ContainsKey(modiferType))
             {
-                _modiferValues.Add(modiferType, new ModifierValue());
+                InitializeValue(modiferType);
             }
 
             _modiferValues[modiferType].AdditiveValue += modifier.AdditiveValue;
@@ -35,14 +37,22 @@ namespace MainPlayer
             return _modiferValues.ContainsKey(type) ? _modiferValues[type].MultiplicativeValue : 0;
         }
 
-        public void ModifyValue(EDifficultyModiferType type, out float modifiedValue)
+        public void ModifyValue(EDifficultyModiferType type, ref float modifiedValue)
         {
-            modifiedValue = 0;
-
-            if (_modiferValues.ContainsKey(type))
+            if (!_modiferValues.ContainsKey(type))
             {
-                modifiedValue += _modiferValues[type].AdditiveValue;
-                modifiedValue *= _modiferValues[type].MultiplicativeValue;
+                InitializeValue(type);
+            }
+
+            modifiedValue += _modiferValues[type].AdditiveValue;
+            modifiedValue *= _modiferValues[type].MultiplicativeValue;
+        }
+
+        private void InitializeValue(EDifficultyModiferType modifierType)
+        {
+            if (!_modiferValues.ContainsKey(modifierType))
+            {
+                _modiferValues.Add(modifierType, new ModifierValue());
             }
         }
     }
