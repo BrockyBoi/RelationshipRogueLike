@@ -17,8 +17,11 @@ namespace Dialogue.UI
     {
         public static PotentialPlayerDialogueUI Instance { get; private set; }
 
-        [SerializeField]
+        [SerializeField, Title("UI")]
         private Canvas _canvas;
+
+        [SerializeField]
+        private VerticalLayoutGroup _verticalLayoutGroup;
 
         [SerializeField, AssetsOnly]
         private PotentialPlayerDialogueUIObject _potentialPlayerDialoguePrefab;
@@ -31,8 +34,8 @@ namespace Dialogue.UI
         private float _timeToMoveFromResultToDialogue = 1.5f;
         public float TimeToMoveFromResultToDialogue { get {  return _timeToMoveFromResultToDialogue;} }
 
-        [SerializeField]
-        private VerticalLayoutGroup _verticalLayoutGroup;
+        [SerializeField, Title("Audio")]
+        private AudioClip _dialogueObjectChangeClip;
 
         private void Awake()
         {
@@ -96,6 +99,7 @@ namespace Dialogue.UI
                         if (MiniGameControllersManager.Instance.GetCurrentGameSolver().IsStage(EGameStage.InGame))
                         {
                             oldResult.RemoveResult();
+                            AudioManager.Instance.PlaySoundEffect(_dialogueObjectChangeClip);
                         }
                     }
                 }

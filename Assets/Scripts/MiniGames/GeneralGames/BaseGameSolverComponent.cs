@@ -206,6 +206,8 @@ namespace GeneralGame
             WonPreviousGame = false;
             OnGameFailed?.Invoke();
 
+            AudioManager.Instance.PlayAudioEvent(EAudioEvent.LoseGame);
+
             // If player fails to complete game they lose an extra health point
             Player.Instance.HealthComponent.ChangeHealth(-1);
             EndGame();
@@ -215,6 +217,7 @@ namespace GeneralGame
         {
             WonPreviousGame = true;
             OnGameWin?.Invoke();
+            AudioManager.Instance.PlayAudioEvent(EAudioEvent.WinGame);
             EndGame();
         }
         #endregion

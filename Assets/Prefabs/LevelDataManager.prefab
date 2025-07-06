@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1101957288469039508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3040944644191681634}
+  - component: {fileID: 773315214004380669}
+  m_Layer: 0
+  m_Name: LevelDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3040944644191681634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101957288469039508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773315214004380669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101957288469039508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0343d8746b3becd45a065506e263c063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelDatas:
+    keyData: 0000000001000000020000000400000003000000
+    valueData:
+    - ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 9bb7edb914ae47f418e30c5acf26b517, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 5534b33f8e17f64489f58dc20e674aab, type: 3}
+      BackgroundMusicOnStart: {fileID: 8300000, guid: 5f4c54af6b5fe6544b8816b8c583abd7, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 502a9062ccb53fb4bb2591f4ae3d5fe7, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: af24fe5f7bf7361419be7478586f53c4, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 822244fe45949814c9ff4052bae157d4, type: 3}
+      BackgroundMusicOnStart: {fileID: 8300000, guid: 5f4c54af6b5fe6544b8816b8c583abd7, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 057d06e9d43123d44bba42e404db71eb, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 08bd107e22e87f74697dedbfdfa62f3f, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
+      BackgroundMusicOnStart: {fileID: 8300000, guid: 5f4c54af6b5fe6544b8816b8c583abd7, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: 7a91f4c2f01038f4aae5027b2ff184ff, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: ddae2f0c2e69d9749b51aa4ae814a81e, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+      BackgroundMusicOnStart: {fileID: 8300000, guid: 5f4c54af6b5fe6544b8816b8c583abd7, type: 3}
+    - ConversationToRun: {fileID: 11400000, guid: b556fdcd51024e94b8320e29834f0652, type: 2}
+      ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
+      BackgroundImage: {fileID: 21300000, guid: 712d36adfdc38204c99f8e4b5375f901, type: 3}
+      BackgroundMusicOnStart: {fileID: 8300000, guid: 5f4c54af6b5fe6544b8816b8c583abd7, type: 3}

@@ -27,11 +27,13 @@ namespace Dialogue
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField]
+        private bool _playCustomLevel = false;
+
+        [SerializeField, HideIf("@_playCustomLevel")]
+        private ELevel _levelToPlay = ELevel.None;
+
+        [SerializeField, ShowIf("@_playCustomLevel")]
         private LevelConversationData _conversationData;
-
-        [SerializeField]
-        private Conversation _defaultEndSceneConversation;
-
         public LevelConversationData ConversationData { get { return _conversationData; } }
 
         private Coroutine _conversationCoroutine;
@@ -73,6 +75,11 @@ namespace Dialogue
                 {
                     healthComponent.OnDeath += OnPlayerDeath;
                 }
+            }
+
+            if (_playCustomLevel)
+            {
+                _levelToPlay = ELevel.None;
             }
 
             if (_runDialogueOnStart)
@@ -144,18 +151,14 @@ namespace Dialogue
 
         private void SetConversationsForLevel()
         {
-            if (LevelDataManager.Instance != null)
+            if (ensure(LevelDataManager.Instance != null, "Level Data Manager is null"))
             {
-                LevelConversationData levelConversationData = LevelDataManager.Instance.GetLevelConversationData();
+                LevelConversationData levelConversationData = LevelDataManager.Instance.GetLevelConversationData(_levelToPlay);
                 if (ensure(levelConversationData != null && levelConversationData.ConversationToRun != null && levelConversationData.ConversationOnPlayerDeath != null, "Level Conversation Data has invalid elements"))
                 {
                     _conversationData = levelConversationData;
                     AudioManager.Instance.PlayBackgroundMusic(levelConversationData.BackgroundMusicOnStart);
                 }
-            }
-            else
-            {
-                Debug.LogWarning("Level data manager is null");
             }
         }
 

@@ -23,6 +23,12 @@ namespace Maze
 
         private bool IsFakeGame { get { return !Mathf.Approximately(_fakeMazeTime, 0) && _fakeMazeTime > 0; } }
 
+        [SerializeField]
+        private AudioClip _unlockGateAudioClip;
+
+        [SerializeField]
+        private AudioClip _collectKeyAudioClip;
+
         public System.Action OnWallHit;
         public System.Action OnKeyCollected;
         public System.Action OnMazeSolved;
@@ -144,6 +150,13 @@ namespace Maze
         {
             _keysToCollect--;
             OnKeyCollected?.Invoke();
+
+            AudioManager.Instance.PlaySoundEffect(_collectKeyAudioClip);
+
+            if (KeysToCollect <= 0)
+            {
+                AudioManager.Instance.PlaySoundEffect(_unlockGateAudioClip);
+            }
         }
 
         public void OnTimePickupCollected(float timeAdded)

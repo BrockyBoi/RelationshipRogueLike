@@ -12,7 +12,8 @@ public enum ELevel
     Restaurant,
     MovieTheatre,
     LoveConfession,
-    Fight
+    Fight,
+    None
 }
 
 [Serializable]
@@ -28,7 +29,7 @@ public class LevelDataManager : MonoBehaviour
     private HashSet<ELevel> _levelsCompleted;
     public HashSet<ELevel> LevelsCompleted { get { return _levelsCompleted; } }
 
-    private ELevel _currentLevel;
+    private ELevel _currentLevel = ELevel.None;
 
     private void Awake()
     {
@@ -46,9 +47,10 @@ public class LevelDataManager : MonoBehaviour
         }
     }
 
-    public LevelConversationData GetLevelConversationData()
+    public LevelConversationData GetLevelConversationData(ELevel level = ELevel.None)
     {
-        return ensure(_levelDatas.ContainsKey(_currentLevel), "Does not have data for " + _currentLevel + " level") ? _levelDatas[_currentLevel] : null;
+        ELevel levelToCheck = level == ELevel.None ? _currentLevel : level;
+        return ensure(_levelDatas.ContainsKey(levelToCheck), "Does not have data for " + levelToCheck + " level") ? _levelDatas[levelToCheck] : null;
     }
 
     public void SetLevelToPlayOnLoad(ELevel level)

@@ -1,9 +1,20 @@
+using GeneralGame;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using static GlobalFunctions;
+
+public enum EAudioEvent
+{
+    WinGame,
+    LoseGame,
+}
+
+[Serializable]
+public class AudioEventClips : UnitySerializedDictionary<EAudioEvent, AudioClip> { }
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +22,9 @@ public class AudioManager : MonoBehaviour
 
     [Title("Audio Source"), SerializeField, Required]
     private AudioSource _backgroundMusicSource;
+
+    [SerializeField]
+    private AudioEventClips _clips;
 
     private List<AudioSource> _soundEffectsSources;
 
@@ -74,6 +88,14 @@ public class AudioManager : MonoBehaviour
             _backgroundMusicSource.Stop();
             _backgroundMusicSource.clip = backgroundMusic;
             _backgroundMusicSource.Play();
+        }
+    }
+
+    public void PlayAudioEvent(EAudioEvent audioEvent)
+    {
+        if (ensure(_clips.ContainsKey(audioEvent), "Clips dictionary does not contain " + audioEvent + " in AudioManager"))
+        {
+            PlaySoundEffect(_clips[audioEvent]);
         }
     }
 }
