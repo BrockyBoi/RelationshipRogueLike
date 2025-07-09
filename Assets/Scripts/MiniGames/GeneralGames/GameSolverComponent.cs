@@ -20,9 +20,6 @@ namespace GeneralGame
         protected GenerationData _gameData;
         public GenerationData GameData { get { return _gameData; } }
 
-        [SerializeField]
-        protected bool _startGameTimerOnInitialize = true;
-
         #region Completion Results
         private void SetGameCompletionResults(List<CompletionResultType> gameCompletionResults)
         {
@@ -31,13 +28,13 @@ namespace GeneralGame
                 _gameCompletionResults = gameCompletionResults;
 
                 List<GameCompletionResult> results = new List<GameCompletionResult>(gameCompletionResults);
-                PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results);
+                PotentialPlayerDialogueUI.Instance.AddDialogueObjects(results, this);
+                SetGameStage(EGameStage.WaitForDialogueUI);
             }
         }
 
         public void GeneratorInitializeSolver(List<CompletionResultType> gameCompletionResults, GenerationData data)
         {
-            SetGameStage(EGameStage.PreCountdown);
             MiniGameControllersManager.Instance.SetCurrentGameType(_gameType);
             SetGameCompletionResults(gameCompletionResults);
             SetGenerationGameData(data);
@@ -50,11 +47,6 @@ namespace GeneralGame
                 _gameData = generationData;
 
                 SetTimeToCompleteGame(generationData.GameDuration);
-
-                if (_startGameTimerOnInitialize)
-                {
-                    StartGameTimer();
-                }
             }
         }
 

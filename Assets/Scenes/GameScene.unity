@@ -3344,6 +3344,7 @@ MonoBehaviour:
     BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
     BackgroundMusicOnStart: {fileID: 0}
   _runDialogueOnStart: 0
+  _nextDialogueClickClip: {fileID: 8300000, guid: 1fdf8f8ee658e664a9204ce362443200, type: 3}
 --- !u!4 &888546738
 Transform:
   m_ObjectHideFlags: 0
@@ -3662,7 +3663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _countDownTimeGiven: 1
   _gameType: 0
-  _startGameTimerOnInitialize: 1
+  _startGameTimerOnInitialize: 0
   _penaltyOnWallHit: 0.5
   _unlockGateAudioClip: {fileID: 8300000, guid: dbe50013be829864f85e4d9f7ac1b8b6, type: 3}
   _collectKeyAudioClip: {fileID: 8300000, guid: 5ae944c78450f2442b66d62425a803a4, type: 3}

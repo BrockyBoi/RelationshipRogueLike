@@ -26,12 +26,20 @@ namespace Dialogue.UI
         [SerializeField, AssetsOnly]
         private PotentialPlayerDialogueUIObject _potentialPlayerDialoguePrefab;
 
+        private BaseGameSolverComponent _currentGameSolver;
+
         private List<PotentialPlayerDialogueUIObject> _dialogueObjects;
 
         private int _currentlyHighlightedIndex = 0;
 
         [SerializeField]
         private float _timeToMoveFromResultToDialogue = 1.5f;
+
+        [SerializeField, Title("Show UI Timing")]
+        private float _timeBetweenShowingUIElements = .35f;
+
+        [SerializeField]
+        private float _timeForDialogueUIToAppear = 1.5f;
         public float TimeToMoveFromResultToDialogue { get {  return _timeToMoveFromResultToDialogue;} }
 
         [SerializeField, Title("Audio")]
@@ -42,11 +50,14 @@ namespace Dialogue.UI
             Instance = this;
             _dialogueObjects = new List<PotentialPlayerDialogueUIObject>();
             _currentlyHighlightedIndex = -1;
+
+            Application.targetFrameRate = 120;
         }
 
-        public void AddDialogueObjects(List<GameCompletionResult> completionResults)
+        public void AddDialogueObjects(List<GameCompletionResult> completionResults, BaseGameSolverComponent currentGameSolver)
         {
             //_verticalLayoutGroup.enabled = true;
+
 
             foreach (GameCompletionResult completionResult in completionResults)
             {
@@ -54,11 +65,34 @@ namespace Dialogue.UI
                 dialogueUI.SetGameCompletionResult(completionResult);
                 dialogueUI.StopHighlightingObject();
                 _dialogueObjects.Add(dialogueUI);
+
+                dialogueUI.Show(false);
             }
 
-            //_verticalLayoutGroup.enabled = false;
+            _currentGameSolver = currentGameSolver;
+
+
+            StartCoroutine(AddPotentialDialogueObjectsToUI());
 
             ShowUI();
+        }
+
+        private IEnumerator AddPotentialDialogueObjectsToUI()
+        {
+            yield return new WaitForSeconds(.05f);
+
+            _verticalLayoutGroup.enabled = false;
+
+            foreach (PotentialPlayerDialogueUIObject ui in _dialogueObjects)
+            {
+                ui.AddResultToUI(_timeForDialogueUIToAppear);
+                ui.Show(true);
+
+                yield return new WaitForSeconds(_timeBetweenShowingUIElements);
+            }
+
+            yield return new WaitForSeconds(1.5f);
+            _currentGameSolver.OnUIInitialized();
         }
 
         public PotentialPlayerDialogueUIObject GetCurrentlyHighlightedPotentialPlayerDialogueUI()
@@ -76,6 +110,8 @@ namespace Dialogue.UI
             _currentlyHighlightedIndex = -1;
             _dialogueObjects.Clear();
             HideUI();
+
+            _verticalLayoutGroup.enabled = true;
         }
 
         public void HighlightResult(int indexResult, float percentage)
@@ -98,7 +134,7 @@ namespace Dialogue.UI
 
                         if (MiniGameControllersManager.Instance.GetCurrentGameSolver().IsStage(EGameStage.InGame))
                         {
-                            oldResult.RemoveResult();
+                            oldResult.RemoveResultFromUI();
                             AudioManager.Instance.PlaySoundEffect(_dialogueObjectChangeClip);
                         }
                     }

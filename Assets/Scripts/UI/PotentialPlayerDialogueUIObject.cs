@@ -73,10 +73,26 @@ namespace Dialogue.UI
             transform.localScale = _startScale;
         }
 
-        public void RemoveResult()
+        public void Show(bool shouldShow)
+        {
+            _backgroundImage.enabled = shouldShow;
+            _backgroundSlider.enabled = shouldShow;
+            _dialogueText.enabled = shouldShow;
+            _healthChangeText.enabled = shouldShow;
+            _healthImage.enabled = shouldShow;
+        }
+
+        public void AddResultToUI(float timeToShow)
+        {
+            Vector3 endPos = transform.position;
+            transform.position = transform.position + Vector3.right * 1000;
+            GlobalFunctions.LerpObjectToLocation(this, gameObject, endPos, timeToShow);
+        }
+
+        public void RemoveResultFromUI()
         {
             Vector3 endPos = transform.position + Vector3.right * 1000;
-            GlobalFunctions.LerpObjectToLocation(this, gameObject, endPos, 2);
+            GlobalFunctions.LerpObjectToLocation(this, gameObject, endPos, 2f);
         }
     }
 }

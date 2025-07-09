@@ -12,6 +12,7 @@ namespace GeneralGame
 {
     public enum EGameStage
     {
+        WaitForDialogueUI,
         PreCountdown,
         DuringCountdown,
         InGameInputPrevented,
@@ -34,6 +35,9 @@ namespace GeneralGame
 
         [SerializeField]
         protected EGameType _gameType;
+
+        [SerializeField]
+        protected bool _startGameTimerOnInitialize = true;
 
         public bool WonPreviousGame { get; protected set; }
 
@@ -127,6 +131,16 @@ namespace GeneralGame
             SetGameStage(EGameStage.InGame);
 
             OnMainTimerValueChange += MainTimerValueChanged;
+        }
+
+        public void OnUIInitialized()
+        {
+            SetGameStage(EGameStage.PreCountdown);
+
+            if (_startGameTimerOnInitialize)
+            {
+                StartGameTimer();
+            }
         }
 
         protected virtual void StartGameTimer()

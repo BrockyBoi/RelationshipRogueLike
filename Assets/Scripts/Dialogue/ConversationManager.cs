@@ -52,6 +52,9 @@ namespace Dialogue
 
         private List<StandardDialogueObject> _dialogueObjectsThisConversation;
 
+        [SerializeField, Title("Audio")]
+        private AudioClip _nextDialogueClickClip;
+
         private void Awake()
         {
             if (Instance == null)
@@ -119,6 +122,11 @@ namespace Dialogue
                     healthComponent.OnDeath -= OnPlayerDeath;
                 }
             }
+        }
+
+        public void SetUpConversationManagerForStandardGame()
+        {
+            _levelToPlay = ELevel.None;
         }
 
         [Button]
@@ -422,8 +430,11 @@ namespace Dialogue
 
         public void PressedPreviousDialogue()
         {
-            _currentDialogueIndex = Mathf.Max(0, _currentDialogueIndex - 1);
-            DisplayCurrentDialogue();
+            if (_currentDialogueIndex > 0)
+            {
+                _currentDialogueIndex = Mathf.Max(0, _currentDialogueIndex - 1);
+                DisplayCurrentDialogue();
+            }
         }
 
         private void DisplayCurrentDialogue()
@@ -431,6 +442,7 @@ namespace Dialogue
             if (ensure(_dialogueObjectsThisConversation.IsValidIndex(_currentDialogueIndex), _currentDialogueIndex + " is not valid index out of " + _dialogueObjectsThisConversation.Count + " dialogue objects"))
             {
                 DialogueUI.Instance.ShowDialogue(_dialogueObjectsThisConversation[_currentDialogueIndex]);
+                AudioManager.Instance.PlaySoundEffect(_nextDialogueClickClip);
             }
         }
 

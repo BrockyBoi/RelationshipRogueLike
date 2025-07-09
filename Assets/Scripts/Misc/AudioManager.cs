@@ -40,10 +40,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-    }
 
-    private void Start()
-    {
         _soundEffectsSources = new List<AudioSource>();
     }
 

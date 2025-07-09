@@ -15,6 +15,8 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField]
     private string _mapSceneName = "MapScene";
 
+    private string _previousScene = string.Empty;
+
     [SerializeField]
     private AudioClip _defaultMapSceneBackgroundMusic;
 
@@ -42,6 +44,11 @@ public class GameSceneManager : MonoBehaviour
     {
         if (scene.name == _gameSceneName)
         {
+            if (_previousScene == _mapSceneName)
+            {
+                ConversationManager.Instance.SetUpConversationManagerForStandardGame();
+            }
+
             ConversationManager.Instance.StartConversation();
         }
         else if (scene.name == _mapSceneName)
@@ -49,6 +56,8 @@ public class GameSceneManager : MonoBehaviour
             MapSceneManager.Instance.DisableAlreadyUsedMapObjects();
             AudioManager.Instance.PlayBackgroundMusic(_defaultMapSceneBackgroundMusic);
         }
+
+        _previousScene = scene.name;
     }
 
     public void LoadMapLevel()
