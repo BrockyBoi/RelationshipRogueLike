@@ -26,9 +26,9 @@ namespace ShootYourShotGame
             }
         }
 
-        protected override void OnGameGenerated()
+        protected override void OnObjectEnabled()
         {
-            base.OnGameGenerated();
+            base.OnObjectEnabled();
 
             transform.position = Camera.main.ViewportToWorldPoint(new Vector3(.5f, .5f)).ChangeAxis(ExtensionMethods.EVectorAxis.Z, -5);
         }

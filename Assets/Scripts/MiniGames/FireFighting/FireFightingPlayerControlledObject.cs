@@ -59,9 +59,9 @@ namespace FireFighting
             transform.localScale = _startingScale * (1 + (1 - _currentMoveSpeedSlowdownMultiplier) * _scaleMultiplier);
         }
 
-        protected override void OnGameGenerated()
+        protected override void OnObjectEnabled()
         {
-            base.OnGameGenerated();
+            base.OnObjectEnabled();
             transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
         }
 

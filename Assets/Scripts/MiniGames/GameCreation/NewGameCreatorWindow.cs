@@ -1,11 +1,8 @@
-using ShootYourShotGame;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
+#if UNITY_EDITOR
 public class NewGameCreatorWindow : EditorWindow
 {
     string NewGameName = "Default Name";
@@ -161,3 +158,4 @@ public class NewGameCreatorWindow : EditorWindow
         }
     }
 }
+#endif

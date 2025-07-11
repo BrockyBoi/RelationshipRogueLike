@@ -1,8 +1,5 @@
 using GeneralGame;
 using GeneralGame.Generation;
-using Sirenix.OdinInspector.Editor;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using static GlobalFunctions;

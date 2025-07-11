@@ -28,12 +28,12 @@ public abstract class MiniGameGameObject<GameSolverComponent, GameGeneratorCompo
             {
                 _gameSolver = (GameSolverComponent)solver;
                 _gameSolver.OnGameStop += OnGameStop;
+                _gameSolver.OnStageChange += OnGameStateChanged;
             }
 
             if (ensure(generator is GameGeneratorComponent, "Cannot get " + typeof(GameGeneratorComponent) + " from " + gameObject.name + " with game type " + _gameType))
             {
                 _gameGenerator = (GameGeneratorComponent)generator;
-                _gameGenerator.ListenToOnGameGenerated(OnGameGenerated);
             }
         }
 
@@ -45,18 +45,26 @@ public abstract class MiniGameGameObject<GameSolverComponent, GameGeneratorCompo
 
     private void OnDestroy()
     {
-        if (_gameGenerator != null)
-        {
-            _gameGenerator.UnlistenToOnGameGenerated(OnGameGenerated);
-        }
-
         if (_gameSolver != null)
         {
             _gameSolver.OnGameStop -= OnGameStop;
+            _gameSolver.OnStageChange -= OnGameStateChanged;
         }
     }
 
-    protected virtual void OnGameGenerated()
+    protected virtual void OnGameStateChanged(EGameStage stage)
+    {
+        switch(stage)
+        {
+            case EGameStage.PreCountdown:
+                OnObjectEnabled(); 
+                break;
+            default:
+                break;
+        }
+    }
+
+    protected virtual void OnObjectEnabled()
     {
         gameObject.SetActive(true);
     }
