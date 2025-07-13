@@ -3336,13 +3336,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9553685d03949f6468ef4348f0e4e140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playCustomLevel: 0
+  _debugPlayCustomLevel: 1
   _levelToPlay: 1
   _conversationData:
-    ConversationToRun: {fileID: 11400000, guid: 739ead90a794a3144a78254cc9946084, type: 2}
+    ConversationToRun: {fileID: 11400000, guid: e946e82c51dc26b45b96d42d0f9be10c, type: 2}
     ConversationOnPlayerDeath: {fileID: 11400000, guid: 69d191b94e95a9f4c8e3f09af0fd5b3c, type: 2}
     BackgroundImage: {fileID: 21300000, guid: 92e9289f81886f4458a57d6d03fac96c, type: 3}
-    BackgroundMusicOnStart: {fileID: 0}
+    BackgroundMusicOnStart: {fileID: 8300000, guid: 3f014b781915bcf4eaadc84bf90145da, type: 3}
   _runDialogueOnStart: 0
   _nextDialogueClickClip: {fileID: 8300000, guid: 1fdf8f8ee658e664a9204ce362443200, type: 3}
 --- !u!4 &888546738

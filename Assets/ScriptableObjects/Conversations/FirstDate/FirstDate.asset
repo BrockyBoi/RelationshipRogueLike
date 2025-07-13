@@ -50,9 +50,32 @@ MonoBehaviour:
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Hi there!  It\u2019s so nice to meet you.  I know it\u2019s
-        a bit awkward having Tabitha setting us up on a blind date, but I\u2019m
-        really glad that you showed up.  My name is Amrtita, and she said your name
-        was Bianka, right?"
+        a bit awkward having a friend set us up on a blind date, but I\u2019m really
+        glad that you showed up.  My name is Amrtita, and she said your name was
+        Bianka, right?"
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 5
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 1
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Oh!  Uhh, damn.  She's actually pretty cute.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 1
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Oh yeah, should probably tell her my name and not just stand
+        still for an hour.
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -227,6 +250,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Answer Name Maze
     DialogueObjectType: 2
     StandardDialogueObjects: []
@@ -660,6 +687,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Amrita Yapping
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -674,10 +705,10 @@ MonoBehaviour:
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It\u2019s so nice to meet you, Bianka.  I haven\u2019t
-        gotten out in a while or really met anyone new, let alone gone on a date.  "
+        really met anyone new in a while, let alone gone on a date.  "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
-        CharacterSentiment: 1
+        CharacterSentiment: 4
         CustomDialogueOptions:
           UsesCustomName: 0
           CustomName: 
@@ -699,9 +730,43 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Not all has been bad though.  Canada is a really chill country-
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Hah!  <i>Chill</i>...
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 6
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 1
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Hmmmm, that's either the cutest or dumbest thing I've ever
+        seen.  Will need to keep a mental note of that.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "But look at me yapping on and on!  I\u2019m a bit of a
-        talker, so sorry if I\u2019m not letting you speak enough.  Tell me about
-        yourself!  What do you like to do in your free time?"
+        talker.  Sorry if I\u2019m not letting you speak enough.  Tell me about yourself! 
+        What do you like to do in your free time?"
     SentimentDialogueObject:
       SentimentDialogue:
         keyData: 
@@ -876,6 +941,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Maze
     DialogueObjectType: 2
     StandardDialogueObjects: []
@@ -930,8 +999,9 @@ MonoBehaviour:
                 IsThinking: 0
                 UseCurrentPlayerHealthForSentimentSprite: 0
             _standardDialogue: "That\u2019s so cool!  I always wanted to get more
-              into art, but I\u2019m not much of a painter.  I\u2019d love to take
-              a look sometime if that\u2019d be ok with you."
+              into art, but I\u2019m not the most talented at making anything artistic. 
+              I\u2019d love to take a look sometime though if that\u2019d be ok with
+              you."
           - _dialogueData:
               CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
               CharacterSentiment: 0
@@ -1436,6 +1506,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Amrita's Response
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -1450,9 +1524,9 @@ MonoBehaviour:
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "Well I appreciate you sharing that with me.  I always love
-        learning about people\u2019s interests.  Even though it\u2019s nice to have
-        the same intersets as someone, honestly I care much more about someone being
-        passionate.  "
+        learning what people are pasionate about.  Even though it\u2019s nice to
+        have the same intersets as someone, honestly I just want to know they care
+        about <i>something</i>."
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 1
@@ -1463,10 +1537,68 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           IsThinking: 0
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: "It doesn\u2019t have to be what I\u2019m passionate about,
-        as long as it\u2019s something. If I\u2019m dating outside of India I\u2019m
-        not expecting anybody to be able to quote \"Ohm Shanty Ohm\" to me, but even
-        just putting in the effort to relate is more than enough.  "
+      _standardDialogue: "If I\u2019m dating outside of India then I\u2019m not expecting
+        anybody to be able to sing along to <i>Ohm Shanty Ohm</i> with me, but just
+        as long as someone is willing to watch movies with me and engage in my interests
+        then I know we'll be a good match."
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Real quick, do you know what <i>Ohm Shanty Ohm</i> is?
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 1
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Not a fucking clue.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: Oh my god you'll <b>LOVE</b> it.  If you like romance, dancing,
+        and Shah Ru Kahn's insane 90's abs then you'll be in for one hell of a ride.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 87cdc8caa47a73a40aa8615a9c5c6287, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: I genuinely have no clue what you're saying, but consider
+        me convinced!  I promise to give it a watch.
+    - _dialogueData:
+        CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
+        CharacterSentiment: 0
+        CustomDialogueOptions:
+          UsesCustomName: 0
+          CustomName: 
+          UsesCustomSprite: 0
+          CustomSprite: {fileID: 0}
+          IsThinking: 0
+          UseCurrentPlayerHealthForSentimentSprite: 0
+      _standardDialogue: And just like that you've already won a whole lot of points
+        with me.
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 1
@@ -1653,6 +1785,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Looking For Relationship Maze Game
     DialogueObjectType: 2
     StandardDialogueObjects: []
@@ -2100,6 +2236,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Prime For Memory Game
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -2115,8 +2255,8 @@ MonoBehaviour:
           UseCurrentPlayerHealthForSentimentSprite: 0
       _standardDialogue: "It was really nice of Tabitha to do this for us.  She\u2019s
         been mentioning it for such a long time, and I kept saying no either becuase
-        I was busy or shy, and finally she just forced me into this, which I honestly
-        am pretty thankful for.  "
+        I was busy or shy, and finally she just forced me into this. Scary at first,
+        but honestly I'm pretty thankful for it. "
     - _dialogueData:
         CharacterData: {fileID: 11400000, guid: 9f6f7493271fc1845a3e688148f86151, type: 2}
         CharacterSentiment: 1
@@ -2344,6 +2484,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Memory Game
     DialogueObjectType: 3
     StandardDialogueObjects: []
@@ -2867,6 +3011,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Starting To End Dialogue
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -3056,6 +3204,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Rating how the date went by sentiment
     DialogueObjectType: 1
     StandardDialogueObjects: []
@@ -3454,6 +3606,10 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: End Conversation
     DialogueObjectType: 4
     StandardDialogueObjects: []
@@ -3753,3 +3909,7 @@ MonoBehaviour:
       AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}

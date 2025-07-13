@@ -176,7 +176,6 @@ namespace Maze.Generation
                             keyPickupObject.transform.localPosition = keyPickupObject.transform.localPosition.ChangeAxis(ExtensionMethods.EVectorAxis.Y, .5f);
                             _keysInGame.Add(keyPickupObject);
                             keyPickupObject.DeactivateObject();
-                            keysToSpawn--;
 
                             if (potentialStartNodes.Count == 0 && keysToSpawn > 0)
                             {

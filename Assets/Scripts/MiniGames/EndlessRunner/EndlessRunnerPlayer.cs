@@ -46,7 +46,7 @@ namespace EndlessRunner
 
         private void Update()
         {
-            if (IsOnGround() && Input.GetMouseButtonDown(0))
+            if (IsOnGround() && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
             {
                 StartJump();
             }

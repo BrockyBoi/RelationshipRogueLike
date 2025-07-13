@@ -27,12 +27,12 @@ namespace Dialogue
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField]
-        private bool _playCustomLevel = false;
+        private bool _debugPlayCustomLevel = false;
 
-        [SerializeField, HideIf("@_playCustomLevel")]
+        [SerializeField, HideIf("@_debugPlayCustomLevel")]
         private ELevel _levelToPlay = ELevel.None;
 
-        [SerializeField, ShowIf("@_playCustomLevel")]
+        [SerializeField, ShowIf("@_debugPlayCustomLevel")]
         private LevelConversationData _conversationData;
         public LevelConversationData ConversationData { get { return _conversationData; } }
 
@@ -80,7 +80,7 @@ namespace Dialogue
                 }
             }
 
-            if (_playCustomLevel)
+            if (_debugPlayCustomLevel)
             {
                 _levelToPlay = ELevel.None;
             }
@@ -98,8 +98,8 @@ namespace Dialogue
                 return;
             }
 
-            bool pressedNext = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space);
-            bool pressedBack = Input.GetKeyDown(KeyCode.LeftArrow);
+            bool pressedNext = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+            bool pressedBack = Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Backspace);
 
             if (pressedNext)
             {
@@ -159,7 +159,11 @@ namespace Dialogue
 
         private void SetConversationsForLevel()
         {
-            if (ensure(LevelDataManager.Instance != null, "Level Data Manager is null"))
+            if (_debugPlayCustomLevel)
+            {
+                AudioManager.Instance.PlayBackgroundMusic(_conversationData.BackgroundMusicOnStart);
+            }
+            else if (ensure(LevelDataManager.Instance != null, "Level Data Manager is null"))
             {
                 LevelConversationData levelConversationData = LevelDataManager.Instance.GetLevelConversationData(_levelToPlay);
                 if (ensure(levelConversationData != null && levelConversationData.ConversationToRun != null && levelConversationData.ConversationOnPlayerDeath != null, "Level Conversation Data has invalid elements"))
@@ -179,14 +183,10 @@ namespace Dialogue
                 yield break;
             }
 
-            //foreach (DialogueObject dialogueObject in dialogueObject)
-            //{
             if (_playerHasDied)
             {
                 _playerHasDied = false;
                 StartNewConversation(_conversationData.ConversationOnPlayerDeath);
-                //_newConversationOnFinishDialogue = _conversationData.ConversationOnPlayerDeath;
-                //yield return StartCoroutine(ProcessConversation(_conversationData.ConversationOnPlayerDeath));
                 yield break;
             }
 
@@ -300,7 +300,6 @@ namespace Dialogue
                 default:
                     break;
             }
-            //}
         }
 
         private IEnumerator ProcessStandardGameLogic<GeneratorType, SolverType, GenerationDataType, CompletionResultType>(EGameType gameType, GenerationDataType generationData) 
@@ -320,11 +319,6 @@ namespace Dialogue
             _isInGame = false;
             yield return ProcessGameResult(solver.GetCurrentCompletionResult());
         }
-
-        //private void ProcessConversation(Conversation conversation)
-        //{
-        //    yield return ProcessDialogueObject(conversation.DialogueObjects);
-        //}
 
         private IEnumerator ProcessStandardDialogueObjects(List<StandardDialogueObject> dialogueObjects)
         {
@@ -354,7 +348,6 @@ namespace Dialogue
                 if (!branchingDialogue.OnlyUsesDialogue)
                 {
                     _newConversationOnFinishDialogue = branchingDialogue.NewConversation;
-                    //yield return ProcessConversation(branchingDialogue.NewConversation);
                 }
             }
         }
