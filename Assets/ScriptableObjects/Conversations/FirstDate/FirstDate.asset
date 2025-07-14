@@ -74,7 +74,7 @@ MonoBehaviour:
           CustomSprite: {fileID: 0}
           IsThinking: 1
           UseCurrentPlayerHealthForSentimentSprite: 0
-      _standardDialogue: Oh yeah, should probably tell her my name and not just stand
+      _standardDialogue: Ok I should probably tell her my name and not just stand
         still for an hour.
     SentimentDialogueObject:
       SentimentDialogue:

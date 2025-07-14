@@ -234,7 +234,7 @@ MonoBehaviour:
         valueData: []
     MazeSpawnerData:
       GameCompletionResults:
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: Good
         HealthResult:
           HealthAmountToChange: 2
         BranchingDialogue:
@@ -256,7 +256,7 @@ MonoBehaviour:
           MazeSizeModifier: 0
           MazeShakeModifier: 0
           MazeRotateModifier: 0
-      - PotentialPlayerDialogueDescription: Default Description
+      - PotentialPlayerDialogueDescription: Bad
         HealthResult:
           HealthAmountToChange: 0
         BranchingDialogue:

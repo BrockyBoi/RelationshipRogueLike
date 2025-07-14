@@ -127,6 +127,7 @@ namespace Dialogue
         public void SetUpConversationManagerForStandardGame()
         {
             _levelToPlay = ELevel.None;
+            _debugPlayCustomLevel = false;
         }
 
         [Button]
@@ -356,6 +357,24 @@ namespace Dialogue
         {
             yield return ProcessResultDialogueIntoCharacterDialogue();
 
+            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+
+            if (gameResult.BranchingDialogue.DialogueObjects.Count > 0)
+            {
+                AddAndDisplayNewDialogue(gameResult.BranchingDialogue.DialogueObjects);
+            }
+            else
+            {
+                PressedNextDialogue();
+            }
+
+            _isInGame = false;
+
+            if (!gameResult.BranchingDialogue.OnlyUsesDialogue)
+            {
+                _newConversationOnFinishDialogue = gameResult.BranchingDialogue.NewConversation;
+            }
+
             AddAndDisplayNewDialogue(gameResult.BranchingDialogue.DialogueObjects);
             if (!gameResult.BranchingDialogue.OnlyUsesDialogue)
             {
@@ -365,8 +384,8 @@ namespace Dialogue
 
         private IEnumerator ProcessResultDialogueIntoCharacterDialogue()
         {
-            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
-            yield break;
+            //PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+            //yield break;
 
             // Still working on it
             PotentialPlayerDialogueUIObject dialogueUI = PotentialPlayerDialogueUI.Instance.GetCurrentlyHighlightedPotentialPlayerDialogueUI();
@@ -378,13 +397,13 @@ namespace Dialogue
 
                 DialogueUI.Instance.GetMoveFromGameResultToConversationData(out finalLocation, out rect);
 
-                //GlobalFunctions.LerpObjectToLocation(dialogueUI, dialogueUI.gameObject, finalLocation, timeToMove);
-                GlobalFunctions.LerpRectTransform(dialogueUI, dialogueUI.GetComponent<RectTransform>(), rect, timeToMove);
+                dialogueUI.MoveToDialogueUILocation();
 
                 yield return new WaitForSeconds(timeToMove);
-
-                PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
             }
+
+            PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
+
         }
 
         private IEnumerator YieldUntilInput()
@@ -451,7 +470,6 @@ namespace Dialogue
                 _currentDialogueIndex++;
                 AddDialogueObjects(dialogueObjects);
                 DisplayCurrentDialogue();
-
             }
         }
 
@@ -469,23 +487,8 @@ namespace Dialogue
             callback = () => 
             {
                 solver.OnGameStop -= callback;
-                PotentialPlayerDialogueUI.Instance.DestroyAllDialogueOptions();
                 CompletionResultType completionResult = solver.GetCurrentCompletionResult();
-                if (completionResult.BranchingDialogue.DialogueObjects.Count > 0)
-                {
-                    AddAndDisplayNewDialogue(completionResult.BranchingDialogue.DialogueObjects);
-                }
-                else
-                {
-                    PressedNextDialogue();
-                }
-
-                _isInGame = false;
-
-                if (!completionResult.BranchingDialogue.OnlyUsesDialogue)
-                {
-                    _newConversationOnFinishDialogue = completionResult.BranchingDialogue.NewConversation;
-                }
+                StartCoroutine(ProcessGameResult(completionResult));
             };
             solver.OnGameStop += callback;
 

@@ -336,9 +336,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -425,8 +424,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Endless Runner To Order Food
     DialogueObjectType: 8
     StandardDialogueObjects: []
@@ -635,9 +639,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -950,8 +953,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Food Is Served
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -1199,9 +1207,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1288,8 +1295,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Endless Runner
     DialogueObjectType: 8
     StandardDialogueObjects: []
@@ -1498,9 +1510,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -1902,8 +1913,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Meal Is Over
     DialogueObjectType: 0
     StandardDialogueObjects:
@@ -2147,9 +2163,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -2236,8 +2251,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Endless Runner
     DialogueObjectType: 8
     StandardDialogueObjects: []
@@ -2446,9 +2466,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -2697,7 +2716,7 @@ MonoBehaviour:
       GameDuration: 60
       ObjectMoveSpeed: 6
       CoinsToCollect: 100
-      CoinPatternsToSpawn: 13
+      CoinPatternsToSpawn: 15
       ShouldSpawnExtraObjects: 0
       ExtraObjectToSpawn: {fileID: 7105970923738383032, guid: 5161f4aa40eb6ca4c995c93ff69e58a4, type: 3}
       TimeToSpawnExtraObject: 20
@@ -2743,8 +2762,13 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 0}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}
   - Description: Link To End Of Desert
     DialogueObjectType: 5
     StandardDialogueObjects: []
@@ -2953,9 +2977,8 @@ MonoBehaviour:
       TimeObjectsStayInPlay: 0.75
       TimeBetweenSpawns: 0.75
       HasDistractionObjects: 0
-      StartingHealth: 10
-      HealthLostPerEnemy: 1
       HealthLostPerDistraction: 2
+      EnemiesNeededToBeat: 30
     CatchingButterflyGameSpawnerData:
       GameCompletionResults:
       - PotentialPlayerDialogueDescription: Default Description
@@ -3042,5 +3065,10 @@ MonoBehaviour:
       GridSize: {x: 4, y: 4}
       FireIncreasePerSecond: 1
       MaxStartingFireLevel: 1
+      AmountToMoveUpPerSecond: 2
     LinkedConverssationObject:
       NewConversation: {fileID: 11400000, guid: 1f4932577e40bc443826730e483cc1d9, type: 2}
+    SetBackgroundMusicData:
+      AudioClipToPlay: {fileID: 0}
+    PlaySoundEffectData:
+      AudioClipToPlay: {fileID: 0}

@@ -1,4 +1,5 @@
 using GeneralGame.Results;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,10 +26,19 @@ namespace Dialogue.UI
         private GameCompletionResult _result;
 
         private Vector3 _startScale = Vector3.one;
+        private Vector2 _startSizeDelta;
+
+        [SerializeField]
+        private Vector3 _endUIPos;
+
+        [SerializeField]
+        private Vector2 _endSizeDelta;
+
+        [SerializeField]
+        private Vector3 _endScale;
 
         private void Start()
         {
-            _startScale = transform.localScale;
         }
 
         public void SetGameCompletionResult(GameCompletionResult result)
@@ -60,16 +70,16 @@ namespace Dialogue.UI
 
         public void HighlightObject()
         {
-            _backgroundSlider.gameObject.SetActive(true);
+            //_backgroundSlider.gameObject.SetActive(true);
 
-            _backgroundImage.color = Color.yellow;
+            //_backgroundImage.color = Color.yellow;
             transform.localScale = _startScale * 1.25f;
         }
 
         public void StopHighlightingObject()
         {
-            _backgroundSlider.gameObject.SetActive(false);
-            _backgroundImage.color = Color.white;
+            //_backgroundSlider.gameObject.SetActive(false);
+            //_backgroundImage.color = Color.white;
             transform.localScale = _startScale;
         }
 
@@ -93,6 +103,39 @@ namespace Dialogue.UI
         {
             Vector3 endPos = transform.position + Vector3.right * 1000;
             GlobalFunctions.LerpObjectToLocation(this, gameObject, endPos, 2f);
+        }
+
+        public void MoveToDialogueUILocation()
+        {
+            StartCoroutine(MoveToDialogueUILocationCoroutine());
+        }
+
+        private IEnumerator MoveToDialogueUILocationCoroutine()
+        {
+            Vector3 startPos = transform.position;
+            float time = 0;
+            float timeToTake = PotentialPlayerDialogueUI.Instance.TimeToMoveFromResultToDialogue;
+            RectTransform rect = GetComponent<RectTransform>();
+            _startSizeDelta = rect.sizeDelta;
+            _startScale = transform.localScale;
+
+            _backgroundSlider.gameObject.SetActive(false);
+            _backgroundImage.gameObject.SetActive(true);
+
+            while (time < timeToTake)
+            {
+                Vector3 pos = Vector3.Lerp(startPos, _endUIPos, time / timeToTake);
+                transform.position = pos;
+
+                Vector3 sizeDelta = Vector3.Lerp(_startSizeDelta, _endSizeDelta, time / timeToTake);
+                rect.sizeDelta = sizeDelta;
+
+                Vector3 standardScale = Vector3.Lerp(_startScale, _endScale, time / timeToTake);
+                transform.localScale = standardScale;
+                time += Time.deltaTime;
+
+                yield return null;
+            }
         }
     }
 }

@@ -159,7 +159,6 @@ namespace Maze.Generation
 
         private void GenerateKeysInMaze(List<MazeNode> potentialStartNodes)
         {
-            int startPotentialStartNodesCount = potentialStartNodes.Count;
             int keysToSpawn = _gameData.KeysNeeded;
             if (_gameData.NeedsKeys && keysToSpawn > 0)
             {
@@ -176,17 +175,6 @@ namespace Maze.Generation
                             keyPickupObject.transform.localPosition = keyPickupObject.transform.localPosition.ChangeAxis(ExtensionMethods.EVectorAxis.Y, .5f);
                             _keysInGame.Add(keyPickupObject);
                             keyPickupObject.DeactivateObject();
-
-                            if (potentialStartNodes.Count == 0 && keysToSpawn > 0)
-                            {
-                                ensure(false, "More keys need to be spawned, but not enough potential start nodes left");
-                                break;
-                            }
-
-                            if (keysToSpawn == 0)
-                            {
-                                break;
-                            }
                         }
                     }
                 }

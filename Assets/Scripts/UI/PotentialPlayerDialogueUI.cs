@@ -150,5 +150,7 @@ namespace Dialogue.UI
                 _dialogueObjects[_currentlyHighlightedIndex].SetProgressPercentage(percentage);
             }
         }
+
+
     }
 }
